@@ -2,7 +2,7 @@ http://wonderweblabs.github.io/curo-material-interface/
 
 Curo Material Interface is an extraction of our Curo CMS which we use in client projects (http://curocms.com - soon available). Since we want to reuse the design patterns in other projects, we'll continuously move those implementation in this repo.
 
-Most parts of the implementation are loosely based on the Google Material Design concept (http://www.google.com/design/spec/material-design/introduction.html). Feel free to fork this repo and continue your own interpretation of the google material design concept. 
+Most parts of the implementation are loosely based on the Google Material Design concept (http://www.google.com/design/spec/material-design/introduction.html). Feel free to fork this repo and continue your own interpretation of the google material design concept.
 
 As icon set we use google material design icons (https://github.com/google/material-design-icons).
 
@@ -44,6 +44,7 @@ We decided to keep things as open as possible - not like other libraries that in
 // components
 @import cmi/components/navbar
 @import cmi/components/buttons
+@import cmi/components/flex-modal
 ```
 
 At "@import ./font_mixin" you need to implement the right font font-face call for middleman or rails for your application:
@@ -51,6 +52,13 @@ At "@import ./font_mixin" you need to implement the right font font-face call fo
 **Rails**
 
 ```sass
+@font-face
+ font-family: "Material-Design-Icons"
+ src: asset-url("mdi/Material-Design-Icons.eot?-g7cqhn")
+ src: asset-url("mdi/Material-Design-Icons.eot?#iefix-g7cqhn") format("embedded-opentype"), asset-url("mdi/Material-Design-Icons.woff?-g7cqhn") format("woff"), asset-url("mdi/Material-Design-Icons.ttf?-g7cqhn") format("truetype"), asset-url("mdi/Material-Design-Icons.svg?-g7cqhn#Material-Design-Icons") format("svg")
+ font-weight: normal
+ font-style: normal
+
 =font-face-helper($family, $fileBaseName, $weight, $style)
   @font-face
     font-family: $family
@@ -64,6 +72,13 @@ At "@import ./font_mixin" you need to implement the right font font-face call fo
 **Middleman**
 
 ```sass
+@font-face
+ font-family: "Material-Design-Icons"
+ src: font-url("mdi/Material-Design-Icons.eot?-g7cqhn")
+ src: font-url("mdi/Material-Design-Icons.eot?#iefix-g7cqhn") format("embedded-opentype"), font-url("mdi/Material-Design-Icons.woff?-g7cqhn") format("woff"), font-url("mdi/Material-Design-Icons.ttf?-g7cqhn") format("truetype"), font-url("mdi/Material-Design-Icons.svg?-g7cqhn#Material-Design-Icons") format("svg")
+ font-weight: normal
+ font-style: normal
+
 =font-face-helper($family, $fileBaseName, $weight, $style)
   @font-face
     font-family: $family
@@ -80,12 +95,12 @@ CMI is completely scoped - meaning that the classes won't work unless you add a 
 ```haml
 %body
   // won't work:
-  %a.cmi-btn 
+  %a.cmi-btn
     My Button
-  
+
   // works:
   .cmi
-    %a.cmi-btn 
+    %a.cmi-btn
       My Button
 ```
 
@@ -93,6 +108,6 @@ The easiest way is to assign cmi class to the body tag, if scoping the implement
 
 ```haml
 %body.cmi
-  %a.cmi-btn 
+  %a.cmi-btn
     My Button
 ```
