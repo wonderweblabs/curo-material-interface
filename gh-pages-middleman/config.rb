@@ -1,8 +1,8 @@
-set :css_dir, 'curo-material-interface/stylesheets'
+set :css_dir, 'curo-material-interface/gh-pages/stylesheets'
 
-set :js_dir, 'curo-material-interface/javascripts'
+set :js_dir, 'curo-material-interface/gh-pages/javascripts'
 
-set :fonts_dir, 'curo-material-interface/fonts'
+set :fonts_dir, 'curo-material-interface/gh-pages/fonts'
 
 set :images_dir, 'images'
 
