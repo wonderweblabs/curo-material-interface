@@ -1,6 +1,6 @@
 http://wonderweblabs.github.io/curo-material-interface/
 
-Curo Material Interface is an extraction of the wonderweblabs Curo CMS which is used in the client projects (http://curocms.com - soon available). Since we want to reuse the design patterns in other projects, we'll continuously move those implementation in this repo.
+Curo Material Interface is an extraction of the wonderweblabs Curo CMS which is used in the client projects (https://curocms.com - soon available). Since we want to reuse the design patterns in other projects, we'll continuously move those implementation in this repo.
 
 Most parts of the implementation are loosely based on the Google Material Design concept (http://www.google.com/design/spec/material-design/introduction.html). Feel free to fork this repo and continue your own interpretation of the google material design concept.
 
