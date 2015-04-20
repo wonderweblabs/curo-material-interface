@@ -47,6 +47,7 @@ We decided to keep things as open as possible - not like other libraries that in
 @import cmi/components/flex-modal
 @import cmi/components/loading-indicator
 @import cmi/components/ripples
+@import cmi/components/tabs
 ```
 
 At "@import ./font_mixin" you need to implement the right font font-face call for middleman or rails for your application:

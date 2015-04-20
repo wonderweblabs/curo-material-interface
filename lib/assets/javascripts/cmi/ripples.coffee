@@ -1,3 +1,5 @@
+window.CMI or= {}
+
 class CMI.Ripples
 
   @animateClick: (domElement, event) ->
