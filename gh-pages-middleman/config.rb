@@ -15,5 +15,10 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 
+  set :relative_links, true
+
+  # root
+  set :root_path, 'curo-material-interface'
+
   set :google_analytics, true
 end
