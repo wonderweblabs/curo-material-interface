@@ -64,11 +64,11 @@ At "@import ./font_mixin" you need to implement the right font font-face call fo
  font-weight: normal
  font-style: normal
 
-=font-face-helper($family, $fileBaseName, $weight, $style)
+=font-face-helper($family, $fileBaseName, $weight, $style, $svgAppendix: '')
   @font-face
     font-family: $family
     src: asset-url($fileBaseName + '.eot')
-    src: asset-url($fileBaseName + '.eot?#iefix') format('embedded-opentype'), asset-url($fileBaseName + '.woff') format('woff'), asset-url($fileBaseName + '.ttf') format('truetype'), asset-url($fileBaseName + '.svg#robotothin') format('svg')
+    src: asset-url($fileBaseName + '.eot?#iefix') format('embedded-opentype'), asset-url($fileBaseName + '.woff') format('woff'), asset-url($fileBaseName + '.ttf') format('truetype'), asset-url($fileBaseName + '.svg#' + $svgAppendix) format('svg')
     font-weight: $weight
     font-style: $style
 ```
@@ -84,11 +84,11 @@ At "@import ./font_mixin" you need to implement the right font font-face call fo
  font-weight: normal
  font-style: normal
 
-=font-face-helper($family, $fileBaseName, $weight, $style)
+=font-face-helper($family, $fileBaseName, $weight, $style, $svgAppendix: '')
   @font-face
     font-family: $family
     src: font-path($fileBaseName + '.eot')
-    src: font-path($fileBaseName + '.eot?#iefix') format('embedded-opentype'), font-path($fileBaseName + '.woff') format('woff'), font-path($fileBaseName + '.ttf') format('truetype'), font-path($fileBaseName + '.svg#robotothin') format('svg')
+    src: font-path($fileBaseName + '.eot?#iefix') format('embedded-opentype'), font-path($fileBaseName + '.woff') format('woff'), font-path($fileBaseName + '.ttf') format('truetype'), font-path($fileBaseName + '.svg#' + $svgAppendix) format('svg')
     font-weight: $weight
     font-style: $style
 ```
