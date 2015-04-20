@@ -49,6 +49,7 @@ We decided to keep things as open as possible - not like other libraries that in
 @import cmi/components/ripples
 @import cmi/components/tabs
 @import cmi/form_components/text_field
+@import cmi/form_components/checkbox
 ```
 
 At "@import ./font_mixin" you need to implement the right font font-face call for middleman or rails for your application:

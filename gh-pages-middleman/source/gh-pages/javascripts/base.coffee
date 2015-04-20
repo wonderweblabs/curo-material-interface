@@ -4,4 +4,5 @@
 #= require cmi/tabs
 #= require cmi/form_components/text_field
 #= require cmi/form_components/textarea
+#= require cmi/form_components/checkbox
 #

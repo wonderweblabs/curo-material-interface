@@ -489,3 +489,85 @@
           CMI.FormComponents.Textarea.animateHeight($('body'), $(this))
         });
       });
+
+  / ---------------------------------------------
+  / checkboxes
+  .grid-row
+    .grid-col-12
+      %h2.cmi-lined
+        %span Checkboxes
+  .grid-row#checkboxes-1
+    .grid-col-6
+      %h4 Normal
+      .cmi-checkbox-container
+        %label
+          <input type="checkbox" name="check1" value="1" />
+          %span.cmi-animation.cmi-ripples.cmi-ripples-dark
+          %span.cmi-checkbox
+          My checkbox text
+      .cmi-checkbox-container
+        %label
+          <input type="checkbox" name="check1" value="1" checked />
+          %span.cmi-animation.cmi-ripples.cmi-ripples-dark
+          %span.cmi-checkbox
+          My checkbox text
+      .cmi-checkbox-container.cmi-valid
+        %label
+          <input type="checkbox" name="check1" value="1" />
+          %span.cmi-animation.cmi-ripples.cmi-ripples-dark
+          %span.cmi-checkbox
+          My checkbox text
+      .cmi-checkbox-container.cmi-invalid
+        %label
+          <input type="checkbox" name="check1" value="1" />
+          %span.cmi-animation.cmi-ripples.cmi-ripples-dark
+          %span.cmi-checkbox
+          My checkbox text
+      %h4 Hints
+      .cmi-checkbox-container
+        %label
+          <input type="checkbox" name="check1" value="1" />
+          %span.cmi-animation.cmi-ripples.cmi-ripples-dark
+          %span.cmi-checkbox
+          My checkbox text
+        %p.hint Some little notice as hint text.
+      .cmi-checkbox-container
+        %label
+          <input type="checkbox" name="check1" value="1" />
+          %span.cmi-animation.cmi-ripples.cmi-ripples-dark
+          %span.cmi-checkbox
+          My checkbox text
+        %p.cmi-hint.cmi-valid Some little notice as hint text.
+      .cmi-checkbox-container
+        %label
+          <input type="checkbox" name="check1" value="1" />
+          %span.cmi-animation.cmi-ripples.cmi-ripples-dark
+          %span.cmi-checkbox
+          My checkbox text
+        %p.cmi-hint.cmi-valid Some little notice as hint text.
+        %p.cmi-hint Second notice text.
+      .cmi-checkbox-container
+        %label
+          <input type="checkbox" name="check1" value="1" />
+          %span.cmi-animation.cmi-ripples.cmi-ripples-dark
+          %span.cmi-checkbox
+          My checkbox text
+        %p.cmi-hint.cmi-invalid Some little notice as hint text.
+    .grid-col-6
+      %pre
+        :preserve
+          $('#checkboxes-1').on('click', 'label', function() {
+            CMI.FormComponents.Checkbox.click($(this));
+          });
+          $('#checkboxes-1 label').each(function() {
+            CMI.FormComponents.Checkbox.reset($(this));
+          });
+    :javascript
+      $(function() {
+        $('#checkboxes-1').on('click', 'label', function() {
+          CMI.FormComponents.Checkbox.click($(this));
+        });
+        $('#checkboxes-1 label').each(function() {
+          CMI.FormComponents.Checkbox.reset($(this));
+        });
+      });
