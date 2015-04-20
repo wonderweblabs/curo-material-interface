@@ -1,0 +1,114 @@
+.cmi
+
+  // base declaration
+  .cmi-btn
+    position: relative
+    display: inline-block
+    overflow: hidden
+    min-width: $button-min-width
+    height: $button-height
+    margin: $button-margin-vertical $button-margin-horizontal
+    padding: $button-padding-vertical $button-padding-horizontal
+    font-size: $button-font-size
+    text-align: center
+    text-transform: uppercase
+    text-decoration: none
+    line-height: 1
+    letter-spacing: 0.05rem
+    border: none
+    outline: 0
+    cursor: pointer
+    -webkit-tap-highlight-color: transparent
+    +border-radius($button-border-radius)
+    &:hover
+      outline: none
+      text-decoration: none
+      color: darken($color-primary, 7%)
+      background-color: $button-color-hover
+    &:active,
+    &:target
+      outline: none
+      text-decoration: none
+      color: darken($color-primary, 10%)
+      background-color: opacify($button-color-hover, 0.05)
+
+  // button raised
+  .cmi-btn.cmi-btn-raised
+    background-color: $button-color-raised
+    @extend .z-depth-1
+    +transition(.1s ease-out)
+    &:hover
+      background-color: $button-color-hover
+      @extend .z-depth-1-hover
+    &:active,
+    &:target
+      background-color: opacify($button-color-hover, 0.05)
+      @extend .z-depth-2
+
+  // button default
+  .cmi-btn.cmi-btn-default
+    background-color: $button-default-bg-color
+    color: $button-default-font-color
+    &:hover
+      background-color: opacify($button-default-bg-color, 0.02)
+      color: $button-primary-font-color
+    &:active,
+    &:target
+      background-color: opacify($button-default-bg-color, 0.07)
+      color: $button-primary-font-color
+
+  // button primary
+  .cmi-btn.cmi-btn-primary
+    background-color: $button-primary-bg-color
+    color: $button-primary-font-color
+    &:hover
+      background-color: lighten($button-primary-bg-color, 5%)
+      color: $button-primary-font-color
+    &:active,
+    &:target
+      background-color: lighten($button-primary-bg-color, 10%)
+      color: $button-primary-font-color
+
+  // button small
+  .cmi-btn.cmi-btn-small
+    min-width: $button-small-min-width
+    height: $button-small-height
+    padding: $button-small-padding-vertical $button-small-padding-horizontal
+    font-size: $button-small-font-size
+
+  // button large
+  .cmi-btn.cmi-btn-large
+    min-width: $button-large-min-width
+    height: $button-large-height
+    padding: $button-large-padding-vertical $button-large-padding-horizontal
+    font-size: $button-large-font-size
+
+  // button block
+  .cmi-btn.cmi-btn-block
+    display: block
+
+
+  // ------------------------------------
+  // ripples
+
+  .cmi-btn
+    &:active,
+    &:target
+      background-color: $button-color-hover
+
+  .cmi-btn.cmi-btn-raised
+    &:active,
+    &:target
+      background-color: $button-color-hover
+
+  .cmi-btn.cmi-btn-default
+    &:active,
+    &:target
+      background-color: opacify($button-default-bg-color, 0.02)
+
+  .cmi-btn.cmi-btn-primary
+    &:active,
+    &:target
+      background-color: lighten($button-primary-bg-color, 5%)
+
+
