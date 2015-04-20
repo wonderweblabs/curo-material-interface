@@ -1,3 +1,9 @@
-%header#top
-  .container
-    %h1 HEADER
+%header#top.grid-container
+  .grid-row
+    .grid-col-12
+      %nav
+        %ul
+          %li= link_to 'CMI', '/'
+          %li= link_to 'Javascript', '/javascripts.html'
+          %li= link_to 'Marionette Behaviors', '/behaviors.html'
+      %h1= yield_content(:headline)

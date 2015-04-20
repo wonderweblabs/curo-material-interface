@@ -1,6 +1,15 @@
-- content_for(:title, '')
+- content_for(:title, 'Curo Material Interface')
 - content_for(:html_description, '')
 - content_for(:html_keywords, '')
 - content_for(:html_robots, 'index,follow')
 
-%h1 Hello World
+- content_for(:headline, 'Curo Material Interface')
+
+
+.grid-container
+  .grid-row
+    .grid-col-12
+      %h3 Material design ui extracted from Curo CMS
+      %p
+        Most of the ui elements are to Google`s #{link_to('Material Design', 'http://www.google.com/design/spec/material-design/introduction.html', target: :blank)} concept.
+      %hr/

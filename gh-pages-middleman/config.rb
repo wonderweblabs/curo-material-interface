@@ -6,6 +6,8 @@ set :fonts_dir, 'gh-pages/fonts'
 
 set :images_dir, 'images'
 
+activate :livereload
+
 configure :build do
   # Use relative URLs
   # activate :relative_assets
