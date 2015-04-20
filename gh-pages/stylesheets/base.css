@@ -2152,17 +2152,17 @@ html {
   color: #FFFFFF !important; }
 
 /* line 1, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/_extensions.sass */
-.z-depth-1 {
+.z-depth-1, .cmi .cmi-btn.cmi-btn-raised {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
 
 /* line 3, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/_extensions.sass */
-.z-depth-1-hover {
+.z-depth-1-hover, .cmi .cmi-btn.cmi-btn-raised:hover {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19); }
 
 /* line 5, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/_extensions.sass */
-.z-depth-2 {
+.z-depth-2, .cmi .cmi-btn.cmi-btn-raised:active, .cmi .cmi-btn.cmi-btn-raised:target {
   -webkit-box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.2), 0 4px 18px 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.2), 0 4px 18px 0 rgba(0, 0, 0, 0.19); }
 
@@ -5775,6 +5775,134 @@ html {
   .cmi h5.cmi-lined {
     margin: 1.125rem 0 1.05rem 0; }
 
+/* line 1, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_navbar.sass */
+.cmi-navbar {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 5px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.3); }
+  /* line 7, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_navbar.sass */
+  .cmi-navbar.cmi-navbar-padding {
+    padding: 1rem; }
+  /* line 9, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_navbar.sass */
+  .cmi-navbar + .cmi-navbar-alert {
+    position: relative;
+    z-index: 0;
+    margin: -5px 0 5px 0;
+    padding: 15px 15px 10px 15px;
+    background-color: rgba(0, 0, 0, 0.03);
+    -webkit-box-shadow: inset 0px -5px 3px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px -5px 3px -5px rgba(0, 0, 0, 0.3); }
+    /* line 16, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_navbar.sass */
+    .cmi-navbar + .cmi-navbar-alert p {
+      margin: 0 0 5px 0;
+      font-size: 0.75rem;
+      color: #333; }
+    /* line 21, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_navbar.sass */
+    .cmi-navbar + .cmi-navbar-alert.cmi-navbar-alert-danger p {
+      color: #c00; }
+
+/* line 4, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+.cmi .cmi-btn {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  min-width: 5.5rem;
+  height: 2.25rem;
+  margin: 0.375rem 0.25rem;
+  padding: 0.6875rem 0.5rem;
+  font-size: 0.875rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1;
+  letter-spacing: 0.05rem;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  border-top-left-radius: 0.125rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem; }
+  /* line 23, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+  .cmi .cmi-btn:hover {
+    outline: none;
+    text-decoration: none;
+    color: #9dc02d;
+    background-color: rgba(0, 0, 0, 0.05); }
+  /* line 28, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+  .cmi .cmi-btn:active, .cmi .cmi-btn:target {
+    outline: none;
+    text-decoration: none;
+    color: #93b32a;
+    background-color: rgba(0, 0, 0, 0.1); }
+/* line 36, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+.cmi .cmi-btn.cmi-btn-raised {
+  background-color: rgba(0, 0, 0, 0.02);
+  -webkit-transition: 0.1s ease-out;
+  -moz-transition: 0.1s ease-out;
+  transition: 0.1s ease-out; }
+  /* line 40, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+  .cmi .cmi-btn.cmi-btn-raised:hover {
+    background-color: rgba(0, 0, 0, 0.05); }
+  /* line 43, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+  .cmi .cmi-btn.cmi-btn-raised:active, .cmi .cmi-btn.cmi-btn-raised:target {
+    background-color: rgba(0, 0, 0, 0.1); }
+/* line 49, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+.cmi .cmi-btn.cmi-btn-default {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #424242; }
+  /* line 52, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+  .cmi .cmi-btn.cmi-btn-default:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+    color: #424242; }
+  /* line 55, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+  .cmi .cmi-btn.cmi-btn-default:active, .cmi .cmi-btn.cmi-btn-default:target {
+    background-color: rgba(0, 0, 0, 0.11);
+    color: #424242; }
+/* line 61, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+.cmi .cmi-btn.cmi-btn-primary {
+  background-color: #afd23e;
+  color: #424242; }
+  /* line 64, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+  .cmi .cmi-btn.cmi-btn-primary:hover {
+    background-color: #b8d753;
+    color: #424242; }
+  /* line 67, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+  .cmi .cmi-btn.cmi-btn-primary:active, .cmi .cmi-btn.cmi-btn-primary:target {
+    background-color: #c0dc67;
+    color: #424242; }
+/* line 73, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+.cmi .cmi-btn.cmi-btn-small {
+  min-width: 4.375rem;
+  height: 1.8125rem;
+  padding: 0.53125rem 0.4rem;
+  font-size: 0.75rem; }
+/* line 80, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+.cmi .cmi-btn.cmi-btn-large {
+  min-width: 6.5rem;
+  height: 2.6875rem;
+  padding: 0.8125rem 0.7rem;
+  font-size: 1.0625rem; }
+/* line 87, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+.cmi .cmi-btn.cmi-btn-block {
+  display: block; }
+/* line 95, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+.cmi .cmi-btn:active, .cmi .cmi-btn:target {
+  background-color: rgba(0, 0, 0, 0.05); }
+/* line 100, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+.cmi .cmi-btn.cmi-btn-raised:active, .cmi .cmi-btn.cmi-btn-raised:target {
+  background-color: rgba(0, 0, 0, 0.05); }
+/* line 105, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+.cmi .cmi-btn.cmi-btn-default:active, .cmi .cmi-btn.cmi-btn-default:target {
+  background-color: rgba(0, 0, 0, 0.06); }
+/* line 110, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_buttons.sass */
+.cmi .cmi-btn.cmi-btn-primary:active, .cmi .cmi-btn.cmi-btn-primary:target {
+  background-color: #b8d753; }
+
 /* line 26, /Users/sascha/src/wonderweblabs/curo/cmi/gh-pages-middleman/source/gh-pages/stylesheets/_grid.sass */
 .grid-container {
   max-width: 100%;
@@ -6026,28 +6154,40 @@ header#top {
     text-align: center;
     font-size: 2.36859em;
     margin-top: 1.333em;
-    margin-bottom: 1.77689em; }
+    margin-bottom: 1.333em; }
+  /* line 44, /Users/sascha/src/wonderweblabs/curo/cmi/gh-pages-middleman/source/gh-pages/stylesheets/_layout.sass */
+  header#top .buttons {
+    text-align: center; }
+    /* line 46, /Users/sascha/src/wonderweblabs/curo/cmi/gh-pages-middleman/source/gh-pages/stylesheets/_layout.sass */
+    header#top .buttons .cmi-btn {
+      width: 180px;
+      color: #f0f0f0;
+      background-color: #444; }
 
-/* line 47, /Users/sascha/src/wonderweblabs/curo/cmi/gh-pages-middleman/source/gh-pages/stylesheets/_layout.sass */
-#footer .inside-box {
-  padding: 1px 0;
-  background-color: #333; }
-/* line 50, /Users/sascha/src/wonderweblabs/curo/cmi/gh-pages-middleman/source/gh-pages/stylesheets/_layout.sass */
-#footer .links {
-  margin-bottom: 20px;
-  text-align: center; }
 /* line 53, /Users/sascha/src/wonderweblabs/curo/cmi/gh-pages-middleman/source/gh-pages/stylesheets/_layout.sass */
-#footer .disclaimer {
-  margin: 20px 50px;
-  color: #999;
-  text-align: center;
-  font-size: 0.75019em; }
-/* line 58, /Users/sascha/src/wonderweblabs/curo/cmi/gh-pages-middleman/source/gh-pages/stylesheets/_layout.sass */
-#footer hr {
-  margin: 0;
-  border-top-color: #666; }
+#footer {
+  margin-top: 1.77689em;
+  margin-bottom: 1.77689em; }
+  /* line 56, /Users/sascha/src/wonderweblabs/curo/cmi/gh-pages-middleman/source/gh-pages/stylesheets/_layout.sass */
+  #footer .inside-box {
+    padding: 1px 0;
+    background-color: #333; }
+  /* line 59, /Users/sascha/src/wonderweblabs/curo/cmi/gh-pages-middleman/source/gh-pages/stylesheets/_layout.sass */
+  #footer .links {
+    margin-bottom: 20px;
+    text-align: center; }
+  /* line 62, /Users/sascha/src/wonderweblabs/curo/cmi/gh-pages-middleman/source/gh-pages/stylesheets/_layout.sass */
+  #footer .disclaimer {
+    margin: 20px 50px;
+    color: #999;
+    text-align: center;
+    font-size: 0.75019em; }
+  /* line 67, /Users/sascha/src/wonderweblabs/curo/cmi/gh-pages-middleman/source/gh-pages/stylesheets/_layout.sass */
+  #footer hr {
+    margin: 0;
+    border-top-color: #666; }
 
-/* line 62, /Users/sascha/src/wonderweblabs/curo/cmi/gh-pages-middleman/source/gh-pages/stylesheets/_layout.sass */
+/* line 71, /Users/sascha/src/wonderweblabs/curo/cmi/gh-pages-middleman/source/gh-pages/stylesheets/_layout.sass */
 #footer-curo-logo {
   position: relative;
   display: block;
