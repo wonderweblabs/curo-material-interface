@@ -150,3 +150,67 @@
             $('#loading-indicator-6').append(loading.domElement());
             loading.fadeIn();
           });
+
+  / ---------------------------------------------
+  / ripples
+  .grid-row
+    .grid-col-12
+      %h2.cmi-lined
+        %span Ripples
+      .grid-row#ripples-1
+        .grid-col-6
+          %h4 Default (.cmi-ripples)
+          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-btn-default', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-btn-raised', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-btn-raised cmi-btn-primary', onclick: 'return false;'
+        .grid-col-6
+          %pre
+            :preserve
+              $('#ripples-1').on('mousedown', 'a', function(event) {
+                CMI.Ripples.animateClick($(this), event);
+              });
+        :javascript
+          $(function() {
+            $('#ripples-1').on('mousedown', 'a', function(event) {
+              CMI.Ripples.animateClick($(this), event);
+            });
+          });
+      .grid-row#ripples-2
+        .grid-col-6
+          %h4 .cmi-ripples.cmi-ripples-dark
+          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-ripples-dark', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-ripples-dark cmi-btn-default', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-ripples-dark cmi-btn-raised', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-ripples-dark cmi-btn-raised cmi-btn-primary', onclick: 'return false;'
+        .grid-col-6
+          %pre
+            :preserve
+              $('#ripples-2').on('mouseup', 'a', function(event) {
+                CMI.Ripples.animateClick($(this), event);
+              });
+        :javascript
+          $(function() {
+            $('#ripples-2').on('mouseup', 'a', function(event) {
+              CMI.Ripples.animateClick($(this), event);
+            });
+          });
+      .grid-row#ripples-3
+        .grid-col-6
+          %h4 .cmi-ripples.cmi-ripples-primary
+          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-ripples-primary', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-ripples-primary cmi-btn-default', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-ripples-primary cmi-btn-raised', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-ripples-primary cmi-btn-raised cmi-btn-primary', onclick: 'return false;'
+        .grid-col-6
+          %pre
+            :preserve
+              $('#ripples-3').on('click', 'a', function(event) {
+                CMI.Ripples.animateClick($(this), event);
+              });
+        :javascript
+          $(function() {
+            $('#ripples-3').on('click', 'a', function(event) {
+              CMI.Ripples.animateClick($(this), event);
+            });
+          });
