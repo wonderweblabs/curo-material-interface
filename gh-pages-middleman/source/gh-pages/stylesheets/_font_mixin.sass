@@ -1,0 +1,7 @@
+=font-face-helper($family, $fileBaseName, $weight, $style)
+  @font-face
+    font-family: $family
+    src: font-path($fileBaseName + '.eot')
+    src: font-path($fileBaseName + '.eot?#iefix') format('embedded-opentype'), font-path($fileBaseName + '.woff') format('woff'), font-path($fileBaseName + '.ttf') format('truetype'), font-path($fileBaseName + '.svg#robotothin') format('svg')
+    font-weight: $weight
+    font-style: $style

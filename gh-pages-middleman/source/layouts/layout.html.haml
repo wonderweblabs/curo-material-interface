@@ -1,0 +1,23 @@
+!!!
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+/[if IE 7] <html class="no-js lt-ie9 lt-ie8">
+/[if IE 8] <html class="no-js lt-ie9">
+%html
+  %head
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
+    = tag(:meta, name: 'description', content: yield_content(:html_description))
+    = tag(:meta, name: 'keywords', content: yield_content(:html_description))
+    = tag(:meta, name: 'robots', content: yield_content(:html_robots))
+    %title= yield_content(:title) || "Curo Material Interface"
+
+    = stylesheet_link_tag 'base'
+    = javascript_include_tag 'base'
+
+  %body.cmi
+    = partial'shared/browse_happy'
+    = partial'shared/header'
+    = yield
+    = partial'shared/footer'
+    = partial'shared/analytics' if config[:google_analytics] == true
+
