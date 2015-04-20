@@ -11,6 +11,11 @@
     <meta name="robots" content="index,follow" />
     <title>Curo Material Interface</title>
     <link href="gh-pages/stylesheets/base.css" rel="stylesheet" type="text/css" />
+    <script src="//code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/json2/20140204/json2.min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.4.1/backbone.marionette.min.js" type="text/javascript"></script>
     <script src="gh-pages/javascripts/base.js" type="text/javascript"></script>
   </head>
   <body class='cmi'>
@@ -278,7 +283,7 @@
           <div class='grid-row'>
             <div class='grid-col-6'>
               <h3>Flat (default)</h3>
-              <h4>.btn</h4>
+              <h4>.cmi-btn</h4>
               <a class="cmi-btn" onclick="return false;" href="#">Button</a>
               <h4>.cmi-btn.cmi-btn-default</h4>
               <a class="cmi-btn cmi-btn-default" onclick="return false;" href="#">Button</a>
@@ -326,27 +331,98 @@
                 <li>Header/Footer always visible</li>
                 <li>Content overflow scroll</li>
               </ul>
-              <a id="cuma-example-modal-btn" class="btn btn-raised btn-default" href="#">Open example modal</a>
+              <a id="cmi-example-modal-btn" class="cmi-btn cmi-btn-raised cmi-btn-default" href="#">Open example modal</a>
               <script>
                 $(function() {
-                  $('#cuma-example-modal-btn').on('click', function(event){
+                  $('#cmi-example-modal-btn').on('click', function(event){
                     event.preventDefault();
-                    $('#cuma-example-modal').show()
-                    $('body').addClass('cuma-flex-modal-open')
+                    $('#cmi-example-modal').show()
+                    $('body').addClass('cmi-flex-modal-open')
                   });
                 });
               </script>
             </div>
             <div class='grid-col-8'>
-              <pre>.cuma.cuma-flex-modal&#x000A;  .cuma-flex-modal-dialog&#x000A;    [.cuma-flex-modal-dialog-inner] // optionally if 2nd container is necessary&#x000A;      %header&#x000A;        .cuma-flex-modal-header-inside&#x000A;          .cuma-pull-left&#x000A;            %a.cuma-flex-modal-back.btn.ripples{ href: '#' }&#x000A;              %i.mdi-navigation-arrow-back&#x000A;          .cuma-pull-right&#x000A;            %a.cuma-flex-modal-close.btn.ripples{ href: '#' }&#x000A;              %i.mdi-navigation-close&#x000A;          %h1 Modal&#x000A;&#x000A;      %main&#x000A;        .cuma-flex-modal-main-inside&#x000A;          %aside&#x000A;            %p My Sidebar&#x000A;          %section&#x000A;            %p My Content&#x000A;      %footer&#x000A;        .cuma-flex-modal-footer-inside&#x000A;          .cuma-pull-left&#x000A;            %a.cuma-flex-modal-back.btn.ripples{ href: '#' }&#x000A;              %i.mdi-navigation-arrow-back&#x000A;          .cuma-pull-right&#x000A;            %a.cuma-flex-modal-close.btn.btn-default.ripples.ripples-dark{ href: '#' }&#x000A;              Close&#x000A;            %a.cuma-flex-modal-save.btn.btn.btn-raised.btn-primary.ripples{ href: '#' }&#x000A;              Save&#x000A;</pre>
+              <pre>.cmi.cmi-flex-modal&#x000A;  .cmi-flex-modal-dialog&#x000A;    [.cmi-flex-modal-dialog-inner] // optionally if 2nd container is necessary&#x000A;      %header&#x000A;        .cmi-flex-modal-header-inside&#x000A;          .cmi-pull-left&#x000A;            %a.cmi-flex-modal-back.cmi-btn.ripples{ href: '#' }&#x000A;              %i.mdi-navigation-arrow-back&#x000A;          .cmi-pull-right&#x000A;            %a.cmi-flex-modal-close.cmi-btn.ripples{ href: '#' }&#x000A;              %i.mdi-navigation-close&#x000A;          %h1 Modal&#x000A;&#x000A;      %main&#x000A;        .cmi-flex-modal-main-inside&#x000A;          %aside&#x000A;            %p My Sidebar&#x000A;          %section&#x000A;            %p My Content&#x000A;      %footer&#x000A;        .cmi-flex-modal-footer-inside&#x000A;          .cmi-pull-left&#x000A;            %a.cmi-flex-modal-back.cmi-btn.ripples{ href: '#' }&#x000A;              %i.mdi-navigation-arrow-back&#x000A;          .cmi-pull-right&#x000A;            %a.cmi-flex-modal-close.cmi-btn.cmi-btn-default.ripples.ripples-dark{ href: '#' }&#x000A;              Close&#x000A;            %a.cmi-flex-modal-save.cmi-btn.cmi-btn.cmi-btn-raised.cmi-btn-primary.ripples{ href: '#' }&#x000A;              Save&#x000A;</pre>
               <hr>
               <p>
                 To preseve the content from scrolling when the modal is opened, you
                 should add the following class to the body tag:
               </p>
-              <pre>body.cuma-flex-modal-open</pre>
+              <pre>body.cmi-flex-modal-open&#x000A;&#x000A;</pre>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <!-- -------------------------------------------------------------------------------- -->
+    <!-- -------------------------------------------------------------------------------- -->
+    <!-- -------------------------------------------------------------------------------- -->
+    <!-- -------------------------------------------------------------------------------- -->
+    <!-- -- flex modal -->
+    <div class='cmi cmi-flex-modal' id='cmi-example-modal' style='display: none;'>
+      <div class='cmi-flex-modal-dialog'>
+        <div class='cmi-flex-modal-dialog-inner'>
+          <header>
+            <div class='cmi-flex-modal-header-inside'>
+              <div class='cmi-pull-left'>
+                <a class='cmi-flex-modal-back cmi-btn ripples' href='#'>
+                  <i class='mdi-navigation-arrow-back'></i>
+                </a>
+              </div>
+              <div class='cmi-pull-right'>
+                <a class='cmi-flex-modal-close cmi-btn ripples' href='#'>
+                  <i class='mdi-navigation-close'></i>
+                </a>
+              </div>
+              <h1>Modal</h1>
+            </div>
+          </header>
+          <main>
+            <div class='cmi-flex-modal-main-inside'>
+              <aside>
+                <p>My Sidebar</p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+                </p>
+              </aside>
+              <section>
+                <p>My Content</p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+                </p>
+              </section>
+            </div>
+          </main>
+          <footer>
+            <div class='cmi-flex-modal-footer-inside'>
+              <div class='cmi-pull-left'>
+                <a class='cmi-flex-modal-back cmi-btn ripples' href='#'>
+                  <i class='mdi-navigation-arrow-back'></i>
+                </a>
+              </div>
+              <div class='cmi-pull-right'>
+                <a class='cmi-flex-modal-close cmi-btn cmi-btn-default ripples ripples-dark' href='#'>
+                  Close
+                </a>
+                <a class='cmi-flex-modal-save cmi-btn cmi-btn cmi-btn-raised cmi-btn-primary ripples' href='#'>
+                  Save
+                </a>
+              </div>
+            </div>
+          </footer>
         </div>
       </div>
     </div>

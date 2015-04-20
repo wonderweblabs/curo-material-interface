@@ -1,8 +1,13 @@
+@import bourbon
+@import ./grid_config
+
+// cmi libs
 @import cmi/libs
 
 // !!! Important
 // To use curo material interface fonts and icons,
-// you need to provide the font-face loading mixin.
+// you need to provide the font-face loading mixin as well
+// as the definition for the icons.
 @import ./font_mixin
 
 // config
@@ -23,6 +28,12 @@
 // components
 @import cmi/components/navbar
 @import cmi/components/buttons
+@import cmi/components/flex-modal
+@import cmi/components/loading-indicator
+@import cmi/components/ripples
+@import cmi/components/tabs
+@import cmi/form_components/text_field
+@import cmi/form_components/checkbox
 
 // gh pages
 @import ./grid

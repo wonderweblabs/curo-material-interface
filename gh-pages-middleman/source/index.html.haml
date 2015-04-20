@@ -178,7 +178,7 @@
       .grid-row
         .grid-col-6
           %h3 Flat (default)
-          %h4 .btn
+          %h4 .cmi-btn
           = link_to 'Button', '#', class: 'cmi-btn', onclick: 'return false;'
           %h4 .cmi-btn.cmi-btn-default
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-default', onclick: 'return false;'
@@ -221,47 +221,47 @@
             %li Header/Footer always visible
             %li Content overflow scroll
 
-          = link_to 'Open example modal', '#', id: 'cuma-example-modal-btn', class: 'btn btn-raised btn-default'
+          = link_to 'Open example modal', '#', id: 'cmi-example-modal-btn', class: 'cmi-btn cmi-btn-raised cmi-btn-default'
           :javascript
             $(function() {
-              $('#cuma-example-modal-btn').on('click', function(event){
+              $('#cmi-example-modal-btn').on('click', function(event){
                 event.preventDefault();
-                $('#cuma-example-modal').show()
-                $('body').addClass('cuma-flex-modal-open')
+                $('#cmi-example-modal').show()
+                $('body').addClass('cmi-flex-modal-open')
               });
             });
 
         .grid-col-8
           %pre
             :preserve
-              .cuma.cuma-flex-modal
-                .cuma-flex-modal-dialog
-                  [.cuma-flex-modal-dialog-inner] // optionally if 2nd container is necessary
+              .cmi.cmi-flex-modal
+                .cmi-flex-modal-dialog
+                  [.cmi-flex-modal-dialog-inner] // optionally if 2nd container is necessary
                     %header
-                      .cuma-flex-modal-header-inside
-                        .cuma-pull-left
-                          %a.cuma-flex-modal-back.btn.ripples{ href: '#' }
+                      .cmi-flex-modal-header-inside
+                        .cmi-pull-left
+                          %a.cmi-flex-modal-back.cmi-btn.ripples{ href: '#' }
                             %i.mdi-navigation-arrow-back
-                        .cuma-pull-right
-                          %a.cuma-flex-modal-close.btn.ripples{ href: '#' }
+                        .cmi-pull-right
+                          %a.cmi-flex-modal-close.cmi-btn.ripples{ href: '#' }
                             %i.mdi-navigation-close
                         %h1 Modal
 
                     %main
-                      .cuma-flex-modal-main-inside
+                      .cmi-flex-modal-main-inside
                         %aside
                           %p My Sidebar
                         %section
                           %p My Content
                     %footer
-                      .cuma-flex-modal-footer-inside
-                        .cuma-pull-left
-                          %a.cuma-flex-modal-back.btn.ripples{ href: '#' }
+                      .cmi-flex-modal-footer-inside
+                        .cmi-pull-left
+                          %a.cmi-flex-modal-back.cmi-btn.ripples{ href: '#' }
                             %i.mdi-navigation-arrow-back
-                        .cuma-pull-right
-                          %a.cuma-flex-modal-close.btn.btn-default.ripples.ripples-dark{ href: '#' }
+                        .cmi-pull-right
+                          %a.cmi-flex-modal-close.cmi-btn.cmi-btn-default.ripples.ripples-dark{ href: '#' }
                             Close
-                          %a.cuma-flex-modal-save.btn.btn.btn-raised.btn-primary.ripples{ href: '#' }
+                          %a.cmi-flex-modal-save.cmi-btn.cmi-btn.cmi-btn-raised.cmi-btn-primary.ripples{ href: '#' }
                             Save
 
           %hr/
@@ -270,5 +270,53 @@
             should add the following class to the body tag:
           %pre
             :preserve
-              body.cuma-flex-modal-open
+              body.cmi-flex-modal-open
+
+
+/ --------------------------------------------------------------------------------
+/ --------------------------------------------------------------------------------
+/ --------------------------------------------------------------------------------
+/ --------------------------------------------------------------------------------
+/ -- flex modal
+.cmi.cmi-flex-modal#cmi-example-modal{ style: 'display: none;' }
+  .cmi-flex-modal-dialog
+    .cmi-flex-modal-dialog-inner
+      %header
+        .cmi-flex-modal-header-inside
+          .cmi-pull-left
+            %a.cmi-flex-modal-back.cmi-btn.ripples{ href: '#' }
+              %i.mdi-navigation-arrow-back
+          .cmi-pull-right
+            %a.cmi-flex-modal-close.cmi-btn.ripples{ href: '#' }
+              %i.mdi-navigation-close
+          %h1 Modal
+
+      %main
+        .cmi-flex-modal-main-inside
+          %aside
+            %p My Sidebar
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+          %section
+            %p My Content
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+      %footer
+        .cmi-flex-modal-footer-inside
+          .cmi-pull-left
+            %a.cmi-flex-modal-back.cmi-btn.ripples{ href: '#' }
+              %i.mdi-navigation-arrow-back
+          .cmi-pull-right
+            %a.cmi-flex-modal-close.cmi-btn.cmi-btn-default.ripples.ripples-dark{ href: '#' }
+              Close
+            %a.cmi-flex-modal-save.cmi-btn.cmi-btn.cmi-btn-raised.cmi-btn-primary.ripples{ href: '#' }
+              Save
 
