@@ -1,6 +1,6 @@
 http://wonderweblabs.github.io/curo-material-interface/
 
-Curo Material Interface is an extraction of our Curo CMS which we use in client projects (http://curocms.com - soon available). Since we want to reuse the design patterns in other projects, we'll continuously move those implementation in this repo.
+Curo Material Interface is an extraction of the wonderweblabs Curo CMS which is used in the client projects (http://curocms.com - soon available). Since we want to reuse the design patterns in other projects, we'll continuously move those implementation in this repo.
 
 Most parts of the implementation are loosely based on the Google Material Design concept (http://www.google.com/design/spec/material-design/introduction.html). Feel free to fork this repo and continue your own interpretation of the google material design concept.
 
@@ -109,7 +109,7 @@ CMI is completely scoped - meaning that the classes won't work unless you add a 
       My Button
 ```
 
-The easiest way is to assign cmi class to the body tag, if scoping the implementation is not important for you:
+The easiest way is to assign cmi class to the body tag, if scoping of the implementation is not important for you:
 
 ```haml
 %body.cmi
