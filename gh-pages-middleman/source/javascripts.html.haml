@@ -263,3 +263,229 @@
           CMI.Tabs.activate($(this));
         });
       });
+
+  / ---------------------------------------------
+  / text fields
+  .grid-row
+    .grid-col-12
+      %h2.cmi-lined
+        %span Text inputs
+  .grid-row#text-fields-1
+    .grid-col-6
+      %h4 Default
+      .cmi-text-input
+        <input type="text" name="text1" value="" />
+        %label{ for: 'text1' } My field
+      .cmi-text-input
+        <input type="text" name="text1" value="Filled value" />
+        %label{ for: 'text1' } My field
+      .cmi-text-input.cmi-valid
+        <input type="text" name="text1" value="Filled value" />
+        %label{ for: 'text1' } My field
+      .cmi-text-input.cmi-invalid
+        <input type="text" name="text1" value="Filled value" />
+        %label{ for: 'text1' } My field
+      %h4 Hints
+      .cmi-text-input
+        <input type="text" name="text1" value="Filled value" />
+        %label{ for: 'text1' } My field
+        %p.cmi-hint
+          Some little notice as hint text.
+      .cmi-text-input
+        <input type="text" name="text1" value="Filled value" />
+        %label{ for: 'text1' } My field
+        %p.cmi-hint.cmi-valid
+          Some little notice as hint text.
+      .cmi-text-input
+        <input type="text" name="text1" value="Filled value" />
+        %label{ for: 'text1' } My field
+        %p.cmi-hint.cmi-valid
+          Some little notice as hint text.
+        %p.cmi-hint
+          Second text line.
+      .cmi-text-input
+        <input type="text" name="text1" value="Filled value" />
+        %label{ for: 'text1' } My field
+        %p.cmi-hint.cmi-invalid
+          Some little notice as hint text.
+    .grid-col-6
+      %pre
+        :preserve
+          $('#text-fields-1 input').each(function() {
+            CMI.FormComponents.TextField.reset($(this));
+          });
+          $('#text-fields-1').on('change', 'input', function(){
+            CMI.FormComponents.TextField.animateChange($(this))
+          });
+          $('#text-fields-1').on('focus', 'input', function(){
+            CMI.FormComponents.TextField.animateFocus($(this))
+          });
+          $('#text-fields-1').on('blur', 'input', function(){
+            CMI.FormComponents.TextField.animateBlur($(this))
+          });
+          $('#text-fields-1').on('reset', 'form', function(){
+            CMI.FormComponents.TextField.formReset($(this))
+          });
+    :javascript
+      $(function() {
+        $('#text-fields-1 input').each(function() {
+          CMI.FormComponents.TextField.reset($(this));
+        });
+        $('#text-fields-1').on('change', 'input', function(){
+          CMI.FormComponents.TextField.animateChange($(this))
+        });
+        $('#text-fields-1').on('focus', 'input', function(){
+          CMI.FormComponents.TextField.animateFocus($(this))
+        });
+        $('#text-fields-1').on('blur', 'input', function(){
+          CMI.FormComponents.TextField.animateBlur($(this))
+        });
+        $('#text-fields-1').on('reset', 'form', function(){
+          CMI.FormComponents.TextField.formReset($(this))
+        });
+      });
+
+  / ---------------------------------------------
+  / textareas
+  .grid-row
+    .grid-col-12
+      %h2.cmi-lined
+        %span Textareas
+  .grid-row#text-fields-2
+    .grid-col-6
+      %h4 Default
+      .cmi-text-input
+        <textarea name="text2"></textarea>
+        %label{ for: 'text2' } My field
+      .cmi-text-input
+        <textarea name="text2">Hallo Welt</textarea>
+        %label{ for: 'text2' } My field
+      .cmi-text-input.cmi-valid
+        <textarea name="text2">Hallo Welt</textarea>
+        %label{ for: 'text2' } My field
+      .cmi-text-input.cmi-invalid
+        <textarea name="text2">Hallo Welt</textarea>
+        %label{ for: 'text2' } My field
+      %h4 Hints
+      .cmi-text-input
+        <textarea name="text2"></textarea>
+        %label{ for: 'text2' } My field
+        %p.cmi-hint Some little notice as hint text.
+      .cmi-text-input
+        <textarea name="text2">Hallo Welt</textarea>
+        %label{ for: 'text2' } My field
+        %p.cmi-hint.cmi-valid Some little notice as hint text.
+      .cmi-text-input
+        <textarea name="text2">Hallo Welt</textarea>
+        %label{ for: 'text2' } My field
+        %p.cmi-hint.cmi-valid Some little notice as hint text.
+        %p.cmi-hint Second hint text.
+      .cmi-text-input
+        <textarea name="text2">Hallo Welt</textarea>
+        %label{ for: 'text2' } My field
+        %p.cmi-hint.cmi-invalid Some little notice as hint text.
+    .grid-col-6
+      %pre
+        :preserve
+          $('#text-fields-2 textarea').each(function() {
+            CMI.FormComponents.TextField.reset($(this));
+          });
+          $('#text-fields-2').on('change', 'textarea', function(){
+            CMI.FormComponents.TextField.animateChange($(this))
+          });
+          $('#text-fields-2').on('focus', 'textarea', function(){
+            CMI.FormComponents.TextField.animateFocus($(this))
+          });
+          $('#text-fields-2').on('blur', 'textarea', function(){
+            CMI.FormComponents.TextField.animateBlur($(this))
+          });
+          $('#text-fields-2').on('reset', 'form', function(){
+            CMI.FormComponents.TextField.formReset($(this))
+          });
+    :javascript
+      $(function() {
+        $('#text-fields-2 textarea').each(function() {
+          CMI.FormComponents.TextField.reset($(this));
+        });
+        $('#text-fields-2').on('change', 'textarea', function(){
+          CMI.FormComponents.TextField.animateChange($(this))
+        });
+        $('#text-fields-2').on('focus', 'textarea', function(){
+          CMI.FormComponents.TextField.animateFocus($(this))
+        });
+        $('#text-fields-2').on('blur', 'textarea', function(){
+          CMI.FormComponents.TextField.animateBlur($(this))
+        });
+        $('#text-fields-2').on('reset', 'form', function(){
+          CMI.FormComponents.TextField.formReset($(this))
+        });
+      });
+
+  / ---------------------------------------------
+  / growing textareas
+  .grid-row
+    .grid-col-12
+      %h2.cmi-lined
+        %span Growing textareas
+  .grid-row#text-fields-3
+    .grid-col-6
+      .cmi-text-input.cmi-growing-textarea
+        <textarea name="text2"></textarea>
+        %label{ for: 'text2' } My field
+    .grid-col-6
+      %pre
+        :preserve
+          $('#text-fields-2 textarea').each(function() {
+            CMI.FormComponents.TextField.reset($(this));
+          });
+          $('#text-fields-2').on('change', 'textarea', function(){
+            CMI.FormComponents.TextField.animateChange($(this))
+          });
+          $('#text-fields-2').on('focus', 'textarea', function(){
+            CMI.FormComponents.TextField.animateFocus($(this))
+          });
+          $('#text-fields-2').on('blur', 'textarea', function(){
+            CMI.FormComponents.TextField.animateBlur($(this))
+          });
+          $('#text-fields-2').on('reset', 'form', function(){
+            CMI.FormComponents.TextField.formReset($(this))
+          });
+      %pre
+        :preserve
+          $('#text-fields-3').on('keyup', 'textarea', function(){
+            CMI.FormComponents.Textarea.animateHeight($('body'), $(this))
+          });
+          $('#text-fields-3').on('keydown', 'textarea', function(){
+            CMI.FormComponents.Textarea.animateHeight($('body'), $(this))
+          });
+          $('#text-fields-3 textarea').each(function(){
+            CMI.FormComponents.Textarea.animateHeight($('body'), $(this))
+          });
+    :javascript
+      $(function() {
+        $('#text-fields-3 textarea').each(function() {
+          CMI.FormComponents.TextField.reset($(this));
+        });
+        $('#text-fields-3').on('change', 'textarea', function(){
+          CMI.FormComponents.TextField.animateChange($(this))
+        });
+        $('#text-fields-3').on('focus', 'textarea', function(){
+          CMI.FormComponents.TextField.animateFocus($(this))
+        });
+        $('#text-fields-3').on('blur', 'textarea', function(){
+          CMI.FormComponents.TextField.animateBlur($(this))
+        });
+        $('#text-fields-3').on('reset', 'form', function(){
+          CMI.FormComponents.TextField.formReset($(this))
+        });
+        // -------
+        $('#text-fields-3').on('keyup', 'textarea', function(){
+          CMI.FormComponents.Textarea.animateHeight($('body'), $(this))
+        });
+        $('#text-fields-3').on('keydown', 'textarea', function(){
+          CMI.FormComponents.Textarea.animateHeight($('body'), $(this))
+        });
+        $('#text-fields-3 textarea').each(function(){
+          CMI.FormComponents.Textarea.animateHeight($('body'), $(this))
+        });
+      });
