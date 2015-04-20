@@ -1,0 +1,47 @@
+.cmi-loading-indicator
+  +position(absolute, 0 0 0 0)
+  z-index: 100
+  margin: 0
+  padding: 0
+  opacity: 0
+  +transition(opacity .4s linear)
+  &.cmi-loading-indicator-background-dark
+    background-color: rgba(#000, 0.7)
+  &.cmi-loading-indicator-background-light
+    background-color: rgba(#fff, 0.8)
+  &.cmi-loading-fade
+    opacity: 1
+    +transition(opacity .4s linear)
+  .cmi-loading-indicator-inside
+    position: absolute
+    width: $loading-diameter
+    height: $loading-diameter
+    left: 50%
+    top: 50%
+    margin: ($loading-diameter * -0.5) 0 0 ($loading-diameter * -0.5)
+  .circular
+    position: relative
+    height: $loading-diameter
+    width: $loading-diameter
+    +animation(cumaLoadingRotate 2s linear infinite)
+  .path
+    stroke-dasharray: 1, 200
+    stroke-dashoffset: 0
+    stroke-linecap: round
+    stroke: $loading-color
+    +animation(cumaLoadingDash 1.5s ease-in-out infinite)
+
++keyframes(cumaLoadingRotate)
+  100%
+    +transform(rotate(360deg))
+
++keyframes(cumaLoadingDash)
+  0%
+    stroke-dasharray: 1, 200
+    stroke-dashoffset: 0
+  50%
+    stroke-dasharray: 89, 200
+    stroke-dashoffset: -35
+  100%
+    stroke-dasharray: 89, 200
+    stroke-dashoffset: -124
