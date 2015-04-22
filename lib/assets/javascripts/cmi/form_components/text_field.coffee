@@ -4,7 +4,7 @@ window.CMI.FormComponents or= {}
 class CMI.FormComponents.TextField
 
   @reset: (domElement) ->
-    if domElement.val().length > 0
+    if domElement.val().length > 0 || domElement.is(':focus')
       domElement.parents(@_getInputBoxSelector()).addClass('cmi-active')
     else
       domElement.parents(@_getInputBoxSelector()).removeClass('cmi-active')
