@@ -40,8 +40,8 @@ class CMI.LoadingIndicator extends Backbone.View
 
   _getInnerHtml: ->
     $('<div class="cmi-loading-indicator-inside">
-        <svg class="circular">
-          <circle class="path" cx="50" cy="50" fill="none" r="20" stroke-miterlimit="10" stroke-width="3"></circle>
+        <svg class="cmi-circular">
+          <circle class="cmi-path" cx="50" cy="50" fill="none" r="20" stroke-miterlimit="10" stroke-width="3"></circle>
         </svg>
       </div>')
 

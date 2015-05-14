@@ -1,23 +1,22 @@
-.cmi
-  .cmi-ripples,
-  .cmi-ripples-standalone
+.cmi-ripples,
+.cmi-ripples-standalone
+  .cmi-ink
+    position: absolute
+    display: block
+    transform: scale(0)
+    background: $ripples-color-default
+    opacity: 1
+    +border-radius(100%)
+    &.cmi-animate
+      +animation(cmiRipple 0.4s linear)
+
+  &.cmi-ripples-dark
     .cmi-ink
-      position: absolute
-      display: block
-      transform: scale(0)
-      background: $ripples-color-default
-      opacity: 1
-      +border-radius(100%)
-      &.cmi-animate
-        +animation(cmiRipple 0.4s linear)
+      background: $ripples-color-dark
 
-    &.cmi-ripples-dark
-      .cmi-ink
-        background: $ripples-color-dark
-
-    &.cmi-ripples-primary
-      .cmi-ink
-        background: $ripples-color-primary
+  &.cmi-ripples-primary
+    .cmi-ink
+      background: $ripples-color-primary
 
 
 +keyframes(cmiRipple)

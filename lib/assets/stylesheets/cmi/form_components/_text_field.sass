@@ -3,7 +3,7 @@
   margin: 1.25rem 0 1.5rem 0
   font-size: 14px
   font-size: 0.875rem
-  label
+  .cmi-label
     position: absolute
     left: 0
     font-size: 1em
@@ -11,23 +11,23 @@
     pointer-events: none
     cursor: text
     +transition(.2s ease-out all)
-  input
+  .cmi-input
     font-size: 1em
     height: 2em
     padding: 0
-    + label
+    + label, + .cmi-label
       top: 0.3em
-  textarea
+  .cmi-textarea
     width: 100%
     min-height: 2rem
     padding: 0.6em 0 0.7em 0
     font-size: 1em
     background-color: transparent
     overflow: hidden
-    + label
+    + label, .cmi-label
       top: 0.5em
   &.cmi-growing-textarea
-    textarea
+    .cmi-textarea
       resize: none
       +transition(height 0.05s ease)
   .cmi-hidden-textarea-reference
@@ -36,8 +36,8 @@
     top: 9999px
     left: 9999px
 
-  input,
-  textarea
+  .cmi-input,
+  .cmi-textarea
     background-color: transparent
     border: none
     border-bottom: 1px solid $input-color-border
@@ -52,49 +52,49 @@
       +box-shadow(0 1px 0 0 $input-color-focus)
 
   &.cmi-active,
-  input:focus,
-  textarea:focus
-    label
+  .cmi-input:focus,
+  .cmi-textarea:focus
+    .cmi-label
       top: 0
       font-size: 0.8125em
       font-weight: 300
       +transform(translateY(-80%))
 
   &.cmi-active
-    label
+    .cmi-label
       color: color("grey", "base")
 
-  input:focus,
-  textarea:focus
-    + label
+  .cmi-input:focus
+  .cmi-textarea:focus
+    + .cmi-label
       color: $input-color-focus
 
   &.cmi-valid
-    label
+    .cmi-label
       color: $input-color-valid
-    input,
-    textarea
+    .cmi-input,
+    .cmi-textarea
       border-bottom: 1px solid $input-color-valid
       +box-shadow(0 1px 0 0 $input-color-valid)
 
   &.cmi-invalid
-    label
+    .cmi-label
       color: $input-color-invalid
-    input,
-    textarea
+    .cmi-input
+    .cmi-textarea
       border-bottom: 1px solid $input-color-invalid
       +box-shadow(0 1px 0 0 $input-color-invalid)
 
   // hints
-  p.cmi-hint
+  .cmi-p.cmi-hint
     margin: 3px 0 0 0
     font-size: 0.85em
     font-weight: 300
     text-align: right
     color: color("grey", "lighten-1")
-  p.cmi-hint.cmi-valid
+  .cmi-p.cmi-hint.cmi-valid
     color: $input-color-valid
-  p.cmi-hint.cmi-invalid
+  .cmi-p.cmi-hint.cmi-invalid
     color: $input-color-invalid
 
 

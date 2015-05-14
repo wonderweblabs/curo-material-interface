@@ -6,7 +6,7 @@
   font-size: 14px
   font-size: 0.875rem
   +backface-visibility(hidden)
-  label
+  .cmi-label
     position: relative
     display: inline-block
     max-width: 100%
@@ -18,15 +18,15 @@
     cursor: pointer
     vertical-align: top
     +user-select(none)
-  input[type="checkbox"]
+  .cmi-input[type="checkbox"]
     position: absolute
     opacity: 0
     visibility: hidden
     margin-left: -9999px
-  span
+  .cmi-span
     left: 0px
     +transition-duration(0.2s)
-  span.cmi-animation
+  .cmi-span.cmi-animation
     position: absolute
     display: block
     overflow: hidden
@@ -40,7 +40,7 @@
     opacity: 0
     background-color: rgba(#000, 0.07)
     +border-radius(100%)
-  span.cmi-checkbox
+  .cmi-span.cmi-checkbox
     position: relative
     display: inline-block
     overflow: hidden
@@ -61,12 +61,12 @@
       line-height: 15px
       color: #fff
   &.cmi-valid
-    label
+    .cmi-label
       color: $checkbox-color-valid
   &.cmi-invalid
-    label
+    .cmi-label
       color: $checkbox-color-invalid
-  p.cmi-hint
+  p.cmi-hint, .cmi-p.cmi-hint
     margin: 0 0 0 40px
     font-size: 0.86em
     color: $checkbox-color-hint
@@ -74,14 +74,14 @@
       color: $checkbox-color-valid
     &.cmi-invalid
       color: $checkbox-color-invalid
-  label:hover
+  .cmi-label:hover
     .cmi-animation
       visibility: visible
       opacity: 1
       +transition(all 0.1s linear)
   &.cmi-active
-    span.cmi-checkbox
+    .cmi-span.cmi-checkbox
       border-color: $checkbox-color-check
       background-color: $checkbox-color-check
-    span.cmi-checkbox:before
+    .cmi-span.cmi-checkbox:before
       font-size: 15px

@@ -5,27 +5,27 @@
   line-height: 1.4
   box-sizing: border-box
 
-  *
+  *[class^="cmi-"]
     +selection
       background: $color-text-selection-bg
       color: $color-text-selection-text
       text-shadow: none
 
-  div,
-  header,
-  footer,
-  main,
-  aside,
-  ul,
-  ol,
-  form,
-  input,
-  label,
-  textarea,
-  select
+  .cmi-div,
+  .cmi-header,
+  .cmi-footer,
+  .cmi-main,
+  .cmi-aside,
+  .cmi-ul,
+  .cmi-ol,
+  .cmi-form,
+  .cmi-input,
+  .cmi-label,
+  .cmi-textarea,
+  .cmi-select
     box-sizing: border-box
 
-  hr
+  .cmi-hr
     display: block
     margin: 1em 0
     padding: 0
@@ -33,39 +33,39 @@
     border: 0
     border-top: 1px solid #ccc
 
-  i
+  .cmi-i
     line-height: inherit
-    &.left
+    &.cmi-left
       float: left
       margin-right: 15px
-    &.right
+    &.cmi-right
       float: right
       margin-left: 15px
-    &.tiny
+    &.cmi-tiny
       font-size: 1rem
-    &.small
+    &.cmi-small
       font-size: 2rem
-    &.medium
+    &.cmi-medium
       font-size: 4rem
-    &.large
+    &.cmi-large
       font-size: 6rem
 
-  table, th, td
+  .cmi-table, .cmi-th, .cmi-td
     border: none
-  table
+  .cmi-table
     width: 100%
     display: table
-  thead
+  .cmi-thead
     border-bottom: 1px solid $color-table-border
-  td, th
+  .cmi-td, .cmi-th
     padding: 15px 5px
     display: table-cell
     text-align: left
     vertical-align: middle
     background-color: #fff
     +border-radius(2px)
-  tr:nth-child(even)
-    td
+  .cmi-tr:nth-child(even)
+    .cmi-td
       background-color: #f9f9f9
 
   .cmi-pull-right
