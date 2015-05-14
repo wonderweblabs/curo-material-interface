@@ -169,7 +169,7 @@
       if (tabsElement.find('.cmi-tabs-active-indicator').length > 0) {
         return;
       }
-      return tabsElement.append('<li class="cmi-tabs-active-indicator"></li>');
+      return tabsElement.append('<li class="cmi-li cmi-tabs-active-indicator"></li>');
     };
 
     return Tabs;

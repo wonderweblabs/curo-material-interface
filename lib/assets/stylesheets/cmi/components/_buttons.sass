@@ -1,5 +1,5 @@
 // base declaration
-.cmi-btn
+.cmi-btn, a.cmi-btn, button.cmi-btn
   position: relative
   display: inline-block
   overflow: hidden
@@ -17,7 +17,7 @@
   outline: 0
   cursor: pointer
   -webkit-tap-highlight-color: transparent
-  +border-radius($button-border-radius)
+  +cmi-border-radius($button-border-radius)
   &:hover
     outline: none
     text-decoration: none
@@ -30,8 +30,9 @@
     color: darken($color-primary, 10%)
     background-color: opacify($button-color-hover, 0.05)
 
+
 // button raised
-.cmi-btn.cmi-btn-raised
+.cmi-btn.cmi-btn-raised, a.cmi-btn.cmi-btn-raised, button.cmi-btn.cmi-btn-raised
   background-color: $button-color-raised
   @extend .z-depth-1
   +transition(.1s ease-out)
@@ -44,7 +45,7 @@
     @extend .z-depth-2
 
 // button default
-.cmi-btn.cmi-btn-default
+.cmi-btn.cmi-btn-default, a.cmi-btn.cmi-btn-default, button.cmi-btn.cmi-btn-default
   background-color: $button-default-bg-color
   color: $button-default-font-color
   &:hover
@@ -56,7 +57,7 @@
     color: $button-primary-font-color
 
 // button primary
-.cmi-btn.cmi-btn-primary
+.cmi-btn.cmi-btn-primary, a.cmi-btn.cmi-btn-primary, button.cmi-btn.cmi-btn-primary
   background-color: $button-primary-bg-color
   color: $button-primary-font-color
   &:hover
@@ -68,43 +69,43 @@
     color: $button-primary-font-color
 
 // button small
-.cmi-btn.cmi-btn-small
+.cmi-btn.cmi-btn-small, a.cmi-btn.cmi-btn-small, button.cmi-btn.cmi-btn-small
   min-width: $button-small-min-width
   height: $button-small-height
   padding: $button-small-padding-vertical $button-small-padding-horizontal
   font-size: $button-small-font-size
 
 // button large
-.cmi-btn.cmi-btn-large
+.cmi-btn.cmi-btn-large, a.cmi-btn.cmi-btn-large, button.cmi-btn.cmi-btn-large
   min-width: $button-large-min-width
   height: $button-large-height
   padding: $button-large-padding-vertical $button-large-padding-horizontal
   font-size: $button-large-font-size
 
 // button block
-.cmi-btn.cmi-btn-block
+.cmi-btn.cmi-btn-block, a.cmi-btn.cmi-btn-block, button.cmi-btn.cmi-btn-block
   display: block
 
 
 // ------------------------------------
 // ripples
 
-.cmi-btn
+.cmi-btn, a.cmi-btn, button.cmi-btn
   &:active,
   &:target
     background-color: $button-color-hover
 
-.cmi-btn.cmi-btn-raised
+.cmi-btn.cmi-btn-raised, a.cmi-btn.cmi-btn-raised, button.cmi-btn.cmi-btn-raised
   &:active,
   &:target
     background-color: $button-color-hover
 
-.cmi-btn.cmi-btn-default
+.cmi-btn.cmi-btn-default, a.cmi-btn.cmi-btn-default, button.cmi-btn.cmi-btn-default
   &:active,
   &:target
     background-color: opacify($button-default-bg-color, 0.02)
 
-.cmi-btn.cmi-btn-primary
+.cmi-btn.cmi-btn-primary, a.cmi-btn.cmi-btn-primary, button.cmi-btn.cmi-btn-primary
   &:active,
   &:target
     background-color: lighten($button-primary-bg-color, 5%)

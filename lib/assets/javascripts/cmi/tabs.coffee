@@ -43,4 +43,4 @@ class CMI.Tabs
 
   @_ensureActiveIndicator: (tabsElement) ->
     return if tabsElement.find('.cmi-tabs-active-indicator').length > 0
-    tabsElement.append('<li class="cmi-tabs-active-indicator"></li>')
+    tabsElement.append('<li class="cmi-li cmi-tabs-active-indicator"></li>')

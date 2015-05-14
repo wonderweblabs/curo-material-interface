@@ -44,12 +44,12 @@
     outline: none
     width: 100%
     margin: 0
-    +box-shadow(none)
+    +cmi-box-shadow(none)
     +box-sizing(content-box)
     +transition(border-bottom .3s ease)
     &:focus
       border-bottom: 1px solid $input-color-focus
-      +box-shadow(0 1px 0 0 $input-color-focus)
+      +cmi-box-shadow(0 1px 0 0 $input-color-focus)
 
   &.cmi-active,
   .cmi-input:focus,
@@ -75,15 +75,15 @@
     .cmi-input,
     .cmi-textarea
       border-bottom: 1px solid $input-color-valid
-      +box-shadow(0 1px 0 0 $input-color-valid)
+      +cmi-box-shadow(0 1px 0 0 $input-color-valid)
 
   &.cmi-invalid
     .cmi-label
       color: $input-color-invalid
-    .cmi-input
+    .cmi-input,
     .cmi-textarea
       border-bottom: 1px solid $input-color-invalid
-      +box-shadow(0 1px 0 0 $input-color-invalid)
+      +cmi-box-shadow(0 1px 0 0 $input-color-invalid)
 
   // hints
   .cmi-p.cmi-hint
