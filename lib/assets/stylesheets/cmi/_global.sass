@@ -5,77 +5,77 @@
   line-height: 1.4
   box-sizing: border-box
 
-  *[class^="cmi-"]
-    +selection
-      background: $color-text-selection-bg
-      color: $color-text-selection-text
-      text-shadow: none
+*[class^="cmi-"]
+  +selection
+    background: $color-text-selection-bg
+    color: $color-text-selection-text
+    text-shadow: none
 
-  .cmi-div,
-  .cmi-header,
-  .cmi-footer,
-  .cmi-main,
-  .cmi-aside,
-  .cmi-ul,
-  .cmi-ol,
-  .cmi-form,
-  .cmi-input,
-  .cmi-label,
-  .cmi-textarea,
-  .cmi-select
-    box-sizing: border-box
+div.cmi-div,
+header.cmi-header,
+footer.cmi-footer,
+main.cmi-main,
+aside.cmi-aside,
+ul.cmi-ul,
+ol.cmi-ol,
+form.cmi-form,
+input.cmi-input,
+label.cmi-label,
+textarea.cmi-textarea,
+select.cmi-select
+  box-sizing: border-box
 
-  .cmi-hr
-    display: block
-    margin: 1em 0
-    padding: 0
-    height: 1px
-    border: 0
-    border-top: 1px solid #ccc
+hr.cmi-hr
+  display: block
+  margin: 1em 0
+  padding: 0
+  height: 1px
+  border: 0
+  border-top: 1px solid #ccc
 
-  .cmi-i
-    line-height: inherit
-    &.cmi-left
-      float: left
-      margin-right: 15px
-    &.cmi-right
-      float: right
-      margin-left: 15px
-    &.cmi-tiny
-      font-size: 1rem
-    &.cmi-small
-      font-size: 2rem
-    &.cmi-medium
-      font-size: 4rem
-    &.cmi-large
-      font-size: 6rem
-
-  .cmi-table, .cmi-th, .cmi-td
-    border: none
-  .cmi-table
-    width: 100%
-    display: table
-  .cmi-thead
-    border-bottom: 1px solid $color-table-border
-  .cmi-td, .cmi-th
-    padding: 15px 5px
-    display: table-cell
-    text-align: left
-    vertical-align: middle
-    background-color: #fff
-    +cmi-border-radius(2px)
-  .cmi-tr:nth-child(even)
-    .cmi-td
-      background-color: #f9f9f9
-
-  .cmi-pull-right
-    position: relative
-    float: right
-    top: 0
-    +clearfix
-
-  .cmi-pull-left
-    position: relative
+i.cmi-i
+  line-height: inherit
+  &.cmi-left
     float: left
-    top: 0
-    +clearfix
+    margin-right: 15px
+  &.cmi-right
+    float: right
+    margin-left: 15px
+  &.cmi-tiny
+    font-size: 1rem
+  &.cmi-small
+    font-size: 2rem
+  &.cmi-medium
+    font-size: 4rem
+  &.cmi-large
+    font-size: 6rem
+
+table.cmi-table, th.cmi-th, td.cmi-td
+  border: none
+table.cmi-table
+  width: 100%
+  display: table
+thead.cmi-thead
+  border-bottom: 1px solid $color-table-border
+td.cmi-td, th.cmi-th
+  padding: 15px 5px
+  display: table-cell
+  text-align: left
+  vertical-align: middle
+  background-color: #fff
+  +cmi-border-radius(2px)
+tr.cmi-tr:nth-child(even)
+  td.cmi-td
+    background-color: #f9f9f9
+
+.cmi-pull-right
+  position: relative
+  float: right
+  top: 0
+  +clearfix
+
+.cmi-pull-left
+  position: relative
+  float: left
+  top: 0
+  +clearfix
