@@ -243,7 +243,7 @@
               .cmi.cmi-flex-modal
                 .cmi-flex-modal-dialog
                   [.cmi-flex-modal-dialog-inner] // optionally if 2nd container is necessary
-                    %header
+                    %header.cmi-header
                       .cmi-flex-modal-header-inside
                         .cmi-pull-left
                           %a.cmi-flex-modal-back.cmi-btn.ripples{ href: '#' }
@@ -253,24 +253,25 @@
                             %i.mdi-navigation-close
                         %h1.cmi-h1 Modal
 
-                    %main
+                    %main.cmi-main
                       .cmi-flex-modal-main-inside
                         %aside
                           %p.cmi-p My Sidebar
                         %section
                           %p.cmi-p My Content
-                    %footer
+
+                    %footer.cmi-footer
                       .cmi-flex-modal-footer-inside
                         .cmi-pull-left
                           %a.cmi-flex-modal-back.cmi-btn.ripples{ href: '#' }
-                            %i.mdi-navigation-arrow-back
+                            %i.cmi-i.mdi-navigation-arrow-back
                         .cmi-pull-right
                           %a.cmi-flex-modal-close.cmi-btn.cmi-btn-default.ripples.ripples-dark{ href: '#' }
                             Close
                           %a.cmi-flex-modal-save.cmi-btn.cmi-btn.cmi-btn-raised.cmi-btn-primary.ripples{ href: '#' }
                             Save
 
-          %hr/
+          %hr.cmi-hr/
           %p.cmi-p
             To preseve the content from scrolling when the modal is opened, you
             should add the following class to the body tag:
@@ -319,7 +320,7 @@
         .cmi-flex-modal-footer-inside
           .cmi-pull-left
             %a.cmi-flex-modal-back.cmi-btn.ripples{ href: '#' }
-              %i.mdi-navigation-arrow-back
+              %i.cmi-i.mdi-navigation-arrow-back
           .cmi-pull-right
             %a.cmi-flex-modal-close.cmi-btn.cmi-btn-default.ripples.ripples-dark{ href: '#' }
               Close
