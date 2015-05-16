@@ -6,7 +6,7 @@
   font-size: 16px
   font-size: 1rem
   +clearfix
-  a
+  .cmi-a
     display: block
     padding: 0.8rem 1em 0.7rem 1em
     font-size: 0.875em
@@ -17,14 +17,14 @@
     &:hover
       text-decoration: none
       background-color: $tabs-color-hover-bg
-  li
+  .cmi-li
     position: relative
     overflow: hidden
     float: left
-  li.cmi-tabs-active
-    a
+  .cmi-li.cmi-tabs-active
+    .cmi-a
       color: $tabs-color-link-active
-  li.cmi-tabs-active-indicator
+  .cmi-li.cmi-tabs-active-indicator
     position: absolute
     float: none
     height: 3px

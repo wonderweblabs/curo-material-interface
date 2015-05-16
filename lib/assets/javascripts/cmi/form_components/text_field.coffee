@@ -38,7 +38,7 @@ class CMI.FormComponents.TextField
         parentDomElement.removeClass('cmi-invalid')
     else if parentDomElement.hasClass('cmi-validate')
       if domElement.is(':valid')
-        parentDomElement.removeClass('invalid')
+        parentDomElement.removeClass('cmi-invalid')
         parentDomElement.addClass('cmi-valid')
       else
         parentDomElement.removeClass('cmi-valid')

@@ -9,27 +9,27 @@
 .grid-container
   .grid-row
     .grid-col-12
-      %h3 Material design ui extracted from Curo CMS
-      %p
+      %h3.cmi-h3 Material design ui extracted from Curo CMS
+      %p.cmi-p
         Most of the ui elements are to Google`s #{link_to('Material Design', 'http://www.google.com/design/spec/material-design/introduction.html', target: :blank)} concept.
-      %hr/
+      %hr.cmi-hr/
 
 
   / ---------------------------------------------
   / loading indicator
   .grid-row
     .grid-col-12
-      %h2.cmi-lined
-        %span Loading indicator
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Loading indicator
       .grid-row
         .grid-col-6
           #loading-indicator-1{ style: 'width: 100%; height: 150px; background: #f9f9f9; position: relative;' }
             .cmi-loading-indicator.cmi-loading-fade
               .cmi-loading-indicator-inside
-                %svg.circular
-                  %circle.path{ cx: '50', cy: '50', r: '20', fill: 'none', :'stroke-width' => '3', :'stroke-miterlimit' => '10' }
+                %svg.cmi-circular
+                  %circle.cmi-path{ cx: '50', cy: '50', r: '20', fill: 'none', :'stroke-width' => '3', :'stroke-miterlimit' => '10' }
         .grid-col-6
-          %h3 Javascript
+          %h3.cmi-h3 Javascript
       .grid-row
         .grid-col-6
           %h3 Loading default
@@ -37,7 +37,7 @@
         .grid-col-6
           %br/
           %br/
-          %pre
+          %pre.cmi-pre
             :preserve
               var loading = new CMI.LoadingIndicator();
               $('#loading-indicator-2').append(loading.domElement());
@@ -54,13 +54,13 @@
 
       .grid-row
         .grid-col-6
-          %h3 No background
-          %p#loading-indicator-3{ style: 'width: 100%; height: 150px; background: #f9f9f9; position: relative;' }
+          %h3.cmi-h3 No background
+          %p.cmi-p#loading-indicator-3{ style: 'width: 100%; height: 150px; background: #f9f9f9; position: relative;' }
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id [redacted]tilius factum negabat. Itaque mihi non satis videmini considerare quod iter sit naturae quaeque progressio. Sedulo, inquam, faciam. Quamquam te quidem video minime esse deterritum. Quo igitur, inquit, modo? Dolor ergo, id est summum malum, metuetur semper, etiamsi non aderit; Duo Reges: constructio interrete. Equidem etiam Epicurum, in physicis quidem, Democriteum puto. An haec ab eo non dicuntur?
         .grid-col-6
           %br/
           %br/
-          %pre
+          %pre.cmi-pre
             :preserve
               var loading = new CMI.LoadingIndicator();
               $('#loading-indicator-3').append(loading.domElement());
@@ -75,13 +75,13 @@
 
       .grid-row
         .grid-col-6
-          %h3 Background light
-          %p#loading-indicator-4{ style: 'width: 100%; height: 150px; background: #f9f9f9; position: relative;' }
+          %h3.cmi-h3 Background light
+          %p.cmi-p#loading-indicator-4{ style: 'width: 100%; height: 150px; background: #f9f9f9; position: relative;' }
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id [redacted]tilius factum negabat. Itaque mihi non satis videmini considerare quod iter sit naturae quaeque progressio. Sedulo, inquam, faciam. Quamquam te quidem video minime esse deterritum. Quo igitur, inquit, modo? Dolor ergo, id est summum malum, metuetur semper, etiamsi non aderit; Duo Reges: constructio interrete. Equidem etiam Epicurum, in physicis quidem, Democriteum puto. An haec ab eo non dicuntur?
         .grid-col-6
           %br/
           %br/
-          %pre
+          %pre.cmi-pre
             :preserve
               var loading = new CMI.LoadingIndicator({ background: 'light' });
               $('#loading-indicator-4').append(loading.domElement());
@@ -96,13 +96,13 @@
 
       .grid-row
         .grid-col-6
-          %h3 Background dark
-          %p#loading-indicator-5{ style: 'width: 100%; height: 150px; background: #f9f9f9; position: relative;' }
+          %h3.cmi-h3 Background dark
+          %p.cmi-p#loading-indicator-5{ style: 'width: 100%; height: 150px; background: #f9f9f9; position: relative;' }
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id [redacted]tilius factum negabat. Itaque mihi non satis videmini considerare quod iter sit naturae quaeque progressio. Sedulo, inquam, faciam. Quamquam te quidem video minime esse deterritum. Quo igitur, inquit, modo? Dolor ergo, id est summum malum, metuetur semper, etiamsi non aderit; Duo Reges: constructio interrete. Equidem etiam Epicurum, in physicis quidem, Democriteum puto. An haec ab eo non dicuntur?
         .grid-col-6
           %br/
           %br/
-          %pre
+          %pre.cmi-pre
             :preserve
               var loading = new CMI.LoadingIndicator({ background: 'dark' });
               $('#loading-indicator-5').append(loading.domElement());
@@ -117,7 +117,7 @@
 
       .grid-row
         .grid-col-6
-          %h3 Background custom
+          %h3.cmi-h3 Background custom
           :css
             .cmi-loading-indicator.my-custom-background {
               background-color: rgba(70, 0, 0, 0.6);
@@ -125,12 +125,12 @@
             .cmi-loading-indicator.my-custom-background .path {
               stroke: #009
             }
-          %p#loading-indicator-6{ style: 'width: 100%; height: 150px; background: #f9f9f9; position: relative;' }
+          %p.cmi-p#loading-indicator-6{ style: 'width: 100%; height: 150px; background: #f9f9f9; position: relative;' }
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id [redacted]tilius factum negabat. Itaque mihi non satis videmini considerare quod iter sit naturae quaeque progressio. Sedulo, inquam, faciam. Quamquam te quidem video minime esse deterritum. Quo igitur, inquit, modo? Dolor ergo, id est summum malum, metuetur semper, etiamsi non aderit; Duo Reges: constructio interrete. Equidem etiam Epicurum, in physicis quidem, Democriteum puto. An haec ab eo non dicuntur?
         .grid-col-6
           %br/
           %br/
-          %pre
+          %pre.cmi-pre
             :preserve
               .cmi-loading-indicator.my-custom-background {
                 background-color: rgba(#600, 0.8);
@@ -138,7 +138,7 @@
               .cmi-loading-indicator.my-custom-background .path {
                 stroke: #009
               }
-          %pre
+          %pre.cmi-pre
             :preserve
               var loading = new CMI.LoadingIndicator({ background: 'my-custom-background' });
               $('#loading-indicator-6').append(loading.domElement());
@@ -155,17 +155,17 @@
   / ripples
   .grid-row
     .grid-col-12
-      %h2.cmi-lined
-        %span Ripples
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Ripples
       .grid-row#ripples-1
         .grid-col-6
-          %h4 Default (.cmi-ripples)
-          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples', onclick: 'return false;'
-          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-btn-default', onclick: 'return false;'
-          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-btn-raised', onclick: 'return false;'
-          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-btn-raised cmi-btn-primary', onclick: 'return false;'
+          %h4.cmi-h4 Default (.cmi-ripples)
+          = link_to 'Button', '#', class: 'cmi-a cmi-btn cmi-ripples', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-a cmi-btn cmi-ripples cmi-btn-default', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-a cmi-btn cmi-ripples cmi-btn-raised', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-a cmi-btn cmi-ripples cmi-btn-raised cmi-btn-primary', onclick: 'return false;'
         .grid-col-6
-          %pre
+          %pre.cmi-pre
             :preserve
               $('#ripples-1').on('mousedown', 'a', function(event) {
                 CMI.Ripples.animateClick($(this), event);
@@ -178,13 +178,13 @@
           });
       .grid-row#ripples-2
         .grid-col-6
-          %h4 .cmi-ripples.cmi-ripples-dark
-          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-ripples-dark', onclick: 'return false;'
-          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-ripples-dark cmi-btn-default', onclick: 'return false;'
-          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-ripples-dark cmi-btn-raised', onclick: 'return false;'
-          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-ripples-dark cmi-btn-raised cmi-btn-primary', onclick: 'return false;'
+          %h4.cmi-h4 .cmi-ripples.cmi-ripples-dark
+          = link_to 'Button', '#', class: 'cmi-a cmi-btn cmi-ripples cmi-ripples-dark', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-a cmi-btn cmi-ripples cmi-ripples-dark cmi-btn-default', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-a cmi-btn cmi-ripples cmi-ripples-dark cmi-btn-raised', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-a cmi-btn cmi-ripples cmi-ripples-dark cmi-btn-raised cmi-btn-primary', onclick: 'return false;'
         .grid-col-6
-          %pre
+          %pre.cmi-pre
             :preserve
               $('#ripples-2').on('mouseup', 'a', function(event) {
                 CMI.Ripples.animateClick($(this), event);
@@ -197,13 +197,13 @@
           });
       .grid-row#ripples-3
         .grid-col-6
-          %h4 .cmi-ripples.cmi-ripples-primary
-          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-ripples-primary', onclick: 'return false;'
-          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-ripples-primary cmi-btn-default', onclick: 'return false;'
-          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-ripples-primary cmi-btn-raised', onclick: 'return false;'
-          = link_to 'Button', '#', class: 'cmi-btn cmi-ripples cmi-ripples-primary cmi-btn-raised cmi-btn-primary', onclick: 'return false;'
+          %h4.cmi-h4 .cmi-ripples.cmi-ripples-primary
+          = link_to 'Button', '#', class: 'cmi-a cmi-btn cmi-ripples cmi-ripples-primary', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-a cmi-btn cmi-ripples cmi-ripples-primary cmi-btn-default', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-a cmi-btn cmi-ripples cmi-ripples-primary cmi-btn-raised', onclick: 'return false;'
+          = link_to 'Button', '#', class: 'cmi-a cmi-btn cmi-ripples cmi-ripples-primary cmi-btn-raised cmi-btn-primary', onclick: 'return false;'
         .grid-col-6
-          %pre
+          %pre.cmi-pre
             :preserve
               $('#ripples-3').on('click', 'a', function(event) {
                 CMI.Ripples.animateClick($(this), event);
@@ -219,32 +219,32 @@
   / tabs
   .grid-row
     .grid-col-12
-      %h2.cmi-lined
-        %span Tabs
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Tabs
   .grid-row#tabs-1
     .grid-col-6
-      %h4 .cmi-tabs and .cmi-tabs-tab
+      %h4.cmi-h4 .cmi-tabs and .cmi-tabs-tab
       %div{ style: 'width: 100%; height: 210px; background: #f0f0f0; padding: 10px' }
         .cmi-navbar
           %ul.cmi-tabs{ data: { cmi_tabs_container: '#tabs-1' } }
-            %li.cmi-tabs-active= link_to 'Tab 1', '#one'
-            %li= link_to 'Tab 2', '#two'
-            %li= link_to 'Tab 3', '#three'
+            %li.cmi-li.cmi-tabs-active= link_to 'Tab 1', '#one', class: 'cmi-a'
+            %li.cmi-li= link_to 'Tab 2', '#two', class: 'cmi-a'
+            %li.cmi-li= link_to 'Tab 3', '#three', class: 'cmi-a'
         %br/
         .cmi-tabs-tab.cmi-tab-active#one{ style: 'background-color: #fff;' }
-          %h4 Tab 1
-          %p
+          %h4.cmi-h4 Tab 1
+          %p.cmi-p
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum autem in quo sapienter dicimus, id a primo rectissime dicitur. Si mala non sunt, iacet omnis ratio Peripateticorum. Hic ambiguo ludimur.
         .cmi-tabs-tab#two{ style: 'background-color: #fff;' }
-          %h4 Tab 2
-          %p
+          %h4.cmi-h4 Tab 2
+          %p.cmi-p
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum autem in quo sapienter dicimus, id a primo rectissime dicitur. Si mala non sunt, iacet omnis ratio Peripateticorum. Hic ambiguo ludimur.
         .cmi-tabs-tab#three{ style: 'background-color: #fff;' }
-          %h4 Tab 3
-          %p
+          %h4.cmi-h4 Tab 3
+          %p.cmi-p
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum autem in quo sapienter dicimus, id a primo rectissime dicitur. Si mala non sunt, iacet omnis ratio Peripateticorum. Hic ambiguo ludimur.
     .grid-col-6
-      %pre
+      %pre.cmi-pre
         :preserve
           $('#tabs-1 li.cmi-tabs-active a').each(function() {
             CMI.Tabs.activate($(this));
@@ -268,48 +268,48 @@
   / text fields
   .grid-row
     .grid-col-12
-      %h2.cmi-lined
-        %span Text inputs
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Text inputs
   .grid-row#text-fields-1
     .grid-col-6
-      %h4 Default
+      %h4.cmi-h4 Default
       .cmi-text-input
-        <input type="text" name="text1" value="" />
-        %label{ for: 'text1' } My field
+        <input type="text" name="text1" value="" class="cmi-input"/>
+        %label.cmi-label{ for: 'text1' } My field
       .cmi-text-input
-        <input type="text" name="text1" value="Filled value" />
-        %label{ for: 'text1' } My field
+        <input type="text" name="text1" value="Filled value" class="cmi-input"/>
+        %label.cmi-label{ for: 'text1' } My field
       .cmi-text-input.cmi-valid
-        <input type="text" name="text1" value="Filled value" />
-        %label{ for: 'text1' } My field
+        <input type="text" name="text1" value="Filled value" class="cmi-input"/>
+        %label.cmi-label{ for: 'text1' } My field
       .cmi-text-input.cmi-invalid
-        <input type="text" name="text1" value="Filled value" />
-        %label{ for: 'text1' } My field
-      %h4 Hints
+        <input type="text" name="text1" value="Filled value" class="cmi-input"/>
+        %label.cmi-label{ for: 'text1' } My field
+      %h4.cmi-h4 Hints
       .cmi-text-input
-        <input type="text" name="text1" value="Filled value" />
-        %label{ for: 'text1' } My field
-        %p.cmi-hint
+        <input type="text" name="text1" value="Filled value" class="cmi-input"/>
+        %label.cmi-label{ for: 'text1' } My field
+        %p.cmi-p.cmi-hint
           Some little notice as hint text.
       .cmi-text-input
-        <input type="text" name="text1" value="Filled value" />
-        %label{ for: 'text1' } My field
-        %p.cmi-hint.cmi-valid
+        <input type="text" name="text1" value="Filled value" class="cmi-input"/>
+        %label.cmi-label{ for: 'text1' } My field
+        %p.cmi-p.cmi-hint.cmi-valid
           Some little notice as hint text.
       .cmi-text-input
-        <input type="text" name="text1" value="Filled value" />
-        %label{ for: 'text1' } My field
-        %p.cmi-hint.cmi-valid
+        <input type="text" name="text1" value="Filled value" class="cmi-input"/>
+        %label.cmi-label{ for: 'text1' } My field
+        %p.cmi-p.cmi-hint.cmi-valid
           Some little notice as hint text.
-        %p.cmi-hint
+        %p.cmi-p.cmi-hint
           Second text line.
       .cmi-text-input
-        <input type="text" name="text1" value="Filled value" />
-        %label{ for: 'text1' } My field
-        %p.cmi-hint.cmi-invalid
+        <input type="text" name="text1" value="Filled value" class="cmi-input"/>
+        %label.cmi-label{ for: 'text1' } My field
+        %p.cmi-p.cmi-hint.cmi-invalid
           Some little notice as hint text.
     .grid-col-6
-      %pre
+      %pre.cmi-pre
         :preserve
           $('#text-fields-1 input').each(function() {
             CMI.FormComponents.TextField.reset($(this));
@@ -349,43 +349,43 @@
   / textareas
   .grid-row
     .grid-col-12
-      %h2.cmi-lined
-        %span Textareas
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Textareas
   .grid-row#text-fields-2
     .grid-col-6
-      %h4 Default
+      %h4.cmi-h4 Default
       .cmi-text-input
-        <textarea name="text2"></textarea>
-        %label{ for: 'text2' } My field
+        <textarea name="text2" class="cmi-textarea"></textarea>
+        %label.cmi-label{ for: 'text2' } My field
       .cmi-text-input
-        <textarea name="text2">Hallo Welt</textarea>
-        %label{ for: 'text2' } My field
+        <textarea name="text2" class="cmi-textarea">Hallo Welt</textarea>
+        %label.cmi-label{ for: 'text2' } My field
       .cmi-text-input.cmi-valid
-        <textarea name="text2">Hallo Welt</textarea>
-        %label{ for: 'text2' } My field
+        <textarea name="text2" class="cmi-textarea">Hallo Welt</textarea>
+        %label.cmi-label{ for: 'text2' } My field
       .cmi-text-input.cmi-invalid
-        <textarea name="text2">Hallo Welt</textarea>
-        %label{ for: 'text2' } My field
-      %h4 Hints
+        <textarea name="text2" class="cmi-textarea">Hallo Welt</textarea>
+        %label.cmi-label{ for: 'text2' } My field
+      %h4.cmi-h4 Hints
       .cmi-text-input
-        <textarea name="text2"></textarea>
-        %label{ for: 'text2' } My field
-        %p.cmi-hint Some little notice as hint text.
+        <textarea name="text2" class="cmi-textarea"></textarea>
+        %label.cmi-label{ for: 'text2' } My field
+        %p.cmi-p.cmi-hint Some little notice as hint text.
       .cmi-text-input
-        <textarea name="text2">Hallo Welt</textarea>
-        %label{ for: 'text2' } My field
-        %p.cmi-hint.cmi-valid Some little notice as hint text.
+        <textarea name="text2" class="cmi-textarea">Hallo Welt</textarea>
+        %label.cmi-label{ for: 'text2' } My field
+        %p.cmi-p.cmi-hint.cmi-valid Some little notice as hint text.
       .cmi-text-input
-        <textarea name="text2">Hallo Welt</textarea>
-        %label{ for: 'text2' } My field
-        %p.cmi-hint.cmi-valid Some little notice as hint text.
-        %p.cmi-hint Second hint text.
+        <textarea name="text2" class="cmi-textarea">Hallo Welt</textarea>
+        %label.cmi-label{ for: 'text2' } My field
+        %p.cmi-p.cmi-hint.cmi-valid Some little notice as hint text.
+        %p.cmi-p.cmi-hint Second hint text.
       .cmi-text-input
-        <textarea name="text2">Hallo Welt</textarea>
-        %label{ for: 'text2' } My field
-        %p.cmi-hint.cmi-invalid Some little notice as hint text.
+        <textarea name="text2" class="cmi-textarea">Hallo Welt</textarea>
+        %label.cmi-label{ for: 'text2' } My field
+        %p.cmi-p.cmi-hint.cmi-invalid Some little notice as hint text.
     .grid-col-6
-      %pre
+      %pre.cmi-pre
         :preserve
           $('#text-fields-2 textarea').each(function() {
             CMI.FormComponents.TextField.reset($(this));
@@ -425,15 +425,15 @@
   / growing textareas
   .grid-row
     .grid-col-12
-      %h2.cmi-lined
-        %span Growing textareas
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Growing textareas
   .grid-row#text-fields-3
     .grid-col-6
       .cmi-text-input.cmi-growing-textarea
-        <textarea name="text2"></textarea>
-        %label{ for: 'text2' } My field
+        <textarea name="text2" class="cmi-textarea"></textarea>
+        %label.cmi-label{ for: 'text2' } My field
     .grid-col-6
-      %pre
+      %pre.cmi-pre
         :preserve
           $('#text-fields-2 textarea').each(function() {
             CMI.FormComponents.TextField.reset($(this));
@@ -450,7 +450,7 @@
           $('#text-fields-2').on('reset', 'form', function(){
             CMI.FormComponents.TextField.formReset($(this))
           });
-      %pre
+      %pre.cmi-pre
         :preserve
           $('#text-fields-3').on('keyup', 'textarea', function(){
             CMI.FormComponents.Textarea.animateHeight($('body'), $(this))
@@ -494,67 +494,67 @@
   / checkboxes
   .grid-row
     .grid-col-12
-      %h2.cmi-lined
-        %span Checkboxes
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Checkboxes
   .grid-row#checkboxes-1
     .grid-col-6
-      %h4 Normal
+      %h4.cmi-h4 Normal
       .cmi-checkbox-container
-        %label
-          <input type="checkbox" name="check1" value="1" />
-          %span.cmi-animation.cmi-ripples.cmi-ripples-dark
-          %span.cmi-checkbox
+        %label.cmi-label
+          <input type="checkbox" name="check1" value="1" class="cmi-input"/>
+          %span.cmi-span.cmi-animation.cmi-ripples.cmi-ripples-dark
+          %span.cmi-span.cmi-checkbox
           My checkbox text
       .cmi-checkbox-container
-        %label
-          <input type="checkbox" name="check1" value="1" checked />
-          %span.cmi-animation.cmi-ripples.cmi-ripples-dark
-          %span.cmi-checkbox
+        %label.cmi-label
+          <input type="checkbox" name="check1" value="1" checked class="cmi-input"/>
+          %span.cmi-span.cmi-animation.cmi-ripples.cmi-ripples-dark
+          %span.cmi-span.cmi-checkbox
           My checkbox text
       .cmi-checkbox-container.cmi-valid
-        %label
-          <input type="checkbox" name="check1" value="1" />
-          %span.cmi-animation.cmi-ripples.cmi-ripples-dark
-          %span.cmi-checkbox
+        %label.cmi-label
+          <input type="checkbox" name="check1" value="1" class="cmi-input"/>
+          %span.cmi-span.cmi-animation.cmi-ripples.cmi-ripples-dark
+          %span.cmi-span.cmi-checkbox
           My checkbox text
       .cmi-checkbox-container.cmi-invalid
-        %label
-          <input type="checkbox" name="check1" value="1" />
-          %span.cmi-animation.cmi-ripples.cmi-ripples-dark
-          %span.cmi-checkbox
+        %label.cmi-label
+          <input type="checkbox" name="check1" value="1" class="cmi-input"/>
+          %span.cmi-span.cmi-animation.cmi-ripples.cmi-ripples-dark
+          %span.cmi-span.cmi-checkbox
           My checkbox text
-      %h4 Hints
+      %h4.cmi-h4 Hints
       .cmi-checkbox-container
-        %label
-          <input type="checkbox" name="check1" value="1" />
-          %span.cmi-animation.cmi-ripples.cmi-ripples-dark
-          %span.cmi-checkbox
+        %label.cmi-label
+          <input type="checkbox" name="check1" value="1" class="cmi-input"/>
+          %span.cmi-span.cmi-animation.cmi-ripples.cmi-ripples-dark
+          %span.cmi-span.cmi-checkbox
           My checkbox text
-        %p.hint Some little notice as hint text.
+        %p.cmi-p.hint Some little notice as hint text.
       .cmi-checkbox-container
-        %label
-          <input type="checkbox" name="check1" value="1" />
-          %span.cmi-animation.cmi-ripples.cmi-ripples-dark
-          %span.cmi-checkbox
+        %label.cmi-label
+          <input type="checkbox" name="check1" value="1" class="cmi-input"/>
+          %span.cmi-span.cmi-animation.cmi-ripples.cmi-ripples-dark
+          %span.cmi-span.cmi-checkbox
           My checkbox text
-        %p.cmi-hint.cmi-valid Some little notice as hint text.
+        %p.cmi-p.cmi-hint.cmi-valid Some little notice as hint text.
       .cmi-checkbox-container
-        %label
-          <input type="checkbox" name="check1" value="1" />
-          %span.cmi-animation.cmi-ripples.cmi-ripples-dark
-          %span.cmi-checkbox
+        %label.cmi-label
+          <input type="checkbox" name="check1" value="1" class="cmi-input"/>
+          %span.cmi-span.cmi-animation.cmi-ripples.cmi-ripples-dark
+          %span.cmi-span.cmi-checkbox
           My checkbox text
-        %p.cmi-hint.cmi-valid Some little notice as hint text.
-        %p.cmi-hint Second notice text.
+        %p.cmi-p.cmi-hint.cmi-valid Some little notice as hint text.
+        %p.cmi-p.cmi-hint Second notice text.
       .cmi-checkbox-container
-        %label
-          <input type="checkbox" name="check1" value="1" />
-          %span.cmi-animation.cmi-ripples.cmi-ripples-dark
-          %span.cmi-checkbox
+        %label.cmi-label
+          <input type="checkbox" name="check1" value="1" class="cmi-input"/>
+          %span.cmi-span.cmi-animation.cmi-ripples.cmi-ripples-dark
+          %span.cmi-span.cmi-checkbox
           My checkbox text
-        %p.cmi-hint.cmi-invalid Some little notice as hint text.
+        %p.cmi-p.cmi-hint.cmi-invalid Some little notice as hint text.
     .grid-col-6
-      %pre
+      %pre.cmi-pre
         :preserve
           $('#checkboxes-1').on('click', 'label', function() {
             CMI.FormComponents.Checkbox.click($(this));
