@@ -23,19 +23,19 @@
     position: relative
     height: $loading-diameter
     width: $loading-diameter
-    +animation(cumaLoadingRotate 2s linear infinite)
+    +animation(cmiLoadingRotate 2s linear infinite)
   .cmi-path
     stroke-dasharray: 1, 200
     stroke-dashoffset: 0
     stroke-linecap: round
     stroke: $loading-color
-    +animation(cumaLoadingDash 1.5s ease-in-out infinite)
+    +animation(cmiLoadingDash 1.5s ease-in-out infinite)
 
-+keyframes(cumaLoadingRotate)
++keyframes(cmiLoadingRotate)
   100%
     +transform(rotate(360deg))
 
-+keyframes(cumaLoadingDash)
++keyframes(cmiLoadingDash)
   0%
     stroke-dasharray: 1, 200
     stroke-dashoffset: 0
