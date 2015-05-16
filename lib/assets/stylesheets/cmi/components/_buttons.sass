@@ -34,15 +34,15 @@
 // button raised
 .cmi-btn.cmi-btn-raised, a.cmi-btn.cmi-btn-raised, button.cmi-btn.cmi-btn-raised
   background-color: $button-color-raised
-  @extend .z-depth-1
+  @extend .cmi-z-depth-1
   +transition(.1s ease-out)
   &:hover
     background-color: $button-color-hover
-    @extend .z-depth-1-hover
+    @extend .cmi-z-depth-1-hover
   &:active,
   &:target
     background-color: opacify($button-color-hover, 0.05)
-    @extend .z-depth-2
+    @extend .cmi-z-depth-2
 
 // button default
 .cmi-btn.cmi-btn-default, a.cmi-btn.cmi-btn-default, button.cmi-btn.cmi-btn-default
