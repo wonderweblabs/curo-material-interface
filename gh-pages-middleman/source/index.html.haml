@@ -179,32 +179,386 @@
       .grid-row
         .grid-col-6
           %h3.cmi-h3 Flat (default)
-          %h4.cmi-h4 .cmi-btn
-          = link_to 'Button', '#', class: 'cmi-btn cmi-a', onclick: 'return false;'
-          %h4.cmi-h4 .cmi-btn.cmi-btn-default
+          %h5.cmi-h5 .cmi-btn
+          = link_to 'Button', '#', class: 'cmi-btn', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-default
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-default', onclick: 'return false;'
-          %h4.cmi-h4 .cmi-btn.cmi-btn-primary
+          %h5.cmi-h5 .cmi-btn.cmi-btn-primary
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-primary', onclick: 'return false;'
-          %h4.cmi-h4 .cmi-btn.cmi-btn-default.cmi-btn-small
+          %h5.cmi-h5 .cmi-btn.cmi-btn-danger
+          = link_to 'Button', '#', class: 'cmi-btn cmi-btn-danger', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-danger-flat
+          = link_to 'Button', '#', class: 'cmi-btn cmi-btn-danger-flat', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-default.cmi-btn-small
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-default cmi-btn-small', onclick: 'return false;'
-          %h4.cmi-h4 .cmi-btn.cmi-btn-default.cmi-btn-large
+          %h5.cmi-h5 .cmi-btn.cmi-btn-default.cmi-btn-large
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-default cmi-btn-large', onclick: 'return false;'
-          %h4.cmi-h4 .cmi-btn.cmi-btn-default.cmi-btn-block
+          %h5.cmi-h5 .cmi-btn.cmi-btn-default.cmi-btn-block
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-default cmi-btn-block', onclick: 'return false;'
         .grid-col-6
           %h3.cmi-h3 Raised
-          %h4.cmi-h4 .cmi-btn.cmi-btn-raised
-          = link_to 'Button', '#', class: 'cmi-btn cmi-btn-raised cmi-a', onclick: 'return false;'
-          %h4.cmi-h4 .cmi-btn.cmi-btn-raised.cmi-btn-default
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised
+          = link_to 'Button', '#', class: 'cmi-btn cmi-btn-raised', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-default
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-default', onclick: 'return false;'
-          %h4.cmi-h4 .cmi-btn.cmi-btn-raised.cmi-btn-primary
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-primary
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-primary', onclick: 'return false;'
-          %h4.cmi-h4 .cmi-btn.cmi-btn-raised.cmi-btn-default.cmi-btn-small
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-danger
+          = link_to 'Button', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-danger', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-danger-flat
+          = link_to 'Button', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-danger-flat', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-default.cmi-btn-small
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-default cmi-btn-small', onclick: 'return false;'
-          %h4.cmi-h4 .cmi-btn.cmi-btn-raised.cmi-btn-default.cmi-btn-large
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-default.cmi-btn-large
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-default cmi-btn-large', onclick: 'return false;'
-          %h4.cmi-h4 .cmi-btn.cmi-btn-raised.cmi-btn-default.cmi-btn-block
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-default.cmi-btn-block
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-default cmi-btn-block', onclick: 'return false;'
+
+  / ---------------------------------------------
+  / tables
+  .grid-row
+    .grid-col-12
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Tables
+
+      %h4.cmi-h4 .cmi-table
+
+      %table.cmi-table
+        %thead.cmi-thead
+          %tr.cmi-tr
+            %th.cmi-th Column 1
+            %th.cmi-th Column 2
+            %th.cmi-th Column 3
+            %th.cmi-th Column 4
+        %tbody.cmi-tbody
+          %tr.cmi-tr
+            %td.cmi-td Row 1 - 1
+            %td.cmi-td Row 1 - 2
+            %td.cmi-td Row 1 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 2 - 1
+            %td.cmi-td Row 2 - 2
+            %td.cmi-td Row 2 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 3 - 1
+            %td.cmi-td Row 3 - 2
+            %td.cmi-td Row 3 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+
+      %h4.cmi-h4 .cmi-table.cmi-table-striped
+
+      %table.cmi-table.cmi-table-striped
+        %thead.cmi-thead
+          %tr.cmi-tr
+            %th.cmi-th Column 1
+            %th.cmi-th Column 2
+            %th.cmi-th Column 3
+            %th.cmi-th Column 4
+        %tbody.cmi-tbody
+          %tr.cmi-tr
+            %td.cmi-td Row 1 - 1
+            %td.cmi-td Row 1 - 2
+            %td.cmi-td Row 1 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 2 - 1
+            %td.cmi-td Row 2 - 2
+            %td.cmi-td Row 2 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 3 - 1
+            %td.cmi-td Row 3 - 2
+            %td.cmi-td Row 3 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+
+      %h4.cmi-h4 .cmi-table.cmi-table-hoverable
+
+      %table.cmi-table.cmi-table-hoverable
+        %thead.cmi-thead
+          %tr.cmi-tr
+            %th.cmi-th Column 1
+            %th.cmi-th Column 2
+            %th.cmi-th Column 3
+            %th.cmi-th Column 4
+        %tbody.cmi-tbody
+          %tr.cmi-tr
+            %td.cmi-td Row 1 - 1
+            %td.cmi-td Row 1 - 2
+            %td.cmi-td Row 1 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 2 - 1
+            %td.cmi-td Row 2 - 2
+            %td.cmi-td Row 2 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 3 - 1
+            %td.cmi-td Row 3 - 2
+            %td.cmi-td Row 3 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+
+      %h4.cmi-h4 .cmi-table.cmi-table-striped.cmi-table-hoverable
+
+      %table.cmi-table.cmi-table-striped.cmi-table-hoverable
+        %thead.cmi-thead
+          %tr.cmi-tr
+            %th.cmi-th Column 1
+            %th.cmi-th Column 2
+            %th.cmi-th Column 3
+            %th.cmi-th Column 4
+        %tbody.cmi-tbody
+          %tr.cmi-tr
+            %td.cmi-td Row 1 - 1
+            %td.cmi-td Row 1 - 2
+            %td.cmi-td Row 1 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 2 - 1
+            %td.cmi-td Row 2 - 2
+            %td.cmi-td Row 2 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 3 - 1
+            %td.cmi-td Row 3 - 2
+            %td.cmi-td Row 3 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+
+      %h4.cmi-h4 With active rows: .cmi-table.cmi-table-striped
+
+      %table.cmi-table.cmi-table-striped
+        %thead.cmi-thead
+          %tr.cmi-tr
+            %th.cmi-th Column 1
+            %th.cmi-th Column 2
+            %th.cmi-th Column 3
+            %th.cmi-th Column 4
+        %tbody.cmi-tbody
+          %tr.cmi-tr
+            %td.cmi-td Row 1 - 1
+            %td.cmi-td Row 1 - 2
+            %td.cmi-td Row 1 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr.cmi-tr-active
+            %td.cmi-td Row 2 - 1
+            %td.cmi-td Row 2 - 2
+            %td.cmi-td Row 2 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr.cmi-tr-active
+            %td.cmi-td Row 3 - 1
+            %td.cmi-td Row 3 - 2
+            %td.cmi-td Row 3 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 4 - 1
+            %td.cmi-td Row 4 - 2
+            %td.cmi-td Row 4 - 3
+
+      %h4.cmi-h4 With active rows: .cmi-table.cmi-table-striped.cmi-table-hoverable
+
+      %table.cmi-table.cmi-table-striped.cmi-table-hoverable
+        %thead.cmi-thead
+          %tr.cmi-tr
+            %th.cmi-th Column 1
+            %th.cmi-th Column 2
+            %th.cmi-th Column 3
+            %th.cmi-th Column 4
+        %tbody.cmi-tbody
+          %tr.cmi-tr
+            %td.cmi-td Row 1 - 1
+            %td.cmi-td Row 1 - 2
+            %td.cmi-td Row 1 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr.cmi-tr-active
+            %td.cmi-td Row 2 - 1
+            %td.cmi-td Row 2 - 2
+            %td.cmi-td Row 2 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr.cmi-tr-active
+            %td.cmi-td Row 3 - 1
+            %td.cmi-td Row 3 - 2
+            %td.cmi-td Row 3 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 4 - 1
+            %td.cmi-td Row 4 - 2
+            %td.cmi-td Row 4 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+
+  / ---------------------------------------------
+  / lists
+  .grid-row
+    .grid-col-12
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Lists
+
+      %h3.cmi-h3 Normal lists
+
+      %h4.cmi-h4 .cmi-ul and cmi-li
+
+      %ul.cmi-ul
+        %li.cmi-li Row 1
+        %li.cmi-li Row 2
+        %li.cmi-li Row 3
+
+      %h3.cmi-h3 Flex list table
+
+      %h4.cmi-h4 .cmi-flex-list-table and .cmi-ul and cmi-li
+
+      .cmi-flex-list-table
+        %ul.cmi-ul.cmi-flex-list-table-headline
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+        %ul.cmi-ul
+          %li.cmi-li Row 1 - 1
+          %li.cmi-li Row 1 - 2
+          %li.cmi-li Row 1 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul
+          %li.cmi-li Row 2 - 1
+          %li.cmi-li Row 2 - 2
+          %li.cmi-li Row 2 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul
+          %li.cmi-li Row 3 - 1
+          %li.cmi-li Row 3 - 2
+          %li.cmi-li Row 3 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+
+      %h4.cmi-h4 .cmi-flex-list-table.cmi-flex-list-table-hoverable and .cmi-ul and cmi-li
+
+      .cmi-flex-list-table.cmi-flex-list-table-hoverable
+        %ul.cmi-ul.cmi-flex-list-table-headline
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+        %ul.cmi-ul
+          %li.cmi-li Row 1 - 1
+          %li.cmi-li Row 1 - 2
+          %li.cmi-li Row 1 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul
+          %li.cmi-li Row 2 - 1
+          %li.cmi-li Row 2 - 2
+          %li.cmi-li Row 2 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul
+          %li.cmi-li Row 3 - 1
+          %li.cmi-li Row 3 - 2
+          %li.cmi-li Row 3 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+
+      %h4.cmi-h4 .cmi-flex-list-table.cmi-flex-list-table-striped.cmi-flex-list-table-hoverable and .cmi-ul and cmi-li
+
+      .cmi-flex-list-table.cmi-flex-list-table-striped.cmi-flex-list-table-hoverable
+        %ul.cmi-ul.cmi-flex-list-table-headline
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+        %ul.cmi-ul
+          %li.cmi-li Row 1 - 1
+          %li.cmi-li Row 1 - 2
+          %li.cmi-li Row 1 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul
+          %li.cmi-li Row 2 - 1
+          %li.cmi-li Row 2 - 2
+          %li.cmi-li Row 2 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul
+          %li.cmi-li Row 3 - 1
+          %li.cmi-li Row 3 - 2
+          %li.cmi-li Row 3 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+
+      %h4.cmi-h4 With active rows: .cmi-flex-list-table.cmi-flex-list-table-striped and .cmi-ul and cmi-li
+
+      .cmi-flex-list-table.cmi-flex-list-table-striped
+        %ul.cmi-ul.cmi-flex-list-table-headline
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+        %ul.cmi-ul.cmi-flex-list-table-active
+          %li.cmi-li Row 1 - 1
+          %li.cmi-li Row 1 - 2
+          %li.cmi-li Row 1 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul.cmi-flex-list-table-active
+          %li.cmi-li Row 2 - 1
+          %li.cmi-li Row 2 - 2
+          %li.cmi-li Row 2 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul
+          %li.cmi-li Row 3 - 1
+          %li.cmi-li Row 3 - 2
+          %li.cmi-li Row 3 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+
+      %h4.cmi-h4 .cmi-flex-list-table.cmi-flex-list-table-striped.cmi-flex-list-table-hoverable and .cmi-ul and cmi-li
+
+      .cmi-flex-list-table.cmi-flex-list-table-striped.cmi-flex-list-table-hoverable
+        %ul.cmi-ul.cmi-flex-list-table-headline
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+        %ul.cmi-ul
+          %li.cmi-li Row 1 - 1
+          %li.cmi-li Row 1 - 2
+          %li.cmi-li Row 1 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul.cmi-flex-list-table-active
+          %li.cmi-li Row 2 - 1
+          %li.cmi-li Row 2 - 2
+          %li.cmi-li Row 2 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul.cmi-flex-list-table-active
+          %li.cmi-li Row 3 - 1
+          %li.cmi-li Row 3 - 2
+          %li.cmi-li Row 3 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+
+
 
   / ---------------------------------------------
   / modal
@@ -247,25 +601,25 @@
                     %header.cmi-header
                       .cmi-flex-modal-header-inside
                         .cmi-pull-left
-                          %a.cmi-flex-modal-back.cmi-btn.ripples{ href: '#' }
-                            %i.mdi-navigation-arrow-back
+                          %a.cmi-flex-modal-back.cmi-btn.cmi-ripples{ href: '#' }
+                            %i.cmi-i.mdi.mdi-chevron-double-left
                         .cmi-pull-right
-                          %a.cmi-flex-modal-close.cmi-btn.ripples{ href: '#' }
-                            %i.mdi-navigation-close
+                          %a.cmi-flex-modal-close.cmi-btn.cmi-ripples{ href: '#' }
+                            %i.cmi-i.mdi.mdi-close
                         %h1.cmi-h1 Modal
 
                     %main.cmi-main
                       .cmi-flex-modal-main-inside
-                        %aside
+                        %aside.cmi-aside
                           %p.cmi-p My Sidebar
-                        %section
+                        %section.cmi-section
                           %p.cmi-p My Content
 
                     %footer.cmi-footer
                       .cmi-flex-modal-footer-inside
                         .cmi-pull-left
-                          %a.cmi-flex-modal-back.cmi-btn.ripples{ href: '#' }
-                            %i.cmi-i.mdi-navigation-arrow-back
+                          %a.cmi-flex-modal-back.cmi-btn.cmi-ripples{ href: '#' }
+                            %i.cmi-i.cmi-i.mdi.mdi-chevron-double-left
                         .cmi-pull-right
                           %a.cmi-flex-modal-close.cmi-btn.cmi-btn-default.ripples.ripples-dark{ href: '#' }
                             Close
@@ -292,11 +646,11 @@
       %header.cmi-header
         .cmi-flex-modal-header-inside
           .cmi-pull-left
-            %a.cmi-flex-modal-back.cmi-btn.ripples{ href: '#' }
-              %i.mdi-navigation-arrow-back
+            %a.cmi-flex-modal-back.cmi-btn.cmi-ripples{ href: '#' }
+              %i.cmi-i.mdi.mdi-chevron-double-left
           .cmi-pull-right
-            %a.cmi-flex-modal-close.cmi-btn.ripples{ href: '#' }
-              %i.mdi-navigation-close
+            %a.cmi-flex-modal-close.cmi-btn.cmi-ripples{ href: '#' }
+              %i.cmi-i.mdi.mdi-close
           %h1.cmi-h1 Modal
 
       %main.cmi-main
@@ -320,8 +674,8 @@
       %footer.cmi-footer
         .cmi-flex-modal-footer-inside
           .cmi-pull-left
-            %a.cmi-flex-modal-back.cmi-btn.ripples{ href: '#' }
-              %i.cmi-i.mdi-navigation-arrow-back
+            %a.cmi-flex-modal-back.cmi-btn.cmi-ripples{ href: '#' }
+              %i.cmi-i.cmi-i.mdi.mdi-chevron-double-left
           .cmi-pull-right
             %a.cmi-flex-modal-close.cmi-btn.cmi-btn-default.ripples.ripples-dark{ href: '#' }
               Close
