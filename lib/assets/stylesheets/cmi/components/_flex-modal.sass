@@ -2,6 +2,17 @@ body.cmi-flex-modal-open
   overflow: hidden
 
 // base modal structure
+.cmi-flex-modal,
+.cmi-flex-modal-dialog,
+.cmi-flex-modal-dialog-inner,
+.cmi-flex-modal-dialog > header.cmi-header,
+.cmi-flex-modal-dialog > main.cmi-main,
+.cmi-flex-modal-dialog > footer.cmi-footer
+.cmi-flex-modal-dialog-inner > header.cmi-header,
+.cmi-flex-modal-dialog-inner > main.cmi-main,
+.cmi-flex-modal-dialog-inner > footer.cmi-footer
+  +box-sizing(border-box)
+
 .cmi-flex-modal
   +position(fixed, 0 0 0 0)
   +backface-visibility(hidden)
@@ -153,6 +164,8 @@ body.cmi-flex-modal-open
       background-color: darken($modal-header-bgcolor, 5%)
       i.cmi-i
         color: #fff
+  .cmi-btn.cmi-flex-modal-back
+    margin-right: 8px
 
 .cmi-flex-modal-footer-inside
   position: relative

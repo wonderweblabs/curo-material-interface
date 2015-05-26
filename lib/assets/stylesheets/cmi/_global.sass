@@ -3,7 +3,7 @@
   font-size: 16px
   font-size: 1rem
   line-height: 1.4
-  box-sizing: border-box
+  +box-sizing(border-box)
 
 *[class^="cmi-"]
   +selection
@@ -23,7 +23,10 @@ input.cmi-input,
 label.cmi-label,
 textarea.cmi-textarea,
 select.cmi-select
-  box-sizing: border-box
+  +box-sizing(border-box)
+
+.cmi-clearfix
+  +clearfix
 
 hr.cmi-hr
   display: block
@@ -58,15 +61,11 @@ table.cmi-table
 thead.cmi-thead
   border-bottom: 1px solid $color-table-border
 td.cmi-td, th.cmi-th
-  padding: 15px 5px
+  padding: 5px 15px
   display: table-cell
   text-align: left
   vertical-align: middle
-  background-color: #fff
-  +cmi-border-radius(2px)
-tr.cmi-tr:nth-child(even)
-  td.cmi-td
-    background-color: #f9f9f9
+  background: transparent
 
 .cmi-pull-right
   position: relative
