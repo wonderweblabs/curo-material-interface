@@ -597,34 +597,32 @@
             :preserve
               .cmi.cmi-flex-modal
                 .cmi-flex-modal-dialog
-                  [.cmi-flex-modal-dialog-inner] // optionally if 2nd container is necessary
-                    %header.cmi-header
-                      .cmi-flex-modal-header-inside
-                        .cmi-pull-left
-                          %a.cmi-flex-modal-back.cmi-btn.cmi-ripples{ href: '#' }
-                            %i.cmi-i.mdi.mdi-chevron-double-left
-                        .cmi-pull-right
-                          %a.cmi-flex-modal-close.cmi-btn.cmi-ripples{ href: '#' }
-                            %i.cmi-i.mdi.mdi-close
-                        %h1.cmi-h1 Modal
+                  %header.cmi-header
+                    .cmi-flex-modal-header-inside
+                      .cmi-pull-left
+                        %a.cmi-flex-modal-back.cmi-btn.cmi-ripples{ href: '#' }
+                          %i.cmi-i.mdi.mdi-chevron-double-left
+                      .cmi-pull-right
+                        %a.cmi-flex-modal-close.cmi-btn.cmi-ripples{ href: '#' }
+                          %i.cmi-i.mdi.mdi-close
+                      %h1.cmi-h1 Modal
 
-                    %main.cmi-main
-                      .cmi-flex-modal-main-inside
-                        %aside.cmi-aside
-                          %p.cmi-p My Sidebar
-                        %section.cmi-section
-                          %p.cmi-p My Content
+                  %main.cmi-main
+                    %aside.cmi-aside
+                      %p.cmi-p My Sidebar
+                    %section.cmi-section
+                      %p.cmi-p My Content
 
-                    %footer.cmi-footer
-                      .cmi-flex-modal-footer-inside
-                        .cmi-pull-left
-                          %a.cmi-flex-modal-back.cmi-btn.cmi-ripples{ href: '#' }
-                            %i.cmi-i.cmi-i.mdi.mdi-chevron-double-left
-                        .cmi-pull-right
-                          %a.cmi-flex-modal-close.cmi-btn.cmi-btn-default.ripples.ripples-dark{ href: '#' }
-                            Close
-                          %a.cmi-flex-modal-save.cmi-btn.cmi-btn.cmi-btn-raised.cmi-btn-primary.ripples{ href: '#' }
-                            Save
+                  %footer.cmi-footer
+                    .cmi-flex-modal-footer-inside
+                      .cmi-pull-left
+                        %a.cmi-flex-modal-back.cmi-btn.cmi-ripples{ href: '#' }
+                          %i.cmi-i.cmi-i.mdi.mdi-chevron-double-left
+                      .cmi-pull-right
+                        %a.cmi-flex-modal-close.cmi-btn.cmi-btn-default.ripples.ripples-dark{ href: '#' }
+                          Close
+                        %a.cmi-flex-modal-save.cmi-btn.cmi-btn.cmi-btn-raised.cmi-btn-primary.ripples{ href: '#' }
+                          Save
 
           %hr.cmi-hr/
           %p.cmi-p
@@ -642,43 +640,41 @@
 / -- flex modal
 .cmi.cmi-flex-modal#cmi-example-modal{ style: 'display: none;' }
   .cmi-flex-modal-dialog
-    .cmi-flex-modal-dialog-inner
-      %header.cmi-header
-        .cmi-flex-modal-header-inside
-          .cmi-pull-left
-            %a.cmi-flex-modal-back.cmi-btn.cmi-ripples{ href: '#' }
-              %i.cmi-i.mdi.mdi-chevron-double-left
-          .cmi-pull-right
-            %a.cmi-flex-modal-close.cmi-btn.cmi-ripples{ href: '#' }
-              %i.cmi-i.mdi.mdi-close
-          %h1.cmi-h1 Modal
+    %header.cmi-header
+      .cmi-flex-modal-header-inside
+        .cmi-pull-left
+          %a.cmi-flex-modal-back.cmi-btn.cmi-ripples{ href: '#' }
+            %i.cmi-i.mdi.mdi-chevron-double-left
+        .cmi-pull-right
+          %a.cmi-flex-modal-close.cmi-btn.cmi-ripples{ href: '#' }
+            %i.cmi-i.mdi.mdi-close
+        %h1.cmi-h1 Modal
 
-      %main.cmi-main
-        .cmi-flex-modal-main-inside
-          %aside.cmi-aside
-            %p.cmi-p My Sidebar
-            %p.cmi-p
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
-            %p.cmi-p
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
-          %section.cmi-section
-            %p.cmi-p My Content
-            %p.cmi-p
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
-            %p.cmi-p
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
-            %p.cmi-p
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
-            %p.cmi-p
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
-      %footer.cmi-footer
-        .cmi-flex-modal-footer-inside
-          .cmi-pull-left
-            %a.cmi-flex-modal-back.cmi-btn.cmi-ripples{ href: '#' }
-              %i.cmi-i.cmi-i.mdi.mdi-chevron-double-left
-          .cmi-pull-right
-            %a.cmi-flex-modal-close.cmi-btn.cmi-btn-default.ripples.ripples-dark{ href: '#' }
-              Close
-            %a.cmi-flex-modal-save.cmi-btn.cmi-btn.cmi-btn-raised.cmi-btn-primary.ripples{ href: '#' }
-              Save
+    %main.cmi-main
+      %aside.cmi-aside
+        %p.cmi-p My Sidebar
+        %p.cmi-p
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+        %p.cmi-p
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+      %section.cmi-section
+        %p.cmi-p My Content
+        %p.cmi-p
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+        %p.cmi-p
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+        %p.cmi-p
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+        %p.cmi-p
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+    %footer.cmi-footer
+      .cmi-flex-modal-footer-inside
+        .cmi-pull-left
+          %a.cmi-flex-modal-back.cmi-btn.cmi-ripples{ href: '#' }
+            %i.cmi-i.cmi-i.mdi.mdi-chevron-double-left
+        .cmi-pull-right
+          %a.cmi-flex-modal-close.cmi-btn.cmi-btn-default.ripples.ripples-dark{ href: '#' }
+            Close
+          %a.cmi-flex-modal-save.cmi-btn.cmi-btn.cmi-btn-raised.cmi-btn-primary.ripples{ href: '#' }
+            Save
 

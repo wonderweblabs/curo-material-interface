@@ -1,0 +1,21 @@
+.cmi-flex-modal-dialog
+  > main.cmi-main
+    display: block
+    height: auto
+    max-height: none
+    margin: 0
+    padding: 0
+    > aside.cmi-aside,
+    > section.cmi-section
+      display: block
+      overflow: auto
+      height: auto
+      -webkit-overflow-scrolling: touch
+      -ms-overflow-style: none
+    > aside.cmi-aside
+      position: absolute
+      width: $modal-sidebar-width
+    > section.cmi-section
+      position: relative
+      margin-left: $modal-sidebar-width
+

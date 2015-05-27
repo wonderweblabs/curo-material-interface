@@ -22,29 +22,24 @@ body.cmi-flex-modal-open
   z-index: $modal-z-index
   background-color: $modal-backdrop-color
 
-.cmi-flex-modal-dialog,
-.cmi-flex-modal-dialog-inner
-  overflow: hidden
-  z-index: 0
-  margin: 0
-  padding: 0
-  outline: 0
+.cmi-flex-modal-dialog
   +display(flex)
   +flex-direction(column)
   +flex-wrap(nowrap)
   +align-items(stretch)
   +cmi-border-radius(3px)
+  overflow: hidden
+  z-index: 0
+  margin: 0
+  padding: 0
+  outline: 0
 
 .cmi-flex-modal-dialog
   +position(absolute, 5% 5% auto 5%)
   max-height: 90%
   @extend .cmi-z-depth-5
 
-.cmi-flex-modal-dialog-inner
-  position: relative
-
-.cmi-flex-modal-dialog,
-.cmi-flex-modal-dialog-inner
+.cmi-flex-modal-dialog
   > header.cmi-header,
   > main.cmi-main,
   > footer.cmi-footer
@@ -52,53 +47,63 @@ body.cmi-flex-modal-open
 
   > header.cmi-header,
   > footer.cmi-footer
-    overflow: hidden
-    z-index: 10
     +display(flex)
     +flex-shrink(0)
+    overflow: hidden
+    z-index: 10
 
   > header.cmi-header
+    +border-top-radius(3px)
     height: $modal-header-height
     background-color: $modal-header-bgcolor
-    +border-top-radius(3px)
 
   > main.cmi-main
+    +display(flex)
+    +flex-direction(row)
+    +flex-shrink(1)
+    +backface-visibility(hidden)
+    +flex-wrap(nowrap)
+    display: -ms-flexbox
+    display: ms-flexbox
+    -ms-flex-direction: row
+    -ms-flex-pack: justify
+    -ms-flex-align: stretch
+    -ms-flex-line-pack: stretch
     overflow: scroll
     overflow-x: hidden
     overflow-y: scroll
     z-index: 1
+    width: 100%
+    max-height: 100vh
+    margin-top: -$modal-header-height
+    padding-top: $modal-header-height
+    margin-bottom: -$modal-footer-height
+    padding-bottom: $modal-footer-height - 1px
     background-color: $modal-main-bgcolor
-    +display(flex)
-    +flex-direction(column)
-    +flex-shrink(1)
+    will-change: overflow
 
   > footer.cmi-footer
+    +border-bottom-radius(3px)
     height: $modal-footer-height
     background-color: $modal-footer-bgcolor
-    +border-bottom-radius(3px)
 
-.cmi-flex-modal-main-inside
-  position: relative
-  height: auto
-  display: -webkit-box
-  +display(flex)
-  +flex-direction(row)
-  +flex-wrap(nowrap)
-  +flex-grow(1)
-  +flex-shrink(0)
-  +align-items(stretch)
+  > main.cmi-main
+    > aside.cmi-aside,
+    > section.cmi-section
+      position: relative
+      overflow: auto
+      height: auto
+      -webkit-overflow-scrolling: touch
+      -ms-overflow-style: none
 
-  > aside.cmi-aside,
-  > section.cmi-section
-    position: relative
+    > aside.cmi-aside
+      +flex-grow(0)
+      width: $modal-sidebar-width
+      min-width: $modal-sidebar-width
+      background-color: $modal-sidebar-bgcolor
 
-  > aside.cmi-aside
-    width: $modal-sidebar-width
-    min-width: $modal-sidebar-width
-    background-color: $modal-sidebar-bgcolor
-    +flex-grow(0)
-  > .cmi-section
-    +flex-grow(1)
+    > .cmi-section
+      +flex-grow(1)
 
 // modal additional content styling
 .cmi-flex-modal-dialog,
@@ -191,7 +196,8 @@ ul.cmi-flex-modal-aside-tab-list
   padding: 0
   list-style: none
   li.cmi-li
-    margin-bottom: 4px
+    position: relative
+    overflow: hidden
   a.cmi-a
     position: relative
     display: block
