@@ -1,14 +1,17 @@
 .grid-container
   +outer-container
   +box-sizing(border-box)
+  position: relative
 
 .grid-row
   +row
   +box-sizing(border-box)
+  position: relative
   max-width: 980px
   margin: 0 auto
 
 [class*='grid-col-']
+  position: relative
   padding-left: modular-scale(1, 1em, $golden)
   padding-right: modular-scale(1, 1em, $golden)
   +box-sizing(border-box)
