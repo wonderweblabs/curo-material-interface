@@ -1,22 +1,4 @@
 .cmi-text-input
-  position: relative
-  margin: 1.25rem 0 1.5rem 0
-  font-size: 14px
-  font-size: 0.875rem
-  .cmi-label
-    position: absolute
-    left: 0
-    font-size: 1em
-    color: color("grey", "lighten-1")
-    pointer-events: none
-    cursor: text
-    +transition(.2s ease-out all)
-  .cmi-input
-    font-size: 1em
-    height: 2em
-    padding: 0
-    + label, + .cmi-label
-      top: 0.3em
   .cmi-textarea
     width: 100%
     min-height: 2rem
@@ -30,71 +12,5 @@
     .cmi-textarea
       resize: none
       +transition(height 0.05s ease)
-  .cmi-hidden-textarea-reference
-    position: absolute
-    opacity: 0
-    top: 9999px
-    left: 9999px
-
-  .cmi-input,
-  .cmi-textarea
-    background-color: transparent
-    border: none
-    border-bottom: 1px solid $input-color-border
-    outline: none
-    width: 100%
-    margin: 0
-    +cmi-box-shadow(none)
-    +box-sizing(content-box)
-    +transition(border-bottom .3s ease)
-    &:focus
-      border-bottom: 1px solid $input-color-focus
-      +cmi-box-shadow(0 1px 0 0 $input-color-focus)
-
-  &.cmi-active,
-  .cmi-input:focus,
-  .cmi-textarea:focus
-    .cmi-label
-      top: 0
-      font-size: 0.8125em
-      font-weight: 300
-      +transform(translateY(-80%))
-
-  &.cmi-active
-    .cmi-label
-      color: color("grey", "base")
-
-  .cmi-input:focus
-  .cmi-textarea:focus
-    + .cmi-label
-      color: $input-color-focus
-
-  &.cmi-valid
-    .cmi-label
-      color: $input-color-valid
-    .cmi-input,
-    .cmi-textarea
-      border-bottom: 1px solid $input-color-valid
-      +cmi-box-shadow(0 1px 0 0 $input-color-valid)
-
-  &.cmi-invalid
-    .cmi-label
-      color: $input-color-invalid
-    .cmi-input,
-    .cmi-textarea
-      border-bottom: 1px solid $input-color-invalid
-      +cmi-box-shadow(0 1px 0 0 $input-color-invalid)
-
-  // hints
-  .cmi-p.cmi-hint
-    margin: 3px 0 0 0
-    font-size: 0.85em
-    font-weight: 300
-    text-align: right
-    color: color("grey", "lighten-1")
-  .cmi-p.cmi-hint.cmi-valid
-    color: $input-color-valid
-  .cmi-p.cmi-hint.cmi-invalid
-    color: $input-color-invalid
 
 

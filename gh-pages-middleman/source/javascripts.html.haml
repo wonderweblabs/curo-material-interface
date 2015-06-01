@@ -572,4 +572,87 @@
         });
       });
 
+  / ---------------------------------------------
+  / selects
+  .grid-row
+    .grid-col-12
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Selects
+  .grid-row#selects-1
+    .grid-col-6
+      %h4.cmi-h4 Default
+      .cmi-select-input
+        %label.cmi-label My select field
+        %select.cmi-select{ name: 'select1' }
+          %option{ value: '' }
+          %option{ value: 'option1' } Option 1
+          %option{ value: 'option2' } Option 2
+          %option{ value: 'option3' } Option 3
 
+      %h4.cmi-h4 No blank value
+      .cmi-select-input
+        %label.cmi-label My select field
+        %select.cmi-select{ name: 'select2' }
+          %option{ value: 'option1' } Option 1
+          %option{ value: 'option2' } Option 2
+          %option{ value: 'option3' } Option 3
+
+      %h4.cmi-h4 Selected
+      .cmi-select-input
+        %label.cmi-label My select field
+        %select.cmi-select{ name: 'select3' }
+          %option{ value: '' }
+          %option{ value: 'option1' } Option 1
+          %option{ value: 'option2', selected: true } Option 2
+          %option{ value: 'option3' } Option 3
+
+      %h4.cmi-h4 Hints
+
+      .cmi-select-input
+        %label.cmi-label My select field
+        %select.cmi-select{ name: 'select4' }
+          %option{ value: '' }
+          %option{ value: 'option1' } Option 1
+          %option{ value: 'option2' } Option 2
+          %option{ value: 'option3' } Option 3
+        %p.cmi-p.hint Some little notice as hint text.
+
+      .cmi-select-input.cmi-valid
+        %label.cmi-label My select field
+        %select.cmi-select{ name: 'select5' }
+          %option{ value: '' }
+          %option{ value: 'option1' } Option 1
+          %option{ value: 'option2' } Option 2
+          %option{ value: 'option3' } Option 3
+        %p.cmi-p.cmi-hint.cmi-valid Some little notice as hint text.
+
+      .cmi-select-input.cmi-valid
+        %label.cmi-label My select field
+        %select.cmi-select{ name: 'select6' }
+          %option{ value: '' }
+          %option{ value: 'option1' } Option 1
+          %option{ value: 'option2' } Option 2
+          %option{ value: 'option3' } Option 3
+        %p.cmi-p.cmi-hint.cmi-valid Some little notice as hint text.
+        %p.cmi-p.cmi-hint Second notice text.
+
+      .cmi-select-input.cmi-invalid
+        %label.cmi-label My select field
+        %select.cmi-select{ name: 'select7' }
+          %option{ value: '' }
+          %option{ value: 'option1' } Option 1
+          %option{ value: 'option2' } Option 2
+          %option{ value: 'option3' } Option 3
+        %p.cmi-p.cmi-hint.cmi-invalid Some little notice as hint text.
+
+
+    .grid-col-6
+      %pre.cmi-pre
+        :preserve
+          $('#selects-1 .cmi-select-input').each(function() {
+            CMI.FormComponents.Select.reset($(this));
+          });
+    :javascript
+      $('#selects-1 .cmi-select-input').each(function() {
+        CMI.FormComponents.Select.reset($(this));
+      });
