@@ -111,6 +111,88 @@
 .cmi-btn.cmi-btn-block, a.cmi-btn.cmi-btn-block, button.cmi-btn.cmi-btn-block
   display: block
 
+// ------------------------------------
+// circle buttons
+.cmi-btn.cmi-btn-circle
+  +cmi-border-radius(25px)
+  +clearfix
+  display: inline-block
+  min-width: 50px
+  height: 50px
+  padding: 0
+  text-align: left
+  i,
+  .cmi-btn-circle-slide-content
+    position: relative
+    display: block
+    white-space: nowrap
+  i
+    float: left
+    padding: 15px
+    font-size: 19px
+  .cmi-btn-circle-slide-content
+    overflow: hidden
+    max-width: 0px
+    margin-right: 0px
+    padding: 18px 0
+    float: right
+    font-size: 14px
+    line-height: 1
+    +transition-property(margin-right max-width)
+    +transition-duration(.25s)
+    +transition-timing-function(ease)
+    +transition-delay(.3s)
+  &:hover
+    .cmi-btn-circle-slide-content
+      max-width: 400px
+      margin-right: 20px
+      +transition-property(margin-right max-width)
+      +transition-duration(.25s)
+      +transition-timing-function(ease)
+      +transition-delay(0s)
+
+// button small
+.cmi-btn.cmi-btn-circle.cmi-btn-small
+  +cmi-border-radius(40px / 2)
+  min-width: 40px
+  height: 40px
+  padding: 0
+  i
+    padding: 11px
+    font-size: 17px
+  .cmi-btn-circle-slide-content
+    padding: 13px 0
+    font-size: 12px
+    line-height: 14px
+
+// button large
+.cmi-btn.cmi-btn-circle.cmi-btn-large
+  +cmi-border-radius(60px / 2)
+  min-width: 60px
+  height: 60px
+  padding: 0
+  i
+    padding: 19px
+    font-size: 22px
+  .cmi-btn-circle-slide-content
+    padding: 20px 0
+    font-size: 18px
+    line-height: 20px
+
+// button grow left
+.cmi-btn.cmi-btn-circle-left
+  text-align: rught
+  i
+    float: right
+  .cmi-btn-circle-slide-content
+    margin-left: 0px
+    float: left
+    +transition-property(margin-left max-width)
+  &:hover
+    .cmi-btn-circle-slide-content
+      margin-left: 20px
+      +transition-property(margin-left max-width)
+
 
 // ------------------------------------
 // ripples
