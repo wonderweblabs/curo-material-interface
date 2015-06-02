@@ -92,6 +92,7 @@ class CMI.FormComponents.Select
     target.attr('selected', true)
 
     @_setValues()
+    @getSelect().trigger 'change'
 
     CMI.FormComponents.TextField.reset(@getInput())
 
@@ -150,7 +151,7 @@ class CMI.FormComponents.Select
 
   # @nodoc
   _bindListeners: ->
-    @getList().on "click.cmiInput#{@getName()}", 'li', $.proxy(@onListClick, @)
+    @getList().on "mousedown.cmiInput#{@getName()}", 'li', $.proxy(@onListClick, @)
 
     @getInput().on "focus.cmiInput#{@getName()}", $.proxy(@onInputFocus, @)
     @getInput().on "blur.cmiInput#{@getName()}", $.proxy(@onInputBlur, @)
@@ -158,7 +159,7 @@ class CMI.FormComponents.Select
 
   # @nodoc
   _unbindListeners: ->
-    @getList().off "click.cmiInput#{@getName()}", 'li'
+    @getList().off "mousedown.cmiInput#{@getName()}", 'li'
 
     @getInput().off "focus.cmiInput#{@getName()}"
     @getInput().off "blur.cmiInput#{@getName()}"
