@@ -110,9 +110,13 @@
 // button block
 .cmi-btn.cmi-btn-block, a.cmi-btn.cmi-btn-block, button.cmi-btn.cmi-btn-block
   display: block
+  margin-left: 0
+  margin-right: 0
+
 
 // ------------------------------------
 // circle buttons
+
 .cmi-btn.cmi-btn-circle
   +cmi-border-radius(25px)
   +clearfix
@@ -181,11 +185,11 @@
 
 // button grow left
 .cmi-btn.cmi-btn-circle-left
-  text-align: rught
+  text-align: right
   i
     float: right
   .cmi-btn-circle-slide-content
-    margin-left: 0px
+    margin-right: 0px !important
     float: left
     +transition-property(margin-left max-width)
   &:hover
