@@ -12,3 +12,11 @@ class CMI.FormSelectBehavior extends Marionette.Behavior
   onShow: ->
     @ui.selects.each ->
       CMI.FormComponents.Select.reset($(this))
+
+  #
+  # To trigger a refresh, call triggerMethod('cmi:select:refresh') on
+  # the view implementing the behavior.
+  #
+  onCmiSelectRefresh: ->
+    @ui.selects.each ->
+      CMI.FormComponents.Select.reset($(this))
