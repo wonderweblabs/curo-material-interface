@@ -54,6 +54,12 @@ class CMI.FormComponents.Select
     @_prepareDom()
 
   close: ->
+    return unless @domElement.hasClass 'cmi-select-open'
+
+    @domElement.removeClass 'cmi-select-open'
+    @_open = false
+
+    CMI.FormComponents.TextField.reset(@getInput())
 
   select: (value) ->
 
@@ -70,16 +76,21 @@ class CMI.FormComponents.Select
     @getSelect().attr 'name'
 
 
+  onInputClick: ->
+    @domElement.addClass 'cmi-select-open'
+    @_open = true
+
   onInputFocus: ->
     @domElement.addClass 'cmi-select-open'
     @_open = true
 
   onInputBlur: (event) ->
-    if @domElement.hasClass 'cmi-select-open'
-      setTimeout =>
-        @domElement.removeClass 'cmi-select-open'
-        @_open = false
-      , 100
+    @close()
+
+    setTimeout =>
+      CMI.FormComponents.TextField.reset(@getInput())
+    , 50
+
 
   onListClick: (event) ->
     event.preventDefault()
@@ -94,7 +105,7 @@ class CMI.FormComponents.Select
     @_setValues()
     @getSelect().trigger 'change'
 
-    CMI.FormComponents.TextField.reset(@getInput())
+    @close()
 
 
   # ---------------------------------------------
@@ -154,6 +165,7 @@ class CMI.FormComponents.Select
     @getList().on "mousedown.cmiInput#{@getName()}", 'li', $.proxy(@onListClick, @)
 
     @getInput().on "focus.cmiInput#{@getName()}", $.proxy(@onInputFocus, @)
+    @getInput().on "click.cmiInput#{@getName()}", $.proxy(@onInputClick, @)
     @getInput().on "blur.cmiInput#{@getName()}", $.proxy(@onInputBlur, @)
 
 
