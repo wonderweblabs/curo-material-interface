@@ -1,0 +1,99 @@
+.cmi-card,
+.cmi-card-header,
+.cmi-card-image,
+.cmi-card-content,
+.cmi-card-actions
+  +box-sizing(border-box)
+  position: relative
+  display: block
+
+.cmi-card
+  +cmi-border-radius(2px)
+  +cmi-box-shadow(0 2px 5px 0 rgba(#000, 0.16), 0 2px 10px 0 rgba(#000, 0.12))
+  overflow: hidden
+  margin: 0.5rem 0 1rem 0
+  background-color: #fff
+
+.cmi-card-header,
+.cmi-card-content
+  padding: 16px
+
+.cmi-card-header
+  +clearfix
+  .cmi-card-header-image
+    +cmi-border-radius(20px)
+    position: relative
+    overflow: hidden
+    float: left
+    width: 40px
+    height: 40px
+    margin-right: 16px
+    img
+      width: 40px
+      height: auto
+  .cmi-card-header-headline
+    margin: 0 0 3px 0
+    font-size: 18px
+    line-height: 1.2
+  .cmi-card-header-sub-headline
+    margin: 0
+    font-size: 14px
+    line-height: 1.2
+    color: color('grey', 'base')
+
+.cmi-card-image
+  img.cmi-img
+    width: 100%
+    height: auto
+  span.cmi-span
+    +position(absolute, auto auto 0 0)
+    padding: 20px
+    font-size: 24px
+    font-weight: 300
+    text-shadow: 0 0 4px rgba(#000, 0.4)
+    color: #fff
+
+.cmi-card-content
+  padding-top: 24px
+  *:first-child
+    margin-top: 0px
+  *:last-child
+    margin-bottom: 0px
+
+.cmi-card-actions
+  padding: 8px
+  a, .cmi-btn
+    min-width: 0
+    margin-top: 0
+    margin-bottom: 0
+    padding: $button-padding-vertical 8px
+    color: $color-primary
+    &:hover
+      color: lighten($color-primary, 15%)
+      background-color: transparent
+  *:first-child
+    margin-left: 0px
+  *:last-child
+    margin-right: 0px
+
+.cmi-card-separator
+  height: 0px
+  margin: 0
+  padding: 0
+  border-top: 1px solid rgba(#000, 0.05)
+  border-bottom: 1px solid rgba(#fff, 0.15)
+
+.cmi-card-primary
+  color: #fff
+  background-color: $color-primary
+  a, .cmi-btn
+    color: color('grey', 'darken-3')
+    &:hover
+      color: color('grey', 'darken-1')
+  .cmi-card-header,
+  .cmi-card-content
+    color: #fff
+
+
+
+
