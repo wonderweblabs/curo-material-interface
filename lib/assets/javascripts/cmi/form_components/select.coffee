@@ -106,6 +106,7 @@ class CMI.FormComponents.Select
     @getSelect().trigger 'change'
 
     @close()
+    @getInput().stop().delay(250).blur()
 
 
   # ---------------------------------------------
