@@ -1,3 +1,14 @@
+.cmi-loading-indicator,
+.cmi-loading-indicator,
+.cmi-loading-indicator .cmi-loading-indicator-inside,
+.cmi-loading-indicator .cmi-circular,
+.cmi-loading-indicator .cmi-path
+  +transform-style(preserve-3d)
+  +transform(translateZ(0))
+  +animation-fill-mode(none)
+  +perspective(1000)
+  +backface-visibility(hidden)
+
 .cmi-loading-indicator
   +position(absolute, 0 0 0 0)
   +transition(opacity .4s linear)
@@ -6,6 +17,10 @@
   padding: 0
   opacity: 0
   pointer-events: none
+  -webkit-backface-visibility: hidden
+  -webkit-perspective: 1000
+  backface-visibility: hidden
+  perspective: 1000
   &.cmi-loading-indicator-background-dark
     background-color: rgba(#000, 0.7)
   &.cmi-loading-indicator-background-light
@@ -14,6 +29,10 @@
     +transition(opacity .4s linear)
     opacity: 1
     pointer-events: all
+    .cmi-circular
+      +animation(cmiLoadingRotate 2s linear infinite)
+    .cmi-path
+      +animation(cmiLoadingDash 1.5s ease-in-out infinite)
   .cmi-loading-indicator-inside
     position: absolute
     width: $loading-diameter
@@ -26,7 +45,6 @@
     position: relative
     height: $loading-diameter
     width: $loading-diameter
-    +animation(cmiLoadingRotate 2s linear infinite)
     pointer-events: none
   .cmi-path
     stroke-dasharray: 1, 200
@@ -34,7 +52,6 @@
     stroke-linecap: round
     stroke: $loading-color
     pointer-events: none
-    +animation(cmiLoadingDash 1.5s ease-in-out infinite)
 
 +keyframes(cmiLoadingRotate)
   100%
