@@ -149,7 +149,7 @@ class CMI.FormComponents.Select
     selected = $('option:selected', @getSelect())
     return if selected.length <= 0
 
-    content = selected.html()
+    content = selected.text()
     value = selected.val()
 
     if selected.data('cmi-input-content') && selected.data('cmi-input-content').length > 0
