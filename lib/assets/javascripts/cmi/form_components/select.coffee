@@ -100,13 +100,14 @@ class CMI.FormComponents.Select
     Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
 
   getViewportScrollY: ->
-    window.scrollY
+    window.pageYOffset
 
   updateDropdownListPosition: ->
     offset = @getInput().offset()
     width = @getInput().width()
 
     # reset
+    @getDropdownList().removeClass 'cmi-select-list-scroll'
     @getDropdownList().css
       height: 'auto'
       top: 0
@@ -129,13 +130,14 @@ class CMI.FormComponents.Select
       pos.top = @getViewportScrollY()
 
     # fix if bottom is outside viewport
-    if pos.top + dropdownHeight > @getDocumentHeight()
-      pos.bottom = window.scrollY * -1
+    if pos.top + dropdownHeight > @getViewportScrollY() + @getViewportHeight()
+      pos.bottom = @getViewportScrollY() * -1
       pos.top = null if pos.top > @getViewportScrollY()
 
     # fix if top is outside viewport
     if pos.top == null && dropdownHeight > @getViewportHeight()
       pos.top = @getViewportScrollY()
+      @getDropdownList().addClass 'cmi-select-list-scroll'
 
     # set position
     pos.top = if pos.top == null then 'auto' else "#{pos.top}px"
@@ -219,7 +221,7 @@ class CMI.FormComponents.Select
       content = '&nbsp;' if content.length <= 0
       options.push "<li data-cmi-value='#{$(option).val()}'>#{content}</li>"
 
-    dropdownList = $("<ul class='cmi-select-list'>#{options.join('')}</ul>")
+    dropdownList = $("<div class='cmi-select-list'><ul>#{options.join('')}</ul></div>")
 
     @domElement.data 'cmi-select-dropdown-list', dropdownList
     $('body').append dropdownList

@@ -17,16 +17,28 @@
     cursor: pointer
 
 .cmi-select-list
+  +box-sizing(border-box)
   +position(absolute, 0 auto auto 0)
   +cmi-box-shadow(0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12))
   display: none
-  overflow: scroll
+  overflow: none
+  white-space: normal
   z-index: 800
-  list-style: none
   margin: 16px 0 16px 0
   padding: 0
   background-color: #fff
   pointer-events: none
+  &.cmi-select-list-scroll
+    overflow: auto
+    overflow-y: scroll
+  ul
+    +box-sizing(border-box)
+    margin: 0
+    padding: 0
+    list-style: none
+    background-color: #fff
+    pointer-events: none
+    white-space: normal
   li
     +user-select(none)
     padding: 10px 15px
@@ -51,7 +63,7 @@
 .cmi-select-list.cmi-select-open
   display: block
   pointer-events: all
-  li
+  ul, li
     cursor: pointer
     pointer-events: all
 
