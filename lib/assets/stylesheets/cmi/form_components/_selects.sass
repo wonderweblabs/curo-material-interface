@@ -17,12 +17,13 @@
     cursor: pointer
 
 .cmi-select-list
-  +position(absolute, 0 0 auto 0)
+  +position(absolute, 0 auto auto 0)
   +cmi-box-shadow(0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12))
   display: none
+  overflow: scroll
   z-index: 800
   list-style: none
-  margin: -11px 0 16px 0
+  margin: 16px 0 16px 0
   padding: 0
   background-color: #fff
   pointer-events: none
@@ -38,18 +39,20 @@
     &.cmi-select-selected
       background-color: $color-primary
 
-
-
 .cmi-select-select-hidden
   display: none
 
+.cmi-select-list-open
+  overflow: hidden
+
 // open state
 .cmi-select-input.cmi-select-open
-  .cmi-select-list
-    display: block
+
+.cmi-select-list.cmi-select-open
+  display: block
+  pointer-events: all
+  li
+    cursor: pointer
     pointer-events: all
-    li
-      cursor: pointer
-      pointer-events: all
 
 

@@ -588,6 +588,9 @@
           %option{ value: 'option1' } Option 1
           %option{ value: 'option2' } Option 2
           %option{ value: 'option3' } Option 3
+          %option{ value: 'option4' } Option 4
+          %option{ value: 'option5' } Option 5
+          %option{ value: 'option6' } Option 6
 
       %h4.cmi-h4 No blank value
       .cmi-select-input
@@ -615,7 +618,7 @@
           %option{ value: 'option1' } Option 1
           %option{ value: 'option2' } Option 2
           %option{ value: 'option3' } Option 3
-        %p.cmi-p.hint Some little notice as hint text.
+        %p.cmi-p.cmi-hint Some little notice as hint text.
 
       .cmi-select-input.cmi-valid
         %label.cmi-label My select field
@@ -640,9 +643,11 @@
         %label.cmi-label My select field
         %select.cmi-select{ name: 'select7' }
           %option{ value: '' }
-          %option{ value: 'option1' } Option 1
-          %option{ value: 'option2' } Option 2
-          %option{ value: 'option3' } Option 3
+          - 18.times do |index|
+            - if index == 2
+              %option{ value: "option#{index}", selected: 'selected' } Option #{index}
+            - else
+              %option{ value: "option#{index}" } Option #{index}
         %p.cmi-p.cmi-hint.cmi-invalid Some little notice as hint text.
 
 

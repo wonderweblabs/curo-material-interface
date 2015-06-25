@@ -41,33 +41,48 @@ class CMI.FormComponents.Select
   # ---------------------------------------------
 
   constructor: (@domElement) ->
-    @_prepareDom()
+    @reset()
+
+  reset: ->
+    @_prepare()
 
   destroy: ->
     @_unbindListeners()
+    @_clear()
 
-    @getInput().remove()
-    @getList().remove()
-    @getSelect().removeClass 'cmi-select-select-hidden'
+  open: ->
+    return if @domElement.hasClass 'cmi-select-open'
 
-  reset: ->
-    @_prepareDom()
+    @_open = true
+
+    @domElement.addClass 'cmi-select-open'
+    @getDropdownList().addClass 'cmi-select-open'
+    $('body').addClass 'cmi-select-list-open'
+
+    $(window).on 'resize.cmiSelectOpen', $.proxy(@updateDropdownListPosition, @)
+
+    @updateDropdownListPosition()
 
   close: ->
     return unless @domElement.hasClass 'cmi-select-open'
 
-    @domElement.removeClass 'cmi-select-open'
+    $(window).off 'resize.cmiSelectOpen'
+
     @_open = false
+
+    @domElement.removeClass 'cmi-select-open'
+    @getDropdownList().removeClass 'cmi-select-open'
+    $('body').removeClass 'cmi-select-list-open'
 
     CMI.FormComponents.TextField.reset(@getInput())
 
   select: (value) ->
 
   getInput: ->
-    $('input.cmi-input', @domElement)
+    @domElement.data('cmi-select-input') || $('<div></div>')
 
-  getList: ->
-    $('ul.cmi-select-list', @domElement)
+  getDropdownList: ->
+    @domElement.data('cmi-select-dropdown-list') || $('<div></div>')
 
   getSelect: ->
     $('select', @domElement)
@@ -75,14 +90,63 @@ class CMI.FormComponents.Select
   getName: ->
     @getSelect().attr 'name'
 
+  getDocumentHeight: ->
+    html = document.documentElement
+    body = document.body
+
+    Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight )
+
+  getViewportHeight: ->
+    Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+
+  getViewportScrollY: ->
+    window.scrollY
+
+  updateDropdownListPosition: ->
+    offset = @getInput().offset()
+    width = @getInput().width()
+
+    # reset
+    @getDropdownList().css
+      height: 'auto'
+      top: 0
+      bottom: 'auto'
+      width: "#{width}px"
+      left: "#{offset.left}px"
+
+    # set the position
+    dropdownHeight = @getDropdownList().outerHeight(true)
+    dropdownMarginTop = parseInt(@getDropdownList().css('margin-top'))
+    pos = { bottom: null, top: offset.top - dropdownMarginTop }
+
+    # adjust position for selected element
+    selected = $('.cmi-select-selected', @getDropdownList()).first()
+    selectedOffset = selected.offset().top - selected.offsetParent().offset().top
+    pos.top = pos.top - selectedOffset
+
+    # fix if top is outside viewport
+    if pos.top < @getViewportScrollY()
+      pos.top = @getViewportScrollY()
+
+    # fix if bottom is outside viewport
+    if pos.top + dropdownHeight > @getDocumentHeight()
+      pos.bottom = window.scrollY * -1
+      pos.top = null if pos.top > @getViewportScrollY()
+
+    # fix if top is outside viewport
+    if pos.top == null && dropdownHeight > @getViewportHeight()
+      pos.top = @getViewportScrollY()
+
+    # set position
+    pos.top = if pos.top == null then 'auto' else "#{pos.top}px"
+    pos.bottom = if pos.bottom == null then 'auto' else "#{pos.bottom}px"
+    @getDropdownList().css pos
 
   onInputClick: ->
-    @domElement.addClass 'cmi-select-open'
-    @_open = true
+    @open()
 
   onInputFocus: ->
-    @domElement.addClass 'cmi-select-open'
-    @_open = true
+    @open()
 
   onInputBlur: (event) ->
     @close()
@@ -90,7 +154,6 @@ class CMI.FormComponents.Select
     setTimeout =>
       CMI.FormComponents.TextField.reset(@getInput())
     , 50
-
 
   onListClick: (event) ->
     event.preventDefault()
@@ -113,9 +176,12 @@ class CMI.FormComponents.Select
   # private methods
 
   # @nodoc
-  _prepareDom: ->
-    @_addInput()
-    @_addList()
+  _prepare: ->
+    return unless @domElement instanceof jQuery
+    return unless @domElement.length > 0
+
+    @_initializeInput()
+    @_initializeDropdownList()
     @_hideSelect()
     @_setValues()
     @_bindListeners()
@@ -123,26 +189,55 @@ class CMI.FormComponents.Select
     CMI.FormComponents.TextField.reset(@getInput())
 
   # @nodoc
-  _addInput: ->
-    return if @getInput().length > 0
+  _clear: ->
+    return unless @domElement instanceof jQuery
+    return unless @domElement.length > 0
 
-    @domElement.prepend $("<input class='cmi-input' readonly='true' />")
+    @_clearInput()
+    @_clearDropdownList()
+    @_showSelect()
 
   # @nodoc
-  _addList: ->
-    return if @getList().length > 0
+  _initializeInput: ->
+    input = $("<input class='cmi-input' readonly='true' />")
 
+    @domElement.data 'cmi-select-input', input
+    @domElement.prepend input
+
+  # @nodoc
+  _clearInput: ->
+    return unless @domElement.data('cmi-select-input') instanceof jQuery
+
+    @domElement.data('cmi-select-input').remove()
+    @domElement.data 'cmi-select-input', null
+
+  # @nodoc
+  _initializeDropdownList: ->
     options = []
     for option in $('option', @getSelect())
       content = $(option).html()
       content = '&nbsp;' if content.length <= 0
       options.push "<li data-cmi-value='#{$(option).val()}'>#{content}</li>"
 
-    $("<ul class='cmi-select-list'>#{options.join('')}</ul>").insertBefore @getSelect()
+    dropdownList = $("<ul class='cmi-select-list'>#{options.join('')}</ul>")
+
+    @domElement.data 'cmi-select-dropdown-list', dropdownList
+    $('body').append dropdownList
+
+  # @nodoc
+  _clearDropdownList: ->
+    return unless @domElement.data('cmi-select-dropdown-list') instanceof jQuery
+
+    @domElement.data('cmi-select-dropdown-list').remove()
+    @domElement.data 'cmi-select-dropdown-list', null
 
   # @nodoc
   _hideSelect: ->
     @getSelect().addClass 'cmi-select-select-hidden'
+
+  # @nodoc
+  _showSelect: ->
+    @getSelect().removeClass 'cmi-select-select-hidden'
 
   # @nodoc
   _setValues: ->
@@ -157,23 +252,23 @@ class CMI.FormComponents.Select
 
     @getInput().val content
 
-    $("li", @getList()).removeClass 'cmi-select-selected'
-    $("li[data-cmi-value='#{value}']", @getList()).addClass 'cmi-select-selected'
+    $("li", @getDropdownList()).removeClass 'cmi-select-selected'
+    $("li[data-cmi-value='#{value}']", @getDropdownList()).addClass 'cmi-select-selected'
 
 
   # @nodoc
   _bindListeners: ->
-    @getList().on "mousedown.cmiInput#{@getName()}", 'li', $.proxy(@onListClick, @)
+    @getDropdownList().on "mousedown.cmiInput#{@getName()}", 'li', $.proxy(@onListClick, @)
 
     @getInput().on "focus.cmiInput#{@getName()}", $.proxy(@onInputFocus, @)
     @getInput().on "click.cmiInput#{@getName()}", $.proxy(@onInputClick, @)
     @getInput().on "blur.cmiInput#{@getName()}", $.proxy(@onInputBlur, @)
 
-
   # @nodoc
   _unbindListeners: ->
-    @getList().off "mousedown.cmiInput#{@getName()}", 'li'
+    @getDropdownList().off "mousedown.cmiInput#{@getName()}", 'li'
 
     @getInput().off "focus.cmiInput#{@getName()}"
     @getInput().off "blur.cmiInput#{@getName()}"
+
 
