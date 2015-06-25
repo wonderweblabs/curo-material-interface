@@ -15,9 +15,7 @@ class CMI.FormTextFieldBehavior extends Marionette.Behavior
     'blur @ui.inputs': 'onInputBlur'
 
   onRender: ->
-    if @ui.inputs? == true && @ui.inputs.length > 0
-      @ui.inputs.each ->
-        CMI.FormComponents.TextField.reset($(this))
+    @onCmiFormTextFieldsReset()
 
   onInputChange: (event) ->
     CMI.FormComponents.TextField.animateChange($(event.currentTarget))
@@ -27,4 +25,17 @@ class CMI.FormTextFieldBehavior extends Marionette.Behavior
 
   onInputBlur: (event) ->
     CMI.FormComponents.TextField.animateBlur($(event.currentTarget))
+
+  onCmiFormTextFieldsReset: ->
+    return unless @ui.inputs instanceof jQuery
+    return unless @ui.inputs.length > 0
+
+    _self = @
+
+    @ui.inputs.each -> _self.onCmiFormTextFieldReset($(this))
+
+  onCmiFormTextFieldReset: (domElement) ->
+    return unless domElement instanceof jQuery
+
+    CMI.FormComponents.TextField.reset(domElement)
 

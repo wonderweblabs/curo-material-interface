@@ -45,5 +45,5 @@ class CMI.FormComponents.TextField
         parentDomElement.addClass('cmi-invalid')
 
   @_getInputBoxSelector: ->
-    '.cmi-text-input'
+    '.cmi-text-input, .cmi-select-input'
 
