@@ -4,7 +4,7 @@ set :js_dir, 'gh-pages/javascripts'
 
 set :fonts_dir, 'gh-pages/fonts'
 
-set :images_dir, 'images'
+set :images_dir, 'gh-pages/images'
 
 activate :livereload
 

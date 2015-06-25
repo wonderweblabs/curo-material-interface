@@ -9,217 +9,754 @@
 .grid-container
   .grid-row
     .grid-col-12
-      %h3 Material design ui extracted from Curo CMS
-      %p
-        Most of the ui elements are to Google`s #{link_to('Material Design', 'http://www.google.com/design/spec/material-design/introduction.html', target: :blank)} concept.
-      %hr/
+      %h3.cmi-h3 Material design ui extracted from Curo CMS
+      %p.cmi-p
+        Most of the ui elements are to Google`s #{link_to('Material Design', 'http://www.google.com/design/spec/material-design/introduction.html', target: :blank, class: 'cmi-a')} concept.
+      %hr.cmi-hr/
 
   / ---------------------------------------------
   / headlines
   .grid-row
     .grid-col-6
-      %h1 Headline h1
+      %h1.cmi-h1 Headline h1
       %div{ style: 'height: 1px;' }
-      %h2 Headline h2
+      %h2.cmi-h2 Headline h2
       %div{ style: 'height: 1px;' }
-      %h3 Headline h3
+      %h3.cmi-h3 Headline h3
       %div{ style: 'height: 1px;' }
-      %h4 Headline h4
+      %h4.cmi-h4 Headline h4
       %div{ style: 'height: 1px;' }
-      %h5 Headline h5
+      %h5.cmi-h5 Headline h5
 
     .grid-col-6
-      %h1.cmi-lined
-        %span Headline h1 lined
+      %h1.cmi-h1.cmi-lined
+        %span.cmi-span Headline h1 lined
       %div{ style: 'height: 1px;' }
-      %h2.cmi-lined
-        %span Headline h2 lined
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Headline h2 lined
       %div{ style: 'height: 1px;' }
-      %h3.cmi-lined
-        %span Headline h3 lined
+      %h3.cmi-h3.cmi-lined
+        %span.cmi-span Headline h3 lined
       %div{ style: 'height: 1px;' }
-      %h4.cmi-lined
-        %span Headline h4 lined
+      %h4.cmi-h4.cmi-lined
+        %span.cmi-span Headline h4 lined
       %div{ style: 'height: 1px;' }
-      %h5.cmi-lined
-        %span Headline h5 lined
+      %h5.cmi-h5.cmi-lined
+        %span.cmi-span Headline h5 lined
 
   / ---------------------------------------------
   / line
   .grid-row
     .grid-col-12
-      %h2.cmi-lined
-        %span Line
-      %hr/
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Line
+      %hr.cmi-hr/
 
   / ---------------------------------------------
   / blockquote
   .grid-row
     .grid-col-12
-      %h2.cmi-lined
-        %span Blockquote
-      %blockquote
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Blockquote
+      %blockquote.cmi-blockquote
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habes, inquam, Cato, formam eorum, de quibus loquor, philosophorum. Cur, nisi quod turpis oratio est? Duo Reges: constructio interrete. Ergo id est convenienter naturae vivere, a natura discedere. Sed quid attinet de rebus tam apertis plura requirere? Quid, quod res alia tota est? Quae cum dixisset, finem ille.
 
   / ---------------------------------------------
   / paragraphs
   .grid-row
     .grid-col-12
-      %h2.cmi-lined
-        %span Paragraphs and sub formats
-      %p
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Paragraphs and sub formats
+      %p.cmi-p
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habes, inquam, Cato, formam eorum, de quibus loquor, philosophorum. Cur, nisi quod turpis oratio est? Duo Reges: constructio interrete. Ergo id est convenienter naturae vivere, a natura discedere. Sed quid attinet de rebus tam apertis plura requirere? Quid, quod res alia tota est? Quae cum dixisset, finem ille.
       .grid-row
         .grid-col-6
-          %h3 em
-          %p
-            %em Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          %h3 strong
-          %p
-            %strong Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          %h3 small
-          %p
-            %small Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          %h3.cmi-h3 em
+          %p.cmi-p
+            %em.cmi-em Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          %h3.cmi-h3 strong
+          %p.cmi-p
+            %strong.cmi-strong Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          %h3.cmi-h3 small
+          %p.cmi-p
+            %small.cmi-small Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         .grid-col-6
-          %h3 links
-          %p
-            %small #{link_to('Lorem ipsum dolor', '#')} sit amet, consectetur adipiscing elit.
-          %h3 .text-light
-          %p.text-light
+          %h3.cmi-h3 links
+          %p.cmi-p
+            %small.cmi-small #{link_to('Lorem ipsum dolor', '#', class: 'cmi-a')} sit amet, consectetur adipiscing elit.
+          %h3.cmi-h3 .text-light
+          %p.cmi-p.cmi-text-light
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          %h3 .text-primary
-          %p.text-primary
+          %h3.cmi-h3 .text-primary
+          %p.cmi-p.cmi-text-primary
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
   / ---------------------------------------------
   / navbar
   .grid-row
     .grid-col-12
-      %h2.cmi-lined
-        %span Navbar
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Navbar
   .grid-row
     .grid-col-12
-      %h3 .cmi-navbar
+      %h3.cmi-h3 .cmi-navbar
       .cmi-navbar
-        %ul.cmi-tabs
-          %li= link_to 'Allgemein', '#general-tab'
-          %li= link_to 'Meta / SEO', '#seo-tab'
+        %ul.cmi-ul.cmi-tabs
+          %li.cmi-li= link_to 'Allgemein', '#general-tab', class: 'cmi-a'
+          %li.cmi-li= link_to 'Meta / SEO', '#seo-tab', class: 'cmi-a'
   .grid-row
     .grid-col-6
       .cmi-navbar
-        %h3 Überschrift
+        %h3.cmi-h3 Überschrift
     .grid-col-6
       %div{ style: 'width: 100%; height: 100px; background: #f0f0f0; padding: 10px' }
         .cmi-navbar
-          %h3 Überschrift
+          %h3.cmi-h3 Überschrift
   .grid-row
     .grid-col-12
-      %h3 .cmi-navbar.cmi-navbar-padding
+      %h3.cmi-h3 .cmi-navbar.cmi-navbar-padding
       %div{ style: 'width: 100%; height: 100px; background: #f0f0f0; padding: 10px' }
         .cmi-navbar.cmi-navbar-padding
           Hallo Welt
 
   .grid-row
     .grid-col-12
-      %h3 Navbar with alert
+      %h3.cmi-h3 Navbar with alert
   .grid-row
     .grid-col-6
       %div{ style: 'width: 100%; height: 170px; background: #f0f0f0; padding: 10px' }
         .cmi-navbar.cmi-navbar-padding
           Hallo Welt
         .cmi-navbar-alert
-          %p
+          %p.cmi-p
             My awesome alert message...
     .grid-col-6
       %div{ style: 'width: 100%; height: 170px; background: #fff; padding: 10px' }
         .cmi-navbar.cmi-navbar-padding
           Hallo Welt
         .cmi-navbar-alert
-          %p
+          %p.cmi-p
             My awesome alert message...
 
   .grid-row
     .grid-col-12
-      %h3 Navbar with danger alert
+      %h3.cmi-h3 Navbar with danger alert
   .grid-row
     .grid-col-6
       %div{ style: 'width: 100%; height: 170px; background: #f0f0f0; padding: 10px' }
         .cmi-navbar.cmi-navbar-padding
           Hallo Welt
         .cmi-navbar-alert.cmi-navbar-alert-danger
-          %p
+          %p.cmi-p
             My awesome alert message...
     .grid-col-6
       %div{ style: 'width: 100%; height: 170px; background: #fff; padding: 10px' }
         .cmi-navbar.cmi-navbar-padding
           Hallo Welt
         .cmi-navbar-alert.cmi-navbar-alert-danger
-          %p
+          %p.cmi-p
             My awesome alert message...
 
   / ---------------------------------------------
   / icons
   .grid-row
     .grid-col-12
-      %h2.cmi-lined
-        %span Icons
-      %p
-        See google material design icons:
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Icons
+      %p.cmi-p
+        See google material design icons with community extension:
       %ul
-        %li= link_to 'Github', 'https://github.com/google/material-design-icons', target: :blank
-        %li= link_to 'Icon-List', 'http://google.github.io/material-design-icons/', target: :blank
+        %li.cmi-li= link_to 'Material Design Icons', 'http://materialdesignicons.com/', target: :blank, class: 'cmi-a'
+
+      %i.mdi.mdi-bell
 
   / ---------------------------------------------
   / buttons
   .grid-row
     .grid-col-12
-      %h2.cmi-lined
-        %span Buttons
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Buttons
       .grid-row
         .grid-col-6
-          %h3 Flat (default)
-          %h4 .cmi-btn
+          %h3.cmi-h3 Flat (default)
+          %h5.cmi-h5 .cmi-btn
           = link_to 'Button', '#', class: 'cmi-btn', onclick: 'return false;'
-          %h4 .cmi-btn.cmi-btn-default
+          %h5.cmi-h5 .cmi-btn.cmi-btn-default
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-default', onclick: 'return false;'
-          %h4 .cmi-btn.cmi-btn-primary
+          %h5.cmi-h5 .cmi-btn.cmi-btn-primary
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-primary', onclick: 'return false;'
-          %h4 .cmi-btn.cmi-btn-default.cmi-btn-small
+          %h5.cmi-h5 .cmi-btn.cmi-btn-danger
+          = link_to 'Button', '#', class: 'cmi-btn cmi-btn-danger', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-danger-flat
+          = link_to 'Button', '#', class: 'cmi-btn cmi-btn-danger-flat', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-default.cmi-btn-small
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-default cmi-btn-small', onclick: 'return false;'
-          %h4 .cmi-btn.cmi-btn-default.cmi-btn-large
+          %h5.cmi-h5 .cmi-btn.cmi-btn-default.cmi-btn-large
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-default cmi-btn-large', onclick: 'return false;'
-          %h4 .cmi-btn.cmi-btn-default.cmi-btn-block
+          %h5.cmi-h5 .cmi-btn.cmi-btn-default.cmi-btn-block
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-default cmi-btn-block', onclick: 'return false;'
         .grid-col-6
-          %h3 Raised
-          %h4 .cmi-btn.cmi-btn-raised
+          %h3.cmi-h3 Raised
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-raised', onclick: 'return false;'
-          %h4 .cmi-btn.cmi-btn-raised.cmi-btn-default
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-default
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-default', onclick: 'return false;'
-          %h4 .cmi-btn.cmi-btn-raised.cmi-btn-primary
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-primary
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-primary', onclick: 'return false;'
-          %h4 .cmi-btn.cmi-btn-raised.cmi-btn-default.cmi-btn-small
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-danger
+          = link_to 'Button', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-danger', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-danger-flat
+          = link_to 'Button', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-danger-flat', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-default.cmi-btn-small
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-default cmi-btn-small', onclick: 'return false;'
-          %h4 .cmi-btn.cmi-btn-raised.cmi-btn-default.cmi-btn-large
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-default.cmi-btn-large
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-default cmi-btn-large', onclick: 'return false;'
-          %h4 .cmi-btn.cmi-btn-raised.cmi-btn-default.cmi-btn-block
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-default.cmi-btn-block
           = link_to 'Button', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-default cmi-btn-block', onclick: 'return false;'
+      .grid-row
+        .grid-col-6
+          %h3.cmi-h3 Button circle flat
+          %h5.cmi-h5 .cmi-btn.cmi-btn-circle
+          = link_to '<i class="mdi mdi-check"></i>', '#', class: 'cmi-btn cmi-btn-circle', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-circle.cmi-btn-default
+          = link_to '<i class="mdi mdi-check"></i>', '#', class: 'cmi-btn cmi-btn-circle cmi-btn-default', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-circle.cmi-btn-primary
+          = link_to '<i class="mdi mdi-check"></i>', '#', class: 'cmi-btn cmi-btn-circle cmi-btn-primary', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-circle.cmi-btn-danger
+          = link_to '<i class="mdi mdi-check"></i>', '#', class: 'cmi-btn cmi-btn-circle cmi-btn-danger', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-circle.cmi-btn-danger-flat
+          = link_to '<i class="mdi mdi-check"></i>', '#', class: 'cmi-btn cmi-btn-circle cmi-btn-danger-flat', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-circle.cmi-btn-default.cmi-btn-small
+          = link_to '<i class="mdi mdi-check"></i>', '#', class: 'cmi-btn cmi-btn-circle cmi-btn-default cmi-btn-small', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-circle.cmi-btn-default.cmi-btn-large
+          = link_to '<i class="mdi mdi-check"></i>', '#', class: 'cmi-btn cmi-btn-circle cmi-btn-default cmi-btn-large', onclick: 'return false;'
+        .grid-col-6
+          %h3.cmi-h3 Button circle raised
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-circle
+          = link_to '<i class="mdi mdi-check"></i>', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-circle', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-circle.cmi-btn-default
+          = link_to '<i class="mdi mdi-check"></i>', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-circle cmi-btn-default', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-circle.cmi-btn-primary
+          = link_to '<i class="mdi mdi-check"></i>', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-circle cmi-btn-primary', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-circle.cmi-btn-danger
+          = link_to '<i class="mdi mdi-check"></i>', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-circle cmi-btn-danger', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-circle.cmi-btn-danger-flat
+          = link_to '<i class="mdi mdi-check"></i>', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-circle cmi-btn-danger-flat', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-circle.cmi-btn-default.cmi-btn-small
+          = link_to '<i class="mdi mdi-check"></i>', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-circle cmi-btn-default cmi-btn-small', onclick: 'return false;'
+          %h5.cmi-h5 .cmi-btn.cmi-btn-raised.cmi-btn-circle.cmi-btn-default.cmi-btn-large
+          = link_to '<i class="mdi mdi-check"></i>', '#', class: 'cmi-btn cmi-btn-raised cmi-btn-circle cmi-btn-default cmi-btn-large', onclick: 'return false;'
+      .grid-row
+        .grid-col-6
+          %h3.cmi-h3 Button circle slide content
+          %h5.cmi-h5 .cmi-btn.cmi-btn-circle.cmi-btn-default
+          = link_to '#', class: 'cmi-btn cmi-btn-circle cmi-btn-default', onclick: 'return false;' do
+            .cmi-btn-circle-slide-content
+              My sliding content
+            %i.mdi.mdi-check
+          %h5.cmi-h5 .cmi-btn.cmi-btn-circle.cmi-btn-primary
+          = link_to '#', class: 'cmi-btn cmi-btn-circle cmi-btn-primary', onclick: 'return false;' do
+            .cmi-btn-circle-slide-content
+              My sliding content
+            %i.mdi.mdi-check
+          %h5.cmi-h5 .cmi-btn.cmi-btn-circle.cmi-btn-danger
+          = link_to '#', class: 'cmi-btn cmi-btn-circle cmi-btn-danger', onclick: 'return false;' do
+            .cmi-btn-circle-slide-content
+              My sliding content
+            %i.mdi.mdi-check
+          %h5.cmi-h5 .cmi-btn.cmi-btn-circle.cmi-btn-danger-flat
+          = link_to '#', class: 'cmi-btn cmi-btn-circle cmi-btn-danger-flat', onclick: 'return false;' do
+            .cmi-btn-circle-slide-content
+              My sliding content
+            %i.mdi.mdi-check
+          %h5.cmi-h5 .cmi-btn.cmi-btn-circle.cmi-btn-default.cmi-btn-small
+          = link_to '#', class: 'cmi-btn cmi-btn-circle cmi-btn-default cmi-btn-small', onclick: 'return false;' do
+            .cmi-btn-circle-slide-content
+              My sliding content
+            %i.mdi.mdi-check
+          %h5.cmi-h5 .cmi-btn.cmi-btn-circle.cmi-btn-default.cmi-btn-large
+          = link_to '#', class: 'cmi-btn cmi-btn-circle cmi-btn-default cmi-btn-large', onclick: 'return false;' do
+            .cmi-btn-circle-slide-content
+              My sliding content
+            %i.mdi.mdi-check
+        .grid-col-6
+          %h3.cmi-h3 Button circle slide content direction
+          %h5.cmi-h5 .cmi-btn.cmi-btn-circle.cmi-btn-primary
+          = link_to '#', class: 'cmi-btn cmi-btn-circle cmi-btn-primary', onclick: 'return false;' do
+            .cmi-btn-circle-slide-content
+              My sliding content
+            %i.mdi.mdi-check
+          %h5.cmi-h5 .cmi-btn.cmi-btn-circle.cmi-btn-primary.cmi-btn-circle-left
+          = link_to '#', class: 'cmi-btn cmi-btn-circle cmi-btn-primary cmi-btn-circle-left', onclick: 'return false;' do
+            .cmi-btn-circle-slide-content
+              My sliding content
+            %i.mdi.mdi-check
+
+  / ---------------------------------------------
+  / tables
+  .grid-row
+    .grid-col-12
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Tables
+
+      %h4.cmi-h4 .cmi-table
+
+      %table.cmi-table
+        %thead.cmi-thead
+          %tr.cmi-tr
+            %th.cmi-th Column 1
+            %th.cmi-th Column 2
+            %th.cmi-th Column 3
+            %th.cmi-th Column 4
+        %tbody.cmi-tbody
+          %tr.cmi-tr
+            %td.cmi-td Row 1 - 1
+            %td.cmi-td Row 1 - 2
+            %td.cmi-td Row 1 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 2 - 1
+            %td.cmi-td Row 2 - 2
+            %td.cmi-td Row 2 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 3 - 1
+            %td.cmi-td Row 3 - 2
+            %td.cmi-td Row 3 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+
+      %h4.cmi-h4 .cmi-table.cmi-table-striped
+
+      %table.cmi-table.cmi-table-striped
+        %thead.cmi-thead
+          %tr.cmi-tr
+            %th.cmi-th Column 1
+            %th.cmi-th Column 2
+            %th.cmi-th Column 3
+            %th.cmi-th Column 4
+        %tbody.cmi-tbody
+          %tr.cmi-tr
+            %td.cmi-td Row 1 - 1
+            %td.cmi-td Row 1 - 2
+            %td.cmi-td Row 1 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 2 - 1
+            %td.cmi-td Row 2 - 2
+            %td.cmi-td Row 2 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 3 - 1
+            %td.cmi-td Row 3 - 2
+            %td.cmi-td Row 3 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+
+      %h4.cmi-h4 .cmi-table.cmi-table-hoverable
+
+      %table.cmi-table.cmi-table-hoverable
+        %thead.cmi-thead
+          %tr.cmi-tr
+            %th.cmi-th Column 1
+            %th.cmi-th Column 2
+            %th.cmi-th Column 3
+            %th.cmi-th Column 4
+        %tbody.cmi-tbody
+          %tr.cmi-tr
+            %td.cmi-td Row 1 - 1
+            %td.cmi-td Row 1 - 2
+            %td.cmi-td Row 1 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 2 - 1
+            %td.cmi-td Row 2 - 2
+            %td.cmi-td Row 2 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 3 - 1
+            %td.cmi-td Row 3 - 2
+            %td.cmi-td Row 3 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+
+      %h4.cmi-h4 .cmi-table.cmi-table-striped.cmi-table-hoverable
+
+      %table.cmi-table.cmi-table-striped.cmi-table-hoverable
+        %thead.cmi-thead
+          %tr.cmi-tr
+            %th.cmi-th Column 1
+            %th.cmi-th Column 2
+            %th.cmi-th Column 3
+            %th.cmi-th Column 4
+        %tbody.cmi-tbody
+          %tr.cmi-tr
+            %td.cmi-td Row 1 - 1
+            %td.cmi-td Row 1 - 2
+            %td.cmi-td Row 1 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 2 - 1
+            %td.cmi-td Row 2 - 2
+            %td.cmi-td Row 2 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 3 - 1
+            %td.cmi-td Row 3 - 2
+            %td.cmi-td Row 3 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+
+      %h4.cmi-h4 With active rows: .cmi-table.cmi-table-striped
+
+      %table.cmi-table.cmi-table-striped
+        %thead.cmi-thead
+          %tr.cmi-tr
+            %th.cmi-th Column 1
+            %th.cmi-th Column 2
+            %th.cmi-th Column 3
+            %th.cmi-th Column 4
+        %tbody.cmi-tbody
+          %tr.cmi-tr
+            %td.cmi-td Row 1 - 1
+            %td.cmi-td Row 1 - 2
+            %td.cmi-td Row 1 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr.cmi-tr-active
+            %td.cmi-td Row 2 - 1
+            %td.cmi-td Row 2 - 2
+            %td.cmi-td Row 2 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr.cmi-tr-active
+            %td.cmi-td Row 3 - 1
+            %td.cmi-td Row 3 - 2
+            %td.cmi-td Row 3 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 4 - 1
+            %td.cmi-td Row 4 - 2
+            %td.cmi-td Row 4 - 3
+
+      %h4.cmi-h4 With active rows: .cmi-table.cmi-table-striped.cmi-table-hoverable
+
+      %table.cmi-table.cmi-table-striped.cmi-table-hoverable
+        %thead.cmi-thead
+          %tr.cmi-tr
+            %th.cmi-th Column 1
+            %th.cmi-th Column 2
+            %th.cmi-th Column 3
+            %th.cmi-th Column 4
+        %tbody.cmi-tbody
+          %tr.cmi-tr
+            %td.cmi-td Row 1 - 1
+            %td.cmi-td Row 1 - 2
+            %td.cmi-td Row 1 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr.cmi-tr-active
+            %td.cmi-td Row 2 - 1
+            %td.cmi-td Row 2 - 2
+            %td.cmi-td Row 2 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr.cmi-tr-active
+            %td.cmi-td Row 3 - 1
+            %td.cmi-td Row 3 - 2
+            %td.cmi-td Row 3 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+          %tr.cmi-tr
+            %td.cmi-td Row 4 - 1
+            %td.cmi-td Row 4 - 2
+            %td.cmi-td Row 4 - 3
+            %td.cmi-td
+              %a.cmi-btn.cmi-btn-small Button
+
+  / ---------------------------------------------
+  / lists
+  .grid-row
+    .grid-col-12
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Lists
+
+      %h3.cmi-h3 Normal lists
+
+      %h4.cmi-h4 .cmi-ul and cmi-li
+
+      %ul.cmi-ul
+        %li.cmi-li Row 1
+        %li.cmi-li Row 2
+        %li.cmi-li Row 3
+
+      %h3.cmi-h3 Flex list table
+
+      %h4.cmi-h4 .cmi-flex-list-table and .cmi-ul and cmi-li
+
+      .cmi-flex-list-table
+        %ul.cmi-ul.cmi-flex-list-table-headline
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+        %ul.cmi-ul
+          %li.cmi-li Row 1 - 1
+          %li.cmi-li Row 1 - 2
+          %li.cmi-li Row 1 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul
+          %li.cmi-li Row 2 - 1
+          %li.cmi-li Row 2 - 2
+          %li.cmi-li Row 2 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul
+          %li.cmi-li Row 3 - 1
+          %li.cmi-li Row 3 - 2
+          %li.cmi-li Row 3 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+
+      %h4.cmi-h4 .cmi-flex-list-table.cmi-flex-list-table-hoverable and .cmi-ul and cmi-li
+
+      .cmi-flex-list-table.cmi-flex-list-table-hoverable
+        %ul.cmi-ul.cmi-flex-list-table-headline
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+        %ul.cmi-ul
+          %li.cmi-li Row 1 - 1
+          %li.cmi-li Row 1 - 2
+          %li.cmi-li Row 1 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul
+          %li.cmi-li Row 2 - 1
+          %li.cmi-li Row 2 - 2
+          %li.cmi-li Row 2 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul
+          %li.cmi-li Row 3 - 1
+          %li.cmi-li Row 3 - 2
+          %li.cmi-li Row 3 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+
+      %h4.cmi-h4 .cmi-flex-list-table.cmi-flex-list-table-striped.cmi-flex-list-table-hoverable and .cmi-ul and cmi-li
+
+      .cmi-flex-list-table.cmi-flex-list-table-striped.cmi-flex-list-table-hoverable
+        %ul.cmi-ul.cmi-flex-list-table-headline
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+        %ul.cmi-ul
+          %li.cmi-li Row 1 - 1
+          %li.cmi-li Row 1 - 2
+          %li.cmi-li Row 1 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul
+          %li.cmi-li Row 2 - 1
+          %li.cmi-li Row 2 - 2
+          %li.cmi-li Row 2 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul
+          %li.cmi-li Row 3 - 1
+          %li.cmi-li Row 3 - 2
+          %li.cmi-li Row 3 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+
+      %h4.cmi-h4 With active rows: .cmi-flex-list-table.cmi-flex-list-table-striped and .cmi-ul and cmi-li
+
+      .cmi-flex-list-table.cmi-flex-list-table-striped
+        %ul.cmi-ul.cmi-flex-list-table-headline
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+        %ul.cmi-ul.cmi-flex-list-table-active
+          %li.cmi-li Row 1 - 1
+          %li.cmi-li Row 1 - 2
+          %li.cmi-li Row 1 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul.cmi-flex-list-table-active
+          %li.cmi-li Row 2 - 1
+          %li.cmi-li Row 2 - 2
+          %li.cmi-li Row 2 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul
+          %li.cmi-li Row 3 - 1
+          %li.cmi-li Row 3 - 2
+          %li.cmi-li Row 3 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+
+      %h4.cmi-h4 .cmi-flex-list-table.cmi-flex-list-table-striped.cmi-flex-list-table-hoverable and .cmi-ul and cmi-li
+
+      .cmi-flex-list-table.cmi-flex-list-table-striped.cmi-flex-list-table-hoverable
+        %ul.cmi-ul.cmi-flex-list-table-headline
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+          %li.cmi-li Column 1
+        %ul.cmi-ul
+          %li.cmi-li Row 1 - 1
+          %li.cmi-li Row 1 - 2
+          %li.cmi-li Row 1 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul.cmi-flex-list-table-active
+          %li.cmi-li Row 2 - 1
+          %li.cmi-li Row 2 - 2
+          %li.cmi-li Row 2 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+        %ul.cmi-ul.cmi-flex-list-table-active
+          %li.cmi-li Row 3 - 1
+          %li.cmi-li Row 3 - 2
+          %li.cmi-li Row 3 - 3
+          %li.cmi-li
+            %a.cmi-btn.cmi-btn-small Button
+
+  / ---------------------------------------------
+  / cards
+  .grid-row
+    .grid-col-12
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Cards
+
+    .grid-row
+      .grid-col-5
+        %h3.cmi-h3 .cmi-card
+        %article.cmi-article.cmi-card
+          .cmi-card-content
+            %h3.cmi-h3.cmi-card-content-headline My highlighted topic
+            %p.cmi-p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+
+        %h3.cmi-h3 .cmi-card with image and action bar
+        %article.cmi-article.cmi-card
+          .cmi-card-image
+            %img.cmi-img{ src: 'https://placekitten.com/g/350/300' }
+            %span.cmi-span
+              Such kitty
+          .cmi-card-content
+            %h3.cmi-h3.cmi-card-content-headline My highlighted topic
+            %p.cmi-p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+          .cmi-card-actions
+            %a.cmi-btn{ href: '#', onclick: "return false;" } Do this
+            %a.cmi-btn{ href: '#', onclick: "return false;" } Do that
+
+        %h3.cmi-h3 .cmi-card with separator
+        %article.cmi-article.cmi-card
+          .cmi-card-content
+            %h3.cmi-h3.cmi-card-content-headline My highlighted topic
+            %p.cmi-p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+          .cmi-card-separator
+          .cmi-card-actions
+            %a.cmi-btn{ href: '#', onclick: "return false;" } Do this
+            %a.cmi-btn{ href: '#', onclick: "return false;" } Do that
+
+        %h3.cmi-h3 .cmi-card colored
+        %article.cmi-article.cmi-card.cmi-card-primary
+          .cmi-card-content
+            %h3.cmi-h3.cmi-card-content-headline My highlighted topic
+            %p.cmi-p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+          .cmi-card-separator
+          .cmi-card-actions
+            %a.cmi-btn{ href: '#', onclick: "return false;" } Do this
+            %a.cmi-btn{ href: '#', onclick: "return false;" } Do that
+
+
+      .grid-col-5.grid-col-offset-1
+
+        %h3.cmi-h3 .cmi-card with image and action bar and header
+        %article.cmi-article.cmi-card
+          %header.cmi-header.cmi-card-header
+            %h2.cmi-h2.cmi-card-header-headline
+              Card with header
+          .cmi-card-image
+            %img.cmi-img{ src: 'https://placekitten.com/g/350/300' }
+            %span.cmi-span
+              Such kitty
+          .cmi-card-content
+            %p.cmi-p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+          .cmi-card-actions
+            %a.cmi-btn{ href: '#' } Do this
+            %a.cmi-btn{ href: '#' } Do that
+        %h3.cmi-h3 .cmi-card - headers
+        %article.cmi-article.cmi-card
+          %header.cmi-header.cmi-card-header
+            %h2.cmi-h2.cmi-card-header-headline
+              Card with header
+            %h3.cmi-h3.cmi-card-header-sub-headline
+              And sub headline
+          .cmi-card-image
+            %img.cmi-img{ src: 'https://placekitten.com/g/350/150' }
+            %span.cmi-span
+              Such kitty
+          .cmi-card-content
+            %p.cmi-p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+        %h3.cmi-h3 .cmi-card - headers
+        %article.cmi-article.cmi-card
+          %header.cmi-header.cmi-card-header
+            .cmi-card-header-image
+              %img.cmi-img{ src: 'https://placekitten.com/g/150/150' }
+            %h2.cmi-h2.cmi-card-header-headline
+              Card with header and image
+            %h3.cmi-h3.cmi-card-header-sub-headline
+              And sub headline
+          .cmi-card-image
+            %img.cmi-img{ src: 'https://placekitten.com/g/350/150' }
+            %span.cmi-span
+              Such kitty
+          .cmi-card-content
+            %p.cmi-p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+
+
+
 
   / ---------------------------------------------
   / modal
   .grid-row
     .grid-col-12
-      %h2.cmi-lined
-        %span Flex Modal
+      %h2.cmi-h2.cmi-lined
+        %span.cmi-span Flex Modal
       .grid-row
         .grid-col-4
-          %p Modal with following specs:
-          %ul
-            %li Fixed
-            %li 90% screen width (5% left/right margin)
-            %li max. 90% height (5% top margin, min. 5% bottom margin)
-            %li Header/Footer always visible
-            %li Content overflow scroll
+          %p.cmi-p Modal with following specs:
+          %ul.cmi-ul
+            %li.cmi-li Fixed
+            %li.cmi-li 90% screen width (5% left/right margin)
+            %li.cmi-li max. 90% height (5% top margin, min. 5% bottom margin)
+            %li.cmi-li Header/Footer always visible
+            %li.cmi-li Content overflow scroll
 
           = link_to 'Open example modal', '#', id: 'cmi-example-modal-btn', class: 'cmi-btn cmi-btn-raised cmi-btn-default'
           :javascript
@@ -229,46 +766,51 @@
                 $('#cmi-example-modal').show()
                 $('body').addClass('cmi-flex-modal-open')
               });
+
+              $('#cmi-example-modal a').on('click', function(event){
+                event.preventDefault();
+                $('#cmi-example-modal').hide()
+                $('body').removeClass('cmi-flex-modal-open')
+              });
             });
 
         .grid-col-8
-          %pre
+          %pre.cmi-pre
             :preserve
               .cmi.cmi-flex-modal
                 .cmi-flex-modal-dialog
-                  [.cmi-flex-modal-dialog-inner] // optionally if 2nd container is necessary
-                    %header
-                      .cmi-flex-modal-header-inside
-                        .cmi-pull-left
-                          %a.cmi-flex-modal-back.cmi-btn.ripples{ href: '#' }
-                            %i.mdi-navigation-arrow-back
-                        .cmi-pull-right
-                          %a.cmi-flex-modal-close.cmi-btn.ripples{ href: '#' }
-                            %i.mdi-navigation-close
-                        %h1 Modal
+                  %header.cmi-header
+                    .cmi-flex-modal-header-inside
+                      .cmi-pull-left
+                        %a.cmi-flex-modal-back.cmi-btn.cmi-ripples{ href: '#' }
+                          %i.cmi-i.mdi.mdi-chevron-double-left
+                      .cmi-pull-right
+                        %a.cmi-flex-modal-close.cmi-btn.cmi-ripples{ href: '#' }
+                          %i.cmi-i.mdi.mdi-close
+                      %h1.cmi-h1 Modal
 
-                    %main
-                      .cmi-flex-modal-main-inside
-                        %aside
-                          %p My Sidebar
-                        %section
-                          %p My Content
-                    %footer
-                      .cmi-flex-modal-footer-inside
-                        .cmi-pull-left
-                          %a.cmi-flex-modal-back.cmi-btn.ripples{ href: '#' }
-                            %i.mdi-navigation-arrow-back
-                        .cmi-pull-right
-                          %a.cmi-flex-modal-close.cmi-btn.cmi-btn-default.ripples.ripples-dark{ href: '#' }
-                            Close
-                          %a.cmi-flex-modal-save.cmi-btn.cmi-btn.cmi-btn-raised.cmi-btn-primary.ripples{ href: '#' }
-                            Save
+                  %main.cmi-main
+                    %aside.cmi-aside
+                      %p.cmi-p My Sidebar
+                    %section.cmi-section
+                      %p.cmi-p My Content
 
-          %hr/
-          %p
+                  %footer.cmi-footer
+                    .cmi-flex-modal-footer-inside
+                      .cmi-pull-left
+                        %a.cmi-flex-modal-back.cmi-btn.cmi-ripples{ href: '#' }
+                          %i.cmi-i.cmi-i.mdi.mdi-chevron-double-left
+                      .cmi-pull-right
+                        %a.cmi-flex-modal-close.cmi-btn.cmi-btn-default.ripples.ripples-dark{ href: '#' }
+                          Close
+                        %a.cmi-flex-modal-save.cmi-btn.cmi-btn.cmi-btn-raised.cmi-btn-primary.ripples{ href: '#' }
+                          Save
+
+          %hr.cmi-hr/
+          %p.cmi-p
             To preseve the content from scrolling when the modal is opened, you
             should add the following class to the body tag:
-          %pre
+          %pre.cmi-pre
             :preserve
               body.cmi-flex-modal-open
 
@@ -280,43 +822,41 @@
 / -- flex modal
 .cmi.cmi-flex-modal#cmi-example-modal{ style: 'display: none;' }
   .cmi-flex-modal-dialog
-    .cmi-flex-modal-dialog-inner
-      %header
-        .cmi-flex-modal-header-inside
-          .cmi-pull-left
-            %a.cmi-flex-modal-back.cmi-btn.ripples{ href: '#' }
-              %i.mdi-navigation-arrow-back
-          .cmi-pull-right
-            %a.cmi-flex-modal-close.cmi-btn.ripples{ href: '#' }
-              %i.mdi-navigation-close
-          %h1 Modal
+    %header.cmi-header
+      .cmi-flex-modal-header-inside
+        .cmi-pull-left
+          %a.cmi-flex-modal-back.cmi-btn.cmi-ripples{ href: '#' }
+            %i.cmi-i.mdi.mdi-chevron-double-left
+        .cmi-pull-right
+          %a.cmi-flex-modal-close.cmi-btn.cmi-ripples{ href: '#' }
+            %i.cmi-i.mdi.mdi-close
+        %h1.cmi-h1 Modal
 
-      %main
-        .cmi-flex-modal-main-inside
-          %aside
-            %p My Sidebar
-            %p
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
-            %p
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
-          %section
-            %p My Content
-            %p
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
-            %p
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
-            %p
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
-            %p
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
-      %footer
-        .cmi-flex-modal-footer-inside
-          .cmi-pull-left
-            %a.cmi-flex-modal-back.cmi-btn.ripples{ href: '#' }
-              %i.mdi-navigation-arrow-back
-          .cmi-pull-right
-            %a.cmi-flex-modal-close.cmi-btn.cmi-btn-default.ripples.ripples-dark{ href: '#' }
-              Close
-            %a.cmi-flex-modal-save.cmi-btn.cmi-btn.cmi-btn-raised.cmi-btn-primary.ripples{ href: '#' }
-              Save
+    %main.cmi-main
+      %aside.cmi-aside
+        %p.cmi-p My Sidebar
+        %p.cmi-p
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+        %p.cmi-p
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+      %section.cmi-section
+        %p.cmi-p My Content
+        %p.cmi-p
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+        %p.cmi-p
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+        %p.cmi-p
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+        %p.cmi-p
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quicquam extra virtutem habeatur in bonis. Duo Reges: constructio interrete. Egone non intellego, quid sit don Graece, Latine voluptas? Aperiendum est igitur, quid sit voluptas;
+    %footer.cmi-footer
+      .cmi-flex-modal-footer-inside
+        .cmi-pull-left
+          %a.cmi-flex-modal-back.cmi-btn.cmi-ripples{ href: '#' }
+            %i.cmi-i.cmi-i.mdi.mdi-chevron-double-left
+        .cmi-pull-right
+          %a.cmi-flex-modal-close.cmi-btn.cmi-btn-default.ripples.ripples-dark{ href: '#' }
+            Close
+          %a.cmi-flex-modal-save.cmi-btn.cmi-btn.cmi-btn-raised.cmi-btn-primary.ripples{ href: '#' }
+            Save
 

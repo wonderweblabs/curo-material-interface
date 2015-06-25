@@ -4,7 +4,7 @@ window.CMI.FormComponents or= {}
 class CMI.FormComponents.TextField
 
   @reset: (domElement) ->
-    if domElement.val().length > 0
+    if domElement.val().length > 0 || domElement.is(':focus')
       domElement.parents(@_getInputBoxSelector()).addClass('cmi-active')
     else
       domElement.parents(@_getInputBoxSelector()).removeClass('cmi-active')
@@ -38,12 +38,12 @@ class CMI.FormComponents.TextField
         parentDomElement.removeClass('cmi-invalid')
     else if parentDomElement.hasClass('cmi-validate')
       if domElement.is(':valid')
-        parentDomElement.removeClass('invalid')
+        parentDomElement.removeClass('cmi-invalid')
         parentDomElement.addClass('cmi-valid')
       else
         parentDomElement.removeClass('cmi-valid')
         parentDomElement.addClass('cmi-invalid')
 
   @_getInputBoxSelector: ->
-    '.cmi-text-input'
+    '.cmi-text-input, .cmi-select-input'
 

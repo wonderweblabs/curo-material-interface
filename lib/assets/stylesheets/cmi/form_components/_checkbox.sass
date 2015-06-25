@@ -6,7 +6,7 @@
   font-size: 14px
   font-size: 0.875rem
   +backface-visibility(hidden)
-  label
+  .cmi-label
     position: relative
     display: inline-block
     max-width: 100%
@@ -18,55 +18,57 @@
     cursor: pointer
     vertical-align: top
     +user-select(none)
-  input[type="checkbox"]
+  .cmi-input[type="checkbox"]
     position: absolute
     opacity: 0
     visibility: hidden
     margin-left: -9999px
-  span
+  .cmi-span
     left: 0px
     +transition-duration(0.2s)
-  span.cmi-animation
+  .cmi-span.cmi-animation
     position: absolute
     display: block
     overflow: hidden
     z-index: 0
     height: 36px
     width: 36px
-    top: -7px
+    top: -5px
+    left: 2px
     margin: 0
     content: ""
     visibility: hidden
     opacity: 0
     background-color: rgba(#000, 0.07)
-    +border-radius(100%)
-  span.cmi-checkbox
+    +cmi-border-radius(100%)
+  .cmi-span.cmi-checkbox
     position: relative
     display: inline-block
     overflow: hidden
     z-index: 1
-    width: 16px
-    height: 16px
+    width: 20px
+    height: 20px
     top: 3px
     margin-right: 11px
-    border: 2px solid rgba(#000, 0.5)
-    +border-radius(2px)
+    border: none
+    outline: none
+    font: normal normal normal 24px/1 MaterialDesignIcons
+    +cmi-border-radius(2px)
     &:before
       position: relative
-      content: "\e899"
-      top: -2px
+      content: "\f1df"
+      top: -3px
       left: -2px
-      font-size: 0px
-      font-family: "Material-Design-Icons"
-      line-height: 15px
-      color: #fff
+      font-size: 23px
+      line-height: 23px
+      color: rgba(#000, 0.5)
   &.cmi-valid
-    label
+    .cmi-label
       color: $checkbox-color-valid
   &.cmi-invalid
-    label
+    .cmi-label
       color: $checkbox-color-invalid
-  p.cmi-hint
+  p.cmi-hint, .cmi-p.cmi-hint
     margin: 0 0 0 40px
     font-size: 0.86em
     color: $checkbox-color-hint
@@ -74,14 +76,12 @@
       color: $checkbox-color-valid
     &.cmi-invalid
       color: $checkbox-color-invalid
-  label:hover
+  .cmi-label:hover
     .cmi-animation
       visibility: visible
       opacity: 1
       +transition(all 0.1s linear)
   &.cmi-active
-    span.cmi-checkbox
-      border-color: $checkbox-color-check
-      background-color: $checkbox-color-check
-    span.cmi-checkbox:before
-      font-size: 15px
+    .cmi-span.cmi-checkbox:before
+      color: $checkbox-color-check
+      content: "\f1e0"

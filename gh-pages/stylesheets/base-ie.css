@@ -1,0 +1,31 @@
+/* line 4, /Users/sascha/.rvm/gems/ruby-2.2.2@curo-material-interface-gh-pages-middleman/gems/neat-1.7.2/app/assets/stylesheets/grid/_box-sizing.scss */
+html {
+  box-sizing: border-box; }
+
+/* line 9, /Users/sascha/.rvm/gems/ruby-2.2.2@curo-material-interface-gh-pages-middleman/gems/neat-1.7.2/app/assets/stylesheets/grid/_box-sizing.scss */
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/* line 2, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_flex-modal-ie.sass */
+.cmi-flex-modal-dialog > main.cmi-main {
+  display: block;
+  height: auto;
+  max-height: none;
+  margin: 0;
+  padding: 0; }
+  /* line 8, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_flex-modal-ie.sass */
+  .cmi-flex-modal-dialog > main.cmi-main > aside.cmi-aside,
+  .cmi-flex-modal-dialog > main.cmi-main > section.cmi-section {
+    display: block;
+    overflow: auto;
+    height: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none; }
+  /* line 15, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_flex-modal-ie.sass */
+  .cmi-flex-modal-dialog > main.cmi-main > aside.cmi-aside {
+    position: absolute;
+    width: 230px; }
+  /* line 18, /Users/sascha/src/wonderweblabs/curo/cmi/lib/assets/stylesheets/cmi/components/_flex-modal-ie.sass */
+  .cmi-flex-modal-dialog > main.cmi-main > section.cmi-section {
+    position: relative;
+    margin-left: 230px; }

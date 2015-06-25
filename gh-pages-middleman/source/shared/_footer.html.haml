@@ -2,18 +2,18 @@
   .grid-row
     .grid-col-12
       .inside-box
-        = link_to '#', id: 'footer-curo-logo' do
+        = link_to '#', id: 'footer-curo-logo', class: 'cmi-a' do
           = image_tag 'gh-pages/images/logo-navbar-sprite.png', size: '28x30'
         .grid-row.links
           .grid-col-2.grid-col-offset-3
-            = link_to 'Imprint', 'imprint.html'
+            = link_to 'Imprint', 'imprint.html', class: 'cmi-a'
           .grid-col-2
-            = link_to 'curocms.com', '#'
+            = link_to 'curocms.com', '#', class: 'cmi-a'
           .grid-col-2
-            = link_to 'wonderweblabs', '#'
+            = link_to 'wonderweblabs', '#', class: 'cmi-a'
 
         %hr/
         %p.disclaimer
           Curo CMS and Curo Material Interface are products of wonderweblabs.
           %br/
-          #{link_to('wonderweblabs - webdesign & platform development', 'https://www.wonderweblabs.com', target: :blank)}
+          #{link_to('wonderweblabs - webdesign & platform development', 'https://www.wonderweblabs.com', target: :blank, class: 'cmi-a')}

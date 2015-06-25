@@ -1,114 +1,254 @@
-.cmi
-
-  // base declaration
-  .cmi-btn
-    position: relative
-    display: inline-block
-    overflow: hidden
-    min-width: $button-min-width
-    height: $button-height
-    margin: $button-margin-vertical $button-margin-horizontal
-    padding: $button-padding-vertical $button-padding-horizontal
-    font-size: $button-font-size
-    text-align: center
-    text-transform: uppercase
+// base declaration
+.cmi-btn, a.cmi-btn, button.cmi-btn
+  +cmi-border-radius($button-border-radius)
+  +box-sizing(border-box)
+  position: relative
+  display: inline-block
+  overflow: hidden
+  min-width: $button-min-width
+  height: $button-height
+  margin: $button-margin-vertical $button-margin-horizontal
+  padding: $button-padding-vertical $button-padding-horizontal
+  font-size: $button-font-size
+  text-align: center
+  text-transform: uppercase
+  text-decoration: none
+  line-height: $button-line-height
+  letter-spacing: 0.05rem
+  border: none
+  outline: 0
+  cursor: pointer
+  color: $button-default-font-color
+  -webkit-tap-highlight-color: transparent
+  &:hover
+    outline: none
     text-decoration: none
-    line-height: 1
-    letter-spacing: 0.05rem
-    border: none
-    outline: 0
-    cursor: pointer
-    -webkit-tap-highlight-color: transparent
-    +border-radius($button-border-radius)
-    &:hover
-      outline: none
-      text-decoration: none
-      color: darken($color-primary, 7%)
-      background-color: $button-color-hover
-    &:active,
-    &:target
-      outline: none
-      text-decoration: none
-      color: darken($color-primary, 10%)
-      background-color: opacify($button-color-hover, 0.05)
+    color: darken($color-primary, 7%)
+    background-color: $button-color-hover
+  &:active,
+  &:target
+    outline: none
+    text-decoration: none
+    color: darken($color-primary, 10%)
+    background-color: opacify($button-color-hover, 0.05)
 
-  // button raised
-  .cmi-btn.cmi-btn-raised
-    background-color: $button-color-raised
-    @extend .z-depth-1
-    +transition(.1s ease-out)
-    &:hover
-      background-color: $button-color-hover
-      @extend .z-depth-1-hover
-    &:active,
-    &:target
-      background-color: opacify($button-color-hover, 0.05)
-      @extend .z-depth-2
 
-  // button default
-  .cmi-btn.cmi-btn-default
-    background-color: $button-default-bg-color
-    color: $button-default-font-color
-    &:hover
-      background-color: opacify($button-default-bg-color, 0.02)
-      color: $button-primary-font-color
-    &:active,
-    &:target
-      background-color: opacify($button-default-bg-color, 0.07)
-      color: $button-primary-font-color
+// button raised
+.cmi-btn.cmi-btn-raised, a.cmi-btn.cmi-btn-raised, button.cmi-btn.cmi-btn-raised
+  background-color: $button-color-raised
+  @extend .cmi-z-depth-1
+  +transition(.1s ease-out)
+  &:hover
+    background-color: $button-color-hover
+    @extend .cmi-z-depth-1-hover
+  &:active,
+  &:target
+    background-color: opacify($button-color-hover, 0.05)
+    @extend .cmi-z-depth-2
 
-  // button primary
-  .cmi-btn.cmi-btn-primary
-    background-color: $button-primary-bg-color
+// button default
+.cmi-btn.cmi-btn-default, a.cmi-btn.cmi-btn-default, button.cmi-btn.cmi-btn-default
+  background-color: $button-default-bg-color
+  color: $button-default-font-color
+  &:hover
+    background-color: opacify($button-default-bg-color, 0.02)
     color: $button-primary-font-color
-    &:hover
-      background-color: lighten($button-primary-bg-color, 5%)
-      color: $button-primary-font-color
-    &:active,
-    &:target
-      background-color: lighten($button-primary-bg-color, 10%)
-      color: $button-primary-font-color
+  &:active,
+  &:target
+    background-color: opacify($button-default-bg-color, 0.07)
+    color: $button-primary-font-color
 
-  // button small
-  .cmi-btn.cmi-btn-small
-    min-width: $button-small-min-width
-    height: $button-small-height
-    padding: $button-small-padding-vertical $button-small-padding-horizontal
-    font-size: $button-small-font-size
+// button primary
+.cmi-btn.cmi-btn-primary, a.cmi-btn.cmi-btn-primary, button.cmi-btn.cmi-btn-primary
+  background-color: $button-primary-bg-color
+  color: $button-primary-font-color
+  &:hover
+    background-color: lighten($button-primary-bg-color, 5%)
+    color: $button-primary-font-color
+  &:active,
+  &:target
+    background-color: lighten($button-primary-bg-color, 10%)
+    color: $button-primary-font-color
 
-  // button large
-  .cmi-btn.cmi-btn-large
-    min-width: $button-large-min-width
-    height: $button-large-height
-    padding: $button-large-padding-vertical $button-large-padding-horizontal
-    font-size: $button-large-font-size
+// button danger
+.cmi-btn.cmi-btn-danger, a.cmi-btn.cmi-btn-danger, button.cmi-btn.cmi-btn-danger
+  background-color: $button-danger-bg-color
+  color: $button-danger-font-color
+  &:hover
+    background-color: darken($button-danger-bg-color, 5%)
+    color: lighten($button-danger-font-color, 5%)
+  &:active,
+  &:target
+    background-color: darken($button-danger-bg-color, 10%)
+    color: lighten($button-danger-font-color, 5%)
 
-  // button block
-  .cmi-btn.cmi-btn-block
+// button danger flat
+.cmi-btn.cmi-btn-danger-flat, a.cmi-btn.cmi-btn-danger-flat, button.cmi-btn.cmi-btn-danger-flat
+  color: $button-danger-bg-color
+  &:hover
+    color: lighten($button-danger-bg-color, 5%)
+  &:active,
+  &:target
+    color: lighten($button-danger-bg-color, 5%)
+
+// button small
+.cmi-btn.cmi-btn-small, a.cmi-btn.cmi-btn-small, button.cmi-btn.cmi-btn-small
+  min-width: $button-small-min-width
+  height: $button-small-height
+  padding: $button-small-padding-vertical $button-small-padding-horizontal
+  font-size: $button-small-font-size
+  line-height: $button-small-line-height
+
+// button large
+.cmi-btn.cmi-btn-large, a.cmi-btn.cmi-btn-large, button.cmi-btn.cmi-btn-large
+  min-width: $button-large-min-width
+  height: $button-large-height
+  padding: $button-large-padding-vertical $button-large-padding-horizontal
+  font-size: $button-large-font-size
+  line-height: $button-large-line-height
+
+// button block
+.cmi-btn.cmi-btn-block, a.cmi-btn.cmi-btn-block, button.cmi-btn.cmi-btn-block
+  display: block
+  margin-left: 0
+  margin-right: 0
+
+
+// ------------------------------------
+// circle buttons
+
+.cmi-btn.cmi-btn-circle
+  +cmi-border-radius(25px)
+  +clearfix
+  display: inline-block
+  min-width: 50px
+  height: 50px
+  padding: 0
+  text-align: left
+  i,
+  .cmi-btn-circle-slide-content
+    position: relative
     display: block
+    white-space: nowrap
+  i
+    float: left
+    padding: 15px
+    font-size: 19px
+  .cmi-btn-circle-slide-content
+    overflow: hidden
+    max-width: 0px
+    margin-right: 0px
+    padding: 18px 0
+    float: right
+    font-size: 14px
+    line-height: 1
+    +transition-property(margin-right max-width)
+    +transition-duration(.25s)
+    +transition-timing-function(ease)
+    +transition-delay(.3s)
+  &:hover
+    .cmi-btn-circle-slide-content
+      max-width: 400px
+      margin-right: 20px
+      +transition-property(margin-right max-width)
+      +transition-duration(.25s)
+      +transition-timing-function(ease)
+      +transition-delay(0s)
+
+// button small
+.cmi-btn.cmi-btn-circle.cmi-btn-small
+  +cmi-border-radius(40px / 2)
+  min-width: 40px
+  height: 40px
+  padding: 0
+  i
+    padding: 11px
+    font-size: 17px
+  .cmi-btn-circle-slide-content
+    padding: 13px 0
+    font-size: 12px
+    line-height: 14px
+
+// button large
+.cmi-btn.cmi-btn-circle.cmi-btn-large
+  +cmi-border-radius(60px / 2)
+  min-width: 60px
+  height: 60px
+  padding: 0
+  i
+    padding: 19px
+    font-size: 22px
+  .cmi-btn-circle-slide-content
+    padding: 20px 0
+    font-size: 18px
+    line-height: 20px
+
+// button grow left
+.cmi-btn.cmi-btn-circle-left
+  text-align: right
+  i
+    float: right
+  .cmi-btn-circle-slide-content
+    margin-right: 0px !important
+    float: left
+    +transition-property(margin-left max-width)
+  &:hover
+    .cmi-btn-circle-slide-content
+      margin-left: 20px
+      +transition-property(margin-left max-width)
 
 
-  // ------------------------------------
-  // ripples
+// ------------------------------------
+// ripples
 
+.cmi-btn, a.cmi-btn, button.cmi-btn
+  &:active,
+  &:target
+    background-color: $button-color-hover
+
+.cmi-btn.cmi-btn-raised, a.cmi-btn.cmi-btn-raised, button.cmi-btn.cmi-btn-raised
+  &:active,
+  &:target
+    background-color: $button-color-hover
+
+.cmi-btn.cmi-btn-default, a.cmi-btn.cmi-btn-default, button.cmi-btn.cmi-btn-default
+  &:active,
+  &:target
+    background-color: opacify($button-default-bg-color, 0.02)
+
+.cmi-btn.cmi-btn-primary, a.cmi-btn.cmi-btn-primary, button.cmi-btn.cmi-btn-primary
+  &:active,
+  &:target
+    background-color: lighten($button-primary-bg-color, 5%)
+
+
+// ------------------------------------
+// content dependend changes
+
+td.cmi-td
   .cmi-btn
+    margin-top: 0
+    margin-bottom: 0
+
+tr.cmi-tr-active
+  .cmi-btn, a.cmi-btn, button.cmi-btn
+    background-color: #f4f4f4
+    &:hover
+      background-color: lighten(#f4f4f4, 5%)
     &:active,
     &:target
-      background-color: $button-color-hover
+      background-color: lighten(#f4f4f4, 5%)
 
-  .cmi-btn.cmi-btn-raised
-    &:active,
-    &:target
-      background-color: $button-color-hover
-
-  .cmi-btn.cmi-btn-default
-    &:active,
-    &:target
-      background-color: opacify($button-default-bg-color, 0.02)
-
-  .cmi-btn.cmi-btn-primary
-    &:active,
-    &:target
-      background-color: lighten($button-primary-bg-color, 5%)
-
+.cmi-flex-list-table
+  .cmi-btn
+    margin-top: 0
+    margin-bottom: 0
+  ul.cmi-flex-list-table-active
+    .cmi-btn, a.cmi-btn, button.cmi-btn
+      background-color: #f4f4f4
+      &:hover
+        background-color: lighten(#f4f4f4, 5%)
+      &:active,
+      &:target
+        background-color: lighten(#f4f4f4, 5%)
 
