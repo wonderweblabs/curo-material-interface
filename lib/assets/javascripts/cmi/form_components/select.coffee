@@ -215,7 +215,7 @@ class CMI.FormComponents.Select
   _initializeDropdownList: ->
     options = []
     for option in $('option', @getSelect())
-      content = $(option).html()
+      content = $(option).text()
       content = '&nbsp;' if content.length <= 0
       options.push "<li data-cmi-value='#{$(option).val()}'>#{content}</li>"
 
