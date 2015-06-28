@@ -34,10 +34,11 @@
       border-bottom: 1px solid $input-color-focus
       +cmi-box-shadow(0 1px 0 0 $input-color-focus)
 
-  &.cmi-active,
+  &.cmi-active .cmi-input,
+  &.cmi-active .cmi-textarea,
   .cmi-input:focus,
   .cmi-textarea:focus
-    .cmi-label
+    + .cmi-label
       top: 0
       font-size: 0.8125em
       font-weight: 300
