@@ -38,4 +38,4 @@ class CMI.FormTextFieldBehavior extends Marionette.Behavior
     return unless domElement instanceof jQuery
 
     CMI.FormComponents.TextField.reset(domElement)
-
+    CMI.FormComponents.TextField.animateChange(domElement)

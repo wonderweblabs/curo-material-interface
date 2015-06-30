@@ -33,8 +33,8 @@ class CMI.FormTextareaBehavior extends Marionette.Behavior
   # contain textareas, the textareas won't be resized after showing
   # those elements since the calculation fails.
   #
-  # To fix this, call triggerMethod('cmi:textarea:refresh') on
+  # To fix this, call triggerMethod('cmi:form:textarea:refresh') on
   # the view implementing the textarea behavior to resize correctly.
   #
-  onCmiTextareaRefresh: ->
+  onCmiFormTextareaRefresh: ->
     @onRender()

@@ -22,3 +22,7 @@ class CMI.FormCheckboxBehavior extends Marionette.Behavior
     CMI.FormComponents.Checkbox.click(target)
 
     @view.triggerMethod('cmi:checkbox:click', target)
+
+  onCmiFormCheckboxRefresh: ->
+    @ui.checkboxLabels.each ->
+      CMI.FormComponents.Checkbox.reset($(this))
