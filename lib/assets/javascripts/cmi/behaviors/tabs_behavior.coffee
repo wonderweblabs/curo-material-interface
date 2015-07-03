@@ -1,3 +1,5 @@
+#= require lib/jquery.cookie
+
 window.CMI or= {}
 
 #
@@ -22,12 +24,13 @@ class CMI.TabsBehavior extends Marionette.Behavior
     @onCmiTabsRefresh()
 
   onShow: ->
+    @loadCookie()
     @activate(@ui.tabActive)
 
   onCmiTabsRefresh: ->
     @view.bindUIElements()
-
-    @activate(@ui.tabActive)
+    @loadCookie()
+    @ui.tabActive.click()
 
   onTabClick: (event, b) ->
     event.preventDefault()
@@ -36,6 +39,7 @@ class CMI.TabsBehavior extends Marionette.Behavior
     @activate(target)
     @view.triggerMethod 'cmi:tabs:click', target
 
+    @setCookie(target)
 
   getTabsName: ->
     @ui.tabsNavigation.data('cmi-tabs-name')
@@ -48,6 +52,21 @@ class CMI.TabsBehavior extends Marionette.Behavior
 
     $("[data-cmi-tabs-name=#{@getTabsName()}]##{id}.cmi-tabs-tab")
 
+  loadCookie: ->
+    if @ui.tabsNavigation?
+      for tab in @ui.tabsNavigation
+        value = $.cookie($(tab).data('cmi-tabs-name'))
+
+        @ui.tabActive = $("a[data-cmi-tab-id='#{value}']")
+
+  setCookie: (target) ->
+    if @ui.tabsNavigation?
+      for tab in @ui.tabsNavigation
+        key = $(tab).data('cmi-tabs-name')
+        value = target.data('cmi-tab-id')
+
+        console.log "stored ", value, " for ", key
+        $.cookie(key, value)
 
   activate: (domElement) ->
     return unless domElement instanceof jQuery
@@ -65,4 +84,6 @@ class CMI.TabsBehavior extends Marionette.Behavior
 
     @view.triggerMethod 'cmi:tabs:tab:hide', currentDomElement if currentDomElement? == true
     @view.triggerMethod 'cmi:tabs:tab:show', @getTabForNavigationElement(domElement)
+
+
 
