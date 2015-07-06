@@ -65,7 +65,6 @@ class CMI.TabsBehavior extends Marionette.Behavior
         key = $(tab).data('cmi-tabs-name')
         value = target.data('cmi-tab-id')
 
-        console.log "stored ", value, " for ", key
         $.cookie(key, value)
 
   activate: (domElement) ->
@@ -84,6 +83,3 @@ class CMI.TabsBehavior extends Marionette.Behavior
 
     @view.triggerMethod 'cmi:tabs:tab:hide', currentDomElement if currentDomElement? == true
     @view.triggerMethod 'cmi:tabs:tab:show', @getTabForNavigationElement(domElement)
-
-
-
