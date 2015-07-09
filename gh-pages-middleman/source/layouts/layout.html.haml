@@ -23,10 +23,14 @@
     = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.4.1/backbone.marionette.min.js'
     = javascript_include_tag 'base'
 
+    = cmi_web_components()
+
   %body.cmi
-    = partial'shared/browse_happy'
-    = partial'shared/header'
+    %cmi-sidebar
+    %cmi-button
+    = partial 'shared/browse_happy'
+    = partial 'shared/header'
     = yield
-    = partial'shared/footer'
-    = partial'shared/analytics' if config[:google_analytics] == true
+    = partial 'shared/footer'
+    = partial 'shared/analytics' if config[:google_analytics] == true
 

@@ -19,3 +19,6 @@ gem 'rake'
 
 # cmi
 gem 'curo-material-interface', path: '../'
+
+# debugging
+gem 'byebug'

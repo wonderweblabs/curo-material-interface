@@ -1,0 +1,2 @@
+Polymer
+  is: 'cmi-button'

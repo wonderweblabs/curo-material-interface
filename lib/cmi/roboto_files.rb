@@ -1,4 +1,4 @@
-module CuroMaterialInterface
+module CMI
   ROBOTO_FILES = [
     'Roboto-Black-webfont.eot',
     'Roboto-Black-webfont.svg',

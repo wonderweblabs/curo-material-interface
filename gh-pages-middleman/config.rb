@@ -8,6 +8,14 @@ set :images_dir, 'gh-pages/images'
 
 activate :livereload
 
+activate :cmi_middleman_extension,
+  components_paths: [
+    File.join(File.dirname(__FILE__), '../lib/components')
+  ],
+  components_relative_to_source_paths: [
+    '../../lib/components'
+  ]
+
 configure :build do
   # Use relative URLs
   activate :relative_assets
