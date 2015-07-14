@@ -1,6 +1,3 @@
-require 'cmi/rails' if defined?(Rails)
-require 'cmi/middleman' if defined?(Middleman)
-
 # module
 module CMI
 
@@ -31,5 +28,8 @@ module CMI
   def self.web_components_config=(config)
     @@web_components_config = config
   end
+
+  require 'cmi/rails' if defined?(Rails)
+  require 'cmi/middleman' if defined?(Middleman)
 
 end

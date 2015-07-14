@@ -27,7 +27,22 @@
 
   %body.cmi
     %cmi-sidebar
+      .cmi-sidebar-title Navigation
+      %nav.cmi-sidebar-navigation
+        %a{ href: '#' } Link
+        %a{ href: '#' } Link
+        %a{ href: '#' } Link
+        %a{ href: '#' } Link
+
     %cmi-button
+
+    -# :javascript
+    -#   $(function(){
+    -#     window.setTimeout(function() {
+    -#       $('cmi-sidebar').addClass('cmi-sidebar-visible');
+    -#     }, 300);
+    -#   });
+
     = partial 'shared/browse_happy'
     = partial 'shared/header'
     = yield

@@ -1,7 +1,9 @@
 require 'middleman-core'
 
+require 'cmi/middleman/core_ext/module/attribute_accessor'
 require 'cmi/middleman/extension'
 
+require 'cmi/web_components'
 require 'cmi/web_components/renderer'
 require 'cmi/web_components/context/abstract'
 require 'cmi/web_components/context/middleman'

@@ -1,3 +1,11 @@
+=font-face-helper($family, $fileBaseName, $weight, $style, $svgAppendix: '')
+  @font-face
+    font-family: $family
+    src: font-url($fileBaseName + '.eot')
+    src: font-url($fileBaseName + '.eot?#iefix') format('embedded-opentype'), font-url($fileBaseName + '.woff') format('woff'), font-url($fileBaseName + '.ttf') format('truetype'), font-url($fileBaseName + '.svg#' + $svgAppendix) format('svg')
+    font-weight: $weight
+    font-style: $style
+
 // roboto
 +font-face-helper('Roboto', 'roboto/Roboto-Thin-webfont', 100, normal, 'robotothin')
 +font-face-helper('Roboto', 'roboto/Roboto-ThinItalic-webfont', 100, italic, 'robotothin_italic')

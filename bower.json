@@ -1,0 +1,27 @@
+{
+  "name": "cmi",
+  "version": "0.0.6",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "authors": [
+    "wonderweblabs <wonderweblabs@wonderweblabs.com>",
+    "Sascha Hillig <sascha@wonderweblabs.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-button": "PolymerElements/paper-button",
+    "paper-button": "PolymerElements/paper-checkbox",
+    "paper-button": "PolymerElements/paper-dialog",
+    "paper-button": "PolymerElements/paper-dialog-behavior",
+    "paper-button": "PolymerElements/paper-dialog-scrollable",
+    "paper-button": "PolymerElements/paper-drawer-panel",
+    "paper-button": "PolymerElements/paper-fab"
+  }
+}
