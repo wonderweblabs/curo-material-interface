@@ -1,0 +1,92 @@
+%h2#fab.cmi-lined
+  %span FAB
+
+- icon = "<i class='mdi mdi-check'></i>".html_safe
+
+%hr/
+
+.grid-row
+  .grid-col-6
+    = code do
+      %cmi-fab= icon
+    = code do
+      %cmi-fab{ raised: true }= icon
+    = code do
+      %cmi-fab{ noink: true }= icon
+  .grid-col-6
+    = code do
+      %cmi-fab{ toggles: true }= icon
+    = code do
+      %cmi-fab{ disabled: true }= icon
+
+%hr/
+
+.grid-row
+  .grid-col-6
+    = code do
+      %cmi-fab= icon
+    = code do
+      %cmi-fab{ theme: 'primary' }= icon
+    = code do
+      %cmi-fab{ theme: 'highlight' }= icon
+    = code do
+      %cmi-fab{ theme: 'danger' }= icon
+    = code do
+      %cmi-fab{ filled: true }= icon
+    = code do
+      %cmi-fab{ filled: true, theme: 'primary' }= icon
+    = code do
+      %cmi-fab{ filled: true, theme: 'highlight' }= icon
+    = code do
+      %cmi-fab{ filled: true, theme: 'danger' }= icon
+  .grid-col-6
+    = code do
+      %cmi-fab{ raised: true }= icon
+    = code do
+      %cmi-fab{ raised: true, theme: 'primary' }= icon
+    = code do
+      %cmi-fab{ raised: true, theme: 'highlight' }= icon
+    = code do
+      %cmi-fab{ raised: true, theme: 'danger' }= icon
+    = code do
+      %cmi-fab{ raised: true, filled: true }= icon
+    = code do
+      %cmi-fab{ raised: true, filled: true, theme: 'primary' }= icon
+    = code do
+      %cmi-fab{ raised: true, filled: true, theme: 'highlight' }= icon
+    = code do
+      %cmi-fab{ raised: true, filled: true, theme: 'danger' }= icon
+
+%hr/
+
+.grid-row
+  .grid-col-6
+    = code do
+      %cmi-fab{ filled: true, small: true }= icon
+    = code do
+      %cmi-fab{ filled: true, large: true }= icon
+    = code do
+      %cmi-fab{ filled: true, block: true }= icon
+  .grid-col-6
+    = code do
+      %cmi-fab{ raised: true, filled: true, small: true }= icon
+    = code do
+      %cmi-fab{ raised: true, filled: true, large: true }= icon
+    = code do
+      %cmi-fab{ raised: true, filled: true, block: true }= icon
+
+%hr/
+
+.grid-row
+  .grid-col-12
+    = code do
+      %cmi-fab{ filled: true, block: true }= "#{icon} My longer Text"
+    %br/
+    = code do
+      %cmi-fab{ small: true, filled: true, block: true, theme: "primary" }= "#{icon} My longer Text"
+    %br/
+    = code do
+      %cmi-fab{ small: true, filled: true, block: true, text_right: true, theme: "highlight" }= "#{icon} My longer Text"
+    %br/
+    = code do
+      %cmi-fab{ large: true, filled: true, block: true, text_left: true, theme: "danger" }= "#{icon} My longer Text"

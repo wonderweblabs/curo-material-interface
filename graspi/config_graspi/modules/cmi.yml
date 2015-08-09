@@ -1,0 +1,180 @@
+dependencies:
+  - mdi-1.1.70
+  - cached:polymer-1.0.8
+  - cached:paper-item-1.0.2
+  - cached:paper-toolbar-1.0.4
+  - cached:paper-header-panel-1.0.3
+  - cached:paper-button-1.0.3
+  - cached:paper-fab-1.0.3
+  - cached:paper-input-1.0.8
+  - cached:paper-checkbox-1.0.5
+  - cached:paper-drawer-panel-1.0.3
+  - cached:paper-menu-1.0.1
+  - cached:cmi-drawer-navigation
+  - cmi-button
+  - cmi-fab
+  - cmi-fab-slide
+
+css:
+  concat:
+    includeDependencies: true
+
+js:
+  concat:
+    includeDependencies: true
+  coffee:
+    options:
+      bare: true
+
+fonts:
+  copy:
+    includeDependencies: true
+
+templates:
+  concat:
+    includeDependencies: true
+
+webcomponents:
+  concat:
+    includeDependencies: true
+
+postpipeline:
+  urlReplace:
+    options:
+      cssPatterns:
+        - pattern: 'image-url\((?:QUOTES1|QUOTES2)(\S*)(?:QUOTES1|QUOTES2)\)'
+          modifiers: 'g'
+          quotesPlaceholder: 'QUOTES1'
+          doubleQuotesPlaceholder: 'QUOTES2'
+        - pattern: 'font-url\((?:QUOTES1|QUOTES2)(\S*)(?:QUOTES1|QUOTES2)\)'
+          modifiers: 'g'
+          quotesPlaceholder: 'QUOTES1'
+          doubleQuotesPlaceholder: 'QUOTES2'
+
+live:
+  watch:
+    groups:
+        sass:
+          files:
+            - lib/assets/cmi/stylesheets/**/*.sass
+          tasks:
+            - graspi_build_sass
+        coffee:
+          files:
+            - lib/assets/cmi/javascripts/**/*.coffee
+          tasks:
+            - graspi_build_coffee
+        images:
+          files:
+            - lib/assets/cmi/images/**/*
+          tasks:
+            - graspi_build_images
+        templates:
+          files:
+            - lib/assets/cmi/templates/**/*
+          tasks:
+            - graspi_build_templates
+        webcomponents:
+          files:
+            - lib/assets/cmi/webcomponents/cmi-drawer-navigation/**/*
+            - lib/assets/cmi/webcomponents/cmi-button-behavior/**/*
+            - lib/assets/cmi/webcomponents/cmi-button/**/*
+            - lib/assets/cmi/webcomponents/cmi-fab/**/*
+            - lib/assets/cmi/webcomponents/cmi-fab-slide/**/*
+          tasks:
+            - graspi_build_webcomponents
+
+tasks:
+  graspi_build:
+    - graspi_images
+    - graspi_fonts
+    - graspi_templates
+    - graspi_webcomponents
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_css_minify
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_js_uglify
+    - graspi_filerev
+    - graspi_manifest
+    - graspi_css_replace_urls
+  graspi_build_sass:
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_filerev
+    - graspi_manifest
+    - graspi_css_replace_urls
+  graspi_build_coffee:
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_filerev
+    - graspi_manifest
+    - graspi_css_replace_urls
+  graspi_build_images:
+    - graspi_images
+    - graspi_css_concat
+    - graspi_filerev
+    - graspi_manifest
+    - graspi_css_replace_urls
+  graspi_build_fonts:
+    - graspi_fonts
+    - graspi_css_concat
+    - graspi_filerev
+    - graspi_manifest
+    - graspi_css_replace_urls
+  graspi_build_templates:
+    - graspi_templates
+    - graspi_filerev
+    - graspi_manifest
+  graspi_build_webcomponents:
+    - graspi_webcomponents
+    - graspi_filerev
+    - graspi_manifest
+
+options:
+  destPath: 'gh-pages-middleman/source/gh-pages/assets/cmi_graspi'
+  css:
+    basePath: 'lib/assets/cmi/stylesheets'
+    destFile: 'cmi.css'
+    files:
+      - 'cmi.sass'
+  js:
+    basePath: 'lib/assets/cmi/javascripts'
+    destFile: 'cmi.js'
+    files:
+      - '**/*.coffee'
+  templates:
+    basePath: 'lib/assets/cmi/templates'
+    destFile: 'templates.html'
+    files:
+      - '**/*.haml'
+      - '**/*.html'
+  webcomponents:
+    basePath: 'lib/assets/cmi/webcomponents'
+    destFile: 'webcomponents.html'
+    files: []
+  images:
+    basePath: 'lib/assets/cmi/images'
+    files:
+      - '{,*/}*'
+  fonts:
+    basePath: 'lib/assets/cmi/fonts'
+    files:
+      - '{,*/}*'
+
+environments:
+  development:
+    tasks:
+      graspi_build:
+        - graspi_images
+        - graspi_fonts
+        - graspi_templates
+        - graspi_webcomponents
+        - graspi_css_sass_compile
+        - graspi_css_concat
+        - graspi_js_coffee_compile
+        - graspi_js_concat
+        - graspi_filerev
+        - graspi_manifest
+        - graspi_css_replace_urls

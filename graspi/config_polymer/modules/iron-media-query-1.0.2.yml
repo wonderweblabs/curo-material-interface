@@ -1,0 +1,27 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+
+tasks:
+  graspi_build:
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/iron-media-query'
+  destPath: 'graspi_build/iron-media-query/webcomponents'
+  templates:
+    destFile: 'iron-media-query.html'
+    files:
+      - iron-media-query.html
+  replace:
+    - files:
+        - 'graspi_build/iron-media-query/**/*.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

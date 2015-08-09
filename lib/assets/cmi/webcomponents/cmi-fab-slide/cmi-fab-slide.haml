@@ -1,0 +1,8 @@
+%dom-module#cmi-fab-slide
+  %graspi-webcomponent-stylesheet/
+  %template
+    %paper-ripple
+    %paper-material{ id: "cmi-button", elevation: "[[_elevation]]", animated: true, :'class$' => "[[_computeContentClass(receivedFocusFromKeyboard)]]" }
+      %content{ select: 'cmi-fab-slide-icon' }
+      %content{ select: 'cmi-fab-slide-content' }
+  %graspi-webcomponent-script/

@@ -1,0 +1,36 @@
+// default styling
+table.cmi-table
+  padding: 0
+  border-spacing: 0px
+  border-collapse: collapse
+  outline: none
+  border: none
+
+// table striped
+table.cmi-table-striped
+  tr:nth-child(even)
+    background-color: rgba(#000, 0.03)
+
+// table hoveralbe
+table.cmi-table-hoverable
+  tr:hover
+    background-color: rgba(#000, 0.02)
+
+// table striped & hoveralbe
+table.cmi-table-striped.cmi-table-hoverable
+  tr:nth-child(even)
+    &:hover
+      background-color: rgba(#000, 0.05)
+
+// table active rows
+table.cmi-table
+  tr.cmi-active
+    background-color: $color-table-row-active
+  &.cmi-table-striped
+    tr.cmi-active:nth-child(even)
+      background-color: darken($color-table-row-active, 5%)
+  &.cmi-table-hoverable
+    tr.cmi-active,
+    tr.cmi-active:nth-child(even)
+      &:hover
+        background-color: lighten($color-table-row-active, 5%)

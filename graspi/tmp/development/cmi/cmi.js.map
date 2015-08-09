@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "cmi.js",
+  "sourceRoot": "../../../../lib/assets/cmi/javascripts/",
+  "sources": [
+    "cmi.coffee"
+  ],
+  "names": [],
+  "mappings": ""
+}

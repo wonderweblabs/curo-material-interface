@@ -1,0 +1,38 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - iron-input-1.0.4
+  - iron-autogrow-textarea-1.0.3
+  - iron-form-element-behavior-1.0.3
+  - iron-behaviors-1.0.5
+  - paper-styles-1.0.11
+
+tasks:
+  graspi_build:
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/paper-input'
+  destPath: 'graspi_build/paper-input/webcomponents'
+  templates:
+    destFile: 'paper-input.html'
+    files:
+      - paper-input-addon-behavior.html
+      - paper-input-behavior.html
+      - paper-input-char-counter.html
+      - paper-input-container.html
+      - paper-input-error.html
+      - paper-input.html
+      - paper-textarea.html
+  replace:
+    - files:
+        - 'graspi_build/paper-input/webcomponents/paper-input.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

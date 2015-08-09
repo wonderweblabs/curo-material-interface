@@ -1,0 +1,29 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - iron-a11y-keys-behavior-1.0.5
+
+tasks:
+  graspi_build:
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/iron-behaviors'
+  destPath: 'graspi_build/iron-behaviors/webcomponents'
+  templates:
+    destFile: 'iron-behaviors.html'
+    files:
+      - iron-control-state.html
+      - iron-button-state.html
+  replace:
+    - files:
+        - 'graspi_build/iron-behaviors/**/*.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

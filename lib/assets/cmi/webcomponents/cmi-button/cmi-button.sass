@@ -1,0 +1,126 @@
+@import bourbon
+
+\:host
+  @apply(--cmi-button-defaults)
+  +border-top-radius(3px)
+  +border-bottom-radius(3px)
+  margin: 0 0.29em
+  @apply(--cmi-button)
+  > paper-ripple
+    @apply(--cmi-button-paper-ripple-defaults)
+    @apply(--cmi-button-paper-ripple)
+  > paper-material
+    @apply(--cmi-button-paper-material-defaults)
+    @apply(--cmi-button-paper-material)
+    &.keyboard-focus
+      @apply(--cmi-button-paper-material-keyboard-focused-defaults)
+      @apply(--cmi-button-paper-material-keyboard-focused)
+  > .cmi-button
+    @apply(--cmi-button-inner-defaults)
+    +border-top-radius(3px)
+    +border-bottom-radius(3px)
+    min-width: 5.14em
+    padding: 0.7em 1em
+    @apply(--cmi-button-inner)
+  ::content
+    *
+      text-transform: inherit
+
+\:host([raised])
+  @apply(--cmi-button-raised-defaults)
+  @apply(--cmi-button-raised)
+  > .cmi-button
+    @apply(--cmi-button-raised-inner-defaults)
+    @apply(--cmi-button-raised-inner)
+
+\:host([theme="primary"])
+  @apply(--cmi-button-primary-defaults)
+  @apply(--cmi-button-primary)
+  > .cmi-button
+    @apply(--cmi-button-primary-inner-defaults)
+    @apply(--cmi-button-primary-inner)
+
+\:host([theme="highlight"])
+  @apply(--cmi-button-highlight-defaults)
+  @apply(--cmi-button-highlight)
+  > .cmi-button
+    @apply(--cmi-button-highlight-inner-defaults)
+    @apply(--cmi-button-highlight-inner)
+
+\:host([theme="danger"])
+  @apply(--cmi-button-danger-defaults)
+  @apply(--cmi-button-danger)
+  > .cmi-button
+    @apply(--cmi-button-danger-inner-defaults)
+    @apply(--cmi-button-danger-inner)
+
+\:host([small])
+  @apply(--cmi-button-small-defaults)
+  @apply(--cmi-button-small)
+  > .cmi-button
+    @apply(--cmi-button-small-inner-defaults)
+    padding: 0.4em 0.57em
+    @apply(--cmi-button-small-inner)
+
+\:host([large])
+  @apply(--cmi-button-large-defaults)
+  line-height: 1.2
+  @apply(--cmi-button-large)
+  > .cmi-button
+    @apply(--cmi-button-large-inner-defaults)
+    padding: 0.85em 1.2em
+    @apply(--cmi-button-large-inner)
+
+\:host([filled])
+  @apply(--cmi-button-filled-defaults)
+  @apply(--cmi-button-filled)
+  > .cmi-button
+    @apply(--cmi-button-filled-inner-defaults)
+    @apply(--cmi-button-filled-inner)
+
+\:host([filled][theme="primary"])
+  @apply(--cmi-button-filled-primary-defaults)
+  @apply(--cmi-button-filled-primary)
+  > .cmi-button
+    @apply(--cmi-button-filled-primary-inner-defaults)
+    @apply(--cmi-button-filled-primary-inner)
+
+\:host([filled][theme="highlight"])
+  @apply(--cmi-button-filled-highlight-defaults)
+  @apply(--cmi-button-filled-highlight)
+  > .cmi-button
+    @apply(--cmi-button-filled-highlight-inner-defaults)
+    @apply(--cmi-button-filled-highlight-inner)
+  > paper-ripple
+    @apply(--cmi-button-filled-highlight-ripple-defaults)
+
+\:host([filled][theme="danger"])
+  @apply(--cmi-button-filled-danger-defaults)
+  @apply(--cmi-button-filled-danger)
+  > .cmi-button
+    @apply(--cmi-button-filled-danger-inner-defaults)
+    @apply(--cmi-button-filled-danger-inner)
+  > paper-ripple
+    @apply(--cmi-button-filled-danger-ripple-defaults)
+
+\:host([block])
+  display: block
+  @apply(--cmi-button-block)
+  > .cmi-button
+    @apply(--cmi-button-block-inner)
+
+\:host([noink])
+  @apply(--cmi-button-noink-defaults)
+  @apply(--cmi-button-noink)
+  > paper-ripple
+    @apply(--cmi-button-noink-paper-ripple-defaults)
+    @apply(--cmi-button-noink-paper-ripple)
+
+\:host([disabled])
+  @apply(--cmi-button-disabled-defaults)
+  @apply(--cmi-button-disabled)
+  > .cmi-button
+    @apply(--cmi-button-disabled-inner-defaults)
+    @apply(--cmi-button-disabled-inner)
+
+

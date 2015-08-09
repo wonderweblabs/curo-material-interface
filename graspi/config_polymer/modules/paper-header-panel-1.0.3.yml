@@ -1,0 +1,47 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - iron-flex-layout-1.0.2
+
+tasks:
+  graspi_build:
+    - graspi_css_copy
+    - graspi_css_concat
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/paper-header-panel'
+  destPath: 'graspi_build/paper-header-panel/webcomponents'
+  css:
+    destFile: 'paper-header-panel.css'
+    files:
+      - 'paper-header-panel.css'
+  templates:
+    destFile: 'paper-header-panel.html'
+    files:
+      - paper-header-panel.html
+  replace:
+    - files:
+        - 'graspi_build/paper-header-panel/webcomponents/paper-header-panel.html'
+      pattern:
+        pattern: '(\<link rel\=\"import\" type\=\"css\" href\=\"paper\-header\-panel.css\"\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: 'graspi_build/paper-header-panel/webcomponents/paper-header-panel.css'
+        - '</style>'
+    - files:
+        - 'graspi_build/paper-header-panel/webcomponents/paper-header-panel.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+
+

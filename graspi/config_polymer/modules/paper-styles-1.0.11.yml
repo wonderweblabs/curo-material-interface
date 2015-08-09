@@ -1,0 +1,32 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - iron-flex-layout-1.0.2
+  - font-roboto-1.0.1
+
+tasks:
+  graspi_build:
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/paper-styles'
+  destPath: 'graspi_build/paper-styles/webcomponents'
+  templates:
+    destFile: 'paper-styles.html'
+    files:
+      - color.html
+      - default-theme.html
+      - shadow.html
+      - typography.html
+  replace:
+    - files:
+        - 'graspi_build/paper-styles/**/*.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

@@ -1,0 +1,77 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - paper-behaviors-1.0.3
+  - cmi-button-behavior
+
+js:
+  coffee:
+    options:
+      bare: false
+      sourceMap: false
+
+tasks:
+  graspi_build:
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_templates
+    - graspi_replace
+
+options:
+  basePath: 'lib/assets/cmi/webcomponents/cmi-fab-slide'
+  destPath: 'graspi_build/cmi-fab-slide/webcomponents'
+  css:
+    destFile: 'cmi-fab-slide.css'
+    files:
+      - 'cmi-fab-slide.sass'
+  js:
+    destFile: 'cmi-fab-slide.js'
+    files:
+      - cmi-fab-slide.coffee
+  templates:
+    destFile: 'cmi-fab-slide.html'
+    files:
+      - cmi-fab-slide.haml
+  replace:
+    - files:
+        - 'graspi_build/cmi-fab-slide/webcomponents/cmi-fab-slide.html'
+      pattern:
+        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: 'graspi_build/cmi-fab-slide/webcomponents/cmi-fab-slide.css'
+        - '</style>'
+    - files:
+        - 'graspi_build/cmi-fab-slide/webcomponents/cmi-fab-slide.html'
+      pattern:
+        pattern: '(\<graspi\-webcomponent\-script\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<script>'
+        - file: 'graspi_build/cmi-fab-slide/webcomponents/cmi-fab-slide.js'
+        - '</script>'
+    - files:
+        - 'graspi_build/cmi-fab-slide/webcomponents/cmi-fab-slide.html'
+      pattern:
+        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+    - files:
+        - 'graspi_build/cmi-fab-slide/webcomponents/cmi-fab-slide.html'
+      pattern:
+        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+

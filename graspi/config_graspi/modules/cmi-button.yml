@@ -1,0 +1,77 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - paper-behaviors-1.0.3
+  - cmi-button-behavior
+
+js:
+  coffee:
+    options:
+      bare: false
+      sourceMap: false
+
+tasks:
+  graspi_build:
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_templates
+    - graspi_replace
+
+options:
+  basePath: 'lib/assets/cmi/webcomponents/cmi-button'
+  destPath: 'graspi_build/cmi-button/webcomponents'
+  css:
+    destFile: 'cmi-button.css'
+    files:
+      - 'cmi-button.sass'
+  js:
+    destFile: 'cmi-button.js'
+    files:
+      - cmi-button.coffee
+  templates:
+    destFile: 'cmi-button.html'
+    files:
+      - cmi-button.haml
+  replace:
+    - files:
+        - 'graspi_build/cmi-button/webcomponents/cmi-button.html'
+      pattern:
+        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: 'graspi_build/cmi-button/webcomponents/cmi-button.css'
+        - '</style>'
+    - files:
+        - 'graspi_build/cmi-button/webcomponents/cmi-button.html'
+      pattern:
+        pattern: '(\<graspi\-webcomponent\-script\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<script>'
+        - file: 'graspi_build/cmi-button/webcomponents/cmi-button.js'
+        - '</script>'
+    - files:
+        - 'graspi_build/cmi-button/webcomponents/cmi-button.html'
+      pattern:
+        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+    - files:
+        - 'graspi_build/cmi-button/webcomponents/cmi-button.html'
+      pattern:
+        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+

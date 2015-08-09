@@ -1,0 +1,227 @@
+@import bourbon
+@import cmi/mixins
+
+$normal-border-radius: 28px
+$normal-size: 49px
+$normal-icon-font-size: 17px
+$normal-text-font-size: 15px
+$normal-padding: ($normal-size - $normal-icon-font-size) / 2
+
+$small-border-radius: 22px
+$small-size: 44px
+$small-icon-font-size: 14px
+$small-text-font-size: 14px
+$small-padding: ($small-size - $small-icon-font-size) / 2
+
+$large-border-radius: 34px
+$large-size: 67px
+$large-icon-font-size: 21px
+$large-text-font-size: 19px
+$large-padding: ($large-size - $large-icon-font-size) / 2
+
+// --cmi-fab-slide-animation-duration
+$animation-duration: .25s
+
+// --cmi-fab-slide-animation-close-delay
+$animation-close-delay: .3s
+
+// --cmi-fab-slide-animation-max-width
+$animation-max-width: 400px
+
+\:host
+  @apply(--cmi-button-defaults)
+  +border-top-radius($normal-border-radius)
+  +border-bottom-radius($normal-border-radius)
+  margin: 0 0.29em
+  @apply(--cmi-fab-slide)
+
+  > paper-ripple
+    @apply(--cmi-button-paper-ripple-defaults)
+    @apply(--cmi-fab-slide-paper-ripple)
+
+  > paper-material
+    @apply(--cmi-button-paper-material-defaults)
+    @apply(--cmi-fab-slide-paper-material)
+    &.keyboard-focus
+      @apply(--cmi-button-paper-material-keyboard-focused-defaults)
+      @apply(--cmi-fab-slide-paper-material-keyboard-focused)
+  > .cmi-button
+    @apply(--cmi-button-inner-defaults)
+    +border-top-radius($normal-border-radius)
+    +border-bottom-radius($normal-border-radius)
+    +clearfix()
+    min-width: $normal-size
+    min-height: $normal-size
+    font-size: $normal-icon-font-size
+    @apply(--cmi-fab-slide-inner)
+  ::content
+    *
+      text-transform: inherit
+    cmi-fab-slide-icon,
+    cmi-fab-slide-content
+      position: relative
+      display: block
+      float: left
+      white-space: nowrap
+    cmi-fab-slide-icon
+      padding: $normal-padding
+      width: $normal-size
+      height: $normal-size
+      line-height: 1
+    cmi-fab-slide-content
+      +transition-property(margin-right max-width)
+      +transition-duration(var(--cmi-fab-slide-animation-duration, $animation-duration))
+      +transition-timing-function(ease)
+      +transition-delay(var(--cmi-fab-slide-animation-close-delay, $animation-close-delay))
+      overflow: hidden
+      max-width: 0px
+      margin-right: 0px
+      padding: $normal-padding 0
+      float: right
+      font-size: $normal-text-font-size
+      line-height: $normal-icon-font-size
+
+\:host([raised])
+  @apply(--cmi-button-raised-defaults)
+  @apply(--cmi-fab-slide-raised)
+  > .cmi-button
+    @apply(--cmi-button-raised-inner-defaults)
+    @apply(--cmi-fab-slide-raised-inner)
+
+\:host([theme="primary"])
+  @apply(--cmi-button-primary-defaults)
+  @apply(--cmi-fab-slide-primary)
+  > .cmi-button
+    @apply(--cmi-button-primary-inner-defaults)
+    @apply(--cmi-fab-slide-primary-inner)
+
+\:host([theme="highlight"])
+  @apply(--cmi-button-highlight-defaults)
+  @apply(--cmi-fab-slide-highlight)
+  > .cmi-button
+    @apply(--cmi-button-highlight-inner-defaults)
+    @apply(--cmi-fab-slide-highlight-inner)
+
+\:host([theme="danger"])
+  @apply(--cmi-button-danger-defaults)
+  @apply(--cmi-fab-slide-danger)
+  > .cmi-button
+    @apply(--cmi-button-danger-inner-defaults)
+    @apply(--cmi-fab-slide-danger-inner)
+
+\:host([small])
+  @apply(--cmi-button-small-defaults)
+  +border-top-radius($small-border-radius)
+  +border-bottom-radius($small-border-radius)
+  @apply(--cmi-fab-slide-small)
+  > .cmi-button
+    @apply(--cmi-button-small-inner-defaults)
+    +border-top-radius($small-border-radius)
+    +border-bottom-radius($small-border-radius)
+    min-width: $small-size
+    min-height: $small-size
+    font-size: $small-icon-font-size
+    @apply(--cmi-fab-slide-small-inner)
+  ::content
+    cmi-fab-slide-icon
+      padding: $small-padding
+      width: $small-size
+      height: $small-size
+    cmi-fab-slide-content
+      padding: $small-padding 0
+      float: right
+      font-size: $small-text-font-size
+      line-height: $small-icon-font-size
+
+\:host([large])
+  @apply(--cmi-button-large-defaults)
+  +border-top-radius($large-border-radius)
+  +border-bottom-radius($large-border-radius)
+  @apply(--cmi-fab-slide-large)
+  > .cmi-button
+    @apply(--cmi-button-large-inner-defaults)
+    +border-top-radius($large-border-radius)
+    +border-bottom-radius($large-border-radius)
+    min-width: $large-size
+    min-height: $large-size
+    font-size: $large-icon-font-size
+    @apply(--cmi-fab-slide-large-inner)
+  ::content
+    cmi-fab-slide-icon
+      padding: $large-padding
+      width: $large-size
+      height: $large-size
+    cmi-fab-slide-content
+      padding: $large-padding 0
+      float: right
+      font-size: $large-text-font-size
+      line-height: $large-icon-font-size
+
+\:host([filled])
+  @apply(--cmi-button-filled-defaults)
+  @apply(--cmi-fab-slide-filled)
+  > .cmi-button
+    @apply(--cmi-button-filled-inner-defaults)
+    @apply(--cmi-fab-slide-filled-inner)
+
+\:host([filled][theme="primary"])
+  @apply(--cmi-button-filled-primary-defaults)
+  @apply(--cmi-fab-slide-filled-primary)
+  > .cmi-button
+    @apply(--cmi-button-filled-primary-inner-defaults)
+    @apply(--cmi-fab-slide-filled-primary-inner)
+
+\:host([filled][theme="highlight"])
+  @apply(--cmi-button-filled-highlight-defaults)
+  @apply(--cmi-fab-slide-filled-highlight)
+  > .cmi-button
+    @apply(--cmi-button-filled-highlight-inner-defaults)
+    @apply(--cmi-fab-slide-filled-highlight-inner)
+  > paper-ripple
+    @apply(--cmi-button-filled-highlight-ripple-defaults)
+
+\:host([filled][theme="danger"])
+  @apply(--cmi-button-filled-danger-defaults)
+  @apply(--cmi-fab-slide-filled-danger)
+  > .cmi-button
+    @apply(--cmi-button-filled-danger-inner-defaults)
+    @apply(--cmi-fab-slide-filled-danger-inner)
+  > paper-ripple
+    @apply(--cmi-button-filled-danger-ripple-defaults)
+
+\:host([noink])
+  @apply(--cmi-button-noink-defaults)
+  @apply(--cmi-fab-slide-noink)
+  > paper-ripple
+    @apply(--cmi-button-noink-paper-ripple-defaults)
+    @apply(--cmi-fab-slide-noink-paper-ripple)
+
+\:host([disabled])
+  @apply(--cmi-button-disabled-defaults)
+  @apply(--cmi-fab-slide-disabled)
+  > .cmi-button
+    @apply(--cmi-button-disabled-inner-defaults)
+    @apply(--cmi-fab-slide-disabled-inner)
+
+\:host([open])
+  ::content
+    cmi-fab-slide-content
+      +transition-property(margin-right max-width)
+      +transition-duration(var(--cmi-fab-slide-animation-duration, $animation-duration))
+      +transition-timing-function(ease)
+      +transition-delay(0s)
+      max-width: var(--cmi-fab-slide-animation-max-width, $animation-max-width)
+      margin-right: $normal-padding
+      margin-left: $normal-padding * -0.5
+
+\:host([open][small])
+  ::content
+    cmi-fab-slide-content
+      margin-right: $small-padding
+      margin-left: $small-padding * -0.5
+
+\:host([open][large])
+  ::content
+    cmi-fab-slide-content
+      margin-right: $large-padding
+      margin-left: $large-padding * -0.5

@@ -11,41 +11,42 @@
     = tag(:meta, name: 'robots', content: yield_content(:html_robots))
     %title= yield_content(:title) || "Curo Material Interface"
 
-    = stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js'
-    = stylesheet_link_tag 'base'
-    = surround '<!--[if IE]>', '<![endif]-->' do
-      = stylesheet_link_tag 'base-ie'
+    -#= stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js'
+    -#= stylesheet_link_tag 'base'
+    -#= surround '<!--[if IE]>', '<![endif]-->' do
+    -#  = stylesheet_link_tag 'base-ie'
+
+    :javascript
+      window.Polymer = window.Polymer || {};
+      window.Polymer.dom = 'shadow';
 
     = javascript_include_tag '//code.jquery.com/jquery-2.1.3.min.js'
     = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/json2/20140204/json2.min.js'
     = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'
     = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js'
     = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.4.1/backbone.marionette.min.js'
-    = javascript_include_tag 'base'
 
-    = cmi_web_components()
+    = graspi_stylesheet_link_tag('cmi/cmi')
+    = graspi_stylesheet_link_tag('cmi_doc/application')
 
-  %body.cmi
-    %cmi-sidebar
-      .cmi-sidebar-title Navigation
-      %nav.cmi-sidebar-navigation
-        %a{ href: '#' } Link
-        %a{ href: '#' } Link
-        %a{ href: '#' } Link
-        %a{ href: '#' } Link
+    = graspi_javascript_include_tag('cmi/cmi')
+    = graspi_javascript_include_tag('cmi_doc/application')
 
-    %cmi-button
+    = graspi_html_link_tag('cmi/webcomponents')
 
-    -# :javascript
-    -#   $(function(){
-    -#     window.setTimeout(function() {
-    -#       $('cmi-sidebar').addClass('cmi-sidebar-visible');
-    -#     }, 300);
-    -#   });
-
+  %body.cmi.layout.vertical.fullbleed
     = partial 'shared/browse_happy'
-    = partial 'shared/header'
-    = yield
-    = partial 'shared/footer'
-    = partial 'shared/analytics' if config[:google_analytics] == true
+    %paper-drawer-panel
+      %paper-header-panel.flex{ drawer: true }
+        %paper-toolbar.paper-header
+        .content.fit
+          = yield_content(:sidebar_content)
+      %paper-header-panel.flex{ main: true }
+        %paper-toolbar.paper-header
+          = partial 'shared/header'
+        %div.content.fit
+          = yield
+          = partial 'shared/footer'
+          = partial 'shared/analytics' if config[:google_analytics] == true
+
 

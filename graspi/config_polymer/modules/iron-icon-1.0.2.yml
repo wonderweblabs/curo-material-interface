@@ -1,0 +1,29 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - iron-flex-layout-1.0.2
+  - iron-meta-1.0.3
+
+tasks:
+  graspi_build:
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/paper-button'
+  destPath: 'graspi_build/paper-button/webcomponents'
+  templates:
+    destFile: 'paper-button.html'
+    files:
+      - paper-button.html
+  replace:
+    - files:
+        - 'graspi_build/paper-button/webcomponents/paper-button.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

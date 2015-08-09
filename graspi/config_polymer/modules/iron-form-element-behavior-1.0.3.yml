@@ -1,0 +1,27 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+
+tasks:
+  graspi_build:
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/iron-form-element-behavior'
+  destPath: 'graspi_build/iron-form-element-behavior/webcomponents'
+  templates:
+    destFile: 'iron-form-element-behavior.html'
+    files:
+      - iron-form-element-behavior.html
+  replace:
+    - files:
+        - 'graspi_build/iron-form-element-behavior/webcomponents/iron-form-element-behavior.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

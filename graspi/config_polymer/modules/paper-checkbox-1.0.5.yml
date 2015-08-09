@@ -1,0 +1,49 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - paper-behaviors-1.0.3
+  - paper-styles-1.0.11
+  - paper-ripple-1.0.1
+
+tasks:
+  graspi_build:
+    - graspi_css_copy
+    - graspi_css_concat
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/paper-checkbox'
+  destPath: 'graspi_build/paper-checkbox/webcomponents'
+  css:
+    destFile: 'paper-checkbox.css'
+    files:
+      - 'paper-checkbox.css'
+  templates:
+    destFile: 'paper-checkbox.html'
+    files:
+      - paper-checkbox.html
+  replace:
+    - files:
+        - 'graspi_build/paper-checkbox/webcomponents/paper-checkbox.html'
+      pattern:
+        pattern: '(\<link rel\=\"import\" type\=\"css\" href\=\"paper\-checkbox.css\"\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: 'graspi_build/paper-checkbox/webcomponents/paper-checkbox.css'
+        - '</style>'
+    - files:
+        - 'graspi_build/paper-checkbox/webcomponents/paper-checkbox.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+
+

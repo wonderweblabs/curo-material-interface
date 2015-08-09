@@ -1,0 +1,30 @@
+tmpPath:                'graspi/tmp'
+cacheFile:              'graspi/tmp/files_cache_register.json'
+modulesBuiltTrackFile:  'graspi/tmp/modules_built_track_register.json'
+
+css:
+  sass:
+    options:
+      loadPath:
+        - bower_components/bourbon/app/assets/stylesheets
+        - bower_components/neat/app/assets/stylesheets
+        - lib/assets/cmi/stylesheets
+
+js:
+  uglify:
+    options:
+      nameCache: 'graspi/tmp/uglify_mangle_cache.json'
+
+postpipeline:
+  manifest:
+    options:
+      path: 'graspi/tmp/g-assets.json'
+    replacePattern:
+      pattern: '^(\/)?gh\-pages\-middleman\/source\/'
+      replace: ''
+
+live:
+  watch:
+    options:
+      interrupt:      false
+      forever:        true

@@ -1,0 +1,31 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - iron-form-element-behavior-1.0.3
+  - iron-validatable-behavior-1.0.4
+  - iron-flex-layout-1.0.2
+  - iron-behaviors-1.0.5
+
+tasks:
+  graspi_build:
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/iron-input'
+  destPath: 'graspi_build/iron-input/webcomponents'
+  templates:
+    destFile: 'iron-input.html'
+    files:
+      - iron-input.html
+  replace:
+    - files:
+        - 'graspi_build/iron-input/webcomponents/iron-input.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

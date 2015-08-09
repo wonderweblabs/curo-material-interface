@@ -1,0 +1,62 @@
+%h2#tables Tables
+
+= code_2 do
+  %table.cmi-table.cmi-table-striped.cmi-table-hoverable
+    %thead
+      %tr
+        %th Column 1
+        %th Column 2
+        %th Column 4
+    %tbody
+      %tr
+        %td Row 1 - 1
+        %td Row 1 - 2
+        %td
+          %cmi-button{ small: true, filled: true } Button
+      %tr
+        %td Row 2 - 1
+        %td Row 2 - 2
+        %td
+          %cmi-button{ small: true, filled: true } Button
+      %tr
+        %td Row 3 - 1
+        %td Row 3 - 2
+        %td
+          %cmi-button{ small: true, filled: true } Button
+      %tr
+        %td Row 4 - 1
+        %td Row 4 - 2
+        %td
+          %cmi-button{ small: true, filled: true } Button
+
+
+%h3 Active rows
+
+= code_2 do
+  %table.cmi-table.cmi-table-striped.cmi-table-hoverable
+    %thead
+      %tr
+        %th Column 1
+        %th Column 2
+        %th Column 4
+    %tbody
+      %tr
+        %td Row 1 - 1
+        %td Row 1 - 2
+        %td
+          %cmi-button{ small: true, filled: true } Button
+      %tr.cmi-active
+        %td Row 2 - 1
+        %td Row 2 - 2
+        %td
+          %cmi-button{ small: true, filled: true } Button
+      %tr.cmi-active
+        %td Row 3 - 1
+        %td Row 3 - 2
+        %td
+          %cmi-button{ small: true, filled: true } Button
+      %tr
+        %td Row 4 - 1
+        %td Row 4 - 2
+        %td
+          %cmi-button{ small: true, filled: true } Button

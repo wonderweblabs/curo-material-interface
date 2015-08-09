@@ -1,0 +1,34 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - paper-behaviors-1.0.3
+  - paper-styles-1.0.11
+  - paper-ripple-1.0.1
+  - paper-material-1.0.3
+  - iron-flex-layout-1.0.2
+  - iron-icon-1.0.2
+  - iron-icons-1.0.3
+
+tasks:
+  graspi_build:
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/paper-fab'
+  destPath: 'graspi_build/paper-fab/webcomponents'
+  templates:
+    destFile: 'paper-fab.html'
+    files:
+      - paper-fab.html
+  replace:
+    - files:
+        - 'graspi_build/paper-fab/webcomponents/paper-fab.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

@@ -17,6 +17,12 @@ gem 'neat'
 # rake
 gem 'rake'
 
+# graspi
+gem 'graspi', github: 'wonderweblabs/graspi', branch: 'develop'
+
+# for code blocks
+gem 'htmlbeautifier'
+
 # cmi
 gem 'curo-material-interface', path: '../'
 

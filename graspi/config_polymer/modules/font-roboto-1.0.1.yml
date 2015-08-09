@@ -1,0 +1,15 @@
+#
+#
+# This should be implemented as own solution.
+# The bower packages tries to load the font from google.
+# Instead, we should use the cmi version.
+#
+#
+
+webcomponent: true
+
+dependencies: []
+
+options:
+  basePath: 'bower_components/roboto-font'
+  destPath: 'graspi_build/roboto-font'

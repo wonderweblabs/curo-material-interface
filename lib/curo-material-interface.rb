@@ -30,6 +30,5 @@ module CMI
   end
 
   require 'cmi/rails' if defined?(Rails)
-  require 'cmi/middleman' if defined?(Middleman)
 
 end

@@ -1,0 +1,47 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - paper-styles-1.0.11
+
+tasks:
+  graspi_build:
+    - graspi_css_copy
+    - graspi_css_concat
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/paper-item'
+  destPath: 'graspi_build/paper-item/webcomponents'
+  css:
+    destFile: 'paper-item-shared.css'
+    files:
+      - 'paper-item-shared.css'
+  templates:
+    destFile: 'paper-item.html'
+    files:
+      - paper-item.html
+      - paper-item-body.html
+      - paper-icon-item.html
+  replace:
+    - files:
+        - 'graspi_build/paper-header-panel/webcomponents/paper-header-panel.html'
+      pattern:
+        pattern: '(\<link rel\=\"import\" type\=\"css\" href\=\"paper\-item\-shared.css\"\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: 'graspi_build/paper-item/webcomponents/paper-item-shared.css'
+        - '</style>'
+    - files:
+        - 'graspi_build/paper-item/webcomponents/paper-item.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

@@ -1,0 +1,30 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+
+tasks:
+  graspi_build:
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/iron-selector'
+  destPath: 'graspi_build/iron-selector/webcomponents'
+  templates:
+    destFile: 'iron-selector.html'
+    files:
+      - iron-selection.html
+      - iron-selectable.html
+      - iron-multi-selectable.html
+      - iron-selector.html
+  replace:
+    - files:
+        - 'graspi_build/iron-selector/**/*.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

@@ -1,0 +1,85 @@
+.grid-container
+  +outer-container
+  +box-sizing(border-box)
+  position: relative
+
+.grid-row
+  +row
+  +box-sizing(border-box)
+  position: relative
+  margin: 0 auto
+
+[class*='grid-col-']
+  position: relative
+  padding-left: modular-scale(1, 1em, $golden)
+  padding-right: modular-scale(1, 1em, $golden)
+  +box-sizing(border-box)
+
+.grid-col-1
+  +span-columns(1)
+
+.grid-col-2
+  +span-columns(2)
+
+.grid-col-3
+  +span-columns(3)
+
+.grid-col-4
+  +span-columns(4)
+
+.grid-col-5
+  +span-columns(5)
+
+.grid-col-6
+  +span-columns(6)
+
+.grid-col-7
+  +span-columns(7)
+
+.grid-col-8
+  +span-columns(8)
+
+.grid-col-9
+  +span-columns(9)
+
+.grid-col-10
+  +span-columns(10)
+
+.grid-col-11
+  +span-columns(11)
+
+.grid-col-12
+  +span-columns(12)
+
+.grid-col-offset-1
+  +shift(1)
+
+.grid-col-offset-2
+  +shift(2)
+
+.grid-col-offset-3
+  +shift(3)
+
+.grid-col-offset-4
+  +shift(4)
+
+.grid-col-offset-5
+  +shift(5)
+
+.grid-col-offset-6
+  +shift(6)
+
+.grid-col-offset-7
+  +shift(7)
+
+.grid-col-offset-8
+  +shift(8)
+
+.grid-col-offset-9
+  +shift(9)
+
+.grid-col-offset-10
+  +shift(10)
+
+.grid-col-offset-11
+  +shift(11)

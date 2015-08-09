@@ -1,0 +1,19 @@
+<dom-module id='cmi-drawer-navigation'>
+<graspi-webcomponent-stylesheet>
+<template>
+<iron-selector activate-event='' attr-for-selected='id' class$='[[getIronSelectorClasses(dragging, transition, peeking, selected)]]' selected='[[selected]]'>
+<div id='drawer_left' style$="[[getDrawerStyle('left', drawerLeftWidth)]]">
+<content select='[drawer_left]'></content>
+</div>
+<div id='drawer_right' style$="[[getDrawerStyle('right', drawerRightWidth)]]">
+<content select='[drawer_right]'></content>
+</div>
+<div id='drawer_main' style$='[[getMainStyle(selected, drawerLeftWidth, drawerRightWidth)]]'>
+<content select='[drawer_main]'></content>
+<div id='scrim' on-tap='closeDrawer'></div>
+</div>
+</iron-selector>
+<content></content>
+</template>
+<graspi-webcomponent-script>
+</dom-module>
