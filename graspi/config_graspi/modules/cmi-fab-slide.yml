@@ -21,7 +21,7 @@ tasks:
     - graspi_replace
 
 options:
-  basePath: 'lib/assets/cmi/webcomponents/cmi-fab-slide'
+  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-fab-slide'
   destPath: 'graspi_build/cmi-fab-slide/webcomponents'
   css:
     destFile: 'cmi-fab-slide.css'

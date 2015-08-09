@@ -1,5 +1,5 @@
 dependencies:
-  - mdi-1.1.70
+  - cached:mdi-1.1.70
   - cached:polymer-1.0.8
   - cached:paper-item-1.0.2
   - cached:paper-toolbar-1.0.4
@@ -11,9 +11,9 @@ dependencies:
   - cached:paper-drawer-panel-1.0.3
   - cached:paper-menu-1.0.1
   - cached:cmi-drawer-navigation
-  - cmi-button
-  - cmi-fab
-  - cmi-fab-slide
+  - cached:cmi-button
+  - cached:cmi-fab
+  - cached:cmi-fab-slide
 
 css:
   concat:
@@ -50,39 +50,6 @@ postpipeline:
           modifiers: 'g'
           quotesPlaceholder: 'QUOTES1'
           doubleQuotesPlaceholder: 'QUOTES2'
-
-live:
-  watch:
-    groups:
-        sass:
-          files:
-            - lib/assets/cmi/stylesheets/**/*.sass
-          tasks:
-            - graspi_build_sass
-        coffee:
-          files:
-            - lib/assets/cmi/javascripts/**/*.coffee
-          tasks:
-            - graspi_build_coffee
-        images:
-          files:
-            - lib/assets/cmi/images/**/*
-          tasks:
-            - graspi_build_images
-        templates:
-          files:
-            - lib/assets/cmi/templates/**/*
-          tasks:
-            - graspi_build_templates
-        webcomponents:
-          files:
-            - lib/assets/cmi/webcomponents/cmi-drawer-navigation/**/*
-            - lib/assets/cmi/webcomponents/cmi-button-behavior/**/*
-            - lib/assets/cmi/webcomponents/cmi-button/**/*
-            - lib/assets/cmi/webcomponents/cmi-fab/**/*
-            - lib/assets/cmi/webcomponents/cmi-fab-slide/**/*
-          tasks:
-            - graspi_build_webcomponents
 
 tasks:
   graspi_build:
@@ -133,33 +100,33 @@ tasks:
     - graspi_manifest
 
 options:
-  destPath: 'gh-pages-middleman/source/gh-pages/assets/cmi_graspi'
+  destPath: 'graspi_build/cmi-button-behavior/webcomponents/cmi'
   css:
-    basePath: 'lib/assets/cmi/stylesheets'
+    basePath: 'bower_components/cmi/lib/assets/cmi/stylesheets'
     destFile: 'cmi.css'
     files:
       - 'cmi.sass'
   js:
-    basePath: 'lib/assets/cmi/javascripts'
+    basePath: 'bower_components/cmi/lib/assets/cmi/javascripts'
     destFile: 'cmi.js'
     files:
       - '**/*.coffee'
   templates:
-    basePath: 'lib/assets/cmi/templates'
+    basePath: 'bower_components/cmi/lib/assets/cmi/templates'
     destFile: 'templates.html'
     files:
       - '**/*.haml'
       - '**/*.html'
   webcomponents:
-    basePath: 'lib/assets/cmi/webcomponents'
+    basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents'
     destFile: 'webcomponents.html'
     files: []
   images:
-    basePath: 'lib/assets/cmi/images'
+    basePath: 'bower_components/cmi/lib/assets/cmi/images'
     files:
       - '{,*/}*'
   fonts:
-    basePath: 'lib/assets/cmi/fonts'
+    basePath: 'bower_components/cmi/lib/assets/cmi/fonts'
     files:
       - '{,*/}*'
 

@@ -20,7 +20,8 @@ tasks:
     - graspi_replace
 
 options:
-  basePath: 'lib/assets/cmi/webcomponents/cmi-button-behavior'
+  # basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-button-behavior'
+  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-button-behavior'
   destPath: 'graspi_build/cmi-button-behavior/webcomponents'
   css:
     destFile: 'cmi-button-behavior.css'
