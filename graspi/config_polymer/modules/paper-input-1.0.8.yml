@@ -16,7 +16,7 @@ tasks:
 
 options:
   basePath: 'bower_components/paper-input'
-  destPath: 'graspi_build/paper-input/webcomponents'
+  destFolder: 'paper-input/webcomponents'
   templates:
     destFile: 'paper-input.html'
     files:
@@ -29,7 +29,7 @@ options:
       - paper-textarea.html
   replace:
     - files:
-        - 'graspi_build/paper-input/webcomponents/paper-input.html'
+        - '%%destPath%%/paper-input.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

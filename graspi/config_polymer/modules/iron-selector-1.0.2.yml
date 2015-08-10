@@ -11,7 +11,7 @@ tasks:
 
 options:
   basePath: 'bower_components/iron-selector'
-  destPath: 'graspi_build/iron-selector/webcomponents'
+  destFolder: 'iron-selector/webcomponents'
   templates:
     destFile: 'iron-selector.html'
     files:
@@ -21,7 +21,7 @@ options:
       - iron-selector.html
   replace:
     - files:
-        - 'graspi_build/iron-selector/**/*.html'
+        - '%%destPath%%/**/*.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

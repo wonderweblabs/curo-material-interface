@@ -11,7 +11,7 @@ tasks:
 
 options:
   basePath: 'bower_components/polymer'
-  destPath: 'graspi_build/polymer/webcomponents'
+  destFolder: 'polymer/webcomponents'
   templates:
     destFile: 'polymer.html'
     files:
@@ -20,7 +20,7 @@ options:
       - polymer.html
   replace:
     - files:
-        - 'graspi_build/polymer/webcomponents/polymer.html'
+        - '%%destPath%%/polymer.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'
@@ -28,7 +28,7 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace: ''
     - files:
-        - 'graspi_build/polymer/webcomponents/polymer.html'
+        - '%%destPath%%/polymer.html'
       pattern:
         pattern: '<!--'
         modifiers: ''
@@ -36,6 +36,6 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace:
         - '<script>'
-        - file: 'graspi_build/webcomponentsjs/webcomponents/webcomponents.js'
+        - file: '%%destBasePath%%/webcomponentsjs/webcomponents/webcomponents.js'
         - '</script>'
         - '<!--'

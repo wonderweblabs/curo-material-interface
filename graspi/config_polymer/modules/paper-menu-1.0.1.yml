@@ -13,14 +13,14 @@ tasks:
 
 options:
   basePath: 'bower_components/paper-menu'
-  destPath: 'graspi_build/paper-menu/webcomponents'
+  destFolder: 'paper-menu/webcomponents'
   templates:
     destFile: 'paper-menu.html'
     files:
       - paper-menu.html
   replace:
     - files:
-        - 'graspi_build/paper-menu/webcomponents/paper-menu.html'
+        - '%%destPath%%/paper-menu.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

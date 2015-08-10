@@ -11,14 +11,14 @@ tasks:
 
 options:
   basePath: 'bower_components/iron-a11y-keys-behavior'
-  destPath: 'graspi_build/iron-a11y-keys-behavior/webcomponents'
+  destFolder: 'iron-a11y-keys-behavior/webcomponents'
   templates:
     destFile: 'iron-a11y-keys-behavior.html'
     files:
       - iron-a11y-keys-behavior.html
   replace:
     - files:
-        - 'graspi_build/iron-a11y-keys-behavior/**/*.html'
+        - '%%destPath%%/**/*.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

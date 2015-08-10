@@ -12,14 +12,14 @@ tasks:
 
 options:
   basePath: 'bower_components/iron-validatable-behavior'
-  destPath: 'graspi_build/iron-validatable-behavior/webcomponents'
+  destFolder: 'iron-validatable-behavior/webcomponents'
   templates:
     destFile: 'iron-validatable-behavior.html'
     files:
       - iron-validatable-behavior.html
   replace:
     - files:
-        - 'graspi_build/iron-validatable-behavior/webcomponents/iron-validatable-behavior.html'
+        - '%%destPath%%/iron-validatable-behavior.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

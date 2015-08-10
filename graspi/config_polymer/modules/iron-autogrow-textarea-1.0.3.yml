@@ -15,14 +15,14 @@ tasks:
 
 options:
   basePath: 'bower_components/iron-input'
-  destPath: 'graspi_build/iron-input/webcomponents'
+  destFolder: 'iron-input/webcomponents'
   templates:
     destFile: 'iron-input.html'
     files:
       - iron-input.html
   replace:
     - files:
-        - 'graspi_build/iron-input/webcomponents/iron-input.html'
+        - '%%destPath%%/iron-input.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

@@ -9,7 +9,7 @@ tasks:
     - graspi_replace
 
 options:
-  destPath: 'graspi_build/mdi'
+  destFolder: 'mdi'
   css:
     basePath: 'bower_components/mdi/css'
     destFile: 'materialdesignicons.css'
@@ -33,15 +33,15 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace: ''
     - files:
-        - 'graspi_build/mdi/materialdesignicons.css'
+        - '%%destPath%%/materialdesignicons.css'
       pattern:
-        pattern: '(\.\.\/fonts\/)'
+        pattern: '(\"\.\.\/fonts\/)|(\"cmi\/mdi\/)'
         modifiers: 'g'
         quotesPlaceholder: 'QUOTES1'
         doubleQuotesPlaceholder: 'QUOTES2'
-      replace: 'cmi/mdi-1.1.70/'
+      replace: '"cmi/mdi-1.1.70/'
     - files:
-        - 'graspi_build/mdi/materialdesignicons.css'
+        - '%%destPath%%/materialdesignicons.css'
       pattern:
         pattern: '(\surl\()'
         modifiers: 'g'

@@ -7,28 +7,20 @@ dependencies:
 
 tasks:
   graspi_build:
-    - graspi_css_copy
-    - graspi_css_concat
-    - graspi_templates_copy
-    - graspi_templates_concat
-    - graspi_replace
-
-tasks:
-  graspi_build:
     - graspi_templates_copy
     - graspi_templates_concat
     - graspi_replace
 
 options:
   basePath: 'bower_components/paper-button'
-  destPath: 'graspi_build/paper-button/webcomponents'
+  destFolder: 'paper-button/webcomponents'
   templates:
     destFile: 'paper-button.html'
     files:
       - paper-button.html
   replace:
     - files:
-        - 'graspi_build/paper-button/webcomponents/paper-button.html'
+        - '%%destPath%%/paper-button.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

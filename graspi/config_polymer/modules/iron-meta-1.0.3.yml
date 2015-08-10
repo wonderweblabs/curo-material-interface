@@ -11,14 +11,14 @@ tasks:
 
 options:
   basePath: 'bower_components/iron-meta'
-  destPath: 'graspi_build/iron-meta/webcomponents'
+  destFolder: 'iron-meta/webcomponents'
   templates:
     destFile: 'iron-meta.html'
     files:
       - iron-meta.html
   replace:
     - files:
-        - 'graspi_build/iron-meta/webcomponents/iron-meta.html'
+        - '%%destPath%%/iron-meta.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

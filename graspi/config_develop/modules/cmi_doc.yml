@@ -18,18 +18,6 @@ templates:
 webcomponents:
   concat:
     includeDependencies: true
-postpipeline:
-  urlReplace:
-    options:
-      cssPatterns:
-        - pattern: 'image-url\((?:QUOTES1|QUOTES2)(\S*)(?:QUOTES1|QUOTES2)\)'
-          modifiers: 'g'
-          quotesPlaceholder: 'QUOTES1'
-          doubleQuotesPlaceholder: 'QUOTES2'
-        - pattern: 'font-url\((?:QUOTES1|QUOTES2)(\S*)(?:QUOTES1|QUOTES2)\)'
-          modifiers: 'g'
-          quotesPlaceholder: 'QUOTES1'
-          doubleQuotesPlaceholder: 'QUOTES2'
 
 live:
   watch:
@@ -99,7 +87,8 @@ tasks:
     - graspi_manifest
 
 options:
-  destPath: gh-pages-middleman/source/gh-pages/assets/cmi_doc_graspi
+  destPath: 'gh-pages-middleman/source/gh-pages/assets'
+  destFolder: 'cmi_doc_graspi'
   css:
     basePath: lib/assets/cmi_doc/stylesheets
     destFile: application.css

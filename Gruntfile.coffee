@@ -1,25 +1,24 @@
 module.exports = (grunt) ->
 
+  File    = require('path')
+  basedir = File.resolve()
+
   # Time how long tasks take. Can help when optimizing build times
   # require('time-grunt')(grunt)
 
-  # graspi configuration
-  File   = require('path')
-  dir    = File.resolve()
-  graspi = require('graspi')(grunt,
-    gruntRoot:            dir
-    configTmpFile:        File.join(dir, 'graspi/tmp/config.yml')
-    configLoadPaths:      [
-      File.join(dir, 'graspi/config_libs'),
-      File.join(dir, 'graspi/config_polymer'),
-      File.join(dir, 'graspi/config_graspi'),
-      File.join(dir, 'graspi/config_develop')
-    ]
-    tasksLoadPaths:       []
-  )
-
   # Automatically load required grunt tasks
   require('jit-grunt')(grunt)
+
+  # graspi configuration
+  grunt.option('root', basedir)
+  grunt.option('configCache', File.join(basedir, 'graspi/tmp/config.yml'))
+  grunt.option('configLoadPaths', [
+    File.join(basedir, 'graspi/config_libs'),
+    File.join(basedir, 'graspi/config_polymer'),
+    File.join(basedir, 'graspi/config_graspi'),
+    File.join(basedir, 'graspi/config_develop')
+  ])
+  require('graspi')(grunt)
 
   # ----------------------------------------------------------------
   # tasks

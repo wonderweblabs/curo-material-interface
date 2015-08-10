@@ -12,14 +12,14 @@ tasks:
 
 options:
   basePath: 'bower_components/iron-iconset-svg'
-  destPath: 'graspi_build/iron-iconset-svg/webcomponents'
+  destFolder: 'iron-iconset-svg/webcomponents'
   templates:
     destFile: 'iron-iconset-svg.html'
     files:
       - iron-iconset-svg.html
   replace:
     - files:
-        - 'graspi_build/iron-iconset-svg/webcomponents/iron-iconset-svg.html'
+        - '%%destPath%%/iron-iconset-svg.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

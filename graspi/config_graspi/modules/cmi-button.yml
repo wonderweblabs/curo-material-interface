@@ -22,7 +22,7 @@ tasks:
 
 options:
   basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-button'
-  destPath: 'graspi_build/cmi-button/webcomponents'
+  destFolder: 'cmi-button/webcomponents'
   css:
     destFile: 'cmi-button.css'
     files:
@@ -37,7 +37,7 @@ options:
       - cmi-button.haml
   replace:
     - files:
-        - 'graspi_build/cmi-button/webcomponents/cmi-button.html'
+        - '%%destPath%%/cmi-button.html'
       pattern:
         pattern: '(\<graspi-webcomponent\-stylesheet\>)'
         modifiers: 'g'
@@ -45,10 +45,10 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace:
         - '<style>'
-        - file: 'graspi_build/cmi-button/webcomponents/cmi-button.css'
+        - file: '%%destPath%%/cmi-button.css'
         - '</style>'
     - files:
-        - 'graspi_build/cmi-button/webcomponents/cmi-button.html'
+        - '%%destPath%%/cmi-button.html'
       pattern:
         pattern: '(\<graspi\-webcomponent\-script\>)'
         modifiers: 'g'
@@ -56,10 +56,10 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace:
         - '<script>'
-        - file: 'graspi_build/cmi-button/webcomponents/cmi-button.js'
+        - file: '%%destPath%%/cmi-button.js'
         - '</script>'
     - files:
-        - 'graspi_build/cmi-button/webcomponents/cmi-button.html'
+        - '%%destPath%%/cmi-button.html'
       pattern:
         pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
         modifiers: 'gm'
@@ -67,7 +67,7 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace: ''
     - files:
-        - 'graspi_build/cmi-button/webcomponents/cmi-button.html'
+        - '%%destPath%%/cmi-button.html'
       pattern:
         pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
         modifiers: 'gm'

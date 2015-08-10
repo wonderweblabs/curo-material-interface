@@ -12,7 +12,7 @@ tasks:
 
 options:
   basePath: 'bower_components/iron-behaviors'
-  destPath: 'graspi_build/iron-behaviors/webcomponents'
+  destFolder: 'iron-behaviors/webcomponents'
   templates:
     destFile: 'iron-behaviors.html'
     files:
@@ -20,7 +20,7 @@ options:
       - iron-button-state.html
   replace:
     - files:
-        - 'graspi_build/iron-behaviors/**/*.html'
+        - '%%destPath%%/**/*.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

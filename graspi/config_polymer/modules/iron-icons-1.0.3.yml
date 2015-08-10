@@ -13,7 +13,7 @@ tasks:
 
 options:
   basePath: 'bower_components/iron-icons'
-  destPath: 'graspi_build/iron-icons/webcomponents'
+  destFolder: 'iron-icons/webcomponents'
   templates:
     destFile: 'iron-icons.html'
     files:
@@ -29,7 +29,7 @@ options:
       - social-icons.html
   replace:
     - files:
-        - 'graspi_build/iron-icons/webcomponents/iron-icons.html'
+        - '%%destPath%%/iron-icons.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

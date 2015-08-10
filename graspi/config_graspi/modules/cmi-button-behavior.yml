@@ -20,9 +20,8 @@ tasks:
     - graspi_replace
 
 options:
-  # basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-button-behavior'
   basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-button-behavior'
-  destPath: 'graspi_build/cmi-button-behavior/webcomponents'
+  destFolder: 'cmi-button-behavior/webcomponents'
   css:
     destFile: 'cmi-button-behavior.css'
     files:
@@ -37,7 +36,7 @@ options:
       - cmi-button-behavior.haml
   replace:
     - files:
-        - 'graspi_build/cmi-button-behavior/webcomponents/cmi-button-behavior.html'
+        - '%%destPath%%/cmi-button-behavior.html'
       pattern:
         pattern: '(\<graspi-webcomponent\-stylesheet\>)'
         modifiers: 'g'
@@ -45,10 +44,10 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace:
         - '<style is="custom-style">'
-        - file: 'graspi_build/cmi-button-behavior/webcomponents/cmi-button-behavior.css'
+        - file: '%%destPath%%/cmi-button-behavior.css'
         - '</style>'
     - files:
-        - 'graspi_build/cmi-button-behavior/webcomponents/cmi-button-behavior.html'
+        - '%%destPath%%/cmi-button-behavior.html'
       pattern:
         pattern: '(\<graspi\-webcomponent\-script\>)'
         modifiers: 'g'
@@ -56,10 +55,10 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace:
         - '<script>'
-        - file: 'graspi_build/cmi-button-behavior/webcomponents/cmi-button-behavior.js'
+        - file: '%%destPath%%/cmi-button-behavior.js'
         - '</script>'
     - files:
-        - 'graspi_build/cmi-button-behavior/webcomponents/cmi-button-behavior.html'
+        - '%%destPath%%/cmi-button-behavior.html'
       pattern:
         pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
         modifiers: 'gm'
@@ -67,7 +66,7 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace: ''
     - files:
-        - 'graspi_build/cmi-button-behavior/webcomponents/cmi-button-behavior.html'
+        - '%%destPath%%/cmi-button-behavior.html'
       pattern:
         pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
         modifiers: 'gm'

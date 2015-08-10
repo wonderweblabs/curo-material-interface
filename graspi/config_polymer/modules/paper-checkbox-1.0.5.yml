@@ -16,7 +16,7 @@ tasks:
 
 options:
   basePath: 'bower_components/paper-checkbox'
-  destPath: 'graspi_build/paper-checkbox/webcomponents'
+  destFolder: 'paper-checkbox/webcomponents'
   css:
     destFile: 'paper-checkbox.css'
     files:
@@ -27,7 +27,7 @@ options:
       - paper-checkbox.html
   replace:
     - files:
-        - 'graspi_build/paper-checkbox/webcomponents/paper-checkbox.html'
+        - '%%destPath%%/paper-checkbox.html'
       pattern:
         pattern: '(\<link rel\=\"import\" type\=\"css\" href\=\"paper\-checkbox.css\"\>)'
         modifiers: 'g'
@@ -35,10 +35,10 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace:
         - '<style>'
-        - file: 'graspi_build/paper-checkbox/webcomponents/paper-checkbox.css'
+        - file: '%%destPath%%/paper-checkbox.css'
         - '</style>'
     - files:
-        - 'graspi_build/paper-checkbox/webcomponents/paper-checkbox.html'
+        - '%%destPath%%/paper-checkbox.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

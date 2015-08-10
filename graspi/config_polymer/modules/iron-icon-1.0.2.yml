@@ -12,15 +12,15 @@ tasks:
     - graspi_replace
 
 options:
-  basePath: 'bower_components/paper-button'
-  destPath: 'graspi_build/paper-button/webcomponents'
+  basePath: 'bower_components/iron-icon'
+  destFolder: 'iron-icon/webcomponents'
   templates:
-    destFile: 'paper-button.html'
+    destFile: 'iron-icon.html'
     files:
-      - paper-button.html
+      - iron-icon.html
   replace:
     - files:
-        - 'graspi_build/paper-button/webcomponents/paper-button.html'
+        - '%%destPath%%/iron-icon.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

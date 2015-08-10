@@ -11,14 +11,14 @@ tasks:
 
 options:
   basePath: 'bower_components/iron-form-element-behavior'
-  destPath: 'graspi_build/iron-form-element-behavior/webcomponents'
+  destFolder: 'iron-form-element-behavior/webcomponents'
   templates:
     destFile: 'iron-form-element-behavior.html'
     files:
       - iron-form-element-behavior.html
   replace:
     - files:
-        - 'graspi_build/iron-form-element-behavior/webcomponents/iron-form-element-behavior.html'
+        - '%%destPath%%/iron-form-element-behavior.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

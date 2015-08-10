@@ -22,7 +22,7 @@ tasks:
 
 options:
   basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-fab'
-  destPath: 'graspi_build/cmi-fab/webcomponents'
+  destFolder: 'cmi-fab/webcomponents'
   css:
     destFile: 'cmi-fab.css'
     files:
@@ -37,7 +37,7 @@ options:
       - cmi-fab.haml
   replace:
     - files:
-        - 'graspi_build/cmi-fab/webcomponents/cmi-fab.html'
+        - '%%destPath%%/cmi-fab.html'
       pattern:
         pattern: '(\<graspi-webcomponent\-stylesheet\>)'
         modifiers: 'g'
@@ -45,10 +45,10 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace:
         - '<style>'
-        - file: 'graspi_build/cmi-fab/webcomponents/cmi-fab.css'
+        - file: '%%destPath%%/cmi-fab.css'
         - '</style>'
     - files:
-        - 'graspi_build/cmi-fab/webcomponents/cmi-fab.html'
+        - '%%destPath%%/cmi-fab.html'
       pattern:
         pattern: '(\<graspi\-webcomponent\-script\>)'
         modifiers: 'g'
@@ -56,10 +56,10 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace:
         - '<script>'
-        - file: 'graspi_build/cmi-fab/webcomponents/cmi-fab.js'
+        - file: '%%destPath%%/cmi-fab.js'
         - '</script>'
     - files:
-        - 'graspi_build/cmi-fab/webcomponents/cmi-fab.html'
+        - '%%destPath%%/cmi-fab.html'
       pattern:
         pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
         modifiers: 'gm'
@@ -67,7 +67,7 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace: ''
     - files:
-        - 'graspi_build/cmi-fab/webcomponents/cmi-fab.html'
+        - '%%destPath%%/cmi-fab.html'
       pattern:
         pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
         modifiers: 'gm'

@@ -11,7 +11,7 @@ tasks:
 
 options:
   basePath: 'bower_components/iron-flex-layout'
-  destPath: 'graspi_build/iron-flex-layout/webcomponents'
+  destFolder: 'iron-flex-layout/webcomponents'
   templates:
     destFile: 'iron-flex-layout.html'
     files:
@@ -19,7 +19,7 @@ options:
       - classes/iron-shadow-flex-layout.html
   replace:
     - files:
-        - 'graspi_build/iron-flex-layout/**/*.html'
+        - '%%destPath%%/**/*.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

@@ -12,14 +12,14 @@ tasks:
 
 options:
   basePath: 'bower_components/paper-ripple'
-  destPath: 'graspi_build/paper-ripple/webcomponents'
+  destFolder: 'paper-ripple/webcomponents'
   templates:
     destFile: 'paper-ripple.html'
     files:
       - paper-ripple.html
   replace:
     - files:
-        - 'graspi_build/paper-ripple/**/*.html'
+        - '%%destPath%%/**/*.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

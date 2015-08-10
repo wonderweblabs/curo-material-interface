@@ -12,7 +12,7 @@ tasks:
 
 options:
   basePath: 'bower_components/paper-behaviors'
-  destPath: 'graspi_build/paper-behaviors/webcomponents'
+  destFolder: 'paper-behaviors/webcomponents'
   templates:
     destFile: 'paper-behaviors.html'
     files:
@@ -20,7 +20,7 @@ options:
       - paper-inky-focus-behavior.html
   replace:
     - files:
-        - 'graspi_build/paper-behaviors/**/*.html'
+        - '%%destPath%%/**/*.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

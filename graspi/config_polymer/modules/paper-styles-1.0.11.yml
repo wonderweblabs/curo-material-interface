@@ -13,7 +13,7 @@ tasks:
 
 options:
   basePath: 'bower_components/paper-styles'
-  destPath: 'graspi_build/paper-styles/webcomponents'
+  destFolder: 'paper-styles/webcomponents'
   templates:
     destFile: 'paper-styles.html'
     files:
@@ -23,7 +23,7 @@ options:
       - typography.html
   replace:
     - files:
-        - 'graspi_build/paper-styles/**/*.html'
+        - '%%destPath%%/**/*.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

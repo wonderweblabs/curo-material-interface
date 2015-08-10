@@ -2,6 +2,13 @@ tmpPath:                'graspi/tmp'
 cacheFile:              'graspi/tmp/files_cache_register.json'
 modulesBuiltTrackFile:  'graspi/tmp/modules_built_track_register.json'
 
+# default destination path
+destPath: 'graspi/tmp/graspi/build'
+
+# default destination folder > will be concatinated
+# to destPath
+destFolder: ''
+
 css:
   sass:
     options:

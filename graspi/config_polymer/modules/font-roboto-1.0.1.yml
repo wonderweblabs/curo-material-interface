@@ -12,4 +12,4 @@ dependencies: []
 
 options:
   basePath: 'bower_components/roboto-font'
-  destPath: 'graspi_build/roboto-font'
+  destFolder: 'roboto-font'

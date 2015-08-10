@@ -15,7 +15,7 @@ tasks:
 
 options:
   basePath: 'bower_components/paper-drawer-panel'
-  destPath: 'graspi_build/paper-drawer-panel/webcomponents'
+  destFolder: 'paper-drawer-panel/webcomponents'
   css:
     destFile: 'paper-drawer-panel.css'
     files:
@@ -26,7 +26,7 @@ options:
       - paper-drawer-panel.html
   replace:
     - files:
-        - 'graspi_build/paper-drawer-panel/webcomponents/paper-drawer-panel.html'
+        - '%%destPath%%/paper-drawer-panel.html'
       pattern:
         pattern: '(\<link rel\=\"import\" type\=\"css\" href\=\"paper\-drawer\-panel.css\"\>)'
         modifiers: 'g'
@@ -34,10 +34,10 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace:
         - '<style>'
-        - file: 'graspi_build/paper-drawer-panel/webcomponents/paper-drawer-panel.css'
+        - file: '%%destPath%%/paper-drawer-panel.css'
         - '</style>'
     - files:
-        - 'graspi_build/paper-drawer-panel/webcomponents/paper-drawer-panel.html'
+        - '%%destPath%%/paper-drawer-panel.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

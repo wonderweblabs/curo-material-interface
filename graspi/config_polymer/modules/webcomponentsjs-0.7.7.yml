@@ -9,7 +9,7 @@ tasks:
 
 options:
   basePath: 'bower_components/webcomponentsjs'
-  destPath: 'graspi_build/webcomponentsjs/webcomponents'
+  destFolder: 'webcomponentsjs/webcomponents'
   js:
     destFile: 'webcomponents.js'
     files:

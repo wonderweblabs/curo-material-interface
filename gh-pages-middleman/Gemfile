@@ -26,5 +26,17 @@ gem 'htmlbeautifier'
 # cmi
 gem 'curo-material-interface', path: '../'
 
-# debugging
-gem 'byebug'
+
+# dev
+group :development do
+
+  # debugging
+  gem 'byebug'
+
+  # dev
+  gem 'awesome_print'
+
+  # errors
+  gem 'better_errors'
+
+end

@@ -22,7 +22,7 @@ tasks:
 
 options:
   basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-fab-slide'
-  destPath: 'graspi_build/cmi-fab-slide/webcomponents'
+  destFolder: 'cmi-fab-slide/webcomponents'
   css:
     destFile: 'cmi-fab-slide.css'
     files:
@@ -37,7 +37,7 @@ options:
       - cmi-fab-slide.haml
   replace:
     - files:
-        - 'graspi_build/cmi-fab-slide/webcomponents/cmi-fab-slide.html'
+        - '%%destPath%%/cmi-fab-slide.html'
       pattern:
         pattern: '(\<graspi-webcomponent\-stylesheet\>)'
         modifiers: 'g'
@@ -45,10 +45,10 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace:
         - '<style>'
-        - file: 'graspi_build/cmi-fab-slide/webcomponents/cmi-fab-slide.css'
+        - file: '%%destPath%%/cmi-fab-slide.css'
         - '</style>'
     - files:
-        - 'graspi_build/cmi-fab-slide/webcomponents/cmi-fab-slide.html'
+        - '%%destPath%%/cmi-fab-slide.html'
       pattern:
         pattern: '(\<graspi\-webcomponent\-script\>)'
         modifiers: 'g'
@@ -56,10 +56,10 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace:
         - '<script>'
-        - file: 'graspi_build/cmi-fab-slide/webcomponents/cmi-fab-slide.js'
+        - file: '%%destPath%%/cmi-fab-slide.js'
         - '</script>'
     - files:
-        - 'graspi_build/cmi-fab-slide/webcomponents/cmi-fab-slide.html'
+        - '%%destPath%%/cmi-fab-slide.html'
       pattern:
         pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
         modifiers: 'gm'
@@ -67,7 +67,7 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace: ''
     - files:
-        - 'graspi_build/cmi-fab-slide/webcomponents/cmi-fab-slide.html'
+        - '%%destPath%%/cmi-fab-slide.html'
       pattern:
         pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
         modifiers: 'gm'

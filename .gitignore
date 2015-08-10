@@ -55,6 +55,7 @@ build/
 
 # gh pages build project
 graspi_build/
+graspi/tmp
 gh-pages-middleman/build
 gh-pages-middleman/.ruby-version
 gh-pages-middleman/.ruby-gemset

@@ -21,7 +21,7 @@ tasks:
 
 options:
   basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-drawer-navigation'
-  destPath: 'graspi_build/cmi-drawer-navigation/webcomponents'
+  destFolder: 'cmi-drawer-navigation/webcomponents'
   css:
     destFile: 'cmi-drawer-navigation.css'
     files:
@@ -36,7 +36,7 @@ options:
       - cmi-drawer-navigation.haml
   replace:
     - files:
-        - 'graspi_build/cmi-drawer-navigation/webcomponents/cmi-drawer-navigation.html'
+        - '%%destPath%%/cmi-drawer-navigation.html'
       pattern:
         pattern: '(\<graspi-webcomponent\-stylesheet\>)'
         modifiers: 'g'
@@ -44,10 +44,10 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace:
         - '<style>'
-        - file: 'graspi_build/cmi-drawer-navigation/webcomponents/cmi-drawer-navigation.css'
+        - file: '%%destPath%%/cmi-drawer-navigation.css'
         - '</style>'
     - files:
-        - 'graspi_build/cmi-drawer-navigation/webcomponents/cmi-drawer-navigation.html'
+        - '%%destPath%%/cmi-drawer-navigation.html'
       pattern:
         pattern: '(\<graspi\-webcomponent\-script\>)'
         modifiers: 'g'
@@ -55,10 +55,10 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace:
         - '<script>'
-        - file: 'graspi_build/cmi-drawer-navigation/webcomponents/cmi-drawer-navigation.js'
+        - file: '%%destPath%%/cmi-drawer-navigation.js'
         - '</script>'
     - files:
-        - 'graspi_build/cmi-drawer-navigation/webcomponents/cmi-drawer-navigation.html'
+        - '%%destPath%%/cmi-drawer-navigation.html'
       pattern:
         pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
         modifiers: 'gm'
@@ -66,7 +66,7 @@ options:
         doubleQuotesPlaceholder: 'QUOTES2'
       replace: ''
     - files:
-        - 'graspi_build/cmi-drawer-navigation/webcomponents/cmi-drawer-navigation.html'
+        - '%%destPath%%/cmi-drawer-navigation.html'
       pattern:
         pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
         modifiers: 'gm'

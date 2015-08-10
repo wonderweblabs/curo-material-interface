@@ -13,7 +13,7 @@ tasks:
 
 options:
   basePath: 'bower_components/iron-menu-behavior'
-  destPath: 'graspi_build/iron-menu-behavior/webcomponents'
+  destFolder: 'iron-menu-behavior/webcomponents'
   templates:
     destFile: 'iron-menu-behavior.html'
     files:
@@ -21,7 +21,7 @@ options:
       - iron-menubar-behavior.html
   replace:
     - files:
-        - 'graspi_build/iron-menu-behavior/webcomponents/iron-menu-behavior.html'
+        - '%%destPath%%/iron-menu-behavior.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'
