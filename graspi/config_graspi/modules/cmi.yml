@@ -11,9 +11,9 @@ dependencies:
   - cached:paper-drawer-panel-1.0.3
   - cached:paper-menu-1.0.1
   - cached:cmi-drawer-navigation
-  - cached:cmi-button
-  - cached:cmi-fab
-  - cached:cmi-fab-slide
+  - cmi-button
+  - cmi-fab
+  - cmi-fab-slide
 
 options:
   destFolder: 'cmi'

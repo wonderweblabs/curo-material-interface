@@ -45,7 +45,7 @@ $animation-max-width: 400px
     &.keyboard-focus
       @apply(--cmi-button-paper-material-keyboard-focused-defaults)
       @apply(--cmi-fab-slide-paper-material-keyboard-focused)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-inner-defaults)
     +border-top-radius($normal-border-radius)
     +border-bottom-radius($normal-border-radius)
@@ -84,28 +84,28 @@ $animation-max-width: 400px
 \:host([raised])
   @apply(--cmi-button-raised-defaults)
   @apply(--cmi-fab-slide-raised)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-raised-inner-defaults)
     @apply(--cmi-fab-slide-raised-inner)
 
 \:host([theme="primary"])
   @apply(--cmi-button-primary-defaults)
   @apply(--cmi-fab-slide-primary)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-primary-inner-defaults)
     @apply(--cmi-fab-slide-primary-inner)
 
 \:host([theme="highlight"])
   @apply(--cmi-button-highlight-defaults)
   @apply(--cmi-fab-slide-highlight)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-highlight-inner-defaults)
     @apply(--cmi-fab-slide-highlight-inner)
 
 \:host([theme="danger"])
   @apply(--cmi-button-danger-defaults)
   @apply(--cmi-fab-slide-danger)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-danger-inner-defaults)
     @apply(--cmi-fab-slide-danger-inner)
 
@@ -114,7 +114,7 @@ $animation-max-width: 400px
   +border-top-radius($small-border-radius)
   +border-bottom-radius($small-border-radius)
   @apply(--cmi-fab-slide-small)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-small-inner-defaults)
     +border-top-radius($small-border-radius)
     +border-bottom-radius($small-border-radius)
@@ -138,7 +138,7 @@ $animation-max-width: 400px
   +border-top-radius($large-border-radius)
   +border-bottom-radius($large-border-radius)
   @apply(--cmi-fab-slide-large)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-large-inner-defaults)
     +border-top-radius($large-border-radius)
     +border-bottom-radius($large-border-radius)
@@ -160,21 +160,21 @@ $animation-max-width: 400px
 \:host([filled])
   @apply(--cmi-button-filled-defaults)
   @apply(--cmi-fab-slide-filled)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-filled-inner-defaults)
     @apply(--cmi-fab-slide-filled-inner)
 
 \:host([filled][theme="primary"])
   @apply(--cmi-button-filled-primary-defaults)
   @apply(--cmi-fab-slide-filled-primary)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-filled-primary-inner-defaults)
     @apply(--cmi-fab-slide-filled-primary-inner)
 
 \:host([filled][theme="highlight"])
   @apply(--cmi-button-filled-highlight-defaults)
   @apply(--cmi-fab-slide-filled-highlight)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-filled-highlight-inner-defaults)
     @apply(--cmi-fab-slide-filled-highlight-inner)
   > paper-ripple
@@ -183,7 +183,7 @@ $animation-max-width: 400px
 \:host([filled][theme="danger"])
   @apply(--cmi-button-filled-danger-defaults)
   @apply(--cmi-fab-slide-filled-danger)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-filled-danger-inner-defaults)
     @apply(--cmi-fab-slide-filled-danger-inner)
   > paper-ripple
@@ -199,7 +199,7 @@ $animation-max-width: 400px
 \:host([disabled])
   @apply(--cmi-button-disabled-defaults)
   @apply(--cmi-fab-slide-disabled)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-disabled-inner-defaults)
     @apply(--cmi-fab-slide-disabled-inner)
 

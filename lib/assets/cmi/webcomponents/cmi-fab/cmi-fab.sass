@@ -32,7 +32,7 @@ $large-padding: ($large-size - $large-font-size) / 2
     &.keyboard-focus
       @apply(--cmi-button-paper-material-keyboard-focused-defaults)
       @apply(--cmi-fab-paper-material-keyboard-focused)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-inner-defaults)
     +border-top-radius($normal-border-radius)
     +border-bottom-radius($normal-border-radius)
@@ -50,28 +50,28 @@ $large-padding: ($large-size - $large-font-size) / 2
 \:host([raised])
   @apply(--cmi-button-raised-defaults)
   @apply(--cmi-fab-raised)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-raised-inner-defaults)
     @apply(--cmi-fab-raised-inner)
 
 \:host([theme="primary"])
   @apply(--cmi-button-primary-defaults)
   @apply(--cmi-fab-primary)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-primary-inner-defaults)
     @apply(--cmi-fab-primary-inner)
 
 \:host([theme="highlight"])
   @apply(--cmi-button-highlight-defaults)
   @apply(--cmi-fab-highlight)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-highlight-inner-defaults)
     @apply(--cmi-fab-highlight-inner)
 
 \:host([theme="danger"])
   @apply(--cmi-button-danger-defaults)
   @apply(--cmi-fab-danger)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-danger-inner-defaults)
     @apply(--cmi-fab-danger-inner)
 
@@ -80,7 +80,7 @@ $large-padding: ($large-size - $large-font-size) / 2
   +border-top-radius($small-border-radius)
   +border-bottom-radius($small-border-radius)
   @apply(--cmi-fab-small)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-small-inner-defaults)
     +border-top-radius($small-border-radius)
     +border-bottom-radius($small-border-radius)
@@ -96,7 +96,7 @@ $large-padding: ($large-size - $large-font-size) / 2
   +border-top-radius($large-border-radius)
   +border-bottom-radius($large-border-radius)
   @apply(--cmi-fab-large)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-large-inner-defaults)
     +border-top-radius($large-border-radius)
     +border-bottom-radius($large-border-radius)
@@ -110,21 +110,21 @@ $large-padding: ($large-size - $large-font-size) / 2
 \:host([filled])
   @apply(--cmi-button-filled-defaults)
   @apply(--cmi-fab-filled)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-filled-inner-defaults)
     @apply(--cmi-fab-filled-inner)
 
 \:host([filled][theme="primary"])
   @apply(--cmi-button-filled-primary-defaults)
   @apply(--cmi-fab-filled-primary)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-filled-primary-inner-defaults)
     @apply(--cmi-fab-filled-primary-inner)
 
 \:host([filled][theme="highlight"])
   @apply(--cmi-button-filled-highlight-defaults)
   @apply(--cmi-fab-filled-highlight)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-filled-highlight-inner-defaults)
     @apply(--cmi-fab-filled-highlight-inner)
   > paper-ripple
@@ -133,7 +133,7 @@ $large-padding: ($large-size - $large-font-size) / 2
 \:host([filled][theme="danger"])
   @apply(--cmi-button-filled-danger-defaults)
   @apply(--cmi-fab-filled-danger)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-filled-danger-inner-defaults)
     @apply(--cmi-fab-filled-danger-inner)
   > paper-ripple
@@ -142,17 +142,17 @@ $large-padding: ($large-size - $large-font-size) / 2
 \:host([block])
   display: block
   @apply(--cmi-fab-block)
-  > .cmi-button
+  > .content
     display: block
     width: auto
     @apply(--cmi-fab-block-inner)
 
 \:host([block][text_left])
-  > .cmi-button
+  > .content
     text-align: left
 
 \:host([block][text_right])
-  > .cmi-button
+  > .content
     text-align: right
 
 \:host([noink])
@@ -165,7 +165,7 @@ $large-padding: ($large-size - $large-font-size) / 2
 \:host([disabled])
   @apply(--cmi-button-disabled-defaults)
   @apply(--cmi-fab-disabled)
-  > .cmi-button
+  > .content
     @apply(--cmi-button-disabled-inner-defaults)
     @apply(--cmi-fab-disabled-inner)
 
