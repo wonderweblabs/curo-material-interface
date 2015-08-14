@@ -5,6 +5,8 @@ Polymer
 
   is: 'cmi-fab'
 
+  extends: 'a'
+
   behaviors: [
     Polymer.CmiButtonBehavior
   ]

@@ -11,10 +11,6 @@ Polymer.CmiButtonBehaviorImpl =
     block:    { type: Boolean, reflectToAttribute: true, value: false }
     theme:    { type: String, reflectToAttribute: true, value: 'default' }
 
-    href:     { type: String, reflectToAttribute: true, value: null }
-    target:   { type: String, reflectToAttribute: true, value: '_self' }
-    title:    { type: String, reflectToAttribute: true, value: null }
-
     #
     # Raised - shadow style
     #
@@ -23,25 +19,6 @@ Polymer.CmiButtonBehaviorImpl =
       reflectToAttribute: true
       value: false
       observer: '_calculateElevation'
-
-  _upHandler: ->
-    @_openLink()
-    Polymer.IronButtonStateImpl._upHandler.apply(@)
-
-  _asyncClick: ->
-    @_openLink()
-    Polymer.IronButtonStateImpl._asyncClick.apply(@)
-
-  _openLink: ->
-    return unless @href != null && @href != undefined
-
-    target = @target
-    target or= '_self'
-
-    @_setFocused(false)
-    @_setPointerDown(false)
-    @_setPressed(false)
-    window.open(@href, target)
 
   _calculateElevation: ->
     if @raised

@@ -1,23 +1,11 @@
+includeDependencies: true
+
 dependencies: []
 
-css:
-  concat:
-    includeDependencies: true
 js:
-  concat:
-    includeDependencies: true
   coffee:
     options:
       bare: true
-fonts:
-  copy:
-    includeDependencies: true
-templates:
-  concat:
-    includeDependencies: true
-webcomponents:
-  concat:
-    includeDependencies: true
 
 live:
   watch:

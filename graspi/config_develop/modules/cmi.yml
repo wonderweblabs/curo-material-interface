@@ -1,29 +1,13 @@
+includeDependencies: true
+
 options:
   destPath: 'gh-pages-middleman/source/gh-pages/assets'
   destFolder: 'cmi_graspi'
 
-css:
-  concat:
-    includeDependencies: true
-
 js:
-  concat:
-    includeDependencies: true
   coffee:
     options:
       bare: true
-
-fonts:
-  copy:
-    includeDependencies: true
-
-templates:
-  concat:
-    includeDependencies: true
-
-webcomponents:
-  concat:
-    includeDependencies: true
 
 live:
   watch:
@@ -57,67 +41,3 @@ live:
           - bower_components/cmi/lib/assets/cmi/webcomponents/cmi-fab-slide/**/*
         tasks:
           - graspi_build_webcomponents
-
-tasks:
-  graspi_build:
-    - graspi_images
-    - graspi_fonts
-    - graspi_templates
-    - graspi_webcomponents
-    - graspi_css_sass_compile
-    - graspi_css_concat
-    - graspi_css_minify
-    - graspi_js_coffee_compile
-    - graspi_js_concat
-    - graspi_js_uglify
-    - graspi_filerev
-    - graspi_manifest
-    - graspi_css_replace_urls
-  graspi_build_sass:
-    - graspi_css_sass_compile
-    - graspi_css_concat
-    - graspi_filerev
-    - graspi_manifest
-    - graspi_css_replace_urls
-  graspi_build_coffee:
-    - graspi_js_coffee_compile
-    - graspi_js_concat
-    - graspi_filerev
-    - graspi_manifest
-    - graspi_css_replace_urls
-  graspi_build_images:
-    - graspi_images
-    - graspi_css_concat
-    - graspi_filerev
-    - graspi_manifest
-    - graspi_css_replace_urls
-  graspi_build_fonts:
-    - graspi_fonts
-    - graspi_css_concat
-    - graspi_filerev
-    - graspi_manifest
-    - graspi_css_replace_urls
-  graspi_build_templates:
-    - graspi_templates
-    - graspi_filerev
-    - graspi_manifest
-  graspi_build_webcomponents:
-    - graspi_webcomponents
-    - graspi_filerev
-    - graspi_manifest
-
-environments:
-  development:
-    tasks:
-      graspi_build:
-        - graspi_images
-        - graspi_fonts
-        - graspi_templates
-        - graspi_webcomponents
-        - graspi_css_sass_compile
-        - graspi_css_concat
-        - graspi_js_coffee_compile
-        - graspi_js_concat
-        - graspi_filerev
-        - graspi_manifest
-        - graspi_css_replace_urls

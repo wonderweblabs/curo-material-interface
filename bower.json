@@ -19,6 +19,7 @@
     "bourbon": "~4.2.3",
     "neat": "~1.7.2",
     "polymer": "Polymer/polymer#^1.0.0",
+    "iron-form": "PolymerElements/iron-form#^1.0.8",
     "paper-behaviors": "PolymerElements/paper-behaviors#^1.0.0",
     "paper-styles": "PolymerElements/paper-styles#^1.0.0",
     "paper-ripple": "PolymerElements/paper-ripple#^1.0.0",

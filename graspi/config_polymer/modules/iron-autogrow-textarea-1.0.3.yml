@@ -14,15 +14,15 @@ tasks:
     - graspi_replace
 
 options:
-  basePath: 'bower_components/iron-input'
-  destFolder: 'iron-input/webcomponents'
+  basePath: 'bower_components/iron-autogrow-textarea'
+  destFolder: 'iron-autogrow-textarea/webcomponents'
   templates:
-    destFile: 'iron-input.html'
+    destFile: 'iron-autogrow-textarea.html'
     files:
-      - iron-input.html
+      - iron-autogrow-textarea.html
   replace:
     - files:
-        - '%%destPath%%/iron-input.html'
+        - '%%destPath%%/iron-autogrow-textarea.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

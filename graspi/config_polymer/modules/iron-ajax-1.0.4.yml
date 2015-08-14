@@ -1,7 +1,8 @@
 webcomponent: true
 
 dependencies:
-  - webcomponentsjs-0.7.7
+  - polymer-1.0.8
+  - promise-polyfill-1.0.0
 
 tasks:
   graspi_build:
@@ -10,17 +11,16 @@ tasks:
     - graspi_replace
 
 options:
-  basePath: 'bower_components/polymer'
-  destFolder: 'polymer/webcomponents'
+  basePath: 'bower_components/iron-ajax'
+  destFolder: 'iron-ajax/webcomponents'
   templates:
-    destFile: 'polymer.html'
+    destFile: 'iron-ajax.html'
     files:
-      - polymer-micro.html
-      - polymer-mini.html
-      - polymer.html
+      - iron-request.html
+      - iron-ajax.html
   replace:
     - files:
-        - '%%destPath%%/polymer.html'
+        - '%%destPath%%/iron-ajax.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'
