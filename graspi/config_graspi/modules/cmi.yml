@@ -11,7 +11,7 @@ dependencies:
   - paper-input-1.0.8
   - paper-checkbox-1.0.5
   - paper-drawer-panel-1.0.3
-  - paper-menu-1.0.1
+  - paper-menu-1.1.0
   - cmi-drawer-navigation
   - cmi-button
   - cmi-fab

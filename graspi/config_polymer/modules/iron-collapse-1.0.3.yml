@@ -1,0 +1,27 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+
+tasks:
+  graspi_build:
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/iron-collapse'
+  destFolder: 'iron-collapse/webcomponents'
+  templates:
+    destFile: 'iron-collapse.html'
+    files:
+      - iron-collapse.html
+  replace:
+    - files:
+        - '%%destPath%%/**/*.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

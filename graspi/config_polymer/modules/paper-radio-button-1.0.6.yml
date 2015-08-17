@@ -1,0 +1,47 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - paper-behaviors-1.0.3
+  - paper-ripple-1.0.1
+  - paper-styles-1.0.11
+
+tasks:
+  graspi_build:
+    - graspi_css_copy
+    - graspi_css_concat
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/paper-radio-button'
+  destFolder: 'paper-radio-button/webcomponents'
+  css:
+    destFile: 'paper-radio-button.css'
+    files:
+      - 'paper-radio-button.css'
+  templates:
+    destFile: 'paper-radio-button.html'
+    files:
+      - paper-radio-button.html
+  replace:
+    - files:
+        - '%%destPath%%/paper-radio-button.html'
+      pattern:
+        pattern: '(\<link rel\=\"import\" type\=\"css\" href\=\"paper\-radio\-button\.css\"\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: '%%destPath%%/paper-radio-button.css'
+        - '</style>'
+    - files:
+        - '%%destPath%%/paper-radio-button.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

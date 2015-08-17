@@ -2,8 +2,8 @@ webcomponent: true
 
 dependencies:
   - polymer-1.0.8
-  - iron-menu-behavior-1.0.1
-  - paper-styles-1.0.11
+  - iron-fit-behavior-1.0.3
+  - iron-resizable-behavior-1.0.2
 
 tasks:
   graspi_build:
@@ -12,15 +12,17 @@ tasks:
     - graspi_replace
 
 options:
-  basePath: 'bower_components/paper-menu'
-  destFolder: 'paper-menu/webcomponents'
+  basePath: 'bower_components/iron-overlay-behavior'
+  destFolder: 'iron-overlay-behavior/webcomponents'
   templates:
-    destFile: 'paper-menu.html'
+    destFile: 'iron-overlay-behavior.html'
     files:
-      - paper-menu.html
+      - iron-overlay-backdrop.html
+      - iron-overlay-manager.html
+      - iron-overlay-behavior.html
   replace:
     - files:
-        - '%%destPath%%/paper-menu.html'
+        - '%%destPath%%/iron-overlay-behavior.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

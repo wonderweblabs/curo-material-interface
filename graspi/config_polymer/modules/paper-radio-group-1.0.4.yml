@@ -1,0 +1,29 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - iron-selector-1.0.2
+  - iron-a11y-keys-behavior-1.0.5
+
+tasks:
+  graspi_build:
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/paper-radio-group'
+  destFolder: 'paper-radio-group/webcomponents'
+  templates:
+    destFile: 'paper-radio-group.html'
+    files:
+      - paper-radio-group.html
+  replace:
+    - files:
+        - '%%destPath%%/paper-radio-group.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
