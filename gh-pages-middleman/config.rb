@@ -8,7 +8,7 @@ set :fonts_dir, 'gh-pages/assets'
 
 set :images_dir, 'gh-pages/assets'
 
-activate :livereload
+activate :livereload, port: 35730, host: 'localhost'
 
 activate :graspi,
   env: environment,

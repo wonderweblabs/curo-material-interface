@@ -36,6 +36,7 @@
     "paper-card": "PolymerElements/paper-card#1.0.1",
     "paper-dialog": "PolymerElements/paper-dialog#1.0.1",
     "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#1.0.1",
+    "paper-menu": "PolymerElements/paper-menu#1.1.0",
     "paper-menu-button": "PolymerElements/paper-menu-button#1.0.2",
     "paper-progress": "PolymerElements/paper-progress#1.0.2",
     "paper-radio-button": "PolymerElements/paper-radio-button#1.0.6",
