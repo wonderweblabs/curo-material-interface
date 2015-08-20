@@ -1,0 +1,27 @@
+@import bourbon
+
+\:host
+  +border-top-radius(3px)
+  +border-bottom-radius(3px)
+  min-width: 5.14em
+  margin: 0 0.29em
+  > .content
+    +border-top-radius(3px)
+    +border-bottom-radius(3px)
+    min-width: 5.14em
+    padding: 0.7em 1em
+    ::content
+      *
+        text-transform: inherit
+
+\:host([small])
+  > .content
+    padding: 0.4em 0.57em
+
+\:host([large])
+  line-height: 1.2
+  > .content
+    padding: 0.85em 1.2em
+
+\:host([block])
+  display: block

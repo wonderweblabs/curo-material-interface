@@ -1,0 +1,67 @@
+%cmi-card{ id: 'navbar', block: true }
+  %cmi-card-heading
+    %h2.title Navbar
+  %cmi-card-content{ :'line-top' => true }
+
+    :css
+      .navbar-default .col-left {
+        background: #fff;
+        padding: 10px;
+      }
+      .navbar-gray .col-left {
+        background: #f0f0f0;
+        padding: 10px;
+      }
+
+
+    .navbar-gray
+      %cmi-pages-code-box
+        %cmi-navbar{ :'no-padding' => true }
+          %cmi-navbar-content
+            %paper-tabs{ selected: 0 }
+              %paper-tab{ id: 'general-tab' } General
+              %paper-tab{ id: 'seo-tab' } Meta / SEO
+
+    .navbar-default
+      %cmi-pages-code-box
+        %cmi-navbar{ :'no-padding' => true }
+          %cmi-navbar-content
+            %h3 Headline
+
+    .navbar-gray
+      %cmi-pages-code-box
+        %cmi-navbar
+          %cmi-navbar-content
+            %h3 Headline
+
+    .navbar-default
+      %cmi-pages-code-box
+        %cmi-navbar{ :'show-hint' => true }
+          %cmi-navbar-content
+            %h3 Headline
+          %cmi-navbar-hint
+            My awesome alert message...
+
+    .navbar-gray
+      %cmi-pages-code-box
+        %cmi-navbar{ :'show-hint' => true }
+          %cmi-navbar-content
+            %h3 Headline
+          %cmi-navbar-hint
+            %p My awesome alert message...
+
+    .navbar-default
+      %cmi-pages-code-box
+        %cmi-navbar{ theme: "danger", :'show-hint' => true }
+          %cmi-navbar-content
+            %h3 Headline
+          %cmi-navbar-hint
+            %p My awesome alert message...
+
+    .navbar-gray
+      %cmi-pages-code-box
+        %cmi-navbar{ theme: "danger", :'show-hint' => true }
+          %cmi-navbar-content
+            %h3 Headline
+          %cmi-navbar-hint
+            %p My awesome alert message...

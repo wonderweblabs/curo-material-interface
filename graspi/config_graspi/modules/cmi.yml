@@ -1,0 +1,121 @@
+dependencies:
+  - mdi-1.1.70
+  - webcomponentsjs-0.7.7
+  - polymer-1.0.8
+  - iron-form-1.0.8
+  - paper-item-1.0.2
+  - paper-toolbar-1.0.4
+  - paper-header-panel-1.0.3
+  - paper-checkbox-1.0.5
+  - paper-drawer-panel-1.0.3
+  - paper-menu-1.1.0
+  - paper-tabs-1.0.1
+  - cmi-button
+  - cmi-button-link
+  - cmi-fab
+  - cmi-fab-link
+  - cmi-fab-slide
+  - cmi-h1
+  - cmi-h2
+  - cmi-h3
+  - cmi-h4
+  - cmi-h5
+  - cmi-h6
+  - cmi-navbar
+  - cmi-card
+  - cmi-input
+
+options:
+  destFolder: 'cmi'
+  css:
+    basePath: 'bower_components/cmi/lib/assets/cmi/stylesheets'
+    destFile: 'cmi.css'
+    files:
+      - 'cmi.sass'
+  js:
+    basePath: 'bower_components/cmi/lib/assets/cmi/javascripts'
+    destFile: 'cmi.js'
+    files:
+      - '**/*.coffee'
+  templates:
+    basePath: 'bower_components/cmi/lib/assets/cmi/templates'
+    destFile: 'templates.html'
+    files:
+      - '**/*.haml'
+      - '**/*.html'
+  webcomponents:
+    basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents'
+    destFile: 'webcomponents.html'
+    files: []
+  images:
+    basePath: 'bower_components/cmi/lib/assets/cmi/images'
+    files:
+      - '{,*/}*'
+  fonts:
+    basePath: 'bower_components/cmi/lib/assets/cmi/fonts'
+    files:
+      - '{,*/}*'
+
+tasks:
+  graspi_build:
+    - graspi_images
+    - graspi_fonts
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_css_minify
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_js_uglify
+    - graspi_templates
+    - graspi_webcomponents
+    - graspi_filerev
+    - graspi_manifest
+    - graspi_css_replace_urls
+  graspi_build_sass:
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_filerev
+    - graspi_manifest
+    - graspi_css_replace_urls
+  graspi_build_coffee:
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_filerev
+    - graspi_manifest
+    - graspi_css_replace_urls
+  graspi_build_images:
+    - graspi_images
+    - graspi_css_concat
+    - graspi_filerev
+    - graspi_manifest
+    - graspi_css_replace_urls
+  graspi_build_fonts:
+    - graspi_fonts
+    - graspi_css_concat
+    - graspi_filerev
+    - graspi_manifest
+    - graspi_css_replace_urls
+  graspi_build_templates:
+    - graspi_templates
+    - graspi_filerev
+    - graspi_manifest
+  graspi_build_webcomponents:
+    - graspi_webcomponents
+    - graspi_filerev
+    - graspi_manifest
+
+environments:
+  development:
+    tasks:
+      graspi_build:
+        - graspi_images
+        - graspi_fonts
+        - graspi_css_sass_compile
+        - graspi_css_concat
+        - graspi_js_coffee_compile
+        - graspi_js_concat
+        - graspi_templates
+        - graspi_webcomponents
+        - graspi_filerev
+        - graspi_manifest
+        - graspi_css_replace_urls

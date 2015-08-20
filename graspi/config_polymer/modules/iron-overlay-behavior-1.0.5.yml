@@ -1,0 +1,31 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - iron-fit-behavior-1.0.3
+  - iron-resizable-behavior-1.0.2
+
+tasks:
+  graspi_build:
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/iron-overlay-behavior'
+  destFolder: 'iron-overlay-behavior/webcomponents'
+  templates:
+    destFile: 'iron-overlay-behavior.html'
+    files:
+      - iron-overlay-backdrop.html
+      - iron-overlay-manager.html
+      - iron-overlay-behavior.html
+  replace:
+    - files:
+        - '%%destPath%%/iron-overlay-behavior.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

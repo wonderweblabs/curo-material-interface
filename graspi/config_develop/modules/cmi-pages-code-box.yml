@@ -1,0 +1,75 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+
+js:
+  coffee:
+    options:
+      bare: false
+      sourceMap: false
+
+tasks:
+  graspi_build:
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_templates
+    - graspi_replace
+
+options:
+  basePath: 'src/webcomponents/cmi-pages-code-box'
+  destFolder: 'cmi-pages-code-box/webcomponents'
+  css:
+    destFile: 'cmi-pages-code-box.css'
+    files:
+      - 'cmi-pages-code-box.sass'
+  js:
+    destFile: 'cmi-pages-code-box.js'
+    files:
+      - cmi-pages-code-box.coffee
+  templates:
+    destFile: 'cmi-pages-code-box.html'
+    files:
+      - cmi-pages-code-box.haml
+  replace:
+    - files:
+        - '%%destPath%%/cmi-pages-code-box.html'
+      pattern:
+        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: '%%destPath%%/cmi-pages-code-box.css'
+        - '</style>'
+    - files:
+        - '%%destPath%%/cmi-pages-code-box.html'
+      pattern:
+        pattern: '(\<graspi\-webcomponent\-script\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<script>'
+        - file: '%%destPath%%/cmi-pages-code-box.js'
+        - '</script>'
+    - files:
+        - '%%destPath%%/cmi-pages-code-box.html'
+      pattern:
+        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+    - files:
+        - '%%destPath%%/cmi-pages-code-box.html'
+      pattern:
+        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+

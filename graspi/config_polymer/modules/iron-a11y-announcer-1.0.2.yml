@@ -1,0 +1,27 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+
+tasks:
+  graspi_build:
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/iron-a11y-announcer'
+  destFolder: 'iron-a11y-announcer/webcomponents'
+  templates:
+    destFile: 'iron-a11y-announcer.html'
+    files:
+      - iron-a11y-announcer.html
+  replace:
+    - files:
+        - '%%destPath%%/iron-a11y-announcer.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

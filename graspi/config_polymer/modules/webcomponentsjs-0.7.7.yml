@@ -1,0 +1,14 @@
+dependencies: []
+
+tasks:
+  graspi_build:
+    - graspi_js_copy
+    - graspi_js_concat
+
+options:
+  basePath: 'bower_components/webcomponentsjs'
+  destFolder: 'webcomponentsjs'
+  js:
+    destFile: 'webcomponents.js'
+    files:
+      - 'webcomponents.js'

@@ -1,0 +1,108 @@
+cacheFile:             'tmp/graspi/production/files_cache_register.json'
+modulesBuiltTrackFile: 'tmp/graspi/production/modules_built_track_register.json'
+
+
+# ------------------------------------------------------
+# css
+# ------------------------------------------------------
+css:
+  concat:
+    cached:             false
+  copy:
+    cached:             false
+  sass:
+    cached:             false
+    options:
+      sourcemap:          'none'
+      debugInfo:          false
+      lineNumbers:        false
+      noCache:            true
+      update:             false
+  less:
+    cached:             false
+    options:
+      compress:           true
+      sourceMap:          false
+  minify:
+    cached:             false
+    report:             'gzip'
+    sourceMap:          false
+    # clean-css
+    options:
+      advanced:               false
+      aggressiveMerging:      false
+      compatibility:          '*'
+      keepBreaks:             false
+      keepSpecialComments:    0
+      mediaMerging:           true
+      rebase:                 false
+      restructuring:          true
+      roundingPrecision:      -1
+
+# ------------------------------------------------------
+# js
+# ------------------------------------------------------
+js:
+  copy:
+    cached:             false
+  concat:
+    cached:             false
+  coffee:
+    cached:             false
+    options:
+      sourceMap:          false
+  uglify:
+    cached:             false
+    options:
+      beautify:           false
+      expression:         false
+      report:             'gzip'
+      sourceMap:          false
+      preserveComments:   false
+
+# ------------------------------------------------------
+# images
+# ------------------------------------------------------
+images:
+  copy:
+    cached:             false
+  imagemin:
+    cached:             false
+    options:
+      gifInterlaced:          true
+      jpegProgressive:        true
+      pngOptimizationLevel:   3
+    usePlugins:
+      - jpegRecompressPlugin
+    plugins:
+      jpegRecompressPlugin:
+        loops:          6
+        accurate:       true
+        quality:        'high'
+        method:         'ssim'
+        target:         0.8
+        min:            70
+        max:            90
+        defish:         0
+        progressive:    true
+        subsample:      'default'
+
+# ------------------------------------------------------
+# fonts
+# ------------------------------------------------------
+fonts:
+  copy:
+    cached:             false
+
+# ------------------------------------------------------
+# postpipeline
+# ------------------------------------------------------
+postpipeline:
+  filerevision:
+    digest:       true
+    cached:       false
+  manifest:
+    cached:       false
+  urlReplace:
+    cached:       false
+

@@ -1,0 +1,18 @@
+@import bourbon
+@import cmi/mixins
+@import cmi_default_variables
+@import cmi_custom_variables
+
+\:host
+  +box-sizing(border-box)
+  position: relative
+  display: block
+  padding: 8px 16px 16px 16px
+  font: inherit
+  outline: none
+  &:first-child
+    padding-top: 16px
+
+\:host([line-top])
+  padding-top: 16px
+  border-top: 1px solid rgba(#000, 0.1)

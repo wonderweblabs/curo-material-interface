@@ -1,0 +1,107 @@
+@import bourbon
+@import cmi_default_variables
+@import cmi_custom_variables
+
+$cmi-color-primary: #afd23e
+// $cmi-color-highlight: #FF3064
+$cmi-color-highlight: rgb(251, 15, 78)
+// $cmi-color-danger: #e2231e
+$cmi-color-danger: #F02A22
+$cmi-color-filled-base: rgba(0, 0, 0, 0.05)
+
+$cmi-color-text: #424242
+$cmi-color-text-light: #f5f5f5
+$cmi-color-ripple-light: rgba(255, 255, 255, 1)
+$cmi-color-background-disabled: lighten($cmi-color-filled-base, 10%)
+$cmi-color-text-disabled: lighten($cmi-color-text, 50%)
+
+\:host
+  +user-select(none)
+  +box-sizing(border-box)
+  display: inline-block
+  position: relative
+  font: inherit
+  text-align: center
+  text-transform: uppercase
+  background: transparent
+  outline: none
+  cursor: pointer
+  > paper-ripple
+    color: rgba(0, 0, 0, 0.3)
+  > paper-material
+    font-weight: inherit
+    border-radius: inherit
+    &.keyboard-focus
+      font-weight: bold
+  > .content
+    +box-sizing(border-box)
+    display: block
+    position: relative
+    color: $cmi-color-text
+    ::content
+      *
+        text-transform: inherit
+
+\:host([raised])
+  > .content
+
+\:host([theme="primary"])
+  > .content
+    color: $cmi-color-primary
+
+\:host([theme="highlight"])
+  > .content
+    color: $cmi-color-highlight
+
+\:host([theme="danger"])
+  > .content
+    color: $cmi-color-danger
+
+\:host([small])
+  font-size: 90%
+  > .content
+
+\:host([large])
+  font-size: 115%
+  > .content
+
+\:host([filled])
+  background-color: $cmi-color-filled-base
+  > .content
+
+\:host([filled][theme="primary"])
+  background-color: $cmi-color-primary
+  > .content
+    color: $cmi-color-text
+
+\:host([filled][theme="highlight"])
+  background-color: $cmi-color-highlight
+  > .content
+    color: $cmi-color-text
+  > paper-ripple
+    color: $cmi-color-ripple-light
+
+\:host([filled][theme="danger"])
+  background-color: $cmi-color-danger
+  > .content
+    color: $cmi-color-text-light
+  > paper-ripple
+    color: $cmi-color-ripple-light
+
+\:host([block])
+  display: block
+  > .content
+
+\:host([noink])
+  > paper-ripple
+    display: none
+
+\:host([disabled])
+  color: #a8a8a8
+  cursor: auto
+  pointer-events: none
+  background-color: $cmi-color-background-disabled
+  > .content
+    color: $cmi-color-text-disabled
+
+

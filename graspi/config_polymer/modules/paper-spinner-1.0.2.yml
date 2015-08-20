@@ -1,0 +1,46 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - iron-flex-layout-1.0.2
+  - paper-styles-1.0.11
+
+tasks:
+  graspi_build:
+    - graspi_css_copy
+    - graspi_css_concat
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/paper-spinner'
+  destFolder: 'paper-spinner/webcomponents'
+  css:
+    destFile: 'paper-spinner.css'
+    files:
+      - 'paper-spinner.css'
+  templates:
+    destFile: 'paper-spinner.html'
+    files:
+      - paper-spinner.html
+  replace:
+    - files:
+        - '%%destPath%%/paper-spinner.html'
+      pattern:
+        pattern: '(\<link rel\=\"import\" type\=\"css\" href\=\"paper\-spinner\.css\"\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: '%%destPath%%/paper-spinner.css'
+        - '</style>'
+    - files:
+        - '%%destPath%%/paper-spinner.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

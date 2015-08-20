@@ -1,0 +1,23 @@
+.grid-row
+  .grid-col-12
+    %cmi-card{ block: true }
+      %cmi-card-content{ :'line-top' => true }
+        %h1 Form elements
+
+    %cmi-card{ id: 'input', block: true }
+      %cmi-card-heading
+        %h1.title Input
+      %cmi-card-content{ :'line-top' => true }
+        +include 'src/sections/form-elements/_inputs.haml'
+
+    %cmi-card{ id: 'checkboxes', block: true }
+      %cmi-card-heading
+        %h1.title Checkbox
+      %cmi-card-content{ :'line-top' => true }
+        +include 'src/sections/form-elements/_checkboxes.haml'
+
+    %cmi-card{ id: 'radios', block: true }
+      %cmi-card-heading
+        %h1.title Radio and radio groups
+      %cmi-card-content{ :'line-top' => true }
+        +include 'src/sections/form-elements/_radios.haml'

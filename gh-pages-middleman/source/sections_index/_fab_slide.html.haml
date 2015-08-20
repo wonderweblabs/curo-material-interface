@@ -1,0 +1,68 @@
+%h2#fab-slide.cmi-lined
+  %span FAB Slide
+
+- icon = "<i class='mdi mdi-check'></i>".html_safe
+
+.grid-row
+  .grid-col-12
+    = code do
+      %cmi-fab-slide{ open: true, filled: true }
+        %cmi-fab-slide-icon
+          = icon
+        %cmi-fab-slide-content
+          My longer Text
+    %br/
+    = code do
+      %cmi-fab-slide{ open: true, filled: true, theme: "primary" }
+        %cmi-fab-slide-icon
+          = icon
+        %cmi-fab-slide-content
+          My longer Text
+    %br/
+    = code do
+      %cmi-fab-slide{ open: true, filled: true, small: true, theme: "highlight" }
+        %cmi-fab-slide-icon
+          = icon
+        %cmi-fab-slide-content
+          My longer Text
+    %br/
+    = code do
+      %cmi-fab-slide{ open: true, filled: true, large: true, theme: "danger" }
+        %cmi-fab-slide-icon
+          = icon
+        %cmi-fab-slide-content
+          My longer Text
+
+%hr/
+
+.grid-row
+  .grid-col-12
+    %h3 Hover
+
+    = code do
+      %cmi-fab-slide{ hover: true, filled: true }
+        %cmi-fab-slide-icon
+          = icon
+        %cmi-fab-slide-content
+          My longer Text
+    %br/
+    = code do
+      %cmi-fab-slide{ hover: true, filled: true, theme: "primary" }
+        %cmi-fab-slide-icon
+          = icon
+        %cmi-fab-slide-content
+          My longer Text
+    %br/
+    = code do
+      %cmi-fab-slide{ hover: true, filled: true, small: true, theme: "highlight" }
+        %cmi-fab-slide-icon
+          = icon
+        %cmi-fab-slide-content
+          My longer Text
+    %br/
+    = code do
+      %cmi-fab-slide{ hover: true, filled: true, large:true, theme: "danger" }
+        %cmi-fab-slide-icon
+          = icon
+        %cmi-fab-slide-content
+          My longer Text

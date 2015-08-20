@@ -1,0 +1,34 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - iron-a11y-keys-behavior-1.0.5
+  - iron-icon-1.0.2
+  - iron-icons-1.0.3
+  - paper-input-1.0.8
+  - paper-menu-button-1.0.2
+  - paper-ripple-1.0.1
+  - paper-styles-1.0.11
+
+tasks:
+  graspi_build:
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/paper-dropdown-menu'
+  destFolder: 'paper-dropdown-menu/webcomponents'
+  templates:
+    destFile: 'paper-dropdown-menu.html'
+    files:
+      - paper-dropdown-menu.html
+  replace:
+    - files:
+        - '%%destPath%%/paper-dropdown-menu.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

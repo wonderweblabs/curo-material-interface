@@ -1,0 +1,112 @@
+%h2#buttons.cmi-lined
+  %span Buttons
+
+%hr/
+
+.grid-row
+  .grid-col-6
+    = code do
+      %cmi-button Button
+    = code do
+      %cmi-button{ raised: true } Button
+    = code do
+      %cmi-button{ noink: true } Button
+  .grid-col-6
+    = code do
+      %cmi-button{ toggles: true } Button
+    = code do
+      %cmi-button{ disabled: true } Button
+
+%hr/
+
+.grid-row
+  .grid-col-6
+    = code do
+      %cmi-button Button
+    = code do
+      %cmi-button{ theme: 'primary' } Button
+    = code do
+      %cmi-button{ theme: 'highlight' } Button
+    = code do
+      %cmi-button{ theme: 'danger' } Button
+    = code do
+      %cmi-button{ filled: true } Button
+    = code do
+      %cmi-button{ filled: true, theme: 'primary' } Button
+    = code do
+      %cmi-button{ filled: true, theme: 'highlight' } Button
+    = code do
+      %cmi-button{ filled: true, theme: 'danger' } Button
+  .grid-col-6
+    = code do
+      %cmi-button{ raised: true } Button
+    = code do
+      %cmi-button{ raised: true, theme: 'primary' } Button
+    = code do
+      %cmi-button{ raised: true, theme: 'highlight' } Button
+    = code do
+      %cmi-button{ raised: true, theme: 'danger' } Button
+    = code do
+      %cmi-button{ raised: true, filled: true } Button
+    = code do
+      %cmi-button{ raised: true, filled: true, theme: 'primary' } Button
+    = code do
+      %cmi-button{ raised: true, filled: true, theme: 'highlight' } Button
+    = code do
+      %cmi-button{ raised: true, filled: true, theme: 'danger' } Button
+
+%hr/
+
+.grid-row
+  .grid-col-6
+    = code do
+      %cmi-button{ filled: true, small: true } Button
+    = code do
+      %cmi-button{ filled: true, large: true } Button
+    = code do
+      %cmi-button{ filled: true, block: true } Button
+  .grid-col-6
+    = code do
+      %cmi-button{ raised: true, filled: true, small: true } Button
+    = code do
+      %cmi-button{ raised: true, filled: true, large: true } Button
+    = code do
+      %cmi-button{ raised: true, filled: true, block: true } Button
+
+%hr/
+
+.grid-row
+  .grid-col-6
+    = code do
+      %cmi-button><
+        %i.mdi.mdi-check><
+        &nbsp; Button
+    = code do
+      %cmi-button{ theme: 'primary' }
+        %i.mdi.mdi-check
+        &nbsp; Button
+    = code do
+      %cmi-button{ theme: 'highlight' }
+        %i.mdi.mdi-check
+        &nbsp; Button
+    = code do
+      %cmi-button{ theme: 'danger' }
+        %i.mdi.mdi-check
+        &nbsp; Button
+  .grid-col-6
+    = code do
+      %cmi-button{ cmi: { raised: true } }
+        %i.mdi.mdi-check
+        &nbsp; Button
+    = code do
+      %cmi-button{ raised: true, theme: 'primary' }
+        %i.mdi.mdi-check
+        &nbsp; Button
+    = code do
+      %cmi-button{ raised: true, theme: 'highlight' }
+        %i.mdi.mdi-check
+        &nbsp; Button
+    = code do
+      %cmi-button{ raised: true, theme: 'danger' }
+        %i.mdi.mdi-check
+        &nbsp; Button

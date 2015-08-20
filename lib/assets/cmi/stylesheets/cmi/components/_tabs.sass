@@ -1,0 +1,41 @@
+.cmi-tabs
+  +clearfix
+  position: relative
+  margin: 0
+  padding: 0
+  list-style: none
+  font-size: 16px
+  font-size: 1rem
+  a
+    display: block
+    padding: 0.8rem 1em 0.7rem 1em
+    font-size: 0.875em
+    text-transform: uppercase
+    text-decoration: none
+    line-height: 1.2
+    color: $tabs-color-font
+    &:hover
+      text-decoration: none
+      background-color: $tabs-color-hover-bg
+  li
+    position: relative
+    overflow: hidden
+    float: left
+  li.cmi-tabs-active
+    a
+      color: $tabs-color-link-active
+  li.cmi-tabs-active-indicator
+    position: absolute
+    float: none
+    height: 3px
+    bottom: 0
+    background-color: $tabs-color-link-active
+    &.cmi-tabs-animate-right
+      +transition(right 0.15s ease, left 0.25s ease 0.05s)
+    &.cmi-tabs-animate-left
+      +transition(left 0.15s ease, right 0.25s ease 0.05s)
+
+.cmi-tabs-tab
+  display: none
+  &.cmi-tabs-active
+    display: block

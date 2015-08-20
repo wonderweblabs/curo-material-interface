@@ -1,12 +1,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "curo_material_interface/version"
+require "cmi/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "curo-material-interface"
-  s.version     = CuroMaterialInterface::VERSION
+  s.version     = CMI::VERSION
   s.authors     = ["Sascha Hillig", "Alexander Schrot", "wonderweblabs"]
   s.email       = ["email@wonderweblabs.com"]
   s.homepage    = "https://github.com/wonderweblabs/curo-material-interface"

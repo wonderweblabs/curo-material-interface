@@ -1,0 +1,47 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - paper-styles-1.0.11
+  - paper-ripple-1.0.1
+  - paper-behaviors-1.0.3
+
+tasks:
+  graspi_build:
+    - graspi_css_copy
+    - graspi_css_concat
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/paper-toggle-button'
+  destFolder: 'paper-toggle-button/webcomponents'
+  css:
+    destFile: 'paper-toggle-button.css'
+    files:
+      - 'paper-toggle-button.css'
+  templates:
+    destFile: 'paper-toggle-button.html'
+    files:
+      - paper-toggle-button.html
+  replace:
+    - files:
+        - '%%destPath%%/paper-toggle-button.html'
+      pattern:
+        pattern: '(\<link rel\=\"import\" type\=\"css\" href\=\"paper\-toggle\-button\.css\"\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: '%%destPath%%/paper-toggle-button.css'
+        - '</style>'
+    - files:
+        - '%%destPath%%/paper-toggle-button.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

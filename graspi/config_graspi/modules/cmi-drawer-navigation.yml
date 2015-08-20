@@ -1,0 +1,76 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - iron-selector-1.0.2
+
+js:
+  coffee:
+    options:
+      bare: false
+      sourceMap: false
+
+tasks:
+  graspi_build:
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_templates
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-drawer-navigation'
+  destFolder: 'cmi-drawer-navigation/webcomponents'
+  css:
+    destFile: 'cmi-drawer-navigation.css'
+    files:
+      - 'cmi-drawer-navigation.sass'
+  js:
+    destFile: 'cmi-drawer-navigation.js'
+    files:
+      - cmi-drawer-navigation.coffee
+  templates:
+    destFile: 'cmi-drawer-navigation.html'
+    files:
+      - cmi-drawer-navigation.haml
+  replace:
+    - files:
+        - '%%destPath%%/cmi-drawer-navigation.html'
+      pattern:
+        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: '%%destPath%%/cmi-drawer-navigation.css'
+        - '</style>'
+    - files:
+        - '%%destPath%%/cmi-drawer-navigation.html'
+      pattern:
+        pattern: '(\<graspi\-webcomponent\-script\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<script>'
+        - file: '%%destPath%%/cmi-drawer-navigation.js'
+        - '</script>'
+    - files:
+        - '%%destPath%%/cmi-drawer-navigation.html'
+      pattern:
+        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+    - files:
+        - '%%destPath%%/cmi-drawer-navigation.html'
+      pattern:
+        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+

@@ -1,0 +1,68 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - cmi-headlines-behavior
+
+js:
+  coffee:
+    options:
+      bare: false
+      sourceMap: false
+
+tasks:
+  graspi_build:
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_templates
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-h5'
+  destFolder: 'cmi-h5/webcomponents'
+  css:
+    destFile: 'cmi-h5.css'
+    files:
+      - 'cmi-h5.sass'
+  js:
+    destFile: 'cmi-h5.js'
+    files:
+      - cmi-h5.coffee
+  templates:
+    destFile: 'cmi-h5.html'
+    files:
+      - cmi-h5.haml
+  replace:
+    - files:
+        - '%%destPath%%/cmi-h5.html'
+      pattern:
+        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style is="custom-style">'
+        - file: '%%destPath%%/cmi-h5.css'
+        - '</style>'
+    - files:
+        - '%%destPath%%/cmi-h5.html'
+      pattern:
+        pattern: '(\<graspi\-webcomponent\-script\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<script>'
+        - file: '%%destPath%%/cmi-h5.js'
+        - '</script>'
+    - files:
+        - '%%destPath%%/cmi-h5.html'
+      pattern:
+        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+

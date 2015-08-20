@@ -1,0 +1,65 @@
+%cmi-card{ id: 'text', block: true }
+  %cmi-card-heading
+    %h2.title Text
+  %cmi-card-content{ :'line-top' => true }
+
+    / ---------------------------------------------
+    / blockquote
+    %h3{ is: 'cmi-h3', line: true } Blockquote
+    %cmi-pages-code-box
+      %blockquote
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habes, inquam, Cato, formam eorum, de quibus loquor, philosophorum. Cur, nisi quod turpis oratio est? Duo Reges: constructio interrete. Ergo id est convenienter naturae vivere, a natura discedere. Sed quid attinet de rebus tam apertis plura requirere? Quid, quod res alia tota est? Quae cum dixisset, finem ille.
+
+    / ---------------------------------------------
+    / paragraphs
+    %h3{ is: 'cmi-h3', line: true } Paragraphs and sub formats
+
+    %h4 p
+    %cmi-pages-code-box
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habes, inquam, Cato, formam eorum, de quibus loquor, philosophorum. Cur, nisi quod turpis oratio est? Duo Reges: constructio interrete. Ergo id est convenienter naturae vivere, a natura discedere. Sed quid attinet de rebus tam apertis plura requirere? Quid, quod res alia tota est? Quae cum dixisset, finem ille.
+
+    %h4 em
+    %cmi-pages-code-box
+      %p
+        %em Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+    %h4 strong
+    %cmi-pages-code-box
+      %p
+        %strong Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+    %h4 small
+    %cmi-pages-code-box
+      %p
+        %small Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+    %h4 links
+    %cmi-pages-code-box
+      %p
+        %a{ href: '#' } Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit.
+
+    %h4 .text-light
+    %cmi-pages-code-box
+      %p.text-light
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+    %h4 .text-primary
+    %cmi-pages-code-box
+      %p.text-primary
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+    %h4 Lists
+    %cmi-pages-code-box
+      %ul
+        %li Row 1
+        %li Row 2
+        %li Row 3
+
+    / ---------------------------------------------
+    / line
+    %h3{ is: 'cmi-h3', line: true } Line
+
+    %cmi-pages-code-box
+      %hr/

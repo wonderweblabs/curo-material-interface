@@ -1,0 +1,28 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - iron-flex-layout-1.0.2
+
+tasks:
+  graspi_build:
+    - graspi_templates_copy
+    - graspi_templates_concat
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/paper-toolbar'
+  destFolder: 'paper-toolbar/webcomponents'
+  templates:
+    destFile: 'paper-toolbar.html'
+    files:
+      - paper-toolbar.html
+  replace:
+    - files:
+        - '%%destPath%%/paper-toolbar.html'
+      pattern:
+        pattern: '(?:\<link)(?:.*)(?:\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''

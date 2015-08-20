@@ -1,0 +1,315 @@
+.grid-row
+  .grid-col-12
+    %cmi-card{ id: 'cards', block: true }
+      %cmi-card-content{ :'line-top' => true }
+        %h1 Cards
+
+        -# cmi-card-reveal
+        -#   > .reveal > absolute positioned > events
+        -#   * revealed
+        -#   * animate
+        -#
+        -# cmi-card-collapse
+        -#   > .collapse > can be hidden -> events
+        -#   * open
+        -#   * animate
+
+    %cmi-card{ id: 'card-content', block: true }
+      %cmi-card-heading
+        %h1.title cmi-card-content
+      %cmi-card-content{ :'line-top' => true }
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true, elevation: 4, animatedShadow: true }
+            %cmi-card-content
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true, elevation: 3 }
+            %cmi-card-content
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true, elevation: 2 }
+            %cmi-card-content
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-content
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-content
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+            %cmi-card-content
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-content{ :'no-padding' => true }
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+
+
+    %cmi-card{ id: 'card-actions', block: true }
+      %cmi-card-heading
+        %h1.title cmi-card-actions
+      %cmi-card-content{ :'line-top' => true }
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-actions
+              %cmi-button Do this
+              %cmi-button Do that
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card
+            %cmi-card-actions
+              %cmi-button Do this
+              %cmi-button Do that
+
+
+    %cmi-card{ id: 'card-heading', block: true }
+      %cmi-card-heading
+        %h1.title cmi-card-heading
+      %cmi-card-content{ :'line-top' => true }
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true, elevation: 3 }
+            %cmi-card-heading
+              %h2.title Some title
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true, elevation: 2 }
+            %cmi-card-heading
+              %h2.title Some title
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-heading
+              %h2.title Some title
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-heading
+              %h2.title Some title
+              %h3.sub-title Some title
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-heading{ :'pull-up' => true }
+              %h2.title Some title
+              %h3.sub-title Some title
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-heading{ image: 'https://placekitten.com/g/150/150' }
+              %h2.title Some title
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-heading{ image: 'https://placekitten.com/g/150/150', :'image-alt' => 'Sweet kitty' }
+              %h2.title Some title
+              %h3.sub-title Some title
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-heading{ image: 'https://placekitten.com/g/150/150', :'image-alt' => 'Sweet kitty', :'pull-up' => true }
+              %h2.title Some title
+              %h3.sub-title Some title
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card
+            %cmi-card-heading
+              %h2.title Some title
+
+
+    %cmi-card{ id: 'card-content-line', block: true }
+      %cmi-card-heading
+        %h1.title line top
+      %cmi-card-content{ :'line-top' => true }
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-heading
+              %h2.title Some title
+            %cmi-card-content{ :'line-top' => true }
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-heading
+              %h2.title Some title
+            %cmi-card-content{ :'line-top' => true }
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+            %cmi-card-actions{ :'line-top' => true }
+              %cmi-button Do this
+              %cmi-button Do that
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card
+            %cmi-card-heading
+              %h2.title Some title
+            %cmi-card-content
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+            %cmi-card-actions{ :'line-top' => true }
+              %cmi-button Do this
+              %cmi-button Do that
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card
+            %cmi-card-heading
+              %h2.title Some title
+            %cmi-card-content
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+            %cmi-card-actions{ :'line-top' => true }
+              %cmi-button Do this
+              %cmi-button Do that
+            %cmi-card-actions{ :'line-top' => true }
+              %cmi-button Do this
+              %cmi-button Do that
+
+
+    %cmi-card{ id: 'card-theme', block: true }
+      %cmi-card-heading
+        %h1.title card theme
+      %cmi-card-content{ :'line-top' => true }
+
+        %h2{ is: 'cmi-h2', line: true, id: 'card-theme' } card theme
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ theme: 'primary' }
+            %cmi-card-heading
+              %h2.title Some title
+            %cmi-card-content
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+            %cmi-card-actions{ :'line-top' => true }
+              %cmi-button Do this
+              %cmi-button Do that
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ theme: 'highlight' }
+            %cmi-card-heading
+              %h2.title Some title
+            %cmi-card-content
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+            %cmi-card-actions{ :'line-top' => true }
+              %cmi-button Do this
+              %cmi-button Do that
+
+
+    %cmi-card{ id: 'card-image', block: true }
+      %cmi-card-heading
+        %h1.title cmi-card-image
+      %cmi-card-content{ :'line-top' => true }
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-image{ image: 'https://placekitten.com/g/350/300', :'image-alt' => 'kitten image' }
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-heading
+              %h2.title Some title
+            %cmi-card-image{ image: 'https://placekitten.com/g/350/300', :'image-alt' => 'kitten image' }
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-image{ image: 'https://placekitten.com/g/350/200', :'image-alt' => 'kitten image' }
+            %cmi-card-heading
+              %h2.title Some title
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-heading
+              %h2.title Some title
+            %cmi-card-image{ image: 'https://placekitten.com/g/350/200', :'image-alt' => 'kitten image' }
+            %cmi-card-content
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-image{ image: 'https://placekitten.com/g/350/300', :'image-alt' => 'kitten image' }
+              %h2.title Some title
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-heading
+              %h2.title Some title
+            %cmi-card-image{ image: 'https://placekitten.com/g/350/300', :'image-alt' => 'kitten image' }
+              %h2.title Some title
+              %h3.sub-title Some title
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-image{ image: 'https://placekitten.com/g/350/200', :'image-alt' => 'kitten image' }
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt.
+            %cmi-card-heading
+              %h2.title Some title
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-image{ image: 'https://placekitten.com/g/350/200', :'image-alt' => 'kitten image', :'title-theme' => 'dark' }
+              %h2.title Some title
+            %cmi-card-heading
+              %h2.title Some title
+
+        -# ---------------------------------
+        %cmi-pages-code-box
+          %cmi-card{ block: true }
+            %cmi-card-heading
+              %h2.title Some title
+            %cmi-card-image{ image: 'https://placekitten.com/g/350/200', :'image-alt' => 'kitten image', :'title-theme' => 'light' }
+              %h2.title Some title
+            %cmi-card-content
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est.
+
+

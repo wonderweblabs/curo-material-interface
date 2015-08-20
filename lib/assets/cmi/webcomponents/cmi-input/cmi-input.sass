@@ -1,0 +1,35 @@
+@import bourbon
+@import cmi/mixins
+@import cmi_default_variables
+@import cmi_custom_variables
+
+$cmi-color-primary: #afd23e
+
+$cmi-color-danger: #F02A22
+
+\:host
+  display: block
+  input
+    +placeholder
+      color: #999
+
+  > #shadow ::content
+    > .input-content
+      &.label-is-highlighted
+        label
+          color: $cmi-color-primary
+    > .underline
+      .unfocused-line
+        height: 1px
+        background: #ccc
+      .focused-line
+        background: $cmi-color-primary
+      &.is-invalid
+        .focused-line
+          background: $cmi-color-danger
+    > .add-on-content
+      &.is-highlighted
+        *
+          color: $cmi-color-primary
+
+

@@ -1,0 +1,10 @@
+%dom-module{ id: 'cmi-card-heading' }
+  %template
+    %style{ include: 'cmi-card-content-behavior' }
+    %graspi-webcomponent-stylesheet/
+    .heading-image{ :'hidden$' => "[[!image]]" }
+      %img{ src: "[[image]]", alt: "[[image-alt]]" }
+
+    %content
+
+  %graspi-webcomponent-script/

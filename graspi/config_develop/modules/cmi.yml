@@ -1,0 +1,77 @@
+includeDependencies: true
+
+dependencies:
+  - mdi-1.1.70
+  - webcomponentsjs-0.7.7
+  - polymer-1.0.8
+  - iron-form-1.0.8
+  - paper-item-1.0.2
+  - paper-toolbar-1.0.4
+  - paper-header-panel-1.0.3
+  - paper-checkbox-1.0.5
+  - paper-drawer-panel-1.0.3
+  - paper-menu-1.1.0
+  - paper-tabs-1.0.1
+  - cmi-button
+  - cmi-button-link
+  - cmi-fab
+  - cmi-fab-link
+  - cmi-fab-slide
+  - cmi-h1
+  - cmi-h2
+  - cmi-h3
+  - cmi-h4
+  - cmi-h5
+  - cmi-h6
+  - cmi-navbar
+  - cmi-card
+  - cmi-input
+  - cmi-pages-code-box
+
+options:
+  destPath: 'assets'
+  destFolder: 'cmi'
+
+js:
+  coffee:
+    options:
+      bare: true
+
+live:
+  watch:
+    groups:
+      sass:
+        files:
+          - bower_components/cmi/lib/assets/cmi/stylesheets/**/*.sass
+        tasks:
+          - graspi_build_sass
+      coffee:
+        files:
+          - bower_components/cmi/lib/assets/cmi/javascripts/**/*.coffee
+        tasks:
+          - graspi_build_coffee
+      images:
+        files:
+          - bower_components/cmi/lib/assets/cmi/images/**/*
+        tasks:
+          - graspi_build_images
+      templates:
+        files:
+          - bower_components/cmi/lib/assets/cmi/templates/**/*
+        tasks:
+          - graspi_build_templates
+      webcomponents:
+        files:
+          - bower_components/cmi/lib/assets/cmi/webcomponents/cmi-drawer-navigation/**/*
+          - bower_components/cmi/lib/assets/cmi/webcomponents/cmi-button-behavior/**/*
+          - bower_components/cmi/lib/assets/cmi/webcomponents/cmi-button/**/*
+          - bower_components/cmi/lib/assets/cmi/webcomponents/cmi-fab/**/*
+          - bower_components/cmi/lib/assets/cmi/webcomponents/cmi-fab-slide/**/*
+        tasks:
+          - graspi_build_webcomponents
+
+
+environments:
+  development:
+    options:
+      destPath: 'build/assets'
