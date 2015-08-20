@@ -27,6 +27,7 @@ dependencies:
   - cmi-checkbox
   - cmi-radio-button
   - cmi-radio-group
+  - cmi-toggle-button
 
 options:
   destFolder: 'cmi'

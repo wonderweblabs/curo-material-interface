@@ -1,0 +1,78 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.1.0
+  - paper-behaviors-1.0.3
+  - paper-ripple-1.0.1
+  - paper-styles-1.0.11
+
+js:
+  coffee:
+    options:
+      bare: false
+      sourceMap: false
+
+tasks:
+  graspi_build:
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_templates
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-toggle-button'
+  destFolder: 'cmi-toggle-button/webcomponents'
+  css:
+    destFile: 'cmi-toggle-button.css'
+    files:
+      - 'cmi-toggle-button.sass'
+  js:
+    destFile: 'cmi-toggle-button.js'
+    files:
+      - cmi-toggle-button.coffee
+  templates:
+    destFile: 'cmi-toggle-button.html'
+    files:
+      - cmi-toggle-button.haml
+  replace:
+    - files:
+        - '%%destPath%%/cmi-toggle-button.html'
+      pattern:
+        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: '%%destPath%%/cmi-toggle-button.css'
+        - '</style>'
+    - files:
+        - '%%destPath%%/cmi-toggle-button.html'
+      pattern:
+        pattern: '(\<graspi\-webcomponent\-script\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<script>'
+        - file: '%%destPath%%/cmi-toggle-button.js'
+        - '</script>'
+    - files:
+        - '%%destPath%%/cmi-toggle-button.html'
+      pattern:
+        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+    - files:
+        - '%%destPath%%/cmi-toggle-button.html'
+      pattern:
+        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+
