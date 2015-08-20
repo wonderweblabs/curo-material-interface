@@ -44,9 +44,3 @@ Polymer.CmiButtonBehavior = [
   Polymer.PaperButtonBehavior,
   Polymer.CmiButtonBehaviorImpl
 ]
-
-# Polymer
-Polymer
-
-  is: 'cmi-button-behavior'
-

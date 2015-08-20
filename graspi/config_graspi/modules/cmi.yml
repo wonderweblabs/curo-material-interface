@@ -6,16 +6,24 @@ dependencies:
   - paper-item-1.0.2
   - paper-toolbar-1.0.4
   - paper-header-panel-1.0.3
-  - paper-button-1.0.3
-  - paper-fab-1.0.3
-  - paper-input-1.0.8
   - paper-checkbox-1.0.5
   - paper-drawer-panel-1.0.3
   - paper-menu-1.1.0
-  - cmi-drawer-navigation
+  - paper-tabs-1.0.1
   - cmi-button
+  - cmi-button-link
   - cmi-fab
+  - cmi-fab-link
   - cmi-fab-slide
+  - cmi-h1
+  - cmi-h2
+  - cmi-h3
+  - cmi-h4
+  - cmi-h5
+  - cmi-h6
+  - cmi-navbar
+  - cmi-card
+  - cmi-input
 
 options:
   destFolder: 'cmi'

@@ -1,7 +1,9 @@
-%dom-module{ id: 'cmi-fab', name: 'cmi-fab', extends: 'a' }
-  %graspi-webcomponent-stylesheet/
+%dom-module{ id: 'cmi-fab', name: 'cmi-fab' }
   %template
+    %style{ include: 'cmi-button-behavior' }
+    %graspi-webcomponent-stylesheet/
     %paper-ripple
     %paper-material{ elevation: "[[_elevation]]", animated: true, :'class$' => "[[_computeContentClass(receivedFocusFromKeyboard)]]" }
       %content
+
   %graspi-webcomponent-script/

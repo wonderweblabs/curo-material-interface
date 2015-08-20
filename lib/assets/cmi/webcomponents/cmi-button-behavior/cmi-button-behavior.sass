@@ -2,67 +2,20 @@
 @import cmi_default_variables
 @import cmi_custom_variables
 
-// --cmi-color-primary
-// --cmi-button-background-filled-primary
 $cmi-color-primary: #afd23e
-
-// --cmi-color-highlight
-// --cmi-button-background-filled-highlight
-$cmi-color-highlight: #FF3064
-
-// --cmi-color-danger
-// --cmi-button-background-filled-danger
-$cmi-color-danger: #e2231e
-
-// --cmi-button-background-filled
+// $cmi-color-highlight: #FF3064
+$cmi-color-highlight: rgb(251, 15, 78)
+// $cmi-color-danger: #e2231e
+$cmi-color-danger: #F02A22
 $cmi-color-filled-base: rgba(0, 0, 0, 0.05)
 
-// --cmi-button-text-color
-// --cmi-button-text-filled-highlight
 $cmi-color-text: #424242
-
-// --cmi-button-text-color-light
-// --cmi-button-text-filled-danger
 $cmi-color-text-light: #f5f5f5
-
-// --cmi-color-ripple-light
 $cmi-color-ripple-light: rgba(255, 255, 255, 1)
-
-// --cmi-button-disabled-color
 $cmi-color-background-disabled: lighten($cmi-color-filled-base, 10%)
-
-// --cmi-button-disabled-text-color
 $cmi-color-text-disabled: lighten($cmi-color-text, 50%)
 
-// ----------------------------------------------------------------
-// paper ripple
-\:root
-  /* POLYMER-MIXIN --cmi-button-paper-ripple-defaults */
---cmi-button-paper-ripple-defaults
-  color: rgba(0, 0, 0, 0.3)
-
-// ----------------------------------------------------------------
-// paper material
-\:root
-  /* POLYMER-MIXIN --cmi-button-paper-material-defaults */
---cmi-button-paper-material-defaults
-  font-weight: inherit
-  border-radius: inherit
-
-// ----------------------------------------------------------------
-// paper material - keyboard focused
-\:root
-  /* POLYMER-MIXIN --cmi-button-paper-material-keyboard-focused-defaults */
---cmi-button-paper-material-keyboard-focused-defaults
-  font-weight: bold
-
-
-// ----------------------------------------------------------------
-// cmi button
-
-\:root
-  /* POLYMER-MIXIN --cmi-button-defaults */
---cmi-button-defaults
+\:host
   +user-select(none)
   +box-sizing(border-box)
   display: inline-block
@@ -73,200 +26,82 @@ $cmi-color-text-disabled: lighten($cmi-color-text, 50%)
   background: transparent
   outline: none
   cursor: pointer
+  > paper-ripple
+    color: rgba(0, 0, 0, 0.3)
+  > paper-material
+    font-weight: inherit
+    border-radius: inherit
+    &.keyboard-focus
+      font-weight: bold
+  > .content
+    +box-sizing(border-box)
+    display: block
+    position: relative
+    color: $cmi-color-text
+    ::content
+      *
+        text-transform: inherit
 
-// inner (.cmi-button paper material container)
-\:root
-  /* POLYMER-MIXIN --cmi-button-inner-defaults */
---cmi-button-inner-defaults
-  +box-sizing(border-box)
-  display: block
-  position: relative
-  color: var(--cmi-button-text-color, $cmi-color-text)
+\:host([raised])
+  > .content
 
+\:host([theme="primary"])
+  > .content
+    color: $cmi-color-primary
 
-// ----------------------------------------------------------------
-// cmi button - raised
+\:host([theme="highlight"])
+  > .content
+    color: $cmi-color-highlight
 
-\:root
-  /* POLYMER-MIXIN --cmi-button-raised-defaults */
---cmi-button-raised-defaults
+\:host([theme="danger"])
+  > .content
+    color: $cmi-color-danger
 
-// inner
-\:root
-  /* POLYMER-MIXIN --cmi-button-raised-inner-defaults */
---cmi-button-raised-inner-defaults
-
-
-// ----------------------------------------------------------------
-// cmi button - primary
-
-\:root
-  /* POLYMER-MIXIN --cmi-button-primary-defaults */
---cmi-button-primary-defaults
-
-// inner
-\:root
-  /* POLYMER-MIXIN --cmi-button-primary-inner-defaults */
---cmi-button-primary-inner-defaults
-  color: var(--cmi-color-primary, $cmi-color-primary)
-
-
-// ----------------------------------------------------------------
-// cmi button - highlight
-
-\:root
-  /* POLYMER-MIXIN --cmi-button-highlight-defaults */
---cmi-button-highlight-defaults
-
-// inner
-\:root
-  /* POLYMER-MIXIN --cmi-button-highlight-inner-defaults */
---cmi-button-highlight-inner-defaults
-  color: var(--cmi-color-highlight, $cmi-color-highlight)
-
-
-// ----------------------------------------------------------------
-// cmi button - danger
-
-\:root
-  /* POLYMER-MIXIN --cmi-button-danger-defaults */
---cmi-button-danger-defaults
-
-// inner
-\:root
-  /* POLYMER-MIXIN --cmi-button-danger-inner-defaults */
---cmi-button-danger-inner-defaults
-  color: var(--cmi-color-danger, $cmi-color-danger)
-
-
-// ----------------------------------------------------------------
-// cmi button - small
-
-\:root
-  /* POLYMER-MIXIN --cmi-button-small-defaults */
---cmi-button-small-defaults
+\:host([small])
   font-size: 90%
+  > .content
 
-// inner
-\:root
-  /* POLYMER-MIXIN --cmi-button-small-inner-defaults */
---cmi-button-small-inner-defaults
-
-
-// ----------------------------------------------------------------
-// cmi button - large
-
-\:root
-  /* POLYMER-MIXIN --cmi-button-large-defaults */
---cmi-button-large-defaults
+\:host([large])
   font-size: 115%
+  > .content
 
-// inner
-\:root
-  /* POLYMER-MIXIN --cmi-button-large-inner-defaults */
---cmi-button-large-inner-defaults
+\:host([filled])
+  background-color: $cmi-color-filled-base
+  > .content
 
+\:host([filled][theme="primary"])
+  background-color: $cmi-color-primary
+  > .content
+    color: $cmi-color-text
 
-// ----------------------------------------------------------------
-// cmi button - filled
+\:host([filled][theme="highlight"])
+  background-color: $cmi-color-highlight
+  > .content
+    color: $cmi-color-text
+  > paper-ripple
+    color: $cmi-color-ripple-light
 
-\:root
-  /* POLYMER-MIXIN --cmi-button-filled-defaults */
---cmi-button-filled-defaults
-  background-color: var(--cmi-button-background-filled, $cmi-color-filled-base)
+\:host([filled][theme="danger"])
+  background-color: $cmi-color-danger
+  > .content
+    color: $cmi-color-text-light
+  > paper-ripple
+    color: $cmi-color-ripple-light
 
-// inner
-\:root
-  /* POLYMER-MIXIN --cmi-button-filled-inner-defaults */
---cmi-button-filled-inner-defaults
+\:host([block])
+  display: block
+  > .content
 
+\:host([noink])
+  > paper-ripple
+    display: none
 
-// ----------------------------------------------------------------
-// cmi button - filled-primary
-
-\:root
-  /* POLYMER-MIXIN --cmi-button-filled-primary-defaults */
---cmi-button-filled-primary-defaults
-  background-color: var(--cmi-button-background-filled-primary, $cmi-color-primary)
-
-// inner
-\:root
-  /* POLYMER-MIXIN --cmi-button-filled-primary-inner-defaults */
---cmi-button-filled-primary-inner-defaults
-  color: var(--cmi-button-text-filled-primary, $cmi-color-text)
-
-
-// ----------------------------------------------------------------
-// cmi button - filled-highlight
-
-\:root
-  /* POLYMER-MIXIN --cmi-button-filled-highlight-defaults */
---cmi-button-filled-highlight-defaults
-  background-color: var(--cmi-button-background-filled-highlight, $cmi-color-highlight)
-
-// inner
-\:root
-  /* POLYMER-MIXIN --cmi-button-filled-highlight-inner-defaults */
---cmi-button-filled-highlight-inner-defaults
-  color: var(--cmi-button-text-filled-highlight, $cmi-color-text)
-
-// ripple
-\:root
-  /* POLYMER-MIXIN --cmi-button-filled-highlight-ripple-defaults */
---cmi-button-filled-highlight-ripple-defaults
-  color: var(--cmi-color-ripple-light, $cmi-color-ripple-light)
-
-
-// ----------------------------------------------------------------
-// cmi button - filled-danger
-
-\:root
-  /* POLYMER-MIXIN --cmi-button-filled-danger-defaults */
---cmi-button-filled-danger-defaults
-  background-color: var(--cmi-button-background-filled-danger, $cmi-color-danger)
-
-// inner
-\:root
-  /* POLYMER-MIXIN --cmi-button-filled-danger-inner-defaults */
---cmi-button-filled-danger-inner-defaults
-  color: var(--cmi-button-text-filled-danger, $cmi-color-text-light)
-
-// ripple
-\:root
-  /* POLYMER-MIXIN --cmi-button-filled-danger-ripple-defaults */
---cmi-button-filled-danger-ripple-defaults
-  color: var(--cmi-color-ripple-light, $cmi-color-ripple-light)
-
-
-// ----------------------------------------------------------------
-// cmi button - noink (no ripples)
-
-\:root
-  /* POLYMER-MIXIN --cmi-button-noink-defaults */
---cmi-button-noink-defaults
-
-// paper ripple
-\:root
-  /* POLYMER-MIXIN --cmi-button-noink-paper-ripple-defaults */
---cmi-button-noink-paper-ripple-defaults
-  display: none
-
-
-// ----------------------------------------------------------------
-// cmi button - disabled
-
-\:root
-  /* POLYMER-MIXIN --cmi-button-disabled-defaults */
---cmi-button-disabled-defaults
+\:host([disabled])
   color: #a8a8a8
   cursor: auto
   pointer-events: none
-  background-color: var(--cmi-button-disabled-color, $cmi-color-background-disabled)
-
-// inner
-\:root
-  /* POLYMER-MIXIN --cmi-button-disabled-inner-defaults */
---cmi-button-disabled-inner-defaults
-  color: var(--cmi-button-disabled-text-color, $cmi-color-text-disabled)
+  background-color: $cmi-color-background-disabled
+  > .content
+    color: $cmi-color-text-disabled
 
 

@@ -1,0 +1,60 @@
+-# ---------------------------------
+%h4{ is: 'cmi-h4', line: true } Text input
+
+%cmi-input{ label: 'label', autofocus: true }
+%cmi-input{ label: 'password', type: 'password' }
+%cmi-input{ label: 'label (no-label-float)', :'no-label-float' => true }
+%cmi-input{ label: 'disabled', disabled: true }
+
+
+-# ---------------------------------
+%h4{ is: 'cmi-h4', line: true } Text area
+
+%cmi-textarea{ label: 'textarea label' }
+
+
+-# ---------------------------------
+%h4{ is: 'cmi-h4', line: true } Validation
+
+%cmi-input{ label: 'only type letters (auto-validate)', :'auto-validate' => true, pattern: "[a-zA-Z]*", :'error-message' => "letters only!" }
+%cmi-input{ label: 'only type letters (no auto validate)', pattern: "[a-zA-Z]*", :'error-message' => "letters only, required input!", required: true, id: 'inputForValidation' }
+%cmi-button{ onclick: "validate()" } Validate!
+
+
+-# ---------------------------------
+%h4{ is: 'cmi-h4', line: true } Character counter
+
+%cmi-input{ label: 'label', :'char-counter' => true }
+
+%cmi-input{ label: 'at most 10 letters', :'char-counter' => true, :'auto-validate' => true, pattern: '[a-zA-Z]*', maxlength: '10', :'error-message' => 'letters only!' }
+
+%cmi-textarea{ label: 'textarea', :'char-counter' => true }
+
+%cmi-textarea{ label: 'textarea with maxlength', :'char-counter' => true, maxlength: '10' }
+
+%cmi-textarea{ label: 'text area with rows and max-rows', rows: '3', :'max-rows' => '4' }
+
+
+-# ---------------------------------
+%h4{ is: 'cmi-h4', line: true } Prefixes and Suffixes
+%cmi-input{ label: 'total', class: 'short', type: 'number' }
+  %div{ prefix: true }= "$"
+
+%cmi-input{ label: 'username', class: 'short' }
+  %div{ suffix: true }= "@email.com"
+
+%cmi-input{ label: 'icons and buttons', class: 'short', id: 'inputWithButton' }
+  %i.mdi.mdi-magnify{ prefix: true }
+  %cmi-fab{ small: true, suffix: true, onclick: 'clearInput()', alt: 'clear', title: 'clear', tabindex: '0' }
+    %i.mdi.mdi-close
+
+:plain
+  <script>
+    function validate() {
+      document.getElementById('inputForValidation').validate();
+    }
+
+    function clearInput() {
+      document.getElementById('inputWithButton').value = '';
+    }
+  </script>

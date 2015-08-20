@@ -1,0 +1,78 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - iron-input-1.0.4
+  - iron-form-element-behavior-1.0.3
+  - paper-input-1.0.8
+
+js:
+  coffee:
+    options:
+      bare: false
+      sourceMap: false
+
+tasks:
+  graspi_build:
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_templates
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-input'
+  destFolder: 'cmi-input/webcomponents'
+  css:
+    destFile: 'cmi-input.css'
+    files:
+      - 'cmi-input.sass'
+  js:
+    destFile: 'cmi-input.js'
+    files:
+      - cmi-input.coffee
+  templates:
+    destFile: 'cmi-input.html'
+    files:
+      - cmi-input.haml
+  replace:
+    - files:
+        - '%%destPath%%/cmi-input.html'
+      pattern:
+        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: '%%destPath%%/cmi-input.css'
+        - '</style>'
+    - files:
+        - '%%destPath%%/cmi-input.html'
+      pattern:
+        pattern: '(\<graspi\-webcomponent\-script\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<script>'
+        - file: '%%destPath%%/cmi-input.js'
+        - '</script>'
+    - files:
+        - '%%destPath%%/cmi-input.html'
+      pattern:
+        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+    - files:
+        - '%%destPath%%/cmi-input.html'
+      pattern:
+        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+

@@ -1,4 +1,0 @@
-templates:
-  haml:
-    options:
-      language: ruby

@@ -1,8 +1,8 @@
 %dom-module{ id: 'cmi-button', name: 'cmi-button' }
-  %graspi-webcomponent-stylesheet/
   %template
+    %style{ include: 'cmi-button-behavior' }
+    %graspi-webcomponent-stylesheet/
     %paper-ripple
-
     %paper-material{ elevation: "[[_elevation]]", animated: true, :'class$' => "[[_computeContentClass(receivedFocusFromKeyboard)]]" }
       %content
 

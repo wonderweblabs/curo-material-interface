@@ -1,9 +1,9 @@
-tmpPath:                'graspi/tmp'
-cacheFile:              'graspi/tmp/files_cache_register.json'
-modulesBuiltTrackFile:  'graspi/tmp/modules_built_track_register.json'
+tmpPath:                'tmp/graspi'
+cacheFile:              'tmp/graspi/files_cache_register.json'
+modulesBuiltTrackFile:  'tmp/graspi/modules_built_track_register.json'
 
 # default destination path
-destPath: 'graspi/tmp/graspi/build'
+destPath: 'tmp/graspi/build'
 
 # default destination folder > will be concatinated
 # to destPath
@@ -22,14 +22,14 @@ css:
 js:
   uglify:
     options:
-      nameCache: 'graspi/tmp/uglify_mangle_cache.json'
+      nameCache: 'tmp/graspi/uglify_mangle_cache.json'
 
 postpipeline:
   manifest:
     options:
-      path: 'graspi/tmp/g-assets.json'
+      path: 'tmp/graspi/g-assets.json'
     replacePattern:
-      pattern: '^(\/)?gh\-pages\-middleman\/source\/'
+      pattern: ''
       replace: ''
 
 live:

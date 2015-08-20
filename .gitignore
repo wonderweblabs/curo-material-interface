@@ -43,6 +43,7 @@ build/
 *.rdb
 *.rbc
 *.sublime-*
+.graspi.yml
 
 # apps / software
 .rvmrc

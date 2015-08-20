@@ -1,0 +1,73 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.0.8
+  - paper-material-1.0.3
+  - cmi-card-content-behavior
+  - cmi-card-content
+  - cmi-card-heading
+  - cmi-card-image
+  - cmi-card-actions
+
+js:
+  coffee:
+    options:
+      bare: false
+      sourceMap: false
+
+tasks:
+  graspi_build:
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_templates
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-card'
+  destFolder: 'cmi-card/webcomponents'
+  css:
+    destFile: 'cmi-card.css'
+    files:
+      - 'cmi-card.sass'
+  js:
+    destFile: 'cmi-card.js'
+    files:
+      - cmi-card.coffee
+  templates:
+    destFile: 'cmi-card.html'
+    files:
+      - cmi-card.haml
+  replace:
+    - files:
+        - '%%destPath%%/cmi-card.html'
+      pattern:
+        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: '%%destPath%%/cmi-card.css'
+        - '</style>'
+    - files:
+        - '%%destPath%%/cmi-card.html'
+      pattern:
+        pattern: '(\<graspi\-webcomponent\-script\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<script>'
+        - file: '%%destPath%%/cmi-card.js'
+        - '</script>'
+    - files:
+        - '%%destPath%%/cmi-card.html'
+      pattern:
+        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+

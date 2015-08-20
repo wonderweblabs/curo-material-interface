@@ -1,0 +1,43 @@
+@import bourbon
+@import cmi/mixins
+@import cmi_default_variables
+@import cmi_custom_variables
+
+\:host
+  +box-sizing(border-box)
+  position: relative
+  display: block
+  font: inherit
+  outline: none
+  overflow: hidden
+  > img
+    width: 100%
+    height: auto
+    pointer-events: none
+  > .content
+    +position(absolute, auto 0 0 0)
+    display: block
+    padding: 0
+    background-color: transparent
+    ::content > *
+      margin: 8px 16px
+      color: #fff
+      text-shadow: 0 0 4px rgba(#000, 0.4)
+      &:first-child
+        margin-top: 16px
+      &:last-child
+        margin-bottom: 16px
+
+\:host([title-theme="dark"])
+  > .content
+    background-color: rgba(#000, 0.5)
+    ::content > *
+      color: #eee
+      text-shadow: none
+
+\:host([title-theme="light"])
+  > .content
+    background-color: rgba(#fff, 0.7)
+    ::content > *
+      color: #333
+      text-shadow: none

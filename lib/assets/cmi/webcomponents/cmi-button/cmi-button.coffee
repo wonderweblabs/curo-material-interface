@@ -5,8 +5,6 @@ Polymer
 
   is: 'cmi-button'
 
-  extends: 'a'
-
   behaviors: [
     Polymer.CmiButtonBehavior
   ]
@@ -14,10 +12,5 @@ Polymer
   properties:
 
     block: { type: Boolean, reflectToAttribute: true, value: false }
-
-
-
-
-
 
 

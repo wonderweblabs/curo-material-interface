@@ -19,41 +19,21 @@ $large-icon-font-size: 21px
 $large-text-font-size: 19px
 $large-padding: ($large-size - $large-icon-font-size) / 2
 
-// --cmi-fab-slide-animation-duration
 $animation-duration: .25s
-
-// --cmi-fab-slide-animation-close-delay
 $animation-close-delay: .3s
-
-// --cmi-fab-slide-animation-max-width
 $animation-max-width: 400px
 
 \:host
-  @apply(--cmi-button-defaults)
   +border-top-radius($normal-border-radius)
   +border-bottom-radius($normal-border-radius)
   margin: 0 0.29em
-  @apply(--cmi-fab-slide)
-
-  > paper-ripple
-    @apply(--cmi-button-paper-ripple-defaults)
-    @apply(--cmi-fab-slide-paper-ripple)
-
-  > paper-material
-    @apply(--cmi-button-paper-material-defaults)
-    @apply(--cmi-fab-slide-paper-material)
-    &.keyboard-focus
-      @apply(--cmi-button-paper-material-keyboard-focused-defaults)
-      @apply(--cmi-fab-slide-paper-material-keyboard-focused)
   > .content
-    @apply(--cmi-button-inner-defaults)
     +border-top-radius($normal-border-radius)
     +border-bottom-radius($normal-border-radius)
     +clearfix()
     min-width: $normal-size
     min-height: $normal-size
     font-size: $normal-icon-font-size
-    @apply(--cmi-fab-slide-inner)
   ::content
     *
       text-transform: inherit
@@ -81,47 +61,15 @@ $animation-max-width: 400px
       font-size: $normal-text-font-size
       line-height: $normal-icon-font-size
 
-\:host([raised])
-  @apply(--cmi-button-raised-defaults)
-  @apply(--cmi-fab-slide-raised)
-  > .content
-    @apply(--cmi-button-raised-inner-defaults)
-    @apply(--cmi-fab-slide-raised-inner)
-
-\:host([theme="primary"])
-  @apply(--cmi-button-primary-defaults)
-  @apply(--cmi-fab-slide-primary)
-  > .content
-    @apply(--cmi-button-primary-inner-defaults)
-    @apply(--cmi-fab-slide-primary-inner)
-
-\:host([theme="highlight"])
-  @apply(--cmi-button-highlight-defaults)
-  @apply(--cmi-fab-slide-highlight)
-  > .content
-    @apply(--cmi-button-highlight-inner-defaults)
-    @apply(--cmi-fab-slide-highlight-inner)
-
-\:host([theme="danger"])
-  @apply(--cmi-button-danger-defaults)
-  @apply(--cmi-fab-slide-danger)
-  > .content
-    @apply(--cmi-button-danger-inner-defaults)
-    @apply(--cmi-fab-slide-danger-inner)
-
 \:host([small])
-  @apply(--cmi-button-small-defaults)
   +border-top-radius($small-border-radius)
   +border-bottom-radius($small-border-radius)
-  @apply(--cmi-fab-slide-small)
   > .content
-    @apply(--cmi-button-small-inner-defaults)
     +border-top-radius($small-border-radius)
     +border-bottom-radius($small-border-radius)
     min-width: $small-size
     min-height: $small-size
     font-size: $small-icon-font-size
-    @apply(--cmi-fab-slide-small-inner)
   ::content
     cmi-fab-slide-icon
       padding: $small-padding
@@ -134,18 +82,14 @@ $animation-max-width: 400px
       line-height: $small-icon-font-size
 
 \:host([large])
-  @apply(--cmi-button-large-defaults)
   +border-top-radius($large-border-radius)
   +border-bottom-radius($large-border-radius)
-  @apply(--cmi-fab-slide-large)
   > .content
-    @apply(--cmi-button-large-inner-defaults)
     +border-top-radius($large-border-radius)
     +border-bottom-radius($large-border-radius)
     min-width: $large-size
     min-height: $large-size
     font-size: $large-icon-font-size
-    @apply(--cmi-fab-slide-large-inner)
   ::content
     cmi-fab-slide-icon
       padding: $large-padding
@@ -156,52 +100,6 @@ $animation-max-width: 400px
       float: right
       font-size: $large-text-font-size
       line-height: $large-icon-font-size
-
-\:host([filled])
-  @apply(--cmi-button-filled-defaults)
-  @apply(--cmi-fab-slide-filled)
-  > .content
-    @apply(--cmi-button-filled-inner-defaults)
-    @apply(--cmi-fab-slide-filled-inner)
-
-\:host([filled][theme="primary"])
-  @apply(--cmi-button-filled-primary-defaults)
-  @apply(--cmi-fab-slide-filled-primary)
-  > .content
-    @apply(--cmi-button-filled-primary-inner-defaults)
-    @apply(--cmi-fab-slide-filled-primary-inner)
-
-\:host([filled][theme="highlight"])
-  @apply(--cmi-button-filled-highlight-defaults)
-  @apply(--cmi-fab-slide-filled-highlight)
-  > .content
-    @apply(--cmi-button-filled-highlight-inner-defaults)
-    @apply(--cmi-fab-slide-filled-highlight-inner)
-  > paper-ripple
-    @apply(--cmi-button-filled-highlight-ripple-defaults)
-
-\:host([filled][theme="danger"])
-  @apply(--cmi-button-filled-danger-defaults)
-  @apply(--cmi-fab-slide-filled-danger)
-  > .content
-    @apply(--cmi-button-filled-danger-inner-defaults)
-    @apply(--cmi-fab-slide-filled-danger-inner)
-  > paper-ripple
-    @apply(--cmi-button-filled-danger-ripple-defaults)
-
-\:host([noink])
-  @apply(--cmi-button-noink-defaults)
-  @apply(--cmi-fab-slide-noink)
-  > paper-ripple
-    @apply(--cmi-button-noink-paper-ripple-defaults)
-    @apply(--cmi-fab-slide-noink-paper-ripple)
-
-\:host([disabled])
-  @apply(--cmi-button-disabled-defaults)
-  @apply(--cmi-fab-slide-disabled)
-  > .content
-    @apply(--cmi-button-disabled-inner-defaults)
-    @apply(--cmi-fab-slide-disabled-inner)
 
 \:host([open])
   ::content
