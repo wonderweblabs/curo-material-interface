@@ -1,0 +1,22 @@
+%dom-module{ id: 'cmi-slider' }
+  %graspi-webcomponent-stylesheet/
+  %template
+    #sliderContainer{ :'class$' => "[[_getClassNames(disabled, pin, snaps, immediateValue, min, expand, dragging, transiting, editable)]]" }
+
+      .bar-container
+        %cmi-progress{ :'class$' => "[[_getProgressClass(transiting)]]", id: "sliderBar", :'aria-hidden' => "true", min: "[[min]]", max: "[[max]]", step: "[[step]]", value: "[[immediateValue]]", :'secondary-progress' => "[[secondaryProgress]]", :'on-down' => "_bardown", :'on-up' => "_resetKnob", :'on-track' => "_onTrack" }
+
+      %template{ is: 'dom-if', if: "[[snaps]]" }
+        .slider-markers
+          %template{ is: 'dom-repeat', items: "[[markers]]" }
+            .slider-marker
+
+      #sliderKnob{ :'on-down' => "_knobdown", :'on-up' => "_resetKnob", :'on-track' => "_onTrack", :'on-transitionend' => "_knobTransitionEnd" }
+        %paper-ripple{ id: 'ink', center: true, class: 'circle', :'hidden$' => "[[!receivedFocusFromKeyboard]]" }
+        #sliderKnobInner{ :'value$' => "[[immediateValue]]" }
+
+    %template{ is: 'dom-if', if: "[[editable]]" }
+      %cmi-input{ id: 'input', class: 'slider-input', :'disabled$' => "[[disabled]]", :'on-change' => "_inputChange", value: "[[_fixForInput(immediateValue)]]" }
+
+
+  %graspi-webcomponent-script/

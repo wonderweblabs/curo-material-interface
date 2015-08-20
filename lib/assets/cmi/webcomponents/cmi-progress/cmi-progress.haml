@@ -1,0 +1,9 @@
+%dom-module{ id: 'cmi-progress' }
+  %graspi-webcomponent-stylesheet/
+  %template
+    #progressContainer{ role: "progressbar", :'aria-valuenow$' => "{{value}}", :'aria-valuemin$' => "{{min}}", :'aria-valuemax$' => "{{max}}" }
+      #secondaryProgress.fit
+      #activeProgress.fit
+      #indeterminateSplitter.fit
+
+  %graspi-webcomponent-script/

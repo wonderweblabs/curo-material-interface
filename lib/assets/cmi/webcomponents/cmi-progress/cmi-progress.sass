@@ -1,0 +1,78 @@
+@import bourbon
+@import cmi/mixins
+@import cmi_default_variables
+@import cmi_custom_variables
+
+$cmi-color-primary: #afd23e
+
+$cmi-color-disabled: #ccc
+
+\:host
+  display: inline-block
+  width: 200px
+  height: 4px
+
+\:host(.transiting) #activeProgress,
+\:host(.transiting) #secondaryProgress
+  +transition-property(transform)
+  +transition-duration(0.08s)
+  +transition-timing-function(ease)
+  +transition-delay(0s)
+
+.fit
+  +position(absolute, 0 0 0 0)
+
+#progressContainer
+  position: relative
+  height: 100%
+  overflow: hidden
+
+#progressContainer, #indeterminateSplitter
+  background-color: var(--cmi-progress-container-color, --google-grey-300)
+
+#activeProgress,
+#secondaryProgress
+  +transform-origin(left center)
+  +transform(scaleX(0))
+
+#activeProgress
+  background-color: var(--cmi-progress-active-color, $cmi-color-primary)
+
+#secondaryProgress
+  // background-color: var(--cmi-progress-secondary-color, lighten($cmi-color-primary, 25%))
+  background-color: var(--cmi-progress-secondary-color, $cmi-color-disabled)
+
+#indeterminateSplitter
+  display: none
+
+#activeProgress.indeterminate
+  +transform-origin(right center)
+  +animation(indeterminate-bar 2s linear infinite)
+
+#indeterminateSplitter.indeterminate
+  +transform-origin(center center)
+  +animation(indeterminate-splitter 2s linear infinite)
+  display: block
+
++keyframes(indeterminate-bar)
+  0%
+    +transform(scaleX(1) translateX(-100%))
+  50%
+    +transform(scaleX(1) translateX(0%))
+  75%
+    +transform(scaleX(1) translateX(0%))
+    +animation-timing-function(cubic-bezier(.28,.62,.37,.91))
+  100%
+    +transform(scaleX(0) translateX(0%))
+
++keyframes(indeterminate-splitter)
+  0%
+    +transform(scaleX(.75) translateX(-125%))
+  30%
+    +transform(scaleX(.75) translateX(-125%))
+    +animation-timing-function(cubic-bezier(.42,0,.6,.8))
+  90%
+    +transform(scaleX(.75) translateX(125%))
+  100%
+    +transform(scaleX(.75) translateX(125%))
+

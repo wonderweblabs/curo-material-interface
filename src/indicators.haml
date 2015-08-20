@@ -1,0 +1,14 @@
+.grid-row
+  .grid-col-12
+    %cmi-card{ block: true }
+      %cmi-card-content{ :'line-top' => true }
+        %h1 Indicator elements
+
+    %cmi-card{ id: 'progress', block: true }
+      %cmi-card-heading
+        %h1.title Progress
+      +include 'src/sections/indicators/_progress.haml'
+
+    %cmi-card{ id: 'progress', block: true }
+      %cmi-card-heading
+        %h1.title Loading

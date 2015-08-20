@@ -28,6 +28,8 @@ dependencies:
   - cmi-radio-button
   - cmi-radio-group
   - cmi-toggle-button
+  - cmi-progress
+  - cmi-slider
 
 options:
   destFolder: 'cmi'

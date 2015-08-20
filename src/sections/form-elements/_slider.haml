@@ -1,0 +1,50 @@
+%cmi-card-content{ :'line-top' => true }
+  %div Oxygen
+  %cmi-pages-code-box
+    %cmi-slider{ value: "21" }
+
+  %div Argon
+  %cmi-pages-code-box
+    %cmi-slider{ value: "1" }
+
+  %div Hydrogen
+  %cmi-pages-code-box
+    %cmi-slider{ value: "0" }
+
+  %div Nitrogen
+  %cmi-pages-code-box
+    %cmi-slider{ value: "78" }
+
+  %div Sprinkles
+  %cmi-pages-code-box
+    %cmi-slider{ value: "33", disabled: true }
+
+%cmi-card-content{ :'line-top' => true }
+  .center.horizontal.layout
+    %div R
+    %cmi-slider{ value: "23", max: "255", editable: true }
+  .center.horizontal.layout
+    %div G
+    %cmi-slider{ value: "183", max: "255", editable: true }
+  .center.horizontal.layout
+    %div B
+    %cmi-slider{ value: "211", max: "255", editable: true }
+  .center.horizontal.layout
+    %div &alpha;
+    %cmi-slider{ max: "1.0", step: "0.01", editable: true }
+
+%cmi-card-content{ :'line-top' => true }
+  %div Brightness
+  %cmi-slider{ pin: true, value: "20" }
+  %div
+    Ratings:
+    %span{ id: "ratingsLabel" }
+  %cmi-slider{ id: "ratings", pin: true, snaps: true, max: "10", step: "1", value: "5" }
+
+:javascript
+  var ratings = document.querySelector('#ratings');
+  ratings.addEventListener('value-change', function() {
+    document.querySelector('#ratingsLabel').textContent = ratings.value;
+  });
+
+

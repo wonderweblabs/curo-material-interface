@@ -1,0 +1,83 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.1.0
+  - iron-a11y-keys-behavior-1.0.5
+  - iron-form-element-behavior-1.0.4
+  - iron-range-behavior-1.0.2
+  - paper-behaviors-1.0.3
+  - paper-ripple-1.0.1
+  - paper-styles-1.0.11
+  - cmi-progress
+  - cmi-input
+
+js:
+  coffee:
+    options:
+      bare: false
+      sourceMap: false
+
+tasks:
+  graspi_build:
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_templates
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-slider'
+  destFolder: 'cmi-slider/webcomponents'
+  css:
+    destFile: 'cmi-slider.css'
+    files:
+      - 'cmi-slider.sass'
+  js:
+    destFile: 'cmi-slider.js'
+    files:
+      - cmi-slider.coffee
+  templates:
+    destFile: 'cmi-slider.html'
+    files:
+      - cmi-slider.haml
+  replace:
+    - files:
+        - '%%destPath%%/cmi-slider.html'
+      pattern:
+        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: '%%destPath%%/cmi-slider.css'
+        - '</style>'
+    - files:
+        - '%%destPath%%/cmi-slider.html'
+      pattern:
+        pattern: '(\<graspi\-webcomponent\-script\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<script>'
+        - file: '%%destPath%%/cmi-slider.js'
+        - '</script>'
+    - files:
+        - '%%destPath%%/cmi-slider.html'
+      pattern:
+        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+    - files:
+        - '%%destPath%%/cmi-slider.html'
+      pattern:
+        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+
