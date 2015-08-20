@@ -1,12 +1,11 @@
 dependencies:
   - mdi-1.1.70
   - webcomponentsjs-0.7.7
-  - polymer-1.0.8
+  - polymer-1.1.0
   - iron-form-1.0.8
   - paper-item-1.0.2
   - paper-toolbar-1.0.4
   - paper-header-panel-1.0.3
-  - paper-checkbox-1.0.5
   - paper-drawer-panel-1.0.3
   - paper-menu-1.1.0
   - paper-tabs-1.0.1
@@ -24,6 +23,10 @@ dependencies:
   - cmi-navbar
   - cmi-card
   - cmi-input
+  - cmi-textarea
+  - cmi-checkbox
+  - cmi-radio-button
+  - cmi-radio-group
 
 options:
   destFolder: 'cmi'

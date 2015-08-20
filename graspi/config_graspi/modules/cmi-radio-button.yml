@@ -1,0 +1,78 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.1.0
+  - paper-behaviors-1.0.3
+  - paper-ripple-1.0.1
+  - paper-styles-1.0.11
+
+js:
+  coffee:
+    options:
+      bare: false
+      sourceMap: false
+
+tasks:
+  graspi_build:
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_templates
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-radio-button'
+  destFolder: 'cmi-radio-button/webcomponents'
+  css:
+    destFile: 'cmi-radio-button.css'
+    files:
+      - 'cmi-radio-button.sass'
+  js:
+    destFile: 'cmi-radio-button.js'
+    files:
+      - cmi-radio-button.coffee
+  templates:
+    destFile: 'cmi-radio-button.html'
+    files:
+      - cmi-radio-button.haml
+  replace:
+    - files:
+        - '%%destPath%%/cmi-radio-button.html'
+      pattern:
+        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: '%%destPath%%/cmi-radio-button.css'
+        - '</style>'
+    - files:
+        - '%%destPath%%/cmi-radio-button.html'
+      pattern:
+        pattern: '(\<graspi\-webcomponent\-script\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<script>'
+        - file: '%%destPath%%/cmi-radio-button.js'
+        - '</script>'
+    - files:
+        - '%%destPath%%/cmi-radio-button.html'
+      pattern:
+        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+    - files:
+        - '%%destPath%%/cmi-radio-button.html'
+      pattern:
+        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+

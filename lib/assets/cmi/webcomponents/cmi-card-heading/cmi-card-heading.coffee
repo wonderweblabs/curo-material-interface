@@ -10,7 +10,7 @@ Polymer
   ]
 
   properties:
-    image:        { type: String, value: '' }
-    'image-alt':  { type: String, value: '' }
-    'pull-up':    { type: Boolean, value: false, reflectToAttribute: true }
+    image:     { type: String, value: '' }
+    imageAlt:  { type: String, value: '' }
+    pullUp:    { type: Boolean, value: false, reflectToAttribute: true }
 

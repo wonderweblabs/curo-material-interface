@@ -1,10 +1,8 @@
 webcomponent: true
 
 dependencies:
-  - polymer-1.0.8
-  - iron-input-1.0.4
-  - iron-form-element-behavior-1.0.3
-  - paper-input-1.0.8
+  - polymer-1.1.0
+  - cmi-input-behavior
 
 js:
   coffee:

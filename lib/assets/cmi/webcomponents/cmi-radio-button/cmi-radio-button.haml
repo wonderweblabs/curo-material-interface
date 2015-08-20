@@ -1,0 +1,12 @@
+%dom-module{ id: 'cmi-radio-button' }
+  %graspi-webcomponent-stylesheet/
+  %template
+    #radioContainer
+      #offRadio
+      #onRadio
+      %paper-ripple{ id: 'ink', class: 'circle', center: true, :'checked$' => "[[checked]]" }
+
+    #radioLabel{ :'aria-hidden' => "true" }
+      %content
+
+  %graspi-webcomponent-script/

@@ -1,5 +1,6 @@
 %dom-module{ id: 'cmi-input' }
   %template
+    %style{ include: 'cmi-input-behavior' }
     %graspi-webcomponent-stylesheet/
     %paper-input-container{ id: 'shadow', :'no-label-float' => "[[noLabelFloat]]", :'always-float-label' => "[[_computeAlwaysFloatLabel(alwaysFloatLabel,placeholder)]]", :'auto-validate$' => "[[autoValidate]]", :'disabled$' => "[[disabled]]", invalid: "[[invalid]]" }
 

@@ -10,6 +10,6 @@ Polymer
   ]
 
   properties:
-    'image':        { type: String, value: '' }
-    'image-alt':    { type: String, value: '' }
-    'title-theme':  { type: String, reflectToAttribute: true, value: 'default' }
+    image:      { type: String, value: '' }
+    imageAlt:   { type: String, value: '' }
+    titleTheme: { type: String, reflectToAttribute: true, value: 'default' }

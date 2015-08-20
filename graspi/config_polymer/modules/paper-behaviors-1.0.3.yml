@@ -1,8 +1,8 @@
 webcomponent: true
 
 dependencies:
-  - polymer-1.0.8
-  - iron-behaviors-1.0.5
+  - polymer-1.1.0
+  - iron-behaviors-1.0.7
 
 tasks:
   graspi_build:

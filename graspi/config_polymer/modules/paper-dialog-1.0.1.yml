@@ -1,7 +1,7 @@
 webcomponent: true
 
 dependencies:
-  - polymer-1.0.8
+  - polymer-1.1.0
   - paper-styles-1.0.11
   - paper-dialog-behavior-1.0.4
   - neon-animation-1.0.4

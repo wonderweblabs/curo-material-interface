@@ -1,0 +1,13 @@
+%dom-module{ id: 'cmi-checkbox' }
+  %graspi-webcomponent-stylesheet/
+  %template
+    #checkboxContainer
+      %paper-ripple{ id: 'ink', class: 'circle', center: true, :'checked$' => "[[checked]]" }
+      #checkbox{ :'class$' => "[[_computeCheckboxClass(checked)]]" }
+        #checkmark{ :'class$' => "[[_computeCheckmarkClass(checked)]]" }
+
+    #checkboxLabel{ :'aria-hidden' => "true" }
+      %content
+
+
+  %graspi-webcomponent-script/

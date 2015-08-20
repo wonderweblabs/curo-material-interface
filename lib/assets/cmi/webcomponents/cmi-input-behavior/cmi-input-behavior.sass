@@ -1,0 +1,44 @@
+@import bourbon
+@import cmi/mixins
+@import cmi_default_variables
+@import cmi_custom_variables
+
+$cmi-color-primary: #afd23e
+
+$cmi-color-danger: #F02A22
+
+\:host
+  display: block
+  > #shadow ::content
+    > .input-content
+      .iron-input
+        +placeholder
+          color: #ccc
+      label
+        color: #ccc
+      &.label-is-highlighted
+        label
+          color: $cmi-color-primary
+      &.is-invalid
+        label
+          color: $cmi-color-danger
+      [prefix]
+        margin-right: 4px
+      .mdi
+        font-family: MaterialDesignIcons
+    > .underline
+      .unfocused-line
+        height: 1px
+        background: #ccc
+      .focused-line
+        background: $cmi-color-primary
+      &.is-invalid
+        .focused-line
+          background: $cmi-color-danger
+    > .add-on-content
+      &.is-highlighted
+        *
+          color: $cmi-color-primary
+
+\:host([char-counter])
+  margin-bottom: 10px

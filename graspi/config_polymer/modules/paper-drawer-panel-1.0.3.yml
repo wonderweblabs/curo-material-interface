@@ -1,7 +1,7 @@
 webcomponent: true
 
 dependencies:
-  - polymer-1.0.8
+  - polymer-1.1.0
   - iron-media-query-1.0.2
   - iron-selector-1.0.2
 

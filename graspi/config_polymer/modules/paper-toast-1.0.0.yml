@@ -1,7 +1,7 @@
 webcomponent: true
 
 dependencies:
-  - polymer-1.0.8
+  - polymer-1.1.0
   - iron-a11y-announcer-1.0.2
   - paper-styles-1.0.11
 

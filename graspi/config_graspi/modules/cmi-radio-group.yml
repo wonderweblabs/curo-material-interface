@@ -1,0 +1,77 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.1.0
+  - iron-selector-1.0.2
+  - iron-a11y-keys-behavior-1.0.5
+
+js:
+  coffee:
+    options:
+      bare: false
+      sourceMap: false
+
+tasks:
+  graspi_build:
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_templates
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-radio-group'
+  destFolder: 'cmi-radio-group/webcomponents'
+  css:
+    destFile: 'cmi-radio-group.css'
+    files:
+      - 'cmi-radio-group.sass'
+  js:
+    destFile: 'cmi-radio-group.js'
+    files:
+      - cmi-radio-group.coffee
+  templates:
+    destFile: 'cmi-radio-group.html'
+    files:
+      - cmi-radio-group.haml
+  replace:
+    - files:
+        - '%%destPath%%/cmi-radio-group.html'
+      pattern:
+        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: '%%destPath%%/cmi-radio-group.css'
+        - '</style>'
+    - files:
+        - '%%destPath%%/cmi-radio-group.html'
+      pattern:
+        pattern: '(\<graspi\-webcomponent\-script\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<script>'
+        - file: '%%destPath%%/cmi-radio-group.js'
+        - '</script>'
+    - files:
+        - '%%destPath%%/cmi-radio-group.html'
+      pattern:
+        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+    - files:
+        - '%%destPath%%/cmi-radio-group.html'
+      pattern:
+        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+

@@ -1,7 +1,7 @@
 webcomponent: true
 
 dependencies:
-  - polymer-1.0.8
+  - polymer-1.1.0
   - paper-material-1.0.3
   - cmi-card-content-behavior
   - cmi-card-content

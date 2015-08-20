@@ -5,7 +5,7 @@ Polymer.CmiCardContentBehaviorImpl =
 
   properties:
 
-    'line-top':     { type: Boolean, reflectToAttribute: true, value: false }
+    lineTop: { type: Boolean, reflectToAttribute: true, value: false }
 
 # Polymer
 Polymer.CmiCardContentBehavior = [

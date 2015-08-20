@@ -1,11 +1,8 @@
 webcomponent: true
 
 dependencies:
-  - polymer-1.0.8
-  - iron-form-element-behavior-1.0.3
+  - polymer-1.1.0
   - iron-validatable-behavior-1.0.4
-  - iron-flex-layout-1.0.2
-  - iron-behaviors-1.0.5
 
 tasks:
   graspi_build:
@@ -14,15 +11,15 @@ tasks:
     - graspi_replace
 
 options:
-  basePath: 'bower_components/iron-autogrow-textarea'
-  destFolder: 'iron-autogrow-textarea/webcomponents'
+  basePath: 'bower_components/iron-input'
+  destFolder: 'iron-input/webcomponents'
   templates:
-    destFile: 'iron-autogrow-textarea.html'
+    destFile: 'iron-input.html'
     files:
-      - iron-autogrow-textarea.html
+      - iron-input.html
   replace:
     - files:
-        - '%%destPath%%/iron-autogrow-textarea.html'
+        - '%%destPath%%/iron-input.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

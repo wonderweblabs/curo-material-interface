@@ -1,13 +1,13 @@
 webcomponent: true
 
 dependencies:
-  - polymer-1.0.8
+  - polymer-1.1.0
   - neon-animation-1.0.4
   - paper-material-1.0.3
   - paper-styles-1.0.11
   - iron-dropdown-1.0.4
   - iron-a11y-keys-behavior-1.0.5
-  - iron-behaviors-1.0.5
+  - iron-behaviors-1.0.7
 
 tasks:
   graspi_build:

@@ -9,7 +9,7 @@
     @@yield_script
     @@yield_tpl
     @@yield_webcomponents
-  %body.cmi.layout.vertical.fullbleed
+  %body.cmi.layout.vertical.fullbleed{ unresolved: true }
     +include 'src/shared/_browse_happy.haml'
     %paper-drawer-panel
       %paper-header-panel.flex{ drawer: true }

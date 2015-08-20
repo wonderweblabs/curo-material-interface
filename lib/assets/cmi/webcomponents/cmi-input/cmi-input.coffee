@@ -8,5 +8,6 @@ Polymer
   behaviors: [
     Polymer.IronFormElementBehavior,
     Polymer.PaperInputBehavior,
-    Polymer.IronControlState
+    Polymer.IronControlState,
+    Polymer.CmiInputBehavior
   ]

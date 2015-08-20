@@ -10,4 +10,4 @@ Polymer
   ]
 
   properties:
-    'no-padding': { type: Boolean, reflectToAttribute: true, value: false }
+    noPadding: { type: Boolean, reflectToAttribute: true, value: false }

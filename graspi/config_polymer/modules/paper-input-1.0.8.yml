@@ -1,11 +1,11 @@
 webcomponent: true
 
 dependencies:
-  - polymer-1.0.8
-  - iron-input-1.0.4
-  - iron-autogrow-textarea-1.0.3
-  - iron-form-element-behavior-1.0.3
-  - iron-behaviors-1.0.5
+  - polymer-1.1.0
+  - iron-input-1.0.5
+  - iron-autogrow-textarea-1.0.4
+  - iron-form-element-behavior-1.0.4
+  - iron-behaviors-1.0.7
   - paper-styles-1.0.11
 
 tasks:
