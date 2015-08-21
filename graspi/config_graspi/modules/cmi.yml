@@ -30,6 +30,7 @@ dependencies:
   - cmi-toggle-button
   - cmi-progress
   - cmi-slider
+  - cmi-dialog
 
 options:
   destFolder: 'cmi'

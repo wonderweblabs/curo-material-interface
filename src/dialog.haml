@@ -1,0 +1,39 @@
+.grid-row
+  .grid-col-12
+    %cmi-card{ id: 'dialogs', block: true }
+      %cmi-card-content{ :'line-top' => true }
+        %h1 Dialogs
+
+    %cmi-card{ id: 'cmi-dialog', block: true }
+      %cmi-card-heading
+        %h1.title cmi-dialog
+      +include 'src/sections/dialogs/_dialog.haml'
+
+    %cmi-card{ id: 'paper-dialog-behavior', block: true }
+      %cmi-card-heading
+        %h1.title paper-dialog-behavior
+      %cmi-card-content{ :'line-top' => true }
+        +include 'src/sections/dialogs/_behavior.haml'
+
+:javascript
+  $(function() {
+    HTMLImports.whenReady(function () {
+      $('cmi-button[data-dialog]').on('click', function(e){
+        var button = e.target;
+        while (!button.hasAttribute('data-dialog') && button !== document.body) {
+          button = button.parentElement;
+        }
+
+        if (!button.hasAttribute('data-dialog')) {
+          return;
+        }
+
+        var id = button.getAttribute('data-dialog');
+        var dialog = document.getElementById(id);
+        if (dialog) {
+          dialog.open();
+        }
+      });
+    });
+  });
+

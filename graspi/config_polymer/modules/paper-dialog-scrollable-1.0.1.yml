@@ -2,8 +2,6 @@ webcomponent: true
 
 dependencies:
   - polymer-1.1.0
-  - iron-fit-behavior-1.0.3
-  - iron-resizable-behavior-1.0.2
 
 tasks:
   graspi_build:
@@ -12,17 +10,15 @@ tasks:
     - graspi_replace
 
 options:
-  basePath: 'bower_components/iron-overlay-behavior'
-  destFolder: 'iron-overlay-behavior/webcomponents'
+  basePath: 'bower_components/paper-dialog-scrollable'
+  destFolder: 'paper-dialog-scrollable/webcomponents'
   templates:
-    destFile: 'iron-overlay-behavior.html'
+    destFile: 'paper-dialog-scrollable.html'
     files:
-      - iron-overlay-manager.html
-      - iron-overlay-backdrop.html
-      - iron-overlay-behavior.html
+      - paper-dialog-scrollable.html
   replace:
     - files:
-        - '%%destPath%%/iron-overlay-behavior.html'
+        - '%%destPath%%/paper-dialog-scrollable.html'
       pattern:
         pattern: '(?:\<link)(?:.*)(?:\>)'
         modifiers: 'g'

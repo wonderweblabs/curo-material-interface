@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
+    "jquery": ">=2.1.4",
     "bourbon": "~4.2.3",
     "neat": "~1.7.2",
     "polymer": "Polymer/polymer#>=1.1.0",
@@ -40,6 +41,7 @@
     "paper-badge": "PolymerElements/paper-badge#1.0.2",
     "paper-card": "PolymerElements/paper-card#1.0.1",
     "paper-dialog": "PolymerElements/paper-dialog#1.0.1",
+    "paper-dialog-scrollable": "PolymerElements/paper-dialog-scrollable#1.0.1",
     "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#1.0.1",
     "paper-menu": "PolymerElements/paper-menu#1.1.0",
     "paper-menu-button": "PolymerElements/paper-menu-button#1.0.2",
