@@ -1,3 +1,4 @@
 source "http://rubygems.org"
 
-gemspec
+gem 'sass', '~> 3.4'
+gem 'coffee-script', '~> 2.4'
