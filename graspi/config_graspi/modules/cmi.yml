@@ -40,6 +40,7 @@ dependencies:
   - cmi-menu
   - cmi-tabs
   - cmi-dropdown-menu
+  - cmi-form
 
 options:
   destFolder: 'cmi'

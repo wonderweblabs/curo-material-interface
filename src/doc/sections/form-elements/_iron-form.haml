@@ -1,0 +1,47 @@
+-# %form{ is: 'iron-form' }
+%form{ is: 'cmi-form' }
+  .grid-row
+    .grid-col-8
+      %cmi-input{ label: 'Your name', name: 'name', autofocus: true, value: 'Peter Pan' }
+      %cmi-input{ label: 'Scoped', name: 'user[scoped_name]', autofocus: true, value: 'Scoped Name' }
+      %cmi-input{ label: 'password', type: 'password', name: 'password' }
+      %cmi-textarea{ label: 'Message', name: 'message' }
+      %hr/
+      Normal:
+      %cmi-checkbox{ name: 'check_1' } Check 1
+      %cmi-checkbox{ name: 'check_2', checked: true } Check 2
+      %hr/
+      Boolean:
+      %cmi-checkbox{ name: 'check_3', boolean: true } Check 3
+      %cmi-checkbox{ name: 'check_4', boolean: true, checked: true } Check 4
+      %hr/
+      Normal custom value:
+      %cmi-checkbox{ name: 'check_5', value: 'my test value', checked: true } Check 5
+      %hr/
+      Array:
+      %cmi-checkbox{ name: 'checkArr[]', value: 'Value 1', checked: true } Value 1
+      %cmi-checkbox{ name: 'checkArr[]', value: 'Value 2', checked: true } Value 2
+      %cmi-checkbox{ name: 'checkArr[]', value: 'Value 3' } Value 3
+      %cmi-checkbox{ name: 'checkArr[]', value: 'Value 4' } Value 4
+      %cmi-checkbox{ name: 'checkArr[]', value: 'Value 5' } Value 5
+    .grid-col-4
+      %cmi-button{ filled: true, id: 'iron-form-show-data' } Show data
+      %hr/
+      Data:
+      %pre#iron-form-data
+
+:javascript
+  $(function() {
+    HTMLImports.whenReady(function () {
+
+      $('#iron-form-show-data').on('click', function(event){
+        event.preventDefault();
+
+        form = document.querySelector('form');
+
+        $('#iron-form-data').html(JSON.stringify(form.serialize(), null, 4));
+      });
+
+    });
+  });
+
