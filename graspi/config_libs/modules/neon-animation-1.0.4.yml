@@ -83,8 +83,8 @@ options:
     - files:
         - '%%destPath%%/neon-animation.html'
       pattern:
-        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
-        modifiers: 'gm'
+        pattern: 'sourceMappingURL\=[^\s]*\.js\.map'
+        modifiers: 'g'
         quotesPlaceholder: 'QUOTES1'
         doubleQuotesPlaceholder: 'QUOTES2'
       replace: ''

@@ -45,7 +45,7 @@ options:
     - files:
         - '%%destPath%%/promise-polyfill.html'
       pattern:
-        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
+        pattern: 'sourceMappingURL\=[^\.\s]*\.js\.map'
         modifiers: 'gm'
         quotesPlaceholder: 'QUOTES1'
         doubleQuotesPlaceholder: 'QUOTES2'
