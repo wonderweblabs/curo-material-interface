@@ -1,13 +1,11 @@
-%graspi-webcomponent-stylesheet/
-%dom-module#cmi-pages-code-box
+%dom-module{ id: 'cmi-pages-code-box' }
+  %graspi-webcomponent-stylesheet/
   %template
     .grid-row
-
-      .grid-col-6.col-left
+      %div{ :'class$' => "[[_computeLeftColClasses(leftCols)]]" }
         %content
 
-      .grid-col-6.col-right
-        %pre.cmi-gh-pages-code
-          {{contentHtml}}
+      %div{ :'class$' => "[[_computeRightColClasses(rightCols)]]" }
+        %pre.cmi-gh-pages-code= "{{contentHtml}}"
 
   %graspi-webcomponent-script/

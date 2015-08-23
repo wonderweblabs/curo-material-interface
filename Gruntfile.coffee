@@ -180,7 +180,8 @@ module.exports = (grunt) ->
       '**/*.haml',
       '!**/_*.haml',
       '!**/*_sidebar.haml',
-      '!layouts/**/*'
+      '!layouts/**/*',
+      '!webcomponents/**/*'
     ])
     configs = grunt.file.expand(expandOptions, [
       '**/*.context.yml'

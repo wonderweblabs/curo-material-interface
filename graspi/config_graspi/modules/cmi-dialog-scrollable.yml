@@ -1,0 +1,75 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.1.0
+
+js:
+  coffee:
+    options:
+      bare: false
+      sourceMap: false
+
+tasks:
+  graspi_build:
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_templates
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-dialog-scrollable'
+  destFolder: 'cmi-dialog-scrollable/webcomponents'
+  css:
+    destFile: 'cmi-dialog-scrollable.css'
+    files:
+      - 'cmi-dialog-scrollable.sass'
+  js:
+    destFile: 'cmi-dialog-scrollable.js'
+    files:
+      - cmi-dialog-scrollable.coffee
+  templates:
+    destFile: 'cmi-dialog-scrollable.html'
+    files:
+      - cmi-dialog-scrollable.haml
+  replace:
+    - files:
+        - '%%destPath%%/cmi-dialog-scrollable.html'
+      pattern:
+        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: '%%destPath%%/cmi-dialog-scrollable.css'
+        - '</style>'
+    - files:
+        - '%%destPath%%/cmi-dialog-scrollable.html'
+      pattern:
+        pattern: '(\<graspi\-webcomponent\-script\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<script>'
+        - file: '%%destPath%%/cmi-dialog-scrollable.js'
+        - '</script>'
+    - files:
+        - '%%destPath%%/cmi-dialog-scrollable.html'
+      pattern:
+        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+    - files:
+        - '%%destPath%%/cmi-dialog-scrollable.html'
+      pattern:
+        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+
