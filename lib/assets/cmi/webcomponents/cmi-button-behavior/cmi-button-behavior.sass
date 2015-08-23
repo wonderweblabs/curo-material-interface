@@ -1,19 +1,7 @@
 @import bourbon
+@import cmi_default_mixins
 @import cmi_default_variables
 @import cmi_custom_variables
-
-$cmi-color-primary: #afd23e
-// $cmi-color-highlight: #FF3064
-$cmi-color-highlight: rgb(251, 15, 78)
-// $cmi-color-danger: #e2231e
-$cmi-color-danger: #F02A22
-$cmi-color-filled-base: rgba(0, 0, 0, 0.05)
-
-$cmi-color-text: #424242
-$cmi-color-text-light: #f5f5f5
-$cmi-color-ripple-light: rgba(255, 255, 255, 1)
-$cmi-color-background-disabled: lighten($cmi-color-filled-base, 10%)
-$cmi-color-text-disabled: lighten($cmi-color-text, 50%)
 
 \:host
   +user-select(none)
@@ -27,7 +15,7 @@ $cmi-color-text-disabled: lighten($cmi-color-text, 50%)
   outline: none
   cursor: pointer
   > paper-ripple
-    color: rgba(0, 0, 0, 0.3)
+    color: $cmi-button-paper-ripple
   > paper-material
     font-weight: inherit
     border-radius: inherit
@@ -37,7 +25,7 @@ $cmi-color-text-disabled: lighten($cmi-color-text, 50%)
     +box-sizing(border-box)
     display: block
     position: relative
-    color: $cmi-color-text
+    color: $cmi-button-color-text
     ::content
       *
         text-transform: inherit
@@ -47,15 +35,15 @@ $cmi-color-text-disabled: lighten($cmi-color-text, 50%)
 
 \:host([theme="primary"])
   > .content
-    color: $cmi-color-primary
+    color: $cmi-button-color-primary
 
 \:host([theme="highlight"])
   > .content
-    color: $cmi-color-highlight
+    color: $cmi-button-color-highlight
 
 \:host([theme="danger"])
   > .content
-    color: $cmi-color-danger
+    color: $cmi-button-color-danger
 
 \:host([small])
   font-size: 90%
@@ -66,27 +54,27 @@ $cmi-color-text-disabled: lighten($cmi-color-text, 50%)
   > .content
 
 \:host([filled])
-  background-color: $cmi-color-filled-base
+  background-color: $cmi-button-color-gray
   > .content
 
 \:host([filled][theme="primary"])
-  background-color: $cmi-color-primary
+  background-color: $cmi-button-color-primary
   > .content
-    color: $cmi-color-text
+    color: $cmi-button-color-text
 
 \:host([filled][theme="highlight"])
-  background-color: $cmi-color-highlight
+  background-color: $cmi-button-color-highlight
   > .content
-    color: $cmi-color-text
+    color: $cmi-button-color-text
   > paper-ripple
-    color: $cmi-color-ripple-light
+    color: $cmi-button-paper-ripple-light
 
 \:host([filled][theme="danger"])
-  background-color: $cmi-color-danger
+  background-color: $cmi-button-color-danger
   > .content
-    color: $cmi-color-text-light
+    color: $cmi-button-color-text-light
   > paper-ripple
-    color: $cmi-color-ripple-light
+    color: $cmi-button-paper-ripple-light
 
 \:host([block])
   display: block
@@ -100,8 +88,8 @@ $cmi-color-text-disabled: lighten($cmi-color-text, 50%)
   color: #a8a8a8
   cursor: auto
   pointer-events: none
-  background-color: $cmi-color-background-disabled
+  background-color: $cmi-button-color-background-disabled
   > .content
-    color: $cmi-color-text-disabled
+    color: $cmi-button-color-disabled
 
 
