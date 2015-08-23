@@ -38,31 +38,31 @@ dependencies:
 options:
   destFolder: 'cmi'
   css:
-    basePath: 'bower_components/cmi/lib/assets/cmi/stylesheets'
+    basePath: 'bower_components/cmi/src/stylesheets'
     destFile: 'cmi.css'
     files:
       - 'cmi.sass'
   js:
-    basePath: 'bower_components/cmi/lib/assets/cmi/javascripts'
+    basePath: 'bower_components/cmi/src/javascripts'
     destFile: 'cmi.js'
     files:
       - '**/*.coffee'
   templates:
-    basePath: 'bower_components/cmi/lib/assets/cmi/templates'
+    basePath: 'bower_components/cmi/src/templates'
     destFile: 'templates.html'
     files:
       - '**/*.haml'
       - '**/*.html'
   webcomponents:
-    basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents'
+    basePath: 'bower_components/cmi/src/webcomponents-cmi'
     destFile: 'webcomponents.html'
     files: []
   images:
-    basePath: 'bower_components/cmi/lib/assets/cmi/images'
+    basePath: 'bower_components/cmi/src/images'
     files:
       - '{,*/}*'
   fonts:
-    basePath: 'bower_components/cmi/lib/assets/cmi/fonts'
+    basePath: 'bower_components/cmi/src/fonts'
     files:
       - '{,*/}*'
 

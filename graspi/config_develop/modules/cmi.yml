@@ -53,31 +53,31 @@ live:
     groups:
       sass:
         files:
-          - bower_components/cmi/lib/assets/cmi/stylesheets/**/*.sass
+          - src/stylesheets/**/*.sass
         tasks:
           - graspi_build_sass
       coffee:
         files:
-          - bower_components/cmi/lib/assets/cmi/javascripts/**/*.coffee
+          - src/javascripts/**/*.coffee
         tasks:
           - graspi_build_coffee
       images:
         files:
-          - bower_components/cmi/lib/assets/cmi/images/**/*
+          - src/images/**/*
         tasks:
           - graspi_build_images
       templates:
         files:
-          - bower_components/cmi/lib/assets/cmi/templates/**/*
+          - src/templates/**/*
         tasks:
           - graspi_build_templates
       webcomponents:
         files:
-          - bower_components/cmi/lib/assets/cmi/webcomponents/cmi-drawer-navigation/**/*
-          - bower_components/cmi/lib/assets/cmi/webcomponents/cmi-button-behavior/**/*
-          - bower_components/cmi/lib/assets/cmi/webcomponents/cmi-button/**/*
-          - bower_components/cmi/lib/assets/cmi/webcomponents/cmi-fab/**/*
-          - bower_components/cmi/lib/assets/cmi/webcomponents/cmi-fab-slide/**/*
+          - src/webcomponents/cmi-drawer-navigation/**/*
+          - src/webcomponents/cmi-button-behavior/**/*
+          - src/webcomponents/cmi-button/**/*
+          - src/webcomponents/cmi-fab/**/*
+          - src/webcomponents/cmi-fab-slide/**/*
         tasks:
           - graspi_build_webcomponents
 

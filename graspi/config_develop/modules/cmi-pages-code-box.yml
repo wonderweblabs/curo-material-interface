@@ -19,7 +19,7 @@ tasks:
     - graspi_replace
 
 options:
-  basePath: 'src/webcomponents/cmi-pages-code-box'
+  basePath: 'src/doc/webcomponents/cmi-pages-code-box'
   destFolder: 'cmi-pages-code-box/webcomponents'
   css:
     destFile: 'cmi-pages-code-box.css'

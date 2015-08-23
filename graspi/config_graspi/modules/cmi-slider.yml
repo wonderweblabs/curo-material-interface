@@ -27,7 +27,7 @@ tasks:
     - graspi_replace
 
 options:
-  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-slider'
+  basePath: 'bower_components/cmi/src/webcomponents/cmi-slider'
   destFolder: 'cmi-slider/webcomponents'
   css:
     destFile: 'cmi-slider.css'

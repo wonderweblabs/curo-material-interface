@@ -20,7 +20,7 @@ tasks:
     - graspi_replace
 
 options:
-  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-card-content'
+  basePath: 'bower_components/cmi/src/webcomponents/cmi-card-content'
   destFolder: 'cmi-card-content/webcomponents'
   css:
     destFile: 'cmi-card-content.css'

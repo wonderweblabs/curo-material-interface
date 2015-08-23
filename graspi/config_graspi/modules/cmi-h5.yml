@@ -20,7 +20,7 @@ tasks:
     - graspi_replace
 
 options:
-  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-h5'
+  basePath: 'bower_components/cmi/src/webcomponents/cmi-h5'
   destFolder: 'cmi-h5/webcomponents'
   css:
     destFile: 'cmi-h5.css'

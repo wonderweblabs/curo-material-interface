@@ -15,7 +15,6 @@ module.exports = (grunt) ->
   grunt.option('configCache', File.join(basedir, 'tmp/graspi/config.yml'))
   grunt.option('configLoadPaths', [
     File.join(basedir, 'graspi/config_libs'),
-    File.join(basedir, 'graspi/config_polymer'),
     File.join(basedir, 'graspi/config_graspi'),
     File.join(basedir, 'graspi/config_develop')
   ])
@@ -25,7 +24,11 @@ module.exports = (grunt) ->
   # tasks
   # ----------------------------------------------------------------
 
-  grunt.registerTask('default', ['graspi'])
+  grunt.registerTask 'default', [
+    'build_cmi',
+    'build_cmi_pages_assets',
+    'build_cmi_pages'
+  ]
 
   # ----------------------------------------------------------------
   # Grunt config
@@ -48,8 +51,12 @@ module.exports = (grunt) ->
           'build_cmi_pages_cmi'
         ]
         files: [
-          'lib/assets/cmi/**/*',
-          'src/webcomponents/**/*'
+          'src/fonts/**/*',
+          'src/javascripts/**/*',
+          'src/stylesheets/**/*',
+          'src/var/**/*',
+          'src/webcomponents/**/*',
+          'src/doc/webcomponents/**/*'
         ]
       build_cmi_pages:
         options:
@@ -58,9 +65,9 @@ module.exports = (grunt) ->
           'build_cmi_pages'
         ]
         files: [
-          'src/**/*.haml',
-          'src/**/*.context.yml',
-          '!src/webcomponents/**/*'
+          'src/doc/**/*.haml',
+          'src/doc/**/*.context.yml',
+          '!src/doc/webcomponents/**/*'
         ]
       build_cmi_pages_assets:
         tasks: [
@@ -68,9 +75,9 @@ module.exports = (grunt) ->
           'build_cmi_pages_cmi_pages_assets'
         ]
         files: [
-          'src/javascripts/**/*',
-          'src/stylesheets/**/*',
-          'src/images/**/*'
+          'src/doc/javascripts/**/*',
+          'src/doc/stylesheets/**/*',
+          'src/doc/images/**/*'
         ]
     browserSync:
       build_cmi_pages:
@@ -115,7 +122,7 @@ module.exports = (grunt) ->
   # ----------------------------------------------------------------
   # options
   root = File.resolve()
-  expandOptions = { cwd: File.join(root, 'src') }
+  expandOptions = { cwd: File.join(root, 'src/doc') }
   pageDefaults  =
     pageTitle: 'CMI'
     layout: 'default'
@@ -155,7 +162,7 @@ module.exports = (grunt) ->
 
       cfg = {}
       if _.includes configs, contextFile
-        cfg = grunt.file.readYAML(File.join(root, 'src', contextFile))
+        cfg = grunt.file.readYAML(File.join(expandOptions.cwd, contextFile))
       cfg = _.merge pageDefaults, cfg
 
       gruntCfg              = {}
@@ -168,7 +175,7 @@ module.exports = (grunt) ->
       gruntCfg[id].options.placement      = 'global'
       gruntCfg[id].options.context        = cfg
       gruntCfg[id].files.push
-        src:  File.join(root, 'src', file)
+        src:  File.join(expandOptions.cwd, file)
         dest: File.join(root, 'tmp/html', "#{File.basename(file, File.extname(file))}.html")
       grunt.config.merge { haml: gruntCfg }
       grunt.task.run "haml:#{id}"
@@ -197,7 +204,7 @@ module.exports = (grunt) ->
 
       cfg = {}
       if _.includes configs, "#{File.basename(file, File.extname(file))}.context.yml"
-        cfg = grunt.file.readYAML(File.join(root, 'src', "#{File.basename(file, File.extname(file))}.context.yml"))
+        cfg = grunt.file.readYAML(File.join(expandOptions.cwd, "#{File.basename(file, File.extname(file))}.context.yml"))
       cfg = _.merge pageDefaults, cfg
 
       # compile hamls
@@ -211,10 +218,10 @@ module.exports = (grunt) ->
       gruntCfg[id].options.placement      = 'global'
       gruntCfg[id].options.context        = cfg
       gruntCfg[id].files.push
-        src:  File.join(root, 'src', 'layouts', "#{cfg.layout}.haml")
+        src:  File.join(expandOptions.cwd, 'layouts', "#{cfg.layout}.haml")
         dest: File.join(root, 'tmp/html', "#{File.basename(file, File.extname(file))}.html")
       gruntCfg[id].files.push
-        src:  File.join(root, 'src', file)
+        src:  File.join(expandOptions.cwd, file)
         dest: File.join(root, 'tmp/html', "#{File.basename(file, File.extname(file))}_content.html")
       grunt.config.merge { haml: gruntCfg }
       grunt.task.run "haml:#{id}"
@@ -254,7 +261,7 @@ module.exports = (grunt) ->
 
       cfg = {}
       if _.includes configs, "#{File.basename(file, File.extname(file))}.context.yml"
-        cfg = grunt.file.readYAML(File.join(root, 'src', "#{File.basename(file, File.extname(file))}.context.yml"))
+        cfg = grunt.file.readYAML(File.join(expandOptions.cwd, "#{File.basename(file, File.extname(file))}.context.yml"))
       cfg = _.merge pageDefaults, cfg
 
       # read content

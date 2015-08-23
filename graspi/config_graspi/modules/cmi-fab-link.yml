@@ -17,7 +17,7 @@ tasks:
     - graspi_replace
 
 options:
-  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-fab-link'
+  basePath: 'bower_components/cmi/src/webcomponents/cmi-fab-link'
   destFolder: 'cmi-fab-link/webcomponents'
   js:
     destFile: 'cmi-fab-link.js'

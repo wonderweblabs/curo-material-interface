@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %meta{ charset: "utf-8" }
+    %meta{ content: "width=device-width, initial-scale=1", name: "viewport" }
+    %title #{@pageTitle}
+
+    @@yield_style
+    @@yield_script
+    @@yield_tpl
+    @@yield_webcomponents
+  %body.cmi.layout.vertical.fullbleed{ unresolved: true }
+    +include 'src/doc/shared/_browse_happy.haml'
+    %paper-drawer-panel
+      %paper-header-panel.flex{ drawer: true }
+        %paper-toolbar.paper-header
+          %a{ is: 'cmi-button-link', small: true, href: 'https://github.com/wonderweblabs/curo-material-interface', title: 'View on GitHub' }
+            %i.mdi.mdi-github-circle
+          %a{ is: 'cmi-button-link', small: true, href: 'https://github.com/wonderweblabs/curo-material-interface/zipball/master', title: 'Download as zip' }
+            %i.mdi.mdi-download .zip
+          %a{ is: 'cmi-button-link', small: true, href: 'https://github.com/wonderweblabs/curo-material-interface/tarball/master', title: 'Download as tar' }
+            %i.mdi.mdi-download .tar.gz
+        .content.fit
+          @@yield_sidebar_content
+      %paper-header-panel.flex{ main: true }
+        %paper-toolbar.paper-header
+          #middleBar
+            Curo Material Interface
+        %div.content.fit
+          @@yield_content

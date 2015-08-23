@@ -22,7 +22,7 @@ tasks:
     - graspi_replace
 
 options:
-  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-input-behavior'
+  basePath: 'bower_components/cmi/src/webcomponents/cmi-input-behavior'
   destFolder: 'cmi-input-behavior/webcomponents'
   css:
     destFile: 'cmi-input-behavior.css'

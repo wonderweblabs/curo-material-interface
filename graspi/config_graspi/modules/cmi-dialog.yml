@@ -24,7 +24,7 @@ tasks:
     - graspi_replace
 
 options:
-  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-dialog'
+  basePath: 'bower_components/cmi/src/webcomponents/cmi-dialog'
   destFolder: 'cmi-dialog/webcomponents'
   css:
     destFile: 'cmi-dialog.css'

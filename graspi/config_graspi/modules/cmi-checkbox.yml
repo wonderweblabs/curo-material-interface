@@ -22,7 +22,7 @@ tasks:
     - graspi_replace
 
 options:
-  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-checkbox'
+  basePath: 'bower_components/cmi/src/webcomponents/cmi-checkbox'
   destFolder: 'cmi-checkbox/webcomponents'
   css:
     destFile: 'cmi-checkbox.css'

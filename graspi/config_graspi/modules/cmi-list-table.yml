@@ -19,7 +19,7 @@ tasks:
     - graspi_replace
 
 options:
-  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-list-table'
+  basePath: 'bower_components/cmi/src/webcomponents/cmi-list-table'
   destFolder: 'cmi-list-table/webcomponents'
   css:
     destFile: 'cmi-list-table.css'

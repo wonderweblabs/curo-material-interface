@@ -11,27 +11,27 @@ options:
   destPath: 'assets'
   destFolder: 'cmi_pages'
   css:
-    basePath: src/stylesheets
+    basePath: src/doc/stylesheets
     destFile: application.css
     files:
       - application.sass
   js:
-    basePath: src/javascripts
+    basePath: src/doc/javascripts
     destFile: application.js
     files:
       - '**/*.coffee'
   templates:
-    basePath: src/templates
+    basePath: src/doc/templates
     destFile: templates.html
     files:
       - '**/*.haml'
       - '**/*.html'
   images:
-    basePath: src/images
+    basePath: src/doc/images
     files:
       - '{,*/}*'
   fonts:
-    basePath: src/fonts
+    basePath: src/doc/fonts
     files:
       - '{,*/}*'
 
