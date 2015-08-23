@@ -39,7 +39,7 @@ Polymer
     json = @serialize()
 
     @_requestBot.url = @action
-    @_requestBot.method = @method
+    @_requestBot.method = @method.toUpperCase()
     @_requestBot.contentType = @contentType
     @_requestBot.withCredentials = @withCredentials
 

@@ -51,9 +51,13 @@ Polymer
 
   open: ->
     @.$.menuButton.open()
+    console.log 'OPEN'
+    @fire 'paper-dropdown-open'
 
   close: ->
     @.$.menuButton.close()
+    console.log 'CLOSE'
+    @fire 'paper-dropdown-close'
 
   _onIronActivate: (event) ->
     @_setSelectedItem(event.detail.item)

@@ -38,6 +38,7 @@ dependencies:
   - cmi-icon-item
   - cmi-item-body
   - cmi-menu
+  - cmi-menu-button
   - cmi-tabs
   - cmi-dropdown-menu
   - cmi-form

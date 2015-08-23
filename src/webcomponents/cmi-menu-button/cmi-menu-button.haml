@@ -1,0 +1,11 @@
+%dom-module{ id: 'cmi-menu-button' }
+  %graspi-webcomponent-stylesheet/
+  %template
+    #trigger{ :'on-tap' => "open" }
+      %content{ select: '.dropdown-trigger' }
+
+    %iron-dropdown{ id: "dropdown", opened: "{{opened}}", :'horizontal-align' => "[[horizontalAlign]]", :'vertical-align' => "[[verticalAlign]]", :'horizontal-offset' => "[[horizontalOffset]]", :'vertical-offset' => "[[verticalOffset]]", :'open-animation-config' => "[[openAnimationConfig]]", :'close-animation-config' => "[[closeAnimationConfig]]", :'no-animations' => "[[noAnimations]]" }
+      %paper-material{ class: "dropdown-content" }
+        %content{ select: '.dropdown-content' }
+
+  %graspi-webcomponent-script/
