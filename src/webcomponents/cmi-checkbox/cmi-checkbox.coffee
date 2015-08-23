@@ -10,7 +10,8 @@ Polymer
     toggles: { type: Boolean, value: true, reflectToAttribute: true }
 
   behaviors: [
-    Polymer.PaperInkyFocusBehavior
+    Polymer.PaperInkyFocusBehavior,
+    Polymer.IronCheckedElementBehavior
   ]
 
   hostAttributes:
@@ -34,6 +35,9 @@ Polymer
   _checkedChanged: (checked) ->
     @setAttribute('aria-checked', if checked then 'true' else 'false')
     @active = @checked
+
+
+
     @fire 'iron-change'
 
   _computeCheckboxClass: (checked) ->

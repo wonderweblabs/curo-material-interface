@@ -2,6 +2,7 @@ webcomponent: true
 
 dependencies:
   - polymer-1.1.0
+  - iron-checked-element-behavior-1.0.1
   - paper-behaviors-1.0.3
   - paper-ripple-1.0.1
   - paper-styles-1.0.11
