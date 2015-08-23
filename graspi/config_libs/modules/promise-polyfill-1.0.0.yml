@@ -42,3 +42,11 @@ options:
         quotesPlaceholder: 'QUOTES1'
         doubleQuotesPlaceholder: 'QUOTES2'
       replace: ''
+    - files:
+        - '%%destPath%%/promise-polyfill.html'
+      pattern:
+        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
