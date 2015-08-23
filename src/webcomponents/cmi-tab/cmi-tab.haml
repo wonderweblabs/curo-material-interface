@@ -1,0 +1,10 @@
+%dom-module{ id: 'cmi-tab' }
+  %graspi-webcomponent-stylesheet/
+  %template
+    .tab-content.flex-auto.center-center.horizontal.layout
+      %content
+
+    %template{ is: "dom-if", if: "[[!noink]]" }
+      %paper-ripple{ id: "ink", :'initial-opacity' => "0.95", :'opacity-decay-velocity' => "0.98"  }
+
+  %graspi-webcomponent-script/

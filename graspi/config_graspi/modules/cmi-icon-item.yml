@@ -1,0 +1,76 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.1.0
+  - cmi-item
+
+js:
+  coffee:
+    options:
+      bare: false
+      sourceMap: false
+
+tasks:
+  graspi_build:
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_templates
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/cmi/src/webcomponents/cmi-icon-item'
+  destFolder: 'cmi-icon-item/webcomponents'
+  css:
+    destFile: 'cmi-icon-item.css'
+    files:
+      - 'cmi-icon-item.sass'
+  js:
+    destFile: 'cmi-icon-item.js'
+    files:
+      - cmi-icon-item.coffee
+  templates:
+    destFile: 'cmi-icon-item.html'
+    files:
+      - cmi-icon-item.haml
+  replace:
+    - files:
+        - '%%destPath%%/cmi-icon-item.html'
+      pattern:
+        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style>'
+        - file: '%%destPath%%/cmi-icon-item.css'
+        - '</style>'
+    - files:
+        - '%%destPath%%/cmi-icon-item.html'
+      pattern:
+        pattern: '(\<graspi\-webcomponent\-script\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<script>'
+        - file: '%%destPath%%/cmi-icon-item.js'
+        - '</script>'
+    - files:
+        - '%%destPath%%/cmi-icon-item.html'
+      pattern:
+        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+    - files:
+        - '%%destPath%%/cmi-icon-item.html'
+      pattern:
+        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+

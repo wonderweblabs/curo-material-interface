@@ -1,0 +1,83 @@
+.grid-row
+  .grid-col-12
+    %cmi-card{ id: 'dropdown-menu', block: true }
+      %cmi-card-content{ :'line-top' => true }
+        %h1 Dropdown menu
+
+    %cmi-card{ id: 'cmi-dropdown-menu', block: true }
+      %cmi-card-heading
+        %h2.title cmi-dropdown-menu
+      %cmi-card-content
+        %template{ id: "Demo", is: "dom-bind" }
+
+          %h4{ is: 'cmi-h4', line: true } Basic Menu
+          %cmi-pages-code-box
+            %cmi-dropdown-menu{ label: "Dinosaurs" }
+              %cmi-menu{ class: "dropdown-content" }
+                %template{ is: "dom-repeat", items: "[[dinosaurs]]", as: "dinosaur" }
+                  %cmi-item= "[[dinosaur]]"
+
+          %h4{ is: 'cmi-h4', line: true } Disabled
+          %cmi-pages-code-box
+            %cmi-dropdown-menu{ disabled: true, label: "Disabled" }
+              %cmi-menu{ class: "dropdown-content" }
+                %template{ is: "dom-repeat", items: "[[letters]]", as: "letter" }
+                  %cmi-item= "[[letter]]"
+
+          %h4{ is: 'cmi-h4', line: true } Alternative Content
+          %cmi-pages-code-box
+            %cmi-dropdown-menu{ label: "Menu tabs!?" }
+              %cmi-tabs{ class: "dropdown-content" }
+                %template{ is: "dom-repeat", items: "[[letters]]", as: "letter" }
+                  %cmi-tab= "[[letter]]"
+
+          %h4{ is: 'cmi-h4', line: true } No Label Float
+          %cmi-pages-code-box
+            %cmi-dropdown-menu{ class: "letters", label: "Letters", :'no-label-float' => true }
+              %cmi-menu{ class: "dropdown-content" }
+                %template{ is: "dom-repeat", items: "[[letters]]", as: "letter" }
+                  %cmi-item= "[[letter]]"
+
+          %h4{ is: 'cmi-h4', line: true } No Ripple, No Animations
+          %cmi-pages-code-box
+            %cmi-dropdown-menu{ label: "Dinosaurs", noink: true, :'no-animations' => true }
+              %cmi-menu{ class: "dropdown-content" }
+                %template{ is: "dom-repeat", items: "[[dinosaurs]]", as: "dinosaur" }
+                  %cmi-item= "[[dinosaur]]"
+
+        :javascript
+          Demo.letters = [
+            'alpha',
+            'beta',
+            'gamma',
+            'delta',
+            'epsilon'
+          ];
+          Demo.dinosaurs = [
+            'allosaurus',
+            'brontosaurus',
+            'carcharodontosaurus',
+            'diplodocus',
+            'ekrixinatosaurus',
+            'fukuiraptor',
+            'gallimimus',
+            'hadrosaurus',
+            'iguanodon',
+            'jainosaurus',
+            'kritosaurus',
+            'liaoceratops',
+            'megalosaurus',
+            'nemegtosaurus',
+            'ornithomimus',
+            'protoceratops',
+            'quetecsaurus',
+            'rajasaurus',
+            'stegosaurus',
+            'triceratops',
+            'utahraptor',
+            'vulcanodon',
+            'wannanosaurus',
+            'xenoceratops',
+            'yandusaurus',
+            'zephyrosaurus'
+          ];

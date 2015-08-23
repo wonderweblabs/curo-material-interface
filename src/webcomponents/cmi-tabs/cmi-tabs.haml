@@ -1,0 +1,14 @@
+%dom-module{ id: 'cmi-tabs' }
+  %graspi-webcomponent-stylesheet/
+  %template
+    %paper-icon-button{ icon: "paper-tabs:chevron-left", :'class$' => "[[_computeScrollButtonClass(_leftHidden, scrollable, hideScrollButtons)]]", :'on-up' => "_onScrollButtonUp", :'on-down' => "_onLeftScrollButtonDown" }
+
+    #tabsContainer.flex{ :'on-scroll' => "_scroll" }
+      #tabsContent{ :'class$' => "[[_computeTabsContentClass(scrollable)]]" }
+        %content{ select: '*' }
+
+        #selectionBar{ :'class$' => "[[_computeSelectionBarClass(noBar, alignBottom)]]", :'on-transitionend' => "_onBarTransitionEnd" }
+
+    %paper-icon-button{ icon: "paper-tabs:chevron-right", :'class$' => "[[_computeScrollButtonClass(_rightHidden, scrollable, hideScrollButtons)]]", :'on-up' => "_onScrollButtonUp", :'on-down' => "_onRightScrollButtonDown" }
+
+  %graspi-webcomponent-script/

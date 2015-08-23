@@ -1,0 +1,23 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.1.0
+  - iron-iconset-svg-1.0.4
+
+js:
+  coffee:
+    options:
+      bare: false
+      sourceMap: false
+
+tasks:
+  graspi_build:
+    - graspi_templates
+
+options:
+  basePath: 'bower_components/cmi/src/webcomponents/cmi-tabs-icons'
+  destFolder: 'cmi-tabs-icons/webcomponents'
+  templates:
+    destFile: 'cmi-tabs-icons.html'
+    files:
+      - cmi-tabs-icons.haml

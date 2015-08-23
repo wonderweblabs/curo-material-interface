@@ -37,6 +37,12 @@ dependencies:
   - cmi-dialog-scrollable
   - cmi-table
   - cmi-list-table
+  - cmi-item
+  - cmi-icon-item
+  - cmi-item-body
+  - cmi-menu
+  - cmi-tabs
+  - cmi-dropdown-menu
   - cmi-pages-code-box
 
 options:
