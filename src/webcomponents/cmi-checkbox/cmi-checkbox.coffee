@@ -5,10 +5,6 @@ Polymer
 
   is: 'cmi-checkbox'
 
-  properties:
-    checked: { type: Boolean, value: false, reflectToAttribute: true, notify: true, observer: '_checkedChanged' }
-    toggles: { type: Boolean, value: true, reflectToAttribute: true }
-
   behaviors: [
     Polymer.PaperInkyFocusBehavior,
     Polymer.IronCheckedElementBehavior
@@ -32,13 +28,10 @@ Polymer
 
     @checked = @active if @_isReady
 
-  _checkedChanged: (checked) ->
-    @setAttribute('aria-checked', if checked then 'true' else 'false')
-    @active = @checked
+  _checkedChanged: ->
+    Polymer.IronCheckedElementBehaviorImpl._checkedChanged.apply(@)
 
-
-
-    @fire 'iron-change'
+    @setAttribute('aria-checked', if @checked then 'true' else 'false')
 
   _computeCheckboxClass: (checked) ->
     if (checked) then 'checked' else ''
