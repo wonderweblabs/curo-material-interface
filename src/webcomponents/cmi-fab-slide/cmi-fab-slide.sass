@@ -1,5 +1,4 @@
-@import bourbon
-@import cmi_default_mixins
+@import cmi_env
 
 $normal-border-radius: 28px
 $normal-size: 49px
@@ -39,6 +38,7 @@ $animation-max-width: 400px
       text-transform: inherit
     cmi-fab-slide-icon,
     cmi-fab-slide-content
+      +box-sizing(border-box)
       position: relative
       display: block
       float: left

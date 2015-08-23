@@ -1,19 +1,16 @@
-@import bourbon
-@import cmi_default_mixins
-@import cmi_default_variables
-@import cmi_custom_variables
+@import cmi_env
 
 \:host
   min-height: 72px
   ::content
     > .heading-image
-      +border-top-radius(20px)
-      +border-bottom-radius(20px)
+      +border-top-radius($cmi-card-heading-image-size / 2)
+      +border-bottom-radius($cmi-card-heading-image-size / 2)
       position: relative
       overflow: hidden
       float: left
-      width: 40px
-      height: 40px
+      width: $cmi-card-heading-image-size
+      height: $cmi-card-heading-image-size
       margin-right: 16px
       img
         width: 40px
@@ -26,7 +23,7 @@
     > h6.title,
     > .title
       margin: 8px 0 3px 0
-      font-size: 20px
+      font-size: $cmi-card-heading-font-size-title
       line-height: 1.2
     > h2.sub-title,
     > h3.sub-title,
@@ -35,7 +32,7 @@
     > h6.sub-title,
     > .sub-title
       margin: 0 0 9px 0
-      font-size: 16px
+      font-size: $cmi-card-heading-font-size-subtitle
       line-height: 1.0
       color: #777
 

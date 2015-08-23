@@ -1,12 +1,4 @@
-@import bourbon
-@import cmi_default_mixins
-@import cmi_default_variables
-@import cmi_custom_variables
-
-$cmi-color-primary: #afd23e
-// $cmi-color-highlight: #FF3064
-$cmi-color-highlight: rgb(251, 15, 78)
-$cmi-color-filled-base: rgba(0, 0, 0, 0.05)
+@import cmi_env
 
 \:host
   +box-sizing(border-box)
@@ -29,10 +21,10 @@ $cmi-color-filled-base: rgba(0, 0, 0, 0.05)
   display: block
 
 \:host([theme="primary"])
-  background-color: $cmi-color-primary
+  background-color: $cmi-card-color-primary
 
 \:host([theme="highlight"])
-  background-color: $cmi-color-highlight
+  background-color: $cmi-card-color-highlight
 
 /* IE 10 support for HTML5 hidden attr */
 [hidden]

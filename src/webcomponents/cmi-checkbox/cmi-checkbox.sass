@@ -1,11 +1,4 @@
-@import bourbon
-@import cmi_default_mixins
-@import cmi_default_variables
-@import cmi_custom_variables
-
-$cmi-color-primary: #afd23e
-
-$cmi-color-text: #424242
+@import cmi_env
 
 \:host
   display: inline-block
@@ -16,11 +9,11 @@ $cmi-color-text: #424242
     left: -15px
     width: 48px
     height: 48px
-    color: $cmi-color-primary
+    color: $cmi-checkbox-color-primary
     opacity: 0.6
     pointer-events: none
   #ink[checked]
-    color: $cmi-color-primary
+    color: $cmi-checkbox-color-primary
   #checkbox
     +box-sizing(border-box)
     +transition(background-color 140ms, border-color 140ms)
@@ -29,11 +22,11 @@ $cmi-color-text: #424242
     position: relative
     height: 100%
     border: solid 2px
-    border-color: $cmi-color-text
+    border-color: $cmi-checkbox-color-text
     pointer-events: none
     &.checked
-      background-color: $cmi-color-primary
-      border-color: $cmi-color-primary
+      background-color: $cmi-checkbox-color-primary
+      border-color: $cmi-checkbox-color-primary
   #checkmark
     +transform(rotate(45deg))
     position: absolute
@@ -46,7 +39,7 @@ $cmi-color-text: #424242
     border-left: none
     border-right-width: 2px
     border-bottom-width: 2px
-    border-color: #fff
+    border-color: $cmi-checkbox-color-checkmark
 
 \:host(:focus)
   outline: none
@@ -76,7 +69,7 @@ $cmi-color-text: #424242
   padding-left: 8px
   white-space: normal
   pointer-events: none
-  color: $cmi-color-text
+  color: $cmi-checkbox-color-text
 
 #checkboxLabel[hidden]
   display: none
@@ -86,10 +79,10 @@ $cmi-color-text: #424242
 
 \:host([disabled]) #checkbox
   opacity: 0.5
-  border-color: $cmi-color-text
+  border-color: $cmi-checkbox-color-text
 
 \:host([disabled][checked]) #checkbox
-  background-color: $cmi-color-text
+  background-color: $cmi-checkbox-color-text
   opacity: 0.5
 
 \:host([disabled]) #checkboxLabel

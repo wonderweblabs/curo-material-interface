@@ -1,11 +1,5 @@
-@import bourbon
-@import cmi_default_mixins
-@import cmi_default_variables
-@import cmi_custom_variables
+@import cmi_env
 
-$cmi-color-primary: #afd23e
-
-$cmi-color-text: #424242
 
 \:host
   display: inline-block
@@ -16,11 +10,11 @@ $cmi-color-text: #424242
     left: -16px
     width: 48px
     height: 48px
-    color: $cmi-color-primary
+    color: $cmi-radio-button-color-primary
     opacity: 0.6
     pointer-events: none
   #ink[checked]
-    color: $cmi-color-primary
+    color: $cmi-radio-button-color-primary
   #offRadio
     +box-sizing(content-box)
     +border-top-radius(50%)
@@ -33,7 +27,7 @@ $cmi-color-text: #424242
     height: 12px
     border: solid 2px
     background-color: transparent
-    border-color: $cmi-color-text
+    border-color: $cmi-radio-button-color-text
   #onRadio
     +box-sizing(content-box)
     +transform(scale(0))
@@ -45,7 +39,7 @@ $cmi-color-text: #424242
     left: 4px
     width: 8px
     height: 8px
-    background-color: $cmi-color-primary
+    background-color: $cmi-radio-button-color-primary
 
 \:host(:focus)
   outline: none
@@ -59,7 +53,7 @@ $cmi-color-text: #424242
   vertical-align: middle
 
 \:host([checked]) #offRadio
-  border-color: $cmi-color-primary
+  border-color: $cmi-radio-button-color-primary
 
 \:host([checked]) #onRadio
   +transform(scale(1))
@@ -71,7 +65,7 @@ $cmi-color-text: #424242
   margin-left: 10px
   white-space: normal
   pointer-events: none
-  color: $cmi-color-text
+  color: $cmi-radio-button-color-text
 
 #radioLabel[hidden]
   display: none
@@ -81,11 +75,11 @@ $cmi-color-text: #424242
   pointer-events: none
 
 \:host([disabled]) #offRadio
-  border-color: $cmi-color-text
+  border-color: $cmi-radio-button-color-text
   opacity: 0.5
 
 \:host([disabled][checked]) #onRadio
-  background-color: $cmi-color-text
+  background-color: $cmi-radio-button-color-text
   opacity: 0.5
 
 \:host([disabled]) #radioLabel

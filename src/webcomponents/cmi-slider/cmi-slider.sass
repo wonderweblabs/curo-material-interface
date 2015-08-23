@@ -1,11 +1,5 @@
-@import bourbon
-@import cmi_default_mixins
-@import cmi_default_variables
-@import cmi_custom_variables
+@import cmi_env
 
-$cmi-color-primary: #afd23e
-
-$cmi-color-disabled: #ccc
 
 \:host
   +user-select(none)
@@ -15,16 +9,16 @@ $cmi-color-disabled: #ccc
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 
 \:host(:not([disabled])) #sliderBar
-  --cmi-progress-active-color: $cmi-color-primary
+  --cmi-progress-active-color: $cmi-slider-color-primary
 
 \:host(:not([disabled])) #sliderBar
-  --cmi-progress-secondary-color: lighten($cmi-color-primary, 10%)
+  --cmi-progress-secondary-color: lighten($cmi-slider-color-primary, 10%)
 
 \:host([disabled]) #sliderBar
-  --cmi-progress-active-color: $cmi-color-disabled
+  --cmi-progress-active-color: $cmi-slider-color-disabled
 
 \:host([disabled]) #sliderBar
-  --cmi-progress-secondary-color: lighten($cmi-color-disabled, 10%)
+  --cmi-progress-secondary-color: lighten($cmi-slider-color-disabled, 10%)
 
 \:host(:focus)
   outline: none
@@ -125,7 +119,7 @@ $cmi-color-disabled: #ccc
   +transition-timing-function(ease)
   width: 12px
   height: 12px
-  background-color: darken($cmi-color-primary, 5%)
+  background-color: darken($cmi-slider-color-primary, 5%)
 
 .expand:not(.pin) > #sliderKnob > #sliderKnobInner
   +transform(translateZ(0))
@@ -137,7 +131,7 @@ $cmi-color-disabled: #ccc
   border: 2px solid #c8c8c8
 
 #sliderKnobInner::before
-  background-color: darken($cmi-color-primary, 5%)
+  background-color: darken($cmi-slider-color-primary, 5%)
 
 .pin > #sliderKnob > #sliderKnobInner::before
   +transform(rotate(-45deg) scale(0) translate(0))
@@ -190,13 +184,13 @@ $cmi-color-disabled: #ccc
 .disabled > #sliderKnob > #sliderKnobInner
   width: 8px
   height: 8px
-  background-color: $cmi-color-disabled
+  background-color: $cmi-slider-color-disabled
 
 .disabled.ring > #sliderKnob > #sliderKnobInner
   background-color: transparent
 
 paper-ripple
-  color: darken($cmi-color-primary, 10%)
+  color: darken($cmi-slider-color-primary, 10%)
 
 #sliderKnob
   +display(flex)

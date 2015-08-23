@@ -1,6 +1,4 @@
-@import bourbon
-@import cmi_default_variables
-@import cmi_custom_variables
+@import cmi_env
 
 \:host
   position: relative
@@ -11,14 +9,14 @@
     +position(absolute, 50% 0 auto 0)
     z-index: 0
     width: 100%
-    border-bottom: 1px solid #aaa
+    border-bottom: 1px solid $cmi-headline-color-line
     line-height: 0.1em
   > .h-inner
     +box-sizing(border-box)
     position: relative
     display: inline
     z-index: 1
-    background-color: #fff
+    background-color: $cmi-headline-color-background
     padding: 0 15px 0 0
     ::content
       *

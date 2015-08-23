@@ -1,5 +1,4 @@
-@import bourbon
-@import cmi_default_mixins
+@import cmi_env
 
 \:host
   > .cmi-navbar-content-container
@@ -16,7 +15,7 @@
     z-index: 0
     margin: -5px 0 5px 0
     padding: 15px 15px 10px 15px
-    background-color: rgba(#000, 0.03)
+    background-color: $cmi-navbar-color-hint-background
     ::content p
       margin: 0 0 5px 0
       font-size: 0.75rem
@@ -33,4 +32,4 @@
 \:host([theme="danger"])
   > .cmi-navbar-content-hint-container
     ::content p
-      color: #c00
+      color: $cmi-navbar-color-danger

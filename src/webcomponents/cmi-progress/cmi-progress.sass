@@ -1,11 +1,4 @@
-@import bourbon
-@import cmi_default_mixins
-@import cmi_default_variables
-@import cmi_custom_variables
-
-$cmi-color-primary: #afd23e
-
-$cmi-color-disabled: #ccc
+@import cmi_env
 
 \:host
   display: inline-block
@@ -36,11 +29,10 @@ $cmi-color-disabled: #ccc
   +transform(scaleX(0))
 
 #activeProgress
-  background-color: var(--cmi-progress-active-color, $cmi-color-primary)
+  background-color: var(--cmi-progress-active-color, $cmi-progress-color-primary)
 
 #secondaryProgress
-  // background-color: var(--cmi-progress-secondary-color, lighten($cmi-color-primary, 25%))
-  background-color: var(--cmi-progress-secondary-color, $cmi-color-disabled)
+  background-color: var(--cmi-progress-secondary-color, $cmi-progress-color-disabled)
 
 #indeterminateSplitter
   display: none

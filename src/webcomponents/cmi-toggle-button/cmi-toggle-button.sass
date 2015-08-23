@@ -1,20 +1,14 @@
-@import bourbon
-@import cmi_default_mixins
-@import cmi_default_variables
-@import cmi_custom_variables
+@import cmi_env
 
-$cmi-color-primary: #afd23e
-
-$cmi-color-text: #424242
 
 \:host
   display: inline-block
   .toggle-bar
-    background-color: #000000
+    background-color: $cmi-toggle-button-color-bar
   .toggle-button
-    background-color: $cmi-color-text
+    background-color: $cmi-toggle-button-color-text
   .toggle-ink
-    color: $cmi-color-text
+    color: $cmi-toggle-button-color-text
 
 \:host([disabled])
   pointer-events: none
@@ -24,11 +18,11 @@ $cmi-color-text: #424242
 
 \:host([checked])
   .toggle-bar
-    background-color: $cmi-color-primary
+    background-color: $cmi-toggle-button-color-primary
   .toggle-button
-    background-color: $cmi-color-primary
+    background-color: $cmi-toggle-button-color-primary
   .toggle-ink
-    color: $cmi-color-primary
+    color: $cmi-toggle-button-color-primary
 
 #toggleContainer
   position: relative
@@ -49,7 +43,7 @@ $cmi-color-text: #424242
   opacity: 0.5
 
 \:host([disabled]) #toggleBar
-  background-color: #000
+  background-color: $cmi-toggle-button-color-bar
   opacity: 0.12
 
 #toggleButton

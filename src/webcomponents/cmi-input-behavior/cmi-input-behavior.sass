@@ -1,11 +1,4 @@
-@import bourbon
-@import cmi_default_mixins
-@import cmi_default_variables
-@import cmi_custom_variables
-
-$cmi-color-primary: #afd23e
-
-$cmi-color-danger: #F02A22
+@import cmi_env
 
 \:host
   display: block
@@ -18,10 +11,10 @@ $cmi-color-danger: #F02A22
         color: #ccc
       &.label-is-highlighted
         label
-          color: $cmi-color-primary
+          color: $cmi-input-color-primary
       &.is-invalid
         label
-          color: $cmi-color-danger
+          color: $cmi-input-color-danger
       [prefix]
         margin-right: 4px
       .mdi
@@ -31,14 +24,14 @@ $cmi-color-danger: #F02A22
         height: 1px
         background: #ccc
       .focused-line
-        background: $cmi-color-primary
+        background: $cmi-input-color-primary
       &.is-invalid
         .focused-line
-          background: $cmi-color-danger
+          background: $cmi-input-color-danger
     > .add-on-content
       &.is-highlighted
         *
-          color: $cmi-color-primary
+          color: $cmi-input-color-primary
 
 \:host([char-counter])
   margin-bottom: 10px

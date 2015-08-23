@@ -1,11 +1,5 @@
-@import bourbon
-@import cmi_default_mixins
-@import cmi_default_variables
-@import cmi_custom_variables
+@import cmi_env
 
-$cmi-color-primary: #afd23e
-
-$cmi-color-danger: #F02A22
 
 \:host
   padding: 0
@@ -13,26 +7,30 @@ $cmi-color-danger: #F02A22
   border-collapse: collapse
   outline: none
   border: none
+  ::content > thead,
+  ::content > tbody
+    > tr
+      background-color: $cmi-table-color-odd-row
 
 \:host([striped])
   ::content > thead,
   ::content > tbody,
     > tr:nth-child(even)
-      background-color: rgba(#000, 0.03)
+      background-color: $cmi-table-color-even-row
     > tr.active
-      background-color: $cmi-color-primary
+      background-color: $cmi-table-color-primary
     > tr:nth-child(even).active
-      background-color: darken($cmi-color-primary, 5%)
+      background-color: darken($cmi-table-color-primary, 5%)
 
 \:host([hoverable])
   ::content > thead,
   ::content > tbody,
     > tr.active
-      background-color: lighten($cmi-color-primary, 5%)
+      background-color: lighten($cmi-table-color-primary, 5%)
     > tr:hover
       background-color: rgba(#000, 0.02)
     > tr.active:hover
-      background-color: lighten($cmi-color-primary, 10%)
+      background-color: lighten($cmi-table-color-primary, 10%)
 
 \:host([striped][hoverable])
   ::content > thead,
@@ -40,4 +38,4 @@ $cmi-color-danger: #F02A22
     > tr:nth-child(even):hover
       background-color: rgba(#000, 0.05)
       &.active
-        background-color: lighten($cmi-color-primary, 8%)
+        background-color: lighten($cmi-table-color-primary, 8%)

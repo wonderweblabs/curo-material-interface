@@ -1,11 +1,5 @@
-@import bourbon
-@import cmi_default_mixins
-@import cmi_default_variables
-@import cmi_custom_variables
+@import cmi_env
 
-$cmi-color-primary: #afd23e
-
-$cmi-color-danger: #F02A22
 
 \:host,
 \:host ::content > .cmi-list-table-head > ul,
@@ -23,6 +17,7 @@ $cmi-color-danger: #F02A22
     > ul,
     > ul > li
       position: relative
+      background-color: $cmi-list-table-color-odd-row
     > ul
       +clearfix
       +display(flex)
@@ -35,7 +30,6 @@ $cmi-color-danger: #F02A22
       margin: 0
       padding: 0
       list-style: none
-      background-color: transparent
     > ul > li
       +flex(1)
       +flex-grow(1)
@@ -52,24 +46,24 @@ $cmi-color-danger: #F02A22
 \:host([striped])
   ::content > .cmi-list-table-body
     > ul:nth-child(even)
-      background-color: rgba(#000, 0.03)
+      background-color: $cmi-list-table-color-even-row
     > ul.active
-      background-color: $cmi-color-primary
+      background-color: $cmi-list-table-color-primary
     > ul:nth-child(even).active
-      background-color: darken($cmi-color-primary, 5%)
+      background-color: darken($cmi-list-table-color-primary, 5%)
 
 \:host([hoverable])
   ::content > .cmi-list-table-body
     > ul.active
-      background-color: lighten($cmi-color-primary, 5%)
+      background-color: lighten($cmi-list-table-color-primary, 5%)
     > ul:hover
       background-color: rgba(#000, 0.02)
     > ul.active:hover
-      background-color: lighten($cmi-color-primary, 10%)
+      background-color: lighten($cmi-list-table-color-primary, 10%)
 
 \:host([striped][hoverable])
   ::content > .cmi-list-table-body
     > ul:nth-child(even):hover
       background-color: rgba(#000, 0.05)
       &.active
-        background-color: lighten($cmi-color-primary, 8%)
+        background-color: lighten($cmi-list-table-color-primary, 8%)
