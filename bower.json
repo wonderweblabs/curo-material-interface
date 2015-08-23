@@ -55,5 +55,33 @@
     "paper-toolbar": "PolymerElements/paper-toolbar#1.0.4",
     "paper-tooltip": "PolymerElements/paper-tooltip#1.0.2",
     "mdi": "~1.1.70"
+  },
+  "resolutions": {
+    "polymer": "1.1.1",
+    "paper-badge": "1.0.2",
+    "paper-button": "1.0.3",
+    "paper-card": "1.0.1",
+    "paper-checkbox": "1.0.7",
+    "paper-dialog": "1.0.1",
+    "paper-dialog-behavior": "1.0.4",
+    "paper-dialog-scrollable": "1.0.1",
+    "paper-drawer-panel": "1.0.3",
+    "paper-dropdown-menu": "1.0.1",
+    "paper-fab": "1.0.3",
+    "paper-header-panel": "1.0.3",
+    "paper-input": "1.0.12",
+    "paper-item": "1.0.2",
+    "paper-menu": "1.1.0",
+    "paper-menu-button": "1.0.2",
+    "paper-progress": "1.0.2",
+    "paper-radio-button": "1.0.6",
+    "paper-radio-group": "1.0.4",
+    "paper-slider": "1.0.4",
+    "paper-spinner": "1.0.2",
+    "paper-tabs": "1.0.1",
+    "paper-toast": "1.0.0",
+    "paper-toggle-button": "1.0.6",
+    "paper-toolbar": "1.0.4",
+    "paper-tooltip": "1.0.2"
   }
 }
