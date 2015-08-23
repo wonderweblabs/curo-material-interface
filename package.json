@@ -25,7 +25,6 @@
     "graspi": "wonderweblabs/graspi#develop",
     "grunt": "~0.4.5",
     "grunt-bower-concat": "~0.5.0",
-    "grunt-browser-sync": "~2.1.2",
     "grunt-concat-sourcemap": "~0.4.3",
     "grunt-contrib-clean": "~0.6.0",
     "grunt-contrib-coffee": "~0.13.0",
@@ -37,7 +36,6 @@
     "grunt-contrib-less": "^1.0.1",
     "grunt-contrib-sass": "~0.9.2",
     "grunt-contrib-uglify": "~0.8.0",
-    "grunt-contrib-watch": "~0.6.1",
     "grunt-filerev": "~2.2.0",
     "grunt-filerev-assets": "~0.3.2",
     "grunt-haml": "^0.9.0",
@@ -50,6 +48,8 @@
     "time-grunt": "~1.2.1"
   },
   "devDependencies": {
+    "grunt-browser-sync": "~2.1.2",
+    "grunt-contrib-watch": "~0.6.1",
     "grunt-concurrent": "^2.0.1",
     "grunt-haml": "^0.9.0",
     "grunt-includes": "^0.5.1",
