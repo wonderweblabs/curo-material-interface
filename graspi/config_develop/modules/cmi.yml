@@ -42,6 +42,18 @@ dependencies:
 options:
   destPath: 'assets'
   destFolder: 'cmi'
+  css:
+    basePath: 'src/stylesheets'
+  js:
+    basePath: 'src/javascripts'
+  templates:
+    basePath: 'src/templates'
+  webcomponents:
+    basePath: 'src/webcomponents-cmi'
+  images:
+    basePath: 'src/images'
+  fonts:
+    basePath: 'src/fonts'
 
 js:
   coffee:
