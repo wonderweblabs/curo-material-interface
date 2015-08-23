@@ -35,6 +35,8 @@ dependencies:
   - cmi-slider
   - cmi-dialog
   - cmi-dialog-scrollable
+  - cmi-table
+  - cmi-list-table
   - cmi-pages-code-box
 
 options:

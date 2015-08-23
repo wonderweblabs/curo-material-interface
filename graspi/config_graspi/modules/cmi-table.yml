@@ -1,0 +1,67 @@
+webcomponent: true
+
+dependencies:
+  - polymer-1.1.0
+
+js:
+  coffee:
+    options:
+      bare: false
+      sourceMap: false
+
+tasks:
+  graspi_build:
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_js_coffee_compile
+    - graspi_js_concat
+    - graspi_templates
+    - graspi_replace
+
+options:
+  basePath: 'bower_components/cmi/lib/assets/cmi/webcomponents/cmi-table'
+  destFolder: 'cmi-table/webcomponents'
+  css:
+    destFile: 'cmi-table.css'
+    files:
+      - 'cmi-table.sass'
+  js:
+    destFile: 'cmi-table.js'
+    files:
+      - cmi-table.coffee
+  templates:
+    destFile: 'cmi-table.html'
+    files:
+      - cmi-table.haml
+  replace:
+    - files:
+        - '%%destPath%%/cmi-table.html'
+      pattern:
+        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<style is="custom-style">'
+        - file: '%%destPath%%/cmi-table.css'
+        - '</style>'
+    - files:
+        - '%%destPath%%/cmi-table.html'
+      pattern:
+        pattern: '(\<graspi\-webcomponent\-script\>)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace:
+        - '<script>'
+        - file: '%%destPath%%/cmi-table.js'
+        - '</script>'
+    - files:
+        - '%%destPath%%/cmi-table.html'
+      pattern:
+        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
+        modifiers: 'gm'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+

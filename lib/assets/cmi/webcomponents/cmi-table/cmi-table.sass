@@ -1,0 +1,43 @@
+@import bourbon
+@import cmi/mixins
+@import cmi_default_variables
+@import cmi_custom_variables
+
+$cmi-color-primary: #afd23e
+
+$cmi-color-danger: #F02A22
+
+\:host
+  padding: 0
+  border-spacing: 0px
+  border-collapse: collapse
+  outline: none
+  border: none
+
+\:host([striped])
+  ::content > thead,
+  ::content > tbody,
+    > tr:nth-child(even)
+      background-color: rgba(#000, 0.03)
+    > tr.active
+      background-color: $cmi-color-primary
+    > tr:nth-child(even).active
+      background-color: darken($cmi-color-primary, 5%)
+
+\:host([hoverable])
+  ::content > thead,
+  ::content > tbody,
+    > tr.active
+      background-color: lighten($cmi-color-primary, 5%)
+    > tr:hover
+      background-color: rgba(#000, 0.02)
+    > tr.active:hover
+      background-color: lighten($cmi-color-primary, 10%)
+
+\:host([striped][hoverable])
+  ::content > thead,
+  ::content > tbody,
+    > tr:nth-child(even):hover
+      background-color: rgba(#000, 0.05)
+      &.active
+        background-color: lighten($cmi-color-primary, 8%)

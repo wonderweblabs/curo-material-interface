@@ -1,0 +1,75 @@
+@import bourbon
+@import cmi/mixins
+@import cmi_default_variables
+@import cmi_custom_variables
+
+$cmi-color-primary: #afd23e
+
+$cmi-color-danger: #F02A22
+
+\:host,
+\:host ::content > .cmi-list-table-head > ul,
+\:host ::content > .cmi-list-table-body > ul,
+\:host ::content > .cmi-list-table-head > li,
+\:host ::content > .cmi-list-table-body > li
+  +box-sizing(border-box)
+
+\:host
+  position: relative
+  display: block
+  width: auto
+  ::content > .cmi-list-table-head,
+  ::content > .cmi-list-table-body
+    > ul,
+    > ul > li
+      position: relative
+    > ul
+      +clearfix
+      +display(flex)
+      +flex-direction(row)
+      +justify-content(space-between)
+      +align-items(center)
+      +align-content(stretch)
+      +flex-wrap(nowrap)
+      width: auto
+      margin: 0
+      padding: 0
+      list-style: none
+      background-color: transparent
+    > ul > li
+      +flex(1)
+      +flex-grow(1)
+      width: auto
+      float: left
+      padding: 5px 15px
+      text-align: left
+  ::content > .cmi-list-table-head
+    > ul
+      border-bottom: 1px solid rgb(245, 245, 245)
+    > ul > li
+      font-weight: bold
+
+\:host([striped])
+  ::content > .cmi-list-table-body
+    > ul:nth-child(even)
+      background-color: rgba(#000, 0.03)
+    > ul.active
+      background-color: $cmi-color-primary
+    > ul:nth-child(even).active
+      background-color: darken($cmi-color-primary, 5%)
+
+\:host([hoverable])
+  ::content > .cmi-list-table-body
+    > ul.active
+      background-color: lighten($cmi-color-primary, 5%)
+    > ul:hover
+      background-color: rgba(#000, 0.02)
+    > ul.active:hover
+      background-color: lighten($cmi-color-primary, 10%)
+
+\:host([striped][hoverable])
+  ::content > .cmi-list-table-body
+    > ul:nth-child(even):hover
+      background-color: rgba(#000, 0.05)
+      &.active
+        background-color: lighten($cmi-color-primary, 8%)
