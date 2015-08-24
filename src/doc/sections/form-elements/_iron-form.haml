@@ -24,6 +24,22 @@
       %cmi-checkbox{ name: 'checkArr[]', value: 'Value 3' } Value 3
       %cmi-checkbox{ name: 'checkArr[]', value: 'Value 4' } Value 4
       %cmi-checkbox{ name: 'checkArr[]', value: 'Value 5' } Value 5
+      %hr/
+      %cmi-dropdown-menu{ label: "Select", name: 'important_selection' }
+        %cmi-menu{ class: "dropdown-content" }
+          %cmi-item{ value: 'A' } Value A
+          %cmi-item{ value: 'B' } Value B
+          %cmi-item{ value: 'C' } Value C
+          %cmi-item{ value: 'D' } Value D
+          %cmi-item{ value: 'E' } Value E
+      %hr/
+      %cmi-dropdown-menu{ label: "Select", name: 'important_selection_2' }
+        %cmi-menu{ class: "dropdown-content", selected: 'B', attrForSelected: 'value' }
+          %cmi-item{ value: 'A' } Value A
+          %cmi-item{ value: 'B' } Value B
+          %cmi-item{ value: 'C' } Value C
+          %cmi-item{ value: 'D' } Value D
+          %cmi-item{ value: 'E' } Value E
     .grid-col-4
       %cmi-button{ filled: true, id: 'iron-form-show-data' } Show data
       %hr/

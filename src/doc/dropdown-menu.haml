@@ -12,10 +12,10 @@
 
           %h4{ is: 'cmi-h4', line: true } Basic Menu
           %cmi-pages-code-box
-            %cmi-dropdown-menu{ label: "Dinosaurs" }
+            %cmi-dropdown-menu{ label: "Dinosaurs", id: 'test' }
               %cmi-menu{ class: "dropdown-content" }
                 %template{ is: "dom-repeat", items: "[[dinosaurs]]", as: "dinosaur" }
-                  %cmi-item= "[[dinosaur]]"
+                  %cmi-item{ value: "[[dinosaur]]" }= "[[dinosaur]]"
 
           %h4{ is: 'cmi-h4', line: true } Disabled
           %cmi-pages-code-box
@@ -46,38 +46,40 @@
                   %cmi-item= "[[dinosaur]]"
 
         :javascript
-          Demo.letters = [
-            'alpha',
-            'beta',
-            'gamma',
-            'delta',
-            'epsilon'
-          ];
-          Demo.dinosaurs = [
-            'allosaurus',
-            'brontosaurus',
-            'carcharodontosaurus',
-            'diplodocus',
-            'ekrixinatosaurus',
-            'fukuiraptor',
-            'gallimimus',
-            'hadrosaurus',
-            'iguanodon',
-            'jainosaurus',
-            'kritosaurus',
-            'liaoceratops',
-            'megalosaurus',
-            'nemegtosaurus',
-            'ornithomimus',
-            'protoceratops',
-            'quetecsaurus',
-            'rajasaurus',
-            'stegosaurus',
-            'triceratops',
-            'utahraptor',
-            'vulcanodon',
-            'wannanosaurus',
-            'xenoceratops',
-            'yandusaurus',
-            'zephyrosaurus'
-          ];
+          $(function() {
+            document.querySelector('#Demo').letters = [
+              'alpha',
+              'beta',
+              'gamma',
+              'delta',
+              'epsilon'
+            ];
+            document.querySelector('#Demo').dinosaurs = [
+              'allosaurus',
+              'brontosaurus',
+              'carcharodontosaurus',
+              'diplodocus',
+              'ekrixinatosaurus',
+              'fukuiraptor',
+              'gallimimus',
+              'hadrosaurus',
+              'iguanodon',
+              'jainosaurus',
+              'kritosaurus',
+              'liaoceratops',
+              'megalosaurus',
+              'nemegtosaurus',
+              'ornithomimus',
+              'protoceratops',
+              'quetecsaurus',
+              'rajasaurus',
+              'stegosaurus',
+              'triceratops',
+              'utahraptor',
+              'vulcanodon',
+              'wannanosaurus',
+              'xenoceratops',
+              'yandusaurus',
+              'zephyrosaurus'
+            ];
+          });

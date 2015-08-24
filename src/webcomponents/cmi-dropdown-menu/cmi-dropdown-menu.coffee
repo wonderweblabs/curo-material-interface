@@ -19,6 +19,7 @@ Polymer
       type: Object
       notify: true
       readOnly: true
+      observer: '_selectedItemChange'
     label:
       type: String
     placeholder:
@@ -51,18 +52,24 @@ Polymer
 
   open: ->
     @.$.menuButton.open()
-    @fire 'paper-dropdown-open'
 
   close: ->
     @.$.menuButton.close()
-    @fire 'paper-dropdown-close'
+
+  _selectedItemChange: ->
+    @fire 'cmi-dropdown-menu-select'
+
+  _nameChanged: ->
+    if @name == null || @name == undefined || @name == '' || @name == ' '
+      @_formElementUnregister()
+    else
+      @_formElementRegister()
 
   _onIronActivate: (event) ->
     @_setSelectedItem(event.detail.item)
 
   _onTap: (event) ->
     @open() if (Polymer.Gestures.findOriginalTarget(event) == @)
-
 
   _computeSelectedItemLabel: (selectedItem) ->
     return '' if !selectedItem
@@ -71,6 +78,5 @@ Polymer
 
   _computeMenuVerticalOffset: (noLabelFloat) ->
     if noLabelFloat then -4 else 16
-
 
 
