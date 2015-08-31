@@ -1,6 +1,7 @@
 webcomponent: true
 dependencies:
   - polymer
+  - prism
   - prism-element
 tasks:
   graspi_build:
