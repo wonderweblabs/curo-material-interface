@@ -1,0 +1,12 @@
+#
+#  Created on version 1.0.3
+#
+webcomponent: true
+dependencies:
+  - polymer
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/iron-collapse'
+  destFolder: 'iron-collapse'

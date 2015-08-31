@@ -1,0 +1,10 @@
+webcomponent: true
+dependencies:
+  - cmi-doc-code-box
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+    - graspi_webcomponents_bower
+options:
+  basePath: 'src/webcomponents/cmi-doc-elements'
+  destFolder: 'cmi-doc-elements'

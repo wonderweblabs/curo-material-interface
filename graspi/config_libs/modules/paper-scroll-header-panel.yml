@@ -1,0 +1,14 @@
+#
+#  Created on version 1.0.7
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - iron-resizable-behavior
+  - paper-toolbar
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/paper-scroll-header-panel'
+  destFolder: 'paper-scroll-header-panel'

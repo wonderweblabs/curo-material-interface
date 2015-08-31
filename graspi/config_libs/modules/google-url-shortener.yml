@@ -1,0 +1,13 @@
+#
+#  Created on version 1.0.1
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - google-apis
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/google-url-shortener'
+  destFolder: 'google-url-shortener'

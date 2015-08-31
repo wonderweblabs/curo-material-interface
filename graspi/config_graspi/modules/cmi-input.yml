@@ -1,76 +1,13 @@
 webcomponent: true
-
 dependencies:
-  - polymer-1.1.0
-  - cmi-input-behavior
-
-js:
-  coffee:
-    options:
-      bare: false
-      sourceMap: false
-
+  - polymer
+  - iron-input
+  - iron-form-element-behavior
+  - iron-autogrow-textarea
+  - paper-input
 tasks:
   graspi_build:
-    - graspi_css_sass_compile
-    - graspi_css_concat
-    - graspi_js_coffee_compile
-    - graspi_js_concat
-    - graspi_templates
-    - graspi_replace
-
+    - graspi_webcomponents
 options:
-  basePath: 'bower_components/cmi/src/webcomponents/cmi-input'
-  destFolder: 'cmi-input/webcomponents'
-  css:
-    destFile: 'cmi-input.css'
-    files:
-      - 'cmi-input.sass'
-  js:
-    destFile: 'cmi-input.js'
-    files:
-      - cmi-input.coffee
-  templates:
-    destFile: 'cmi-input.html'
-    files:
-      - cmi-input.haml
-  replace:
-    - files:
-        - '%%destPath%%/cmi-input.html'
-      pattern:
-        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
-        modifiers: 'g'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace:
-        - '<style>'
-        - file: '%%destPath%%/cmi-input.css'
-        - '</style>'
-    - files:
-        - '%%destPath%%/cmi-input.html'
-      pattern:
-        pattern: '(\<graspi\-webcomponent\-script\>)'
-        modifiers: 'g'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace:
-        - '<script>'
-        - file: '%%destPath%%/cmi-input.js'
-        - '</script>'
-    - files:
-        - '%%destPath%%/cmi-input.html'
-      pattern:
-        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
-        modifiers: 'gm'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace: ''
-    - files:
-        - '%%destPath%%/cmi-input.html'
-      pattern:
-        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
-        modifiers: 'gm'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace: ''
-
+  basePath: 'node_modules/cmi/src/webcomponents/cmi-input'
+  destFolder: 'cmi-input'

@@ -1,78 +1,12 @@
 webcomponent: true
-
 dependencies:
-  - polymer-1.1.0
-  - iron-range-behavior-1.0.2
-  - iron-flex-layout-1.0.3
-  - paper-styles-1.0.11
-
-js:
-  coffee:
-    options:
-      bare: false
-      sourceMap: false
-
+  - polymer
+  - iron-range-behavior
+  - iron-flex-layout
+  - paper-styles
 tasks:
   graspi_build:
-    - graspi_css_sass_compile
-    - graspi_css_concat
-    - graspi_js_coffee_compile
-    - graspi_js_concat
-    - graspi_templates
-    - graspi_replace
-
+    - graspi_webcomponents
 options:
-  basePath: 'bower_components/cmi/src/webcomponents/cmi-progress'
-  destFolder: 'cmi-progress/webcomponents'
-  css:
-    destFile: 'cmi-progress.css'
-    files:
-      - 'cmi-progress.sass'
-  js:
-    destFile: 'cmi-progress.js'
-    files:
-      - cmi-progress.coffee
-  templates:
-    destFile: 'cmi-progress.html'
-    files:
-      - cmi-progress.haml
-  replace:
-    - files:
-        - '%%destPath%%/cmi-progress.html'
-      pattern:
-        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
-        modifiers: 'g'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace:
-        - '<style>'
-        - file: '%%destPath%%/cmi-progress.css'
-        - '</style>'
-    - files:
-        - '%%destPath%%/cmi-progress.html'
-      pattern:
-        pattern: '(\<graspi\-webcomponent\-script\>)'
-        modifiers: 'g'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace:
-        - '<script>'
-        - file: '%%destPath%%/cmi-progress.js'
-        - '</script>'
-    - files:
-        - '%%destPath%%/cmi-progress.html'
-      pattern:
-        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
-        modifiers: 'gm'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace: ''
-    - files:
-        - '%%destPath%%/cmi-progress.html'
-      pattern:
-        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
-        modifiers: 'gm'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace: ''
-
+  basePath: 'node_modules/cmi/src/webcomponents/cmi-progress'
+  destFolder: 'cmi-progress'

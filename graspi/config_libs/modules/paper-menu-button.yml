@@ -1,0 +1,18 @@
+#
+#  Created on version 1.0.3
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - neon-animation
+  - paper-material
+  - paper-styles
+  - iron-dropdown
+  - iron-a11y-keys-behavior
+  - iron-behaviors
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/paper-menu-button'
+  destFolder: 'paper-menu-button'

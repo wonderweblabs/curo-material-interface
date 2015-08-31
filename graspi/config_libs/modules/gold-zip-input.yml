@@ -1,0 +1,17 @@
+#
+#  Created on version 1.0.3
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - iron-validator-behavior
+  - iron-form-element-behavior
+  - iron-icon
+  - paper-input
+  - paper-styles
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/gold-zip-input'
+  destFolder: 'gold-zip-input'

@@ -1,0 +1,18 @@
+#
+#  Created on version 1.0.3
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - iron-flex-layout
+  - iron-icon
+  - iron-icons
+  - paper-behaviors
+  - paper-ripple
+  - paper-styles
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/paper-icon-button'
+  destFolder: 'paper-icon-button'

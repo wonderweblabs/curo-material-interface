@@ -1,0 +1,13 @@
+#
+#  Created on version 1.0.2
+#  https://github.com/wonderweblabs/iron-selector/commits/master
+#
+webcomponent: true
+dependencies:
+  - polymer
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/iron-selector'
+  destFolder: 'iron-selector'

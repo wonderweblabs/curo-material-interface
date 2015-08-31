@@ -1,0 +1,14 @@
+webcomponent: true
+dependencies:
+  - polymer
+  - iron-a11y-keys-behavior
+  - iron-behaviors
+  - iron-selector
+  - iron-menu-behavior
+  - cmi-item
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'node_modules/cmi/src/webcomponents/cmi-menu-behavior'
+  destFolder: 'cmi-menu-behavior'

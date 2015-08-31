@@ -1,59 +1,10 @@
 webcomponent: true
-
 dependencies:
-  - polymer-1.1.0
-  - iron-form-1.0.8
-
-js:
-  coffee:
-    options:
-      bare: false
-      sourceMap: false
-
+  - polymer
+  - iron-form
 tasks:
   graspi_build:
-    - graspi_js_coffee_compile
-    - graspi_js_concat
-    - graspi_templates
-    - graspi_replace
-
+    - graspi_webcomponents
 options:
-  basePath: 'bower_components/cmi/src/webcomponents/cmi-form'
-  destFolder: 'cmi-form/webcomponents'
-  js:
-    destFile: 'cmi-form.js'
-    files:
-      - cmi-form.coffee
-  templates:
-    destFile: 'cmi-form.html'
-    files:
-      - cmi-form.haml
-  replace:
-    - files:
-        - '%%destPath%%/cmi-form.html'
-      pattern:
-        pattern: '(\<graspi\-webcomponent\-script\>)'
-        modifiers: 'g'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace:
-        - '<script>'
-        - file: '%%destPath%%/cmi-form.js'
-        - '</script>'
-    - files:
-        - '%%destPath%%/cmi-form.html'
-      pattern:
-        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
-        modifiers: 'gm'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace: ''
-    - files:
-        - '%%destPath%%/cmi-form.html'
-      pattern:
-        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
-        modifiers: 'gm'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace: ''
-
+  basePath: 'node_modules/cmi/src/webcomponents/cmi-form'
+  destFolder: 'cmi-form'

@@ -1,76 +1,11 @@
 webcomponent: true
-
 dependencies:
-  - polymer-1.1.0
-  - paper-styles-1.0.11
-
-js:
-  coffee:
-    options:
-      bare: false
-      sourceMap: false
-
+  - polymer
+  - iron-flex-layout
+  - paper-styles
 tasks:
   graspi_build:
-    - graspi_css_sass_compile
-    - graspi_css_concat
-    - graspi_js_coffee_compile
-    - graspi_js_concat
-    - graspi_templates
-    - graspi_replace
-
+    - graspi_webcomponents
 options:
-  basePath: 'bower_components/cmi/src/webcomponents/cmi-item'
-  destFolder: 'cmi-item/webcomponents'
-  css:
-    destFile: 'cmi-item.css'
-    files:
-      - 'cmi-item.sass'
-  js:
-    destFile: 'cmi-item.js'
-    files:
-      - cmi-item.coffee
-  templates:
-    destFile: 'cmi-item.html'
-    files:
-      - cmi-item.haml
-  replace:
-    - files:
-        - '%%destPath%%/cmi-item.html'
-      pattern:
-        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
-        modifiers: 'g'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace:
-        - '<style>'
-        - file: '%%destPath%%/cmi-item.css'
-        - '</style>'
-    - files:
-        - '%%destPath%%/cmi-item.html'
-      pattern:
-        pattern: '(\<graspi\-webcomponent\-script\>)'
-        modifiers: 'g'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace:
-        - '<script>'
-        - file: '%%destPath%%/cmi-item.js'
-        - '</script>'
-    - files:
-        - '%%destPath%%/cmi-item.html'
-      pattern:
-        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
-        modifiers: 'gm'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace: ''
-    - files:
-        - '%%destPath%%/cmi-item.html'
-      pattern:
-        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
-        modifiers: 'gm'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace: ''
-
+  basePath: 'node_modules/cmi/src/webcomponents/cmi-item'
+  destFolder: 'cmi-item'

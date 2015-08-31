@@ -1,79 +1,13 @@
-
 webcomponent: true
-
 dependencies:
-  - polymer-1.1.0
-  - paper-dialog-behavior-1.0.4
-  - paper-dialog-scrollable-1.0.1
-  - paper-styles-1.0.11
-  - neon-animation-1.0.4
-
-js:
-  coffee:
-    options:
-      bare: false
-      sourceMap: false
-
+  - polymer
+  - paper-dialog-behavior
+  - paper-dialog-scrollable
+  - paper-styles
+  - neon-animation
 tasks:
   graspi_build:
-    - graspi_css_sass_compile
-    - graspi_css_concat
-    - graspi_js_coffee_compile
-    - graspi_js_concat
-    - graspi_templates
-    - graspi_replace
-
+    - graspi_webcomponents
 options:
-  basePath: 'bower_components/cmi/src/webcomponents/cmi-dialog'
-  destFolder: 'cmi-dialog/webcomponents'
-  css:
-    destFile: 'cmi-dialog.css'
-    files:
-      - 'cmi-dialog.sass'
-  js:
-    destFile: 'cmi-dialog.js'
-    files:
-      - cmi-dialog.coffee
-  templates:
-    destFile: 'cmi-dialog.html'
-    files:
-      - cmi-dialog.haml
-  replace:
-    - files:
-        - '%%destPath%%/cmi-dialog.html'
-      pattern:
-        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
-        modifiers: 'g'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace:
-        - '<style>'
-        - file: '%%destPath%%/cmi-dialog.css'
-        - '</style>'
-    - files:
-        - '%%destPath%%/cmi-dialog.html'
-      pattern:
-        pattern: '(\<graspi\-webcomponent\-script\>)'
-        modifiers: 'g'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace:
-        - '<script>'
-        - file: '%%destPath%%/cmi-dialog.js'
-        - '</script>'
-    - files:
-        - '%%destPath%%/cmi-dialog.html'
-      pattern:
-        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
-        modifiers: 'gm'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace: ''
-    - files:
-        - '%%destPath%%/cmi-dialog.html'
-      pattern:
-        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
-        modifiers: 'gm'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace: ''
+  basePath: 'node_modules/cmi/src/webcomponents/cmi-dialog'
+  destFolder: 'cmi-dialog'

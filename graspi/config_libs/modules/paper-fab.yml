@@ -1,0 +1,19 @@
+#
+#  Created on version 1.0.3
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - paper-behaviors
+  - paper-styles
+  - paper-ripple
+  - paper-material
+  - iron-flex-layout
+  - iron-icon
+  - iron-icons
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/paper-fab'
+  destFolder: 'paper-fab'

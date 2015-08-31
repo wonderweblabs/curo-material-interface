@@ -1,79 +1,12 @@
 webcomponent: true
-
 dependencies:
-  - polymer-1.1.0
-  - iron-checked-element-behavior-1.0.1
-  - paper-behaviors-1.0.3
-  - paper-ripple-1.0.1
-  - paper-styles-1.0.11
-
-js:
-  coffee:
-    options:
-      bare: false
-      sourceMap: false
-
+  - polymer
+  - iron-checked-element-behavior
+  - paper-behaviors
+  - paper-ripple
 tasks:
   graspi_build:
-    - graspi_css_sass_compile
-    - graspi_css_concat
-    - graspi_js_coffee_compile
-    - graspi_js_concat
-    - graspi_templates
-    - graspi_replace
-
+    - graspi_webcomponents
 options:
-  basePath: 'bower_components/cmi/src/webcomponents/cmi-checkbox'
-  destFolder: 'cmi-checkbox/webcomponents'
-  css:
-    destFile: 'cmi-checkbox.css'
-    files:
-      - 'cmi-checkbox.sass'
-  js:
-    destFile: 'cmi-checkbox.js'
-    files:
-      - cmi-checkbox.coffee
-  templates:
-    destFile: 'cmi-checkbox.html'
-    files:
-      - cmi-checkbox.haml
-  replace:
-    - files:
-        - '%%destPath%%/cmi-checkbox.html'
-      pattern:
-        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
-        modifiers: 'g'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace:
-        - '<style>'
-        - file: '%%destPath%%/cmi-checkbox.css'
-        - '</style>'
-    - files:
-        - '%%destPath%%/cmi-checkbox.html'
-      pattern:
-        pattern: '(\<graspi\-webcomponent\-script\>)'
-        modifiers: 'g'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace:
-        - '<script>'
-        - file: '%%destPath%%/cmi-checkbox.js'
-        - '</script>'
-    - files:
-        - '%%destPath%%/cmi-checkbox.html'
-      pattern:
-        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
-        modifiers: 'gm'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace: ''
-    - files:
-        - '%%destPath%%/cmi-checkbox.html'
-      pattern:
-        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
-        modifiers: 'gm'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace: ''
-
+  basePath: 'node_modules/cmi/src/webcomponents/cmi-checkbox'
+  destFolder: 'cmi-checkbox'

@@ -1,0 +1,16 @@
+#
+#  Created on version 1.2.0
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - promise-polyfill
+  - ga-api-utils
+  - google-chart
+  - google-signin
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/google-analytics'
+  destFolder: 'google-analytics'

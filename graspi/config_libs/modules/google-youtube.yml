@@ -1,0 +1,14 @@
+#
+#  Created on version 1.0.
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - iron-localstorage
+  - google-apis
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/google-youtube'
+  destFolder: 'google-youtube'

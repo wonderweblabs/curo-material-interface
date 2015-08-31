@@ -5,6 +5,9 @@ modulesBuiltTrackFile:  'tmp/graspi/modules_built_track_register.json'
 # default destination path
 destPath: 'tmp/graspi/build'
 
+# default destination path for webcomponents
+destPathWC: 'build/bower_components'
+
 # default destination folder > will be concatinated
 # to destPath
 destFolder: ''
@@ -30,6 +33,11 @@ postpipeline:
     replacePattern:
       pattern: ''
       replace: ''
+
+webcomponents:
+  bower:
+    cwd:      'build'
+    jsonPath: 'bower.json'
 
 live:
   watch:

@@ -1,79 +1,11 @@
 webcomponent: true
-
 dependencies:
-  - polymer-1.1.0
-  - iron-menu-behavior-1.0.1
-  - iron-collapse-1.0.3
-  - iron-behaviors-1.0.7
-  - paper-styles-1.0.11
-
-js:
-  coffee:
-    options:
-      bare: false
-      sourceMap: false
-
+  - polymer
+  - iron-collapse
+  - cmi-menu-behavior
 tasks:
   graspi_build:
-    - graspi_css_sass_compile
-    - graspi_css_concat
-    - graspi_js_coffee_compile
-    - graspi_js_concat
-    - graspi_templates
-    - graspi_replace
-
+    - graspi_webcomponents
 options:
-  basePath: 'bower_components/cmi/src/webcomponents/cmi-menu'
-  destFolder: 'cmi-menu/webcomponents'
-  css:
-    destFile: 'cmi-menu.css'
-    files:
-      - 'cmi-menu.sass'
-  js:
-    destFile: 'cmi-menu.js'
-    files:
-      - cmi-menu.coffee
-  templates:
-    destFile: 'cmi-menu.html'
-    files:
-      - cmi-menu.haml
-  replace:
-    - files:
-        - '%%destPath%%/cmi-menu.html'
-      pattern:
-        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
-        modifiers: 'g'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace:
-        - '<style>'
-        - file: '%%destPath%%/cmi-menu.css'
-        - '</style>'
-    - files:
-        - '%%destPath%%/cmi-menu.html'
-      pattern:
-        pattern: '(\<graspi\-webcomponent\-script\>)'
-        modifiers: 'g'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace:
-        - '<script>'
-        - file: '%%destPath%%/cmi-menu.js'
-        - '</script>'
-    - files:
-        - '%%destPath%%/cmi-menu.html'
-      pattern:
-        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
-        modifiers: 'gm'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace: ''
-    - files:
-        - '%%destPath%%/cmi-menu.html'
-      pattern:
-        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
-        modifiers: 'gm'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace: ''
-
+  basePath: 'node_modules/cmi/src/webcomponents/cmi-menu'
+  destFolder: 'cmi-menu'

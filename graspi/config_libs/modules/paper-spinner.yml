@@ -1,0 +1,14 @@
+#
+#  Created on version 1.0.2
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - iron-flex-layout
+  - paper-styles
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/paper-spinner'
+  destFolder: 'paper-spinner'

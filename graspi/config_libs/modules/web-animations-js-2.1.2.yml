@@ -1,7 +1,0 @@
-webcomponent: true
-
-dependencies: []
-
-options:
-  basePath: 'bower_components/web-animations-js'
-  destFolder: 'web-animations-js'

@@ -1,0 +1,19 @@
+webcomponent: true
+dependencies:
+  - polymer
+  - iron-a11y-keys-behavior
+  - iron-icon
+  - iron-selector
+  - iron-behaviors
+  - iron-dropdown
+  - paper-ripple
+  - cmi-menu-behavior
+  - cmi-dropdown-behavior
+  - cmi-input
+  - cmi-item
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'node_modules/cmi/src/webcomponents/cmi-select'
+  destFolder: 'cmi-select'

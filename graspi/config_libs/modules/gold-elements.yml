@@ -1,0 +1,17 @@
+#
+#  Created on version 1.0.1
+#
+webcomponent: true
+dependencies:
+  - gold-cc-cvc-input
+  - gold-cc-expiration-input
+  - gold-cc-input
+  - gold-email-input
+  - gold-phone-input
+  - gold-zip-input
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/gold-elements'
+  destFolder: 'gold-elements'

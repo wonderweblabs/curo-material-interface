@@ -1,77 +1,13 @@
 webcomponent: true
-
 dependencies:
-  - polymer-1.1.0
-  - paper-behaviors-1.0.3
+  - polymer
+  - paper-material
+  - paper-ripple
+  - paper-behaviors
   - cmi-button-behavior
-
-js:
-  coffee:
-    options:
-      bare: false
-      sourceMap: false
-
 tasks:
   graspi_build:
-    - graspi_css_sass_compile
-    - graspi_css_concat
-    - graspi_js_coffee_compile
-    - graspi_js_concat
-    - graspi_templates
-    - graspi_replace
-
+    - graspi_webcomponents
 options:
-  basePath: 'bower_components/cmi/src/webcomponents/cmi-fab'
-  destFolder: 'cmi-fab/webcomponents'
-  css:
-    destFile: 'cmi-fab.css'
-    files:
-      - 'cmi-fab.sass'
-  js:
-    destFile: 'cmi-fab.js'
-    files:
-      - cmi-fab.coffee
-  templates:
-    destFile: 'cmi-fab.html'
-    files:
-      - cmi-fab.haml
-  replace:
-    - files:
-        - '%%destPath%%/cmi-fab.html'
-      pattern:
-        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
-        modifiers: 'g'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace:
-        - '<style>'
-        - file: '%%destPath%%/cmi-fab.css'
-        - '</style>'
-    - files:
-        - '%%destPath%%/cmi-fab.html'
-      pattern:
-        pattern: '(\<graspi\-webcomponent\-script\>)'
-        modifiers: 'g'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace:
-        - '<script>'
-        - file: '%%destPath%%/cmi-fab.js'
-        - '</script>'
-    - files:
-        - '%%destPath%%/cmi-fab.html'
-      pattern:
-        pattern: '^((?:\/\*)(?:.*)(?:\*\/))$'
-        modifiers: 'gm'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace: ''
-    - files:
-        - '%%destPath%%/cmi-fab.html'
-      pattern:
-        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
-        modifiers: 'gm'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace: ''
-
+  basePath: 'node_modules/cmi/src/webcomponents/cmi-fab'
+  destFolder: 'cmi-fab'

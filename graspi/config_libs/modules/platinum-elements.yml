@@ -1,0 +1,13 @@
+#
+#  Created on version ...
+#
+webcomponent: true
+dependencies:
+  - platinum-sw
+  - platinum-push-messaging
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/platinum-elements'
+  destFolder: 'platinum-elements'

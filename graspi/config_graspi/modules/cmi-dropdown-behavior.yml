@@ -1,0 +1,13 @@
+webcomponent: true
+dependencies:
+  - polymer
+  - iron-selector
+  - iron-behaviors
+  - iron-dropdown
+  - cmi-item
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'node_modules/cmi/src/webcomponents/cmi-dropdown-behavior'
+  destFolder: 'cmi-dropdown-behavior'

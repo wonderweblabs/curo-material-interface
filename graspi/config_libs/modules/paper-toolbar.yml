@@ -1,0 +1,13 @@
+#
+#  Created on version 1.0.4
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - iron-flex-layout
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/paper-toolbar'
+  destFolder: 'paper-toolbar'

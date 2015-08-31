@@ -1,0 +1,14 @@
+#
+#  Created on version 1.0.3
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - iron-flex-layout
+  - iron-meta
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/iron-icon'
+  destFolder: 'iron-icon'

@@ -1,0 +1,16 @@
+#
+#  Created on version 1.0.4
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - iron-form-element-behavior
+  - iron-icon
+  - paper-input
+  - paper-styles
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/gold-email-input'
+  destFolder: 'gold-email-input'

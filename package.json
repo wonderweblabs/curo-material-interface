@@ -24,7 +24,6 @@
     "convert-source-map": "~1.1.1",
     "graspi": "wonderweblabs/graspi#develop",
     "grunt": "~0.4.5",
-    "grunt-bower-concat": "~0.5.0",
     "grunt-concat-sourcemap": "~0.4.3",
     "grunt-contrib-clean": "~0.6.0",
     "grunt-contrib-coffee": "~0.13.0",
@@ -40,6 +39,7 @@
     "grunt-filerev-assets": "~0.3.2",
     "grunt-haml": "^0.9.0",
     "grunt-replace": "~0.9.2",
+    "grunt-shell": "^1.1.2",
     "grunt-svgmin": "~2.0.1",
     "haml-coffee": "^1.14.1",
     "imagemin-jpeg-recompress": "~4.3.0",
@@ -48,11 +48,17 @@
     "time-grunt": "~1.2.1"
   },
   "devDependencies": {
+    "chalk": "^1.1.1",
+    "grunt": "^0.4.5",
     "grunt-browser-sync": "~2.1.2",
-    "grunt-contrib-watch": "~0.6.1",
     "grunt-concurrent": "^2.0.1",
+    "grunt-contrib-watch": "^0.6.1",
     "grunt-haml": "^0.9.0",
     "grunt-includes": "^0.5.1",
-    "grunt-touch": "^0.1.0"
+    "grunt-notify": "^0.4.1",
+    "grunt-touch": "^0.1.0",
+    "grunt-vulcanize": "^1.0.0",
+    "hydrolysis": "^1.15.4",
+    "web-component-tester": "^3.3.10"
   }
 }

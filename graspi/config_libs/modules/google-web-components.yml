@@ -1,0 +1,26 @@
+#
+#  Created on version 1.0.1
+#
+webcomponent: true
+dependencies:
+  - google-apis
+  - google-feeds
+  - google-map
+  - google-signin
+  - google-sheets
+  - google-youtube
+  - google-analytics
+  - google-calendar
+  - google-chart
+  - google-castable-video
+  - google-hangout-button
+  - google-url-shortener
+  - google-youtube-upload
+  - google-streetview-pano
+  - firebase-element
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/google-web-components'
+  destFolder: 'google-web-components'

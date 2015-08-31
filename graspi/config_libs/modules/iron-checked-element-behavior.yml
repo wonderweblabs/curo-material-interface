@@ -1,0 +1,14 @@
+#
+#  Created on version 1.0.1
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - iron-validatable-behavior
+  - iron-form-element-behavior
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/iron-checked-element-behavior'
+  destFolder: 'iron-checked-element-behavior'

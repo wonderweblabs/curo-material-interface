@@ -1,47 +1,34 @@
 dependencies:
-  - mdi-1.1.70
-  - webcomponentsjs-0.7.7
-  - polymer-1.1.0
-  - iron-form-1.0.8
-  - paper-item-1.0.2
-  - paper-toolbar-1.0.4
-  - paper-header-panel-1.0.3
-  - paper-drawer-panel-1.0.3
-  - paper-menu-1.1.0
-  - paper-tabs-1.0.1
+  - mdi
+  - webcomponentsjs
+  - polymer
+  - paper-toolbar
+  - paper-header-panel
+  - paper-drawer-panel
   - cmi-button
-  - cmi-button-link
-  - cmi-fab
-  - cmi-fab-link
-  - cmi-fab-slide
-  - cmi-h1
-  - cmi-h2
-  - cmi-h3
-  - cmi-h4
-  - cmi-h5
-  - cmi-h6
-  - cmi-navbar
+  - cmi-headline
   - cmi-card
-  - cmi-input
-  - cmi-textarea
   - cmi-checkbox
-  - cmi-radio-button
-  - cmi-radio-group
-  - cmi-toggle-button
-  - cmi-progress
-  - cmi-slider
   - cmi-dialog
-  - cmi-dialog-scrollable
-  - cmi-table
-  - cmi-list-table
+  - cmi-dropdown-behavior
+  - cmi-dropdown-menu
+  - cmi-fab
+  - cmi-form
+  - cmi-input
   - cmi-item
-  - cmi-icon-item
-  - cmi-item-body
+  - cmi-list-table
   - cmi-menu
   - cmi-menu-button
+  - cmi-menu-behavior
+  - cmi-navbar
+  - cmi-progress
+  - cmi-radio-button
+  - cmi-radio-group
+  - cmi-select
+  - cmi-slider
+  - cmi-table
   - cmi-tabs
-  - cmi-dropdown-menu
-  - cmi-form
+  - cmi-toggle-button
 
 options:
   destFolder: 'cmi'

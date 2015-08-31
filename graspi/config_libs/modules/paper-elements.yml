@@ -1,0 +1,42 @@
+#
+#  Created on version 1.0.5
+#
+webcomponent: true
+dependencies:
+  - paper-badge
+  - paper-behaviors
+  - paper-button
+  - paper-card
+  - paper-checkbox
+  - paper-dialog
+  - paper-dialog-behavior
+  - paper-dialog-scrollable
+  - paper-drawer-panel
+  - paper-dropdown-menu
+  - paper-fab
+  - paper-header-panel
+  - paper-icon-button
+  - paper-input
+  - paper-item
+  - paper-material
+  - paper-menu
+  - paper-menu-button
+  - paper-progress
+  - paper-radio-button
+  - paper-radio-group
+  - paper-ripple
+  - paper-slider
+  - paper-spinner
+  - paper-styles
+  - paper-tabs
+  - paper-toast
+  - paper-toggle-button
+  - paper-toolbar
+  - paper-tooltip
+  - paper-scroll-header-panel
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/paper-elements'
+  destFolder: 'paper-elements'

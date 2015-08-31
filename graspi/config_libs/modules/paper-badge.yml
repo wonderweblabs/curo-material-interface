@@ -1,0 +1,14 @@
+#
+#  Created on version 1.0.3
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - iron-resizable-behavior
+  - paper-styles
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/paper-badge'
+  destFolder: 'paper-badge'

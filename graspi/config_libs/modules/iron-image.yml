@@ -1,0 +1,13 @@
+#
+#  Created on version 1.0.2
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - iron-flex-layout
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/iron-image'
+  destFolder: 'iron-image'

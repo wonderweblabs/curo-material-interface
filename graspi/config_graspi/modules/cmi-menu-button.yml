@@ -1,74 +1,13 @@
 webcomponent: true
-
 dependencies:
-  - polymer-1.1.0
-  - iron-dropdown-1.0.4
-  - iron-a11y-keys-behavior-1.0.5
-  - iron-behaviors-1.0.7
-  - paper-material-1.0.3
-  - paper-styles-1.0.11
-  - neon-animation-1.0.4
-  - cmi-menu-button-animations
-
-js:
-  coffee:
-    options:
-      bare: false
-      sourceMap: false
-
+  - polymer
+  - iron-a11y-keys-behavior
+  - iron-dropdown
+  - cmi-menu-behavior
+  - cmi-dropdown-behavior
 tasks:
   graspi_build:
-    - graspi_css_sass_compile
-    - graspi_css_concat
-    - graspi_js_coffee_compile
-    - graspi_js_concat
-    - graspi_templates
-    - graspi_replace
-
+    - graspi_webcomponents
 options:
-  basePath: 'bower_components/cmi/src/webcomponents/cmi-menu-button'
-  destFolder: 'cmi-menu-button/webcomponents'
-  css:
-    destFile: 'cmi-menu-button.css'
-    files:
-      - 'cmi-menu-button.sass'
-  js:
-    destFile: 'cmi-menu-button.js'
-    files:
-      - cmi-menu-button.coffee
-  templates:
-    destFile: 'cmi-menu-button.html'
-    files:
-      - cmi-menu-button.haml
-  replace:
-    - files:
-        - '%%destPath%%/cmi-menu-button.html'
-      pattern:
-        pattern: '(\<graspi-webcomponent\-stylesheet\>)'
-        modifiers: 'g'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace:
-        - '<style>'
-        - file: '%%destPath%%/cmi-menu-button.css'
-        - '</style>'
-    - files:
-        - '%%destPath%%/cmi-menu-button.html'
-      pattern:
-        pattern: '(\<graspi\-webcomponent\-script\>)'
-        modifiers: 'g'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace:
-        - '<script>'
-        - file: '%%destPath%%/cmi-menu-button.js'
-        - '</script>'
-    - files:
-        - '%%destPath%%/cmi-menu-button.html'
-      pattern:
-        pattern: '(\n\n)|(^(?:.*)(?:sourceMappingURL)(?:.*))'
-        modifiers: 'gm'
-        quotesPlaceholder: 'QUOTES1'
-        doubleQuotesPlaceholder: 'QUOTES2'
-      replace: ''
-
+  basePath: 'node_modules/cmi/src/webcomponents/cmi-menu-button'
+  destFolder: 'cmi-menu-button'

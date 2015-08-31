@@ -1,0 +1,16 @@
+#
+#  Created on version 1.0.4
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - marked-element
+  - paper-styles
+  - paper-button
+  - prism-element
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/iron-doc-viewer'
+  destFolder: 'iron-doc-viewer'

@@ -1,0 +1,14 @@
+#
+#  Created on version 1.0.1
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - google-apis
+  - google-signin
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/google-calendar'
+  destFolder: 'google-calendar'

@@ -1,0 +1,11 @@
+#
+#  Created on version 1.2.65
+#
+webcomponent: true
+dependencies: []
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/mdi'
+  destFolder: 'mdi'

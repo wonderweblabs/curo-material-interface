@@ -1,0 +1,13 @@
+#
+#  Created on version 1.2.0
+#
+webcomponent: true
+dependencies:
+  - polymer
+  - sw-toolbox
+tasks:
+  graspi_build:
+    - graspi_webcomponents
+options:
+  basePath: 'bower_components/platinum-sw'
+  destFolder: 'platinum-sw'
