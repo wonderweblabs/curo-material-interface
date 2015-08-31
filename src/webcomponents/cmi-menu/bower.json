@@ -1,0 +1,22 @@
+{
+  "name": "cmi-menu",
+  "version": "1.0.0",
+  "description": "cmi-menu",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "cmi-elements"
+  ],
+  "main": [
+    "cmi-menu.html",
+    "cmi-submenu.html"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.1",
+    "iron-collapse": "PolymerElements/iron-collapse#>=1.0.3",
+    "cmi-menu-behavior": "./bower_components/cmi-menu-behavior"
+  }
+}

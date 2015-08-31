@@ -1,9 +1,21 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../iron-range-behavior/iron-range-behavior.html' }
+%link{ rel: 'import', href: '../iron-flex-layout/classes/iron-flex-layout.html' }
+%link{ rel: 'import', href: '../paper-styles/paper-styles.html' }
+
+/
+  <cmi-progress></cmi-progress>
+
+  @group CMI Elements
+  @element cmi-progress
+  @demo demo/index.html
+
 %dom-module{ id: 'cmi-progress' }
-  %graspi-webcomponent-stylesheet/
+  %link{ rel: 'import', type: 'css', href: './cmi-progress.css' }
   %template
     #progressContainer{ role: "progressbar", :'aria-valuenow$' => "{{value}}", :'aria-valuemin$' => "{{min}}", :'aria-valuemax$' => "{{max}}" }
       #secondaryProgress.fit
       #activeProgress.fit
       #indeterminateSplitter.fit
 
-  %graspi-webcomponent-script/
+  %script{ src: './cmi-progress.js' }

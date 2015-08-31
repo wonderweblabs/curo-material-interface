@@ -1,5 +1,22 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../iron-a11y-keys-behavior/iron-a11y-keys-behavior.html' }
+%link{ rel: 'import', href: '../iron-range-behavior/iron-range-behavior.html' }
+%link{ rel: 'import', href: '../iron-form-element-behavior/iron-form-element-behavior.html' }
+%link{ rel: 'import', href: '../paper-styles/paper-styles.html' }
+%link{ rel: 'import', href: '../paper-behaviors/paper-inky-focus-behavior.html' }
+%link{ rel: 'import', href: '../paper-ripple/paper-ripple.html' }
+%link{ rel: 'import', href: '../cmi-button/cmi-button.html' }
+%link{ rel: 'import', href: '../cmi-progress/cmi-progress.html' }
+
+/
+  `<cmi-slider></cmi-slider>`
+
+  @group CMI Elements
+  @element cmi-slider
+  @demo demo/index.html
+
 %dom-module{ id: 'cmi-slider' }
-  %graspi-webcomponent-stylesheet/
+  %link{ rel: 'import', type: 'css', href: './cmi-slider.css' }
   %template
     #sliderContainer{ :'class$' => "[[_getClassNames(disabled, pin, snaps, immediateValue, min, expand, dragging, transiting, editable)]]" }
 
@@ -18,5 +35,4 @@
     %template{ is: 'dom-if', if: "[[editable]]" }
       %cmi-input{ id: 'input', class: 'slider-input', :'disabled$' => "[[disabled]]", :'on-change' => "_inputChange", value: "[[_fixForInput(immediateValue)]]" }
 
-
-  %graspi-webcomponent-script/
+  %script{ src: './cmi-slider.js' }

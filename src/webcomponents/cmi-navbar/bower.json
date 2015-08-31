@@ -1,0 +1,19 @@
+{
+  "name": "cmi-navbar",
+  "version": "1.0.0",
+  "description": "cmi-navbar",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "cmi-elements"
+  ],
+  "main": [
+    "cmi-navbar.html"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.1"
+  }
+}

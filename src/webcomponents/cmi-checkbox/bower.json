@@ -1,0 +1,22 @@
+{
+  "name": "cmi-checkbox",
+  "version": "1.0.0",
+  "description": "cmi-checkbox",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "cmi-elements"
+  ],
+  "main": [
+    "cmi-checkbox.html"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.1",
+    "iron-checked-element-behavior": "PolymerElements/iron-checked-element-behavior#>=1.0.1",
+    "paper-behaviors": "PolymerElements/paper-behaviors#>=1.0.3",
+    "paper-ripple": "PolymerElements/paper-ripple#>=1.0.1"
+  }
+}

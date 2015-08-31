@@ -1,0 +1,20 @@
+{
+  "name": "cmi-doc-code-box",
+  "version": "1.0.0",
+  "description": "cmi-doc-code-box",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "cmi-doc-elements"
+  ],
+  "ignore": [],
+  "main": [
+    "cmi-doc-code-box.html"
+  ],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.1",
+    "prism-element": "PolymerElements/prism-element#>=1.0.0"
+  }
+}

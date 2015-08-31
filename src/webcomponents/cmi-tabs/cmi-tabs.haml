@@ -1,5 +1,22 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../paper-ripple/paper-ripple.html' }
+%link{ rel: 'import', href: '../iron-flex-layout/iron-flex-layout.html' }
+%link{ rel: 'import', href: '../iron-flex-layout/classes/iron-flex-layout.html' }
+%link{ rel: 'import', href: '../iron-resizable-behavior/iron-resizable-behavior.html' }
+%link{ rel: 'import', href: '../iron-menu-behavior/iron-menubar-behavior.html' }
+%link{ rel: 'import', href: '../iron-icon/iron-icon.html' }
+%link{ rel: 'import', href: './cmi-tabs-icons.html' }
+%link{ rel: 'import', href: './cmi-tab.html' }
+
+/
+  `<cmi-tabs></cmi-tabs>`
+
+  @group CMI Elements
+  @element cmi-tabs
+  @demo demo/index.html
+
 %dom-module{ id: 'cmi-tabs' }
-  %graspi-webcomponent-stylesheet/
+  %link{ rel: 'import', type: 'css', href: './cmi-tabs.css' }
   %template
     %paper-icon-button{ icon: "paper-tabs:chevron-left", :'class$' => "[[_computeScrollButtonClass(_leftHidden, scrollable, hideScrollButtons)]]", :'on-up' => "_onScrollButtonUp", :'on-down' => "_onLeftScrollButtonDown" }
 
@@ -10,5 +27,4 @@
         #selectionBar{ :'class$' => "[[_computeSelectionBarClass(noBar, alignBottom)]]", :'on-transitionend' => "_onBarTransitionEnd" }
 
     %paper-icon-button{ icon: "paper-tabs:chevron-right", :'class$' => "[[_computeScrollButtonClass(_rightHidden, scrollable, hideScrollButtons)]]", :'on-up' => "_onScrollButtonUp", :'on-down' => "_onRightScrollButtonDown" }
-
-  %graspi-webcomponent-script/
+  %script{ src: './cmi-tabs.js' }

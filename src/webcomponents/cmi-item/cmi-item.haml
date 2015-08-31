@@ -1,6 +1,17 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../iron-flex-layout/iron-flex-layout.html' }
+%link{ rel: 'import', href: '../paper-styles/paper-styles.html' }
+
+/
+  <cmi-item></cmi-item>
+
+  @group CMI Elements
+  @element cmi-item
+  @demo demo/index.html
+
 %dom-module{ id: 'cmi-item' }
-  %graspi-webcomponent-stylesheet/
+  %link{ rel: 'import', type: 'css', href: './cmi-item.css' }
   %template
     %content
 
-  %graspi-webcomponent-script/
+  %script{ src: './cmi-item.js' }

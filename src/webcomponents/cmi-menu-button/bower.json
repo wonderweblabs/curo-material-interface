@@ -1,0 +1,22 @@
+{
+  "name": "cmi-menu-button",
+  "version": "1.0.0",
+  "description": "cmi-menu-button",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "cmi-elements"
+  ],
+  "main": [
+    "cmi-menu-button.html",
+    "cmi-menu-button-animations.html"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.1",
+    "iron-a11y-keys-behavior": "PolymerElements/iron-a11y-keys-behavior#>=1.0.5",
+    "iron-dropdown": "*"
+  }
+}

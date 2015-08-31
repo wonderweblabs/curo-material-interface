@@ -1,0 +1,92 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes", :name => "viewport"}
+    %title cmi-menu demo
+    %script{:src => "../../webcomponentsjs/webcomponents-lite.js"}
+    %link{:href => "../../cmi-doc-code-box/cmi-doc-code-box.html", :rel => "import"}
+    %link{:href => "../../iron-collapse/iron-collapse.html", :rel => "import"}
+    %link{:href => "../../cmi-item/cmi-item.html", :rel => "import"}
+    %link{:href => "../cmi-menu.html", :rel => "import"}
+    %link{:href => "../cmi-submenu.html", :rel => "import"}
+    %link{:href => "../../paper-styles/demo-pages.html", :rel => "import"}
+
+    :plain
+      <style is="custom-style">
+        .horizontal-section {
+          padding: 0 !important;
+        }
+
+        .avatar {
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          overflow: hidden;
+          background: #ccc;
+        }
+
+        paper-item {
+          --paper-item: {
+            cursor: pointer;
+          };
+        }
+
+        .sublist {
+          padding-left: 20px;
+          padding-right: 20px;
+
+        }
+      </style>
+
+  %body{ unresolved: true }
+    .horizontal-section-container
+      %div
+        %h4 Standard
+        .horizontal-section
+          %cmi-menu
+            %cmi-item Inbox
+            %cmi-item Starred
+            %cmi-item Sent mail
+            %cmi-item Drafts
+
+      %div
+        %h4 Pre-selected
+        .horizontal-section
+          %cmi-menu{ selected: "0" }
+            %cmi-item Inbox
+            %cmi-item{ disabled: true } Starred
+            %cmi-item Sent mail
+            %cmi-item Drafts
+
+      %div
+        %h4 Multi-select
+        .horizontal-section
+          %cmi-menu{ multi: true }
+            %cmi-item Bold
+            %cmi-item Italic
+            %cmi-item Underline
+            %cmi-item Strikethrough
+
+      %div
+        %h4 Sub-menu
+        .horizontal-section
+          %cmi-menu
+            %cmi-submenu
+              %cmi-item{ class: "menu-trigger" } Topics
+              %cmi-menu{ class: "menu-content sublist" }
+                %cmi-item Topic 1
+                %cmi-item Topic 2
+                %cmi-item Topic 3
+            %cmi-submenu
+              %cmi-item{ class: "menu-trigger" } Faves
+              %cmi-menu{ class: "menu-content sublist", multi: true }
+                %cmi-item Fave 1
+                %cmi-item Fave 2
+            %cmi-submenu{ disabled: true }
+              %cmi-item{ class: "menu-trigger" } Unavailable
+              %cmi-menu{ class: "menu-content sublist", multi: true }
+                %cmi-item Unavailable 1
+                %cmi-item Unavailable 2

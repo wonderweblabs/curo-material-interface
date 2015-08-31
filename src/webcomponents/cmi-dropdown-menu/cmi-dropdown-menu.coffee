@@ -5,78 +5,110 @@ Polymer
 
   is: 'cmi-dropdown-menu'
 
-  behaviors: [
-    Polymer.IronControlState,
-    Polymer.IronButtonState
-  ]
-
   properties:
-    selectedItemLabel:
-      type: String
+    entries:
+      type: Array
       notify: true
-      computed: '_computeSelectedItemLabel(selectedItem)'
-    selectedItem:
-      type: Object
-      notify: true
-      readOnly: true
-      observer: '_selectedItemChange'
+      value: => []
+      observer: '_onDropdownMenuEntriesChange'
     label:
       type: String
     placeholder:
       type: String
-    opened:
+    alwaysFloatLabel:
       type: Boolean
-      notify: true
       value: false
     noLabelFloat:
       type: Boolean
       value: false
       reflectToAttribute: true
-    alwaysFloatLabel:
-      type: Boolean
-      value: false
-    noAnimations:
-      type: Boolean
-      value: false
+    horizontalAlign:
+      type: String
+      value: 'right'
+      reflectToAttribute: true
 
-  listeners:
-    'tap': '_onTap'
+  behaviors: [
+    Polymer.IronControlState,
+    Polymer.IronButtonState,
+    Polymer.CmiMenuBehavior,
+    Polymer.CmiDropdownBehavior
+  ]
+
+  # listeners:
+  #   'cmi-menu-behavior-select': '_onCmiMenuBehaviorSelect'
 
   keyBindings:
     'up down': 'open'
     'esc': 'close'
 
-  hostAttributes:
-    role: 'group'
-    'aria-haspopup': 'true'
+  _onDropdownMenuEntriesChange: ->
+    @menuItems = @entries
 
-  open: ->
-    @.$.menuButton.open()
+  _onChildTap: (event) ->
+    @open()
 
-  close: ->
-    @.$.menuButton.close()
+  _computeInputValue: (selectedItem) ->
+    selectedItem.getAttribute(@titleName)
 
-  _selectedItemChange: ->
-    @fire 'cmi-dropdown-menu-select'
 
-  _nameChanged: ->
-    if @name == null || @name == undefined || @name == '' || @name == ' '
-      @_formElementUnregister()
-    else
-      @_formElementRegister()
+  # properties:
+  #   selectedItem:
+  #     type: Object
+  #     notify: true
+  #     readOnly: true
+  #     observer: '_selectedItemChange'
+  #   selected:
+  #     type: String
+  #     notify: true
+  #     # observer: '_selectedChange'
+  #   selectedItemLabel:
+  #     type: String
+  #     notify: true
+  #     computed: '_computeSelectedItemLabel(selectedItem)'
 
-  _onIronActivate: (event) ->
-    @_setSelectedItem(event.detail.item)
+  # listeners:
+  #   'iron-activate': '_onIronActivate'
+  #   'tap': '_onTap'
 
-  _onTap: (event) ->
-    @open() if (Polymer.Gestures.findOriginalTarget(event) == @)
+  # keyBindings:
+  #   'up down': 'open'
+  #   'esc': 'close'
 
-  _computeSelectedItemLabel: (selectedItem) ->
-    return '' if !selectedItem
+  # hostAttributes:
+  #   role: 'group'
+  #   'aria-haspopup': 'true'
 
-    selectedItem.label || selectedItem.textContent.trim()
+  # _onIronActivate: (event) ->
+  #   @_setSelectedItem(event.detail.item)
 
-  _computeMenuVerticalOffset: (noLabelFloat) ->
-    if noLabelFloat then -4 else 16
+  # open: ->
+  #   @.$.menuButton.open()
+
+  # close: ->
+  #   @.$.menuButton.close()
+
+  # _selectedItemChange: ->
+  #   console.log 'cmi-dropdown-select'
+  #   @fire 'cmi-dropdown-select'
+
+  # _selectedChange: ->
+  #   console.log 'XXXX'
+
+  # _onTap: (event) ->
+  #   @open() if (Polymer.Gestures.findOriginalTarget(event) == @)
+
+  # _nameChanged: ->
+  #   if @name == null || @name == undefined || @name == '' || @name == ' '
+  #     @_formElementUnregister()
+  #   else
+  #     @_formElementRegister()
+
+  # _computeSelectedItemLabel: (selectedItem) ->
+  #   return '' if !selectedItem
+
+  #   selectedItem.label || selectedItem.textContent.trim()
+
+  # _computeMenuVerticalOffset: (noLabelFloat) ->
+  #   if noLabelFloat then -4 else 16
 
 

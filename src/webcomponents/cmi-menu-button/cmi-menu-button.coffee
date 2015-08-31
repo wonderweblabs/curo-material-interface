@@ -1,6 +1,5 @@
 'use strict'
 
-# Polymer
 CmiMenuButton = Polymer
 
   is: 'cmi-menu-button'

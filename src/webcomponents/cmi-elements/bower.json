@@ -1,0 +1,38 @@
+{
+  "name": "cmi-elements",
+  "version": "1.0.0",
+  "description": "cmi elements",
+  "keywords": [
+    "web-components",
+    "polymer"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "cmi-button-behavior": "./bower_components/cmi-button-behavior",
+    "cmi-button": "./bower_components/cmi-button",
+    "cmi-card": "./bower_components/cmi-card",
+    "cmi-checkbox": "./bower_components/cmi-checkbox",
+    "cmi-dialog": "./bower_components/cmi-dialog",
+    "cmi-dropdown-behavior": "./bower_components/cmi-dropdown-behavior",
+    "cmi-dropdown-menu": "./bower_components/cmi-dropdown-menu",
+    "cmi-fab": "./bower_components/cmi-fab",
+    "cmi-form": "./bower_components/cmi-form",
+    "cmi-headline": "./bower_components/cmi-headline",
+    "cmi-input": "./bower_components/cmi-input",
+    "cmi-item": "./bower_components/cmi-item",
+    "cmi-list-table": "./bower_components/cmi-list-table",
+    "cmi-menu-behavior": "./bower_components/cmi-menu-behavior",
+    "cmi-menu-button": "./bower_components/cmi-menu-button",
+    "cmi-menu": "./bower_components/cmi-menu",
+    "cmi-navbar": "./bower_components/cmi-navbar",
+    "cmi-progress": "./bower_components/cmi-progress",
+    "cmi-radio-button": "./bower_components/cmi-radio-button",
+    "cmi-radio-group": "./bower_components/cmi-radio-group",
+    "cmi-select": "./bower_components/cmi-select",
+    "cmi-slider": "./bower_components/cmi-slider",
+    "cmi-table": "./bower_components/cmi-table",
+    "cmi-tabs": "./bower_components/cmi-tabs",
+    "cmi-toggle-button": "./bower_components/cmi-toggle-button"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "cmi-toggle-button",
+  "version": "1.0.0",
+  "description": "cmi-toggle-button",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "cmi-elements"
+  ],
+  "main": [
+    "cmi-toggle-button.html"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.1",
+    "paper-behaviors": "PolymerElements/paper-behaviors#>=1.0.3",
+    "paper-ripple": "PolymerElements/paper-ripple#>=1.0.1"
+  }
+}

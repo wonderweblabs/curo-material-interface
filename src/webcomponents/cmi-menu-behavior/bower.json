@@ -1,0 +1,24 @@
+{
+  "name": "cmi-menu-behavior",
+  "version": "1.0.0",
+  "description": "cmi-menu-behavior",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "cmi-elements"
+  ],
+  "main": [
+    "cmi-menu-behavior.html"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.1",
+    "iron-a11y-keys-behavior": "*",
+    "iron-behaviors": "*",
+    "iron-selector": "*",
+    "iron-menu-behavior": "*",
+    "cmi-item": "*"
+  }
+}

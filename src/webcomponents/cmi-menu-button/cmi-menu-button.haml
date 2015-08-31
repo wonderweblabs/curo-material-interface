@@ -1,5 +1,25 @@
+-# <link rel="import" href="../polymer/polymer.html">
+-# <link rel="import" href="../iron-dropdown/iron-dropdown.html">
+-# <link rel="import" href="../iron-a11y-keys-behavior/iron-a11y-keys-behavior.html">
+-# <link rel="import" href="../iron-behaviors/iron-control-state.html">
+-# <link rel="import" href="../paper-material/paper-material.html">
+-# <link rel="import" href="../paper-styles/default-theme.html">
+-# <link rel="import" href="../neon-animation/animations/fade-in-animation.html">
+-# <link rel="import" href="../neon-animation/animations/fade-out-animation.html">
+-# <link rel="import" href="paper-menu-button-animations.html">
+
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: './cmi-menu-button-animations.html' }
+
+/
+  <cmi-menu-button></cmi-menu-button>
+
+  @group CMI Elements
+  @element cmi-menu-button
+  @demo demo/index.html
+
 %dom-module{ id: 'cmi-menu-button' }
-  %graspi-webcomponent-stylesheet/
+  %link{ rel: 'import', type: 'css', href: './cmi-menu-button.css' }
   %template
     #trigger{ :'on-tap' => "open" }
       %content{ select: '.dropdown-trigger' }
@@ -8,4 +28,4 @@
       %paper-material{ class: "dropdown-content" }
         %content{ select: '.dropdown-content' }
 
-  %graspi-webcomponent-script/
+  %script{ src: './cmi-menu-button.js' }

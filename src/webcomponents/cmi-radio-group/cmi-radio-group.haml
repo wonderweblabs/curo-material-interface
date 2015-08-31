@@ -1,6 +1,18 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../iron-a11y-keys-behavior/iron-a11y-keys-behavior.html' }
+%link{ rel: 'import', href: '../iron-selector/iron-selectable.html' }
+%link{ rel: 'import', href: '../cmi-radio-button/cmi-radio-button.html' }
+
+/
+  <cmi-radio-group></cmi-radio-group>
+
+  @group CMI Elements
+  @element cmi-radio-group
+  @demo demo/index.html
+
 %dom-module{ id: 'cmi-radio-group' }
-  %graspi-webcomponent-stylesheet/
+  %link{ rel: 'import', type: 'css', href: './cmi-radio-group.css' }
   %template
     %content#items{ select: '*' }
 
-  %graspi-webcomponent-script/
+  %script{ src: './cmi-radio-group.js' }

@@ -7,10 +7,20 @@
   border-collapse: collapse
   outline: none
   border: none
+  width: 100%
+  display: table
   ::content > thead,
   ::content > tbody
+    border-bottom: 1px solid #f0f0f0
     > tr
       background-color: $cmi-table-color-odd-row
+      > th, td
+        border: none
+        padding: 5px 15px
+        display: table-cell
+        text-align: left
+        vertical-align: middle
+        background: transparent
 
 \:host([striped])
   ::content > thead,

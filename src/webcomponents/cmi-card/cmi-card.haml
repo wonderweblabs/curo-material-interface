@@ -1,7 +1,17 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../paper-material/paper-material.html' }
+
+/
+  `<cmi-card>My card content</cmi-button>`
+
+  @group CMI Elements
+  @element cmi-card
+  @demo demo/index.html
+
 %dom-module{ id: 'cmi-card' }
+  %link{ rel: 'import', type: 'css', href: './cmi-card.css' }
   %template
-    %graspi-webcomponent-stylesheet/
     %paper-material{ id: 'shadow', :'animated$' => "[[animatedShadow]]", elevation: "[[elevation]]" }
       %content
 
-  %graspi-webcomponent-script/
+  %script{ src: './cmi-card.js' }

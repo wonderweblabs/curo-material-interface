@@ -1,7 +1,18 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../iron-menu-behavior/iron-menu-behavior.html' }
+%link{ rel: 'import', href: '../paper-styles/paper-styles.html' }
+
+/
+  <cmi-menu></cmi-menu>
+
+  @group CMI Elements
+  @element cmi-menu
+  @demo demo/index.html
+
 %dom-module{ id: 'cmi-menu' }
-  %graspi-webcomponent-stylesheet/
+  %link{ rel: 'import', type: 'css', href: './cmi-menu.css' }
   %template
     .selectable-content
       %content
 
-  %graspi-webcomponent-script/
+  %script{ src: './cmi-menu.js' }

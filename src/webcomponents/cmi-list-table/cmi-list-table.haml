@@ -1,6 +1,15 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+
+/
+  <cmi-list-table></cmi-list-table>
+
+  @group CMI Elements
+  @element cmi-list-table
+  @demo demo/index.html
+
 %dom-module{ id: 'cmi-list-table' }
+  %link{ rel: 'import', type: 'css', href: './cmi-list-table.css' }
   %template
-    %graspi-webcomponent-stylesheet/
     %content
 
-  %graspi-webcomponent-script/
+  %script{ src: './cmi-list-table.js' }

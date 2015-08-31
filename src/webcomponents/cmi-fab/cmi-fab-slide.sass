@@ -1,0 +1,134 @@
+@import cmi_env
+
+$normal-border-radius: 28px
+$normal-size: 49px
+$normal-icon-font-size: 17px
+$normal-text-font-size: 15px
+$normal-padding: ($normal-size - $normal-icon-font-size) / 2
+
+$small-border-radius: 22px
+$small-size: 44px
+$small-icon-font-size: 14px
+$small-text-font-size: 14px
+$small-padding: ($small-size - $small-icon-font-size) / 2
+
+$large-border-radius: 34px
+$large-size: 67px
+$large-icon-font-size: 21px
+$large-text-font-size: 19px
+$large-padding: ($large-size - $large-icon-font-size) / 2
+
+$animation-duration: .25s
+$animation-close-delay: .3s
+$animation-max-width: 400px
+
+\:host
+  +border-top-radius($normal-border-radius)
+  +border-bottom-radius($normal-border-radius)
+  margin: 0 0.29em
+  > .content
+    +border-top-radius($normal-border-radius)
+    +border-bottom-radius($normal-border-radius)
+    +clearfix()
+    min-width: $normal-size
+    min-height: $normal-size
+    font-size: $normal-icon-font-size
+  ::content
+    *
+      text-transform: inherit
+    iron-icon
+      width: 17px !important
+      height: 17px !important
+    cmi-fab-slide-icon,
+    cmi-fab-slide-content
+      +box-sizing(border-box)
+      position: relative
+      display: block
+      float: left
+      white-space: nowrap
+    cmi-fab-slide-icon
+      padding: $normal-padding
+      width: $normal-size
+      height: $normal-size
+      line-height: 1
+    cmi-fab-slide-content
+      +transition-property(margin-right max-width)
+      +transition-duration(var(--cmi-fab-slide-animation-duration, $animation-duration))
+      +transition-timing-function(ease)
+      +transition-delay(var(--cmi-fab-slide-animation-close-delay, $animation-close-delay))
+      overflow: hidden
+      max-width: 0px
+      margin-right: 0px
+      padding: $normal-padding 0
+      float: right
+      font-size: $normal-text-font-size
+      line-height: $normal-icon-font-size
+
+\:host([small])
+  +border-top-radius($small-border-radius)
+  +border-bottom-radius($small-border-radius)
+  > .content
+    +border-top-radius($small-border-radius)
+    +border-bottom-radius($small-border-radius)
+    min-width: $small-size
+    min-height: $small-size
+    font-size: $small-icon-font-size
+  ::content
+    iron-icon
+      width: 14px !important
+      height: 14px !important
+    cmi-fab-slide-icon
+      padding: $small-padding
+      width: $small-size
+      height: $small-size
+    cmi-fab-slide-content
+      padding: $small-padding 0
+      float: right
+      font-size: $small-text-font-size
+      line-height: $small-icon-font-size
+
+\:host([large])
+  +border-top-radius($large-border-radius)
+  +border-bottom-radius($large-border-radius)
+  > .content
+    +border-top-radius($large-border-radius)
+    +border-bottom-radius($large-border-radius)
+    min-width: $large-size
+    min-height: $large-size
+    font-size: $large-icon-font-size
+  ::content
+    iron-icon
+      width: 21px !important
+      height: 21px !important
+    cmi-fab-slide-icon
+      padding: $large-padding
+      width: $large-size
+      height: $large-size
+    cmi-fab-slide-content
+      padding: $large-padding 0
+      float: right
+      font-size: $large-text-font-size
+      line-height: $large-icon-font-size
+
+\:host([open])
+  ::content
+    cmi-fab-slide-content
+      +transition-property(margin-right max-width)
+      +transition-duration(var(--cmi-fab-slide-animation-duration, $animation-duration))
+      +transition-timing-function(ease)
+      +transition-delay(0s)
+      max-width: var(--cmi-fab-slide-animation-max-width, $animation-max-width)
+      margin-right: $normal-padding
+      margin-left: $normal-padding * -0.5
+
+\:host([open][small])
+  ::content
+    cmi-fab-slide-content
+      margin-right: $small-padding
+      margin-left: $small-padding * -0.5
+
+\:host([open][large])
+  ::content
+    cmi-fab-slide-content
+      margin-right: $large-padding
+      margin-left: $large-padding * -0.5

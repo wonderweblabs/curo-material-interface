@@ -31,6 +31,9 @@ $large-padding: ($large-size - $large-font-size) / 2
   ::content
     *
       text-transform: inherit
+    iron-icon
+      width: 17px !important
+      height: 17px !important
 
 \:host([small])
   +border-top-radius($small-border-radius)
@@ -43,6 +46,10 @@ $large-padding: ($large-size - $large-font-size) / 2
     height: $small-size
     padding: $small-padding
     font-size: $small-font-size
+  ::content
+    iron-icon
+      width: 14px !important
+      height: 14px !important
 
 \:host([large])
   +border-top-radius($large-border-radius)
@@ -55,6 +62,10 @@ $large-padding: ($large-size - $large-font-size) / 2
     height: $large-size
     padding: $large-padding
     font-size: $large-font-size
+  ::content
+    iron-icon
+      width: 21px !important
+      height: 21px !important
 
 \:host([block])
   display: block

@@ -5,16 +5,18 @@
   position: relative
   text-align: left
   cursor: pointer
-
-  // --paper-input-container-input:
-  //   overflow: hidden
-  //   white-space: nowrap
-  //   text-overflow: ellipsis
-  //   max-width: 100%
-  //   box-sizing: border-box
-  //   cursor: pointer
-
-  @apply(--paper-dropdown-menu)
+  #input > ::content
+    input,
+    textarea,
+    iron-autogrow-textarea,
+    .paper-input-input
+      overflow: hidden
+      white-space: nowrap
+      text-overflow: ellipsis
+      max-width: 100%
+      box-sizing: border-box
+      cursor: pointer
+      @apply(--paper-dropdown-menu)
 
 \:host([disabled])
   @apply(--paper-dropdown-menu-disabled)
@@ -27,19 +29,17 @@
 
 paper-ripple
   top: 20px
-  left: 8px
-  bottom: 16px
-  right: 8px
+  left: 0
+  bottom: 6px
+  right: 0px
 
   @apply(--paper-dropdown-menu-ripple)
 
-paper-menu-button
-  @apply(--paper-dropdown-menu-button)
-
-paper-input
+cmi-input
   @apply(--paper-dropdown-menu-input)
 
 iron-icon
   color: var(--disabled-text-color)
 
   @apply(--paper-dropdown-menu-icon)
+

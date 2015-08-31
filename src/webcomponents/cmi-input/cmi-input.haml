@@ -1,7 +1,23 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../iron-input/iron-input.html' }
+%link{ rel: 'import', href: '../iron-form-element-behavior/iron-form-element-behavior.html' }
+%link{ rel: 'import', href: '../paper-input/paper-input-behavior.html' }
+%link{ rel: 'import', href: '../paper-input/paper-input-container.html' }
+%link{ rel: 'import', href: '../paper-input/paper-input-error.html' }
+%link{ rel: 'import', href: '../paper-input/paper-input-char-counter.html' }
+%link{ rel: 'import', href: './cmi-input-behavior.html' }
+
+/
+  <cmi-input></cmi-input>
+
+  @group CMI Elements
+  @element cmi-input
+  @demo demo/index.html
+
 %dom-module{ id: 'cmi-input' }
+  %style{ include: 'cmi-input-behavior' }
+  %link{ rel: 'import', type: 'css', href: './cmi-input.css' }
   %template
-    %style{ include: 'cmi-input-behavior' }
-    %graspi-webcomponent-stylesheet/
     %paper-input-container{ id: 'shadow', :'no-label-float' => "[[noLabelFloat]]", :'always-float-label' => "[[_computeAlwaysFloatLabel(alwaysFloatLabel,placeholder)]]", :'auto-validate$' => "[[autoValidate]]", :'disabled$' => "[[disabled]]", invalid: "[[invalid]]" }
 
       %content{ select: "[prefix]" }
@@ -18,4 +34,4 @@
       %template{ is: 'dom-if', if: "[[charCounter]]" }
         %paper-input-char-counter
 
-  %graspi-webcomponent-script/
+  %script{ src: './cmi-input.js' }

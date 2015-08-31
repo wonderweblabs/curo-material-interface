@@ -1,0 +1,14 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+
+%script{ src: './cmi-card-content-behavior.js' }
+
+/
+  `cmi-card-content-shared-style` implements a shared style for the cmi card
+  content elements (e.g. cmi-card-content or cmi-card-headline). Use it inside of you dom-module
+  with <style include="cmi-card-content-shared-style"></style>
+
+  @group CMI Elements
+  @element cmi-button-shared-style
+
+%dom-module{ id: 'cmi-card-content-shared-style' }
+  %link{ rel: 'import', type: 'css', href: './cmi-card-content-shared-style.css' }

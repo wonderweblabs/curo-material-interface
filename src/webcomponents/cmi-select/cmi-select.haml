@@ -1,0 +1,12 @@
+%dom-module{ id: 'cmi-select' }
+  %style{ include: 'cmi-menu-behavior' }
+  %graspi-webcomponent-stylesheet/
+  %template
+    %iron-selector{ id: 'menu-content', :'attr-for-selected$' => "[[attrForSelected]]", :'selected$' => "{{selected}}", :'selected-item$' => "{{selectedItem}}", :'activate-event$' => "{{activateEvent}}", :'selectable$' => "[[selectable]]", :'selected-class$' => "[[selectedClass]]", :'selected-attribute$' => "[[selectedAttribute]]", :'multi$' => "[[multi]]", :'selected-values$' => "{{selectedValues}}", :'selected-items' => "{{selectedItems}}" }
+      %template{ is: 'dom-if', if: '[[_computeIfItemsRepeat(menuItems)]]' }
+        %template{ is: "dom-repeat", items: "[[_computeItems(attrForSelected, attrForItemTitle, menuItems)]]", as: "item" }
+          %cmi-select-option{ :'value$' => "[[item.value]]" }= "[[item.title]]"
+      %template{ is: 'dom-if', if: '[[!_computeIfItemsRepeat(menuItems)]]' }
+        %content
+
+  %graspi-webcomponent-script/

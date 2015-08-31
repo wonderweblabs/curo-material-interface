@@ -1,0 +1,153 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes", :name => "viewport"}
+    %title cmi-tabs demo
+    %script{:src => "../../webcomponentsjs/webcomponents-lite.js"}
+    %link{:href => "../../cmi-doc-code-box/cmi-doc-code-box.html", :rel => "import"}
+    %link{:href => "../../iron-flex-layout/classes/iron-flex-layout.html", :rel => "import"}
+    %link{:href => "../../cmi-navbar/cmi-navbar.html", :rel => "import"}
+    %link{:href => "../cmi-tabs.html", :rel => "import"}
+    %link{:href => "../cmi-tab.html", :rel => "import"}
+    %link{:href => "../../paper-styles/demo-pages.html", :rel => "import"}
+
+    :plain
+      <style is="custom-style">
+        :root {
+          --paper-toolbar-background: #00bcd4;
+        }
+
+        body {
+          font-family: sans-serif;
+          margin: 0;
+          padding: 24px;
+          color: #333;
+        }
+
+        cmi-tabs, cmi-toolbar {
+          background-color: #00bcd4;
+          color: #fff;
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        cmi-toolbar cmi-tabs {
+          box-shadow: none;
+        }
+
+        cmi-tabs[noink][no-bar] cmi-tab.iron-selected {
+          color: #ffff8d;
+        }
+
+        cmi-tabs[align-bottom] {
+          box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        h3 {
+          font-size: 16px;
+          font-weight: 400;
+          padding-top: 20px;
+        }
+
+      </style>
+
+  %body{ unresolved: true }
+    %h3 A. No ink effect and no sliding bar
+
+    %cmi-doc-code-box{ :'left-cols' => '8', :'right-cols' => '4' }
+      %cmi-tabs{ selected: "0", noink: true, :'no-bar' => true }
+        %cmi-tab ITEM ONE
+        %cmi-tab ITEM TWO
+        %cmi-tab ITEM THREE
+
+
+    %h3 B. The bottom bar appears to indicate the selected tab, but without sliding effect.
+
+    %cmi-doc-code-box{ :'left-cols' => '8', :'right-cols' => '4' }
+      %cmi-tabs{ selected: "0", noink: true, :'no-slide' => true }
+        %cmi-tab ITEM ONE
+        %cmi-tab ITEM TWO
+        %cmi-tab ITEM THREE
+
+
+    %h3 C. The bar slides to the selected tab
+
+    %cmi-doc-code-box{ :'left-cols' => '8', :'right-cols' => '4' }
+      %cmi-tabs{ selected: "0", noink: true }
+        %cmi-tab ITEM ONE
+        %cmi-tab ITEM TWO
+        %cmi-tab ITEM THREE
+
+
+    %h3 D. Inky Tabs
+
+    %cmi-doc-code-box{ :'left-cols' => '8', :'right-cols' => '4' }
+      %cmi-tabs{ selected: "0" }
+        %cmi-tab ITEM ONE
+        %cmi-tab ITEM TWO
+        %cmi-tab ITEM THREE
+
+
+    %h3 E. Scrollable Tabs
+
+    %cmi-doc-code-box{ :'left-cols' => '8', :'right-cols' => '4' }
+      %cmi-tabs{ id: "scrollableTabs", selected: "0", scrollable: true }
+        %cmi-tab NUMBER ONE ITEM
+        %cmi-tab ITEM TWO
+        %cmi-tab THE THIRD ITEM
+        %cmi-tab THE ITEM FOUR
+        %cmi-tab FIFTH
+        %cmi-tab THE SIXTH TAB
+        %cmi-tab NUMBER SEVEN
+        %cmi-tab EIGHT
+        %cmi-tab NUMBER NINE
+        %cmi-tab THE TENTH
+        %cmi-tab THE ITEM ELEVEN
+        %cmi-tab TWELFTH ITEM
+
+
+    %h3 F. Link Tabs
+
+    %cmi-doc-code-box{ :'left-cols' => '8', :'right-cols' => '4' }
+      %cmi-tabs{ selected: "0" }
+      %cmi-tab{ link: true }
+        %a{ href: "#item1", class: "horizontal center-center layout" } ITEM ONE
+      %cmi-tab{ link: true }
+        %a{ href: "#item2", class: "horizontal center-center layout" } ITEM TWO
+      %cmi-tab{ link: true }
+        %a{ href: "#item3", class: "horizontal center-center layout" } ITEM THREE
+
+
+    %h3 G. Tabs in Toolbar
+
+    %cmi-doc-code-box{ :'left-cols' => '8', :'right-cols' => '4' }
+      %cmi-navbar
+        %cmi-tabs{ selected: "0", class: "bottom self-end", style: "width: 300px;" }
+          %cmi-tab ITEM ONE
+          %cmi-tab ITEM TWO
+        .bottom.flex
+
+    %h3 H. Tabs aligned to bottom
+
+    %cmi-tabs{ selected: "0", :'align-bottom' => true }
+      %cmi-tab ITEM ONE
+      %cmi-tab ITEM TWO
+      %cmi-tab ITEM THREE
+
+
+    %h3 I. Bound Selection
+
+    %template{ is: "dom-bind" }
+      %h2
+        Current Tab:
+        %span= "[[selected]]"
+      %cmi-tabs{ selected: "{{selected}}" }
+        %cmi-tab ITEM ONE
+        %cmi-tab ITEM TWO
+        %cmi-tab ITEM THREE
+
+
+
+
+

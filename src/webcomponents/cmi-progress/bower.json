@@ -1,0 +1,22 @@
+{
+  "name": "cmi-progress",
+  "version": "1.0.0",
+  "description": "cmi-progress",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "cmi-elements"
+  ],
+  "main": [
+    "cmi-progress.html"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.1",
+    "iron-range-behavior": "*",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#>=1.0.3",
+    "paper-styles": "PolymerElements/paper-styles#>=1.0.11"
+  }
+}

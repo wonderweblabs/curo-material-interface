@@ -1,12 +1,32 @@
 %dom-module{ id: 'cmi-dropdown-menu' }
+  %style{ include: 'cmi-menu-behavior' }
   %graspi-webcomponent-stylesheet/
   %template
-    %cmi-menu-button{ id: "menuButton", :'vertical-align' => "top", :'horizontal-align' => "right", :'vertical-offset' => "[[_computeMenuVerticalOffset(noLabelFloat)]]", disabled: "[[disabled]]", :'no-animations' => "[[noAnimations]]", :'on-iron-activate' => "_onIronActivate", opened: "{{opened}}" }
-      .dropdown-trigger
-        %paper-ripple
-        %cmi-input{ readonly: true, disabled: "[[disabled]]", value: "[[selectedItemLabel]]", placeholder: "[[placeholder]]", :'always-float-label' => "[[alwaysFloatLabel]]", :'no-label-float' => "[[noLabelFloat]]", label: "[[label]]" }
-          %iron-icon{ icon: 'arrow-drop-down', suffix: true }
-      .dropdown-content
-        %content{ select: ".dropdown-content" }
+    .dropdown-trigger
+      %paper-ripple
+      %cmi-input{ id: 'input', :'on-tap' => '_onChildTap', readonly: true, disabled: "[[disabled]]", value: "[[_computeInputValue(selectedItem)]]", placeholder: "[[placeholder]]", :'always-float-label' => "[[alwaysFloatLabel]]", :'no-label-float' => "[[noLabelFloat]]", label: "[[label]]" }
+        %iron-icon{ icon: 'arrow-drop-down', suffix: true }
+    %iron-dropdown{ id: "dropdown", :'opened$' => "{{opened}}", :'horizontal-align$' => "{{horizontalAlign}}", :'vertical-align$' => "{{verticalAlign}}", :'horizontal-offset$' => "{{horizontalOffset}}", :'vertical-offset$' => "{{verticalOffset}}", :'open-animation-config$' => "{{openAnimationConfig}}", :'close-animation-config$' => "{{closeAnimationConfig}}", :'no-animations$' => "{{noAnimations}}" }
+      %paper-material{ class: "dropdown-content" }
+        %iron-selector{ id: 'menu-content', :'attr-for-selected$' => "[[attrForSelected]]", :'selected$' => "{{selected}}", :'selected-item$' => "{{selectedItem}}", :'activate-event$' => "{{activateEvent}}", :'selectable$' => "[[selectable]]", :'selected-class$' => "[[selectedClass]]", :'selected-attribute$' => "[[selectedAttribute]]", :'multi$' => "[[multi]]", :'selected-values$' => "{{selectedValues}}", :'selected-items' => "{{selectedItems}}" }
+          %template{ is: 'dom-if', if: '[[_computeIfItemsRepeat(menuItems)]]' }
+            %template{ is: "dom-repeat", items: "[[_computeItems(attrForSelected, attrForItemTitle, menuItems)]]", as: "item" }
+              %cmi-item{ :'value$' => "[[item.value]]" }= "[[item.title]]"
+          %template{ is: 'dom-if', if: '[[!_computeIfItemsRepeat(menuItems)]]' }
+            %content
+
+    -# %content
+
+    -# %cmi-menu-button{ id: "menuButton", :'vertical-align' => "top", :'horizontal-align' => "right", :'vertical-offset' => "[[_computeMenuVerticalOffset(noLabelFloat)]]", disabled: "[[disabled]]", :'no-animations' => "[[noAnimations]]", :'on-iron-activate' => "_onIronActivate", opened: "{{opened}}" }
+    -#   .dropdown-trigger
+    -#     %paper-ripple
+    -#     %cmi-input{ readonly: true, disabled: "[[disabled]]", value: "[[selectedItemLabel]]", placeholder: "[[placeholder]]", :'always-float-label' => "[[alwaysFloatLabel]]", :'no-label-float' => "[[noLabelFloat]]", label: "[[label]]" }
+    -#       %iron-icon{ icon: 'arrow-drop-down', suffix: true }
+    -#   .dropdown-content
+    -#     %content{ select: ".dropdown-content" }
+
+    -# %cmi-menu{ class: "dropdown-content" }
+    -#   %template{ is: "dom-repeat", items: "[[letters]]", as: "letter" }
+    -#     %cmi-item{ value: "[[letter.value]]" }= "[[letter.title]]"
 
   %graspi-webcomponent-script/

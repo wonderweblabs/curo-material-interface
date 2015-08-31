@@ -1,0 +1,24 @@
+{
+  "name": "cmi-card",
+  "version": "1.0.0",
+  "description": "cmi-card",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "cmi-elements"
+  ],
+  "main": [
+    "cmi-card.html",
+    "cmi-card-content-behavior.html",
+    "cmi-card-actions.html",
+    "cmi-card-content.html",
+    "cmi-card-heading.html",
+    "cmi-card-image.html"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.1"
+  }
+}

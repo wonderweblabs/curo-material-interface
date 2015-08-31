@@ -1,0 +1,25 @@
+{
+  "name": "cmi-fab",
+  "version": "1.0.0",
+  "description": "cmi-fab",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "cmi-elements"
+  ],
+  "main": [
+    "cmi-fab.html",
+    "cmi-fab-link.html",
+    "cmi-fab-slide.html"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.1",
+    "paper-material": "PolymerElements/paper-material#>=1.0.2",
+    "paper-behaviors": "PolymerElements/paper-behaviors#>=1.0.3",
+    "paper-ripple": "PolymerElements/paper-ripple#>=1.0.1",
+    "cmi-button-behavior": "*"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "cmi-dropdown-menu",
+  "version": "1.0.0",
+  "description": "cmi-dropdown-menu",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "cmi-elements"
+  ],
+  "main": [
+    "cmi-dropdown-menu.html"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.1",
+    "iron-a11y-keys-behavior": "PolymerElements/iron-a11y-keys-behavior#>=1.0.5",
+    "iron-icon": "PolymerElements/iron-icon#>=1.0.3",
+    "iron-selector": "*",
+    "iron-behaviors": "PolymerElements/iron-behaviors#>=1.0.8",
+    "iron-dropdown": "PolymerElements/iron-dropdown#>=1.0.5",
+    "paper-ripple": "PolymerElements/paper-ripple#>=1.0.1",
+    "cmi-input": "./bower_components/cmi-input",
+    "cmi-item": "./bower_components/cmi-item",
+    "cmi-dropdown-behavior": "./bower_components/cmi-dropdown-behavior",
+    "cmi-menu-behavior": "./bower_components/cmi-menu-behavior"
+  }
+}

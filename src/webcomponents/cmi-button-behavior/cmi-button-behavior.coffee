@@ -1,6 +1,11 @@
 'use strict'
 
-#
+###
+  Polymer.CmiButtonBehavior` implements general features for cmi button
+  elements like cmi-button or cmi-fab.
+
+  @polymerBehavior Polymer.CmiButtonBehavior
+###
 Polymer.CmiButtonBehaviorImpl =
 
   properties:
@@ -38,8 +43,9 @@ Polymer.CmiButtonBehaviorImpl =
     classes.join(' ')
 
 
-
-# Polymer
+###
+  @polymerBehavior Polymer.CmiButtonBehavior
+###
 Polymer.CmiButtonBehavior = [
   Polymer.PaperButtonBehavior,
   Polymer.CmiButtonBehaviorImpl

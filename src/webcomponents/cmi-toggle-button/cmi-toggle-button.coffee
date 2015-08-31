@@ -1,6 +1,5 @@
 'use strict'
 
-# Polymer
 Polymer
 
   is: 'cmi-toggle-button'

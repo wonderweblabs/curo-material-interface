@@ -1,9 +1,20 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../paper-ripple/paper-ripple.html' }
+%link{ rel: 'import', href: '../paper-behaviors/paper-inky-focus-behavior.html' }
+
+/
+  <cmi-toggle-button></cmi-toggle-button>
+
+  @group CMI Elements
+  @element cmi-toggle-button
+  @demo demo/index.html
+
 %dom-module{ id: 'cmi-toggle-button' }
-  %graspi-webcomponent-stylesheet/
+  %link{ rel: 'import', type: 'css', href: './cmi-toggle-button.css' }
   %template
     #toggleContainer
       #toggleBar.toggle-bar
       #toggleButton.toggle-button
         %paper-ripple{ id: 'ink', class: 'toggle-ink circle', center: true, recenters: true }
 
-  %graspi-webcomponent-script/
+  %script{ src: './cmi-toggle-button.js' }

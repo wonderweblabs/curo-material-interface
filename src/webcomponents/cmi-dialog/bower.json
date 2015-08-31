@@ -1,0 +1,25 @@
+{
+  "name": "cmi-dialog",
+  "version": "1.0.0",
+  "description": "cmi-dialog",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "cmi-elements"
+  ],
+  "main": [
+    "cmi-dialog.html",
+    "cmi-dialog-scrollable.html"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.1",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#>=1.0.3",
+    "paper-dialog-behavior": "PolymerElements/paper-dialog-behavior#>=1.0.4",
+    "paper-dialog-scrollable": "PolymerElements/paper-dialog-scrollable#>=1.0.1",
+    "paper-styles": "PolymerElements/paper-styles#>=1.0.11",
+    "neon-animation": "PolymerElements/neon-animation#>=1.0.4"
+  }
+}

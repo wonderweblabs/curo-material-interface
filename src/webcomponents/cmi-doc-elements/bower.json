@@ -1,0 +1,14 @@
+{
+  "name": "cmi-doc-elements",
+  "version": "1.0.0",
+  "description": "cmi doc elements",
+  "keywords": [
+    "web-components",
+    "polymer"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "cmi-doc-code-box": "./bower_components/cmi-doc-code-box"
+  }
+}
