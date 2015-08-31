@@ -2,8 +2,8 @@ webcomponent: true
 dependencies:
   - polymer
   - paper-material
-  - paper-ripple
   - paper-behaviors
+  - paper-ripple
   - cmi-button-behavior
 tasks:
   graspi_build:

@@ -1,0 +1,65 @@
+dependencies:
+  - mdi
+
+options:
+  destFolder: 'cmi-styles'
+  css:
+    basePath: 'node_modules/cmi/src/stylesheets'
+    destFile: 'cmi.css'
+    files:
+      - 'cmi.sass'
+  images:
+    basePath: 'node_modules/cmi/src/images'
+    files:
+      - '{,*/}*'
+  fonts:
+    basePath: 'node_modules/cmi/src/fonts'
+    files:
+      - '{,*/}*'
+
+tasks:
+  graspi_build:
+    - graspi_images
+    - graspi_fonts
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_css_minify
+    - graspi_templates
+    - graspi_filerev
+    - graspi_manifest
+    - graspi_css_replace_urls
+  graspi_build_sass:
+    - graspi_css_sass_compile
+    - graspi_css_concat
+    - graspi_filerev
+    - graspi_manifest
+    - graspi_css_replace_urls
+  graspi_build_images:
+    - graspi_images
+    - graspi_css_concat
+    - graspi_filerev
+    - graspi_manifest
+    - graspi_css_replace_urls
+  graspi_build_fonts:
+    - graspi_fonts
+    - graspi_css_concat
+    - graspi_filerev
+    - graspi_manifest
+    - graspi_css_replace_urls
+  graspi_build_templates:
+    - graspi_templates
+    - graspi_filerev
+    - graspi_manifest
+
+environments:
+  development:
+    tasks:
+      graspi_build:
+        - graspi_images
+        - graspi_fonts
+        - graspi_css_sass_compile
+        - graspi_css_concat
+        - graspi_templates
+        - graspi_filerev
+        - graspi_manifest
+        - graspi_css_replace_urls

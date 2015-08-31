@@ -1,11 +1,51 @@
 #
 #  Created on version 1.2.65
 #
-webcomponent: true
 dependencies: []
 tasks:
   graspi_build:
-    - graspi_webcomponents
+    - graspi_fonts_copy
+    - graspi_replace
+    - graspi_css_copy
+    - graspi_css_concat
+    - graspi_replace
 options:
   basePath: 'bower_components/mdi'
   destFolder: 'mdi'
+  css:
+    destFile: 'materialdesignicons.css'
+    files:
+      - 'css/materialdesignicons.css'
+  fonts:
+    basePath: 'bower_components/mdi/fonts'
+    files:
+      - 'materialdesignicons.eot'
+      - 'materialdesignicons.svg'
+      - 'materialdesignicons.ttf'
+      - 'materialdesignicons.woff'
+      - 'materialdesignicons.woff2'
+  replace:
+    - files:
+        - 'bower_components/mdi/css/materialdesignicons.css'
+      pattern:
+        pattern: '(sourceMappingURL\=materialdesignicons\.css\.map)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ''
+    - files:
+        - '%%destPath%%/materialdesignicons.css'
+      pattern:
+        pattern: '(\"\.\.\/fonts\/)|(\"cmi\/mdi\/)'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: '"cmi/mdi-1.1.70/'
+    - files:
+        - '%%destPath%%/materialdesignicons.css'
+      pattern:
+        pattern: '(\surl\()'
+        modifiers: 'g'
+        quotesPlaceholder: 'QUOTES1'
+        doubleQuotesPlaceholder: 'QUOTES2'
+      replace: ' font-url('

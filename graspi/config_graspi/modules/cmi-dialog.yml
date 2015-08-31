@@ -1,6 +1,7 @@
 webcomponent: true
 dependencies:
   - polymer
+  - iron-flex-layout
   - paper-dialog-behavior
   - paper-dialog-scrollable
   - paper-styles

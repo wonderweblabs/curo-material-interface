@@ -4,12 +4,9 @@ CmiDropdownBehaviorConfig = {}
 CmiDropdownBehaviorConfig.ANIMATION_CUBIC_BEZIER = 'cubic-bezier(.3,.95,.5,1)'
 CmiDropdownBehaviorConfig.MAX_ANIMATION_TIME_MS = 400
 
-###
-  `Polymer.CmiDropdownBehavior`
+Polymer
 
-  @polymerBehavior Polymer.CmiDropdownBehavior
-###
-Polymer.CmiDropdownBehaviorImpl =
+  is: 'cmi-dropdown'
 
   properties:
     opened:
@@ -98,21 +95,12 @@ Polymer.CmiDropdownBehaviorImpl =
 
   _openedChanged: (opened, oldOpened) ->
     if opened
-      @fire('cmi-dropdown-behavior-open')
+      @fire('cmi-dropdown-open')
     else if oldOpened != null
-      @fire('cmi-dropdown-behavior-close')
+      @fire('cmi-dropdown-close')
 
   _disabledChanged: (disabled) ->
     Polymer.IronControlState._disabledChanged.apply(this, arguments)
 
     @close() if disabled && @opened
-
-
-###
-  @polymerBehavior Polymer.CmiDropdownBehavior
-###
-Polymer.CmiDropdownBehavior = [
-  Polymer.CmiDropdownBehaviorImpl
-]
-
 

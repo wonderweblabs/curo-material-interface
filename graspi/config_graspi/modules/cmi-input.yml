@@ -2,8 +2,8 @@ webcomponent: true
 dependencies:
   - polymer
   - iron-input
-  - iron-form-element-behavior
   - iron-autogrow-textarea
+  - iron-form-element-behavior
   - paper-input
 tasks:
   graspi_build:

@@ -1,114 +1,183 @@
 'use strict'
 
-# Polymer
 Polymer
 
-  is: 'cmi-dropdown-menu'
+  is: "cmi-dropdown-menu"
+
+  ###
+  Fired when the dropdown opens.
+
+  @event paper-dropdown-open
+  ###
+
+  ###
+  Fired when the dropdown closes.
+
+  @event paper-dropdown-close
+  ###
+  behaviors: [
+    Polymer.IronControlState,
+    Polymer.IronButtonState
+  ]
 
   properties:
-    entries:
-      type: Array
+
+    ###
+    The derived "label" of the currently selected item. This value
+    is the `label` property on the selected item if set, or else the
+    trimmed text content of the selected item.
+    ###
+    selectedItemLabel:
+      type: String
       notify: true
-      value: => []
-      observer: '_onDropdownMenuEntriesChange'
+      computed: "_computeSelectedItemLabel(selectedItem)"
+
+
+    ###
+    The last selected item. An item is selected if the dropdown menu has
+    a child with class `dropdown-content`, and that child triggers an
+    `iron-select` event with the selected `item` in the `detail`.
+    ###
+    selectedItem:
+      type: Object
+      notify: true
+      readOnly: true
+
+
+    ###
+    The label for the dropdown.
+    ###
     label:
       type: String
+
+
+    ###
+    The placeholder for the dropdown.
+    ###
     placeholder:
       type: String
-    alwaysFloatLabel:
+
+
+    ###
+    True if the dropdown is open. Otherwise, false.
+    ###
+    opened:
       type: Boolean
+      notify: true
       value: false
+
+
+    ###
+    Set to true to disable the floating label. Bind this to the
+    `<paper-input-container>`'s `noLabelFloat` property.
+    ###
     noLabelFloat:
       type: Boolean
       value: false
       reflectToAttribute: true
-    horizontalAlign:
-      type: String
-      value: 'right'
-      reflectToAttribute: true
 
-  behaviors: [
-    Polymer.IronControlState,
-    Polymer.IronButtonState,
-    Polymer.CmiMenuBehavior,
-    Polymer.CmiDropdownBehavior
-  ]
 
-  # listeners:
-  #   'cmi-menu-behavior-select': '_onCmiMenuBehaviorSelect'
+    ###
+    Set to true to always float the label. Bind this to the
+    `<paper-input-container>`'s `alwaysFloatLabel` property.
+    ###
+    alwaysFloatLabel:
+      type: Boolean
+      value: false
+
+
+    ###
+    Set to true to disable animations when opening and closing the
+    dropdown.
+    ###
+    noAnimations:
+      type: Boolean
+      value: false
+
+  listeners:
+    tap: "_onTap"
 
   keyBindings:
-    'up down': 'open'
-    'esc': 'close'
+    "up down": "open"
+    esc: "close"
 
-  _onDropdownMenuEntriesChange: ->
-    @menuItems = @entries
+  hostAttributes:
+    role: "group"
+    "aria-haspopup": "true"
 
-  _onChildTap: (event) ->
-    @open()
+  attached: ->
 
-  _computeInputValue: (selectedItem) ->
-    selectedItem.getAttribute(@titleName)
+    # NOTE(cdata): Due to timing, a preselected value in a `IronSelectable`
+    # child will cause an `iron-select` event to fire while the element is
+    # still in a `DocumentFragment`. This has the effect of causing
+    # handlers not to fire. So, we double check this value on attached:
+    contentElement = @getContentElement()
+    @_setSelectedItem contentElement.selectedItem  if contentElement and contentElement.selectedItem
+
+  ###
+  getter
+  ###
+  getContentElement: ->
+    Polymer.dom(this.$.content).getDistributedNodes()[0]
+
+  ###
+  Show the dropdown content.
+  ###
+  open: ->
+    @$.menuButton.open()
 
 
-  # properties:
-  #   selectedItem:
-  #     type: Object
-  #     notify: true
-  #     readOnly: true
-  #     observer: '_selectedItemChange'
-  #   selected:
-  #     type: String
-  #     notify: true
-  #     # observer: '_selectedChange'
-  #   selectedItemLabel:
-  #     type: String
-  #     notify: true
-  #     computed: '_computeSelectedItemLabel(selectedItem)'
+  ###
+  Hide the dropdown content.
+  ###
+  close: ->
+    @$.menuButton.close()
 
-  # listeners:
-  #   'iron-activate': '_onIronActivate'
-  #   'tap': '_onTap'
 
-  # keyBindings:
-  #   'up down': 'open'
-  #   'esc': 'close'
+  ###
+  A handler that is called when `iron-select` is fired.
 
-  # hostAttributes:
-  #   role: 'group'
-  #   'aria-haspopup': 'true'
+  @param {CustomEvent} event An `iron-select` event.
+  ###
+  _onIronSelect: (event) ->
+    @_setSelectedItem event.detail.item
+    @fire 'cmi-dropdown-menu-select'
 
-  # _onIronActivate: (event) ->
-  #   @_setSelectedItem(event.detail.item)
 
-  # open: ->
-  #   @.$.menuButton.open()
+  ###
+  A handler that is called when the dropdown is tapped.
 
-  # close: ->
-  #   @.$.menuButton.close()
+  @param {CustomEvent} event A tap event.
+  ###
+  _onTap: (event) ->
+    @open()  if Polymer.Gestures.findOriginalTarget(event) is this
 
-  # _selectedItemChange: ->
-  #   console.log 'cmi-dropdown-select'
-  #   @fire 'cmi-dropdown-select'
 
-  # _selectedChange: ->
-  #   console.log 'XXXX'
+  ###
+  Compute the label for the dropdown given a selected item.
 
-  # _onTap: (event) ->
-  #   @open() if (Polymer.Gestures.findOriginalTarget(event) == @)
+  @param {Element} selectedItem A selected Element item, with an
+  optional `label` property.
+  ###
+  _computeSelectedItemLabel: (selectedItem) ->
+    return ""  unless selectedItem
+    selectedItem.label or selectedItem.textContent.trim()
 
-  # _nameChanged: ->
-  #   if @name == null || @name == undefined || @name == '' || @name == ' '
-  #     @_formElementUnregister()
-  #   else
-  #     @_formElementRegister()
 
-  # _computeSelectedItemLabel: (selectedItem) ->
-  #   return '' if !selectedItem
+  ###
+  Compute the vertical offset of the menu based on the value of
+  `noLabelFloat`.
 
-  #   selectedItem.label || selectedItem.textContent.trim()
+  @param {boolean} noLabelFloat True if the label should not float
+  above the input, otherwise false.
+  ###
+  _computeMenuVerticalOffset: (noLabelFloat) ->
 
-  # _computeMenuVerticalOffset: (noLabelFloat) ->
-  #   if noLabelFloat then -4 else 16
+    # NOTE(cdata): These numbers are somewhat magical because they are
+    # derived from the metrics of elements internal to `paper-input`'s
+    # template. The metrics will change depending on whether or not the
+    # input has a floating label.
+    (if noLabelFloat then -4 else 16)
+
 
 

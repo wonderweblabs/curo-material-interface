@@ -17,6 +17,10 @@
   "dependencies": {
     "polymer": "Polymer/polymer#>=1.1.1",
     "iron-a11y-keys-behavior": "PolymerElements/iron-a11y-keys-behavior#>=1.0.5",
-    "iron-dropdown": "*"
+    "iron-dropdown": "PolymerElements/iron-dropdown#>=1.0.5",
+    "iron-behaviors": "PolymerElements/iron-behaviors#>=1.0.8",
+    "paper-material": "PolymerElements/paper-material#>=1.0.2",
+    "paper-styles": "PolymerElements/paper-styles#>=1.0.11",
+    "neon-animation": "PolymerElements/neon-animation#>=1.0.4"
   }
 }

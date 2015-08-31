@@ -16,8 +16,9 @@
   "private": true,
   "dependencies": {
     "polymer": "Polymer/polymer#>=1.1.1",
-    "cmi-button-behavior": "./bower_components/cmi-button-behavior",
     "paper-material": "PolymerElements/paper-material#>=1.0.2",
-    "paper-ripple": "PolymerElements/paper-ripple#>=1.0.1"
+    "paper-ripple": "PolymerElements/paper-ripple#>=1.0.1",
+    "paper-behaviors": "PolymerElements/paper-behaviors#>=1.0.3",
+    "cmi-button-behavior": "./bower_components/cmi-button-behavior"
   }
 }

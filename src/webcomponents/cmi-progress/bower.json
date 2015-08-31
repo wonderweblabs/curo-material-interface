@@ -15,7 +15,7 @@
   "private": true,
   "dependencies": {
     "polymer": "Polymer/polymer#>=1.1.1",
-    "iron-range-behavior": "*",
+    "iron-range-behavior": "PolymerElements/iron-range-behavior#>=1.0.2",
     "iron-flex-layout": "PolymerElements/iron-flex-layout#>=1.0.3",
     "paper-styles": "PolymerElements/paper-styles#>=1.0.11"
   }

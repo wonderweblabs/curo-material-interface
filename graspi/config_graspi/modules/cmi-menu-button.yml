@@ -3,8 +3,10 @@ dependencies:
   - polymer
   - iron-a11y-keys-behavior
   - iron-dropdown
-  - cmi-menu-behavior
-  - cmi-dropdown-behavior
+  - iron-behaviors
+  - paper-material
+  - paper-styles
+  - neon-animation
 tasks:
   graspi_build:
     - graspi_webcomponents

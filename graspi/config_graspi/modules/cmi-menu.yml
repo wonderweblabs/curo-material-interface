@@ -1,6 +1,8 @@
 webcomponent: true
 dependencies:
   - polymer
+  - iron-behaviors
+  - iron-menu-behavior
   - iron-collapse
   - cmi-menu-behavior
 tasks:

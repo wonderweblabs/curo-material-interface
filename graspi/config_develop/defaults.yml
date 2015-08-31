@@ -18,8 +18,8 @@ css:
       loadPath:
         - bower_components/bourbon/app/assets/stylesheets
         - bower_components/neat/app/assets/stylesheets
+        - src/stylesheets/webcomponents
         - src/var
-        - src/doc/var
 
 js:
   uglify:

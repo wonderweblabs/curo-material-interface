@@ -1,12 +1,32 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../iron-a11y-keys-behavior/iron-a11y-keys-behavior.html' }
+%link{ rel: 'import', href: '../iron-form-element-behavior/iron-form-element-behavior.html' }
+%link{ rel: 'import', href: '../iron-behaviors/iron-control-state.html' }
+%link{ rel: 'import', href: '../cmi-dropdown-menu/cmi-dropdown-menu.html' }
+%link{ rel: 'import', href: '../cmi-menu/cmi-menu.html' }
+
+
+/
+  cmi-select
+
+  @group CMI Elements
+  @element cmi-select
+  @demo demo/index.html
+
 %dom-module{ id: 'cmi-select' }
-  %style{ include: 'cmi-menu-behavior' }
-  %graspi-webcomponent-stylesheet/
+  -# %link{ rel: 'import', type: 'css', href: './cmi-select.css' }
   %template
-    %iron-selector{ id: 'menu-content', :'attr-for-selected$' => "[[attrForSelected]]", :'selected$' => "{{selected}}", :'selected-item$' => "{{selectedItem}}", :'activate-event$' => "{{activateEvent}}", :'selectable$' => "[[selectable]]", :'selected-class$' => "[[selectedClass]]", :'selected-attribute$' => "[[selectedAttribute]]", :'multi$' => "[[multi]]", :'selected-values$' => "{{selectedValues}}", :'selected-items' => "{{selectedItems}}" }
-      %template{ is: 'dom-if', if: '[[_computeIfItemsRepeat(menuItems)]]' }
-        %template{ is: "dom-repeat", items: "[[_computeItems(attrForSelected, attrForItemTitle, menuItems)]]", as: "item" }
-          %cmi-select-option{ :'value$' => "[[item.value]]" }= "[[item.title]]"
-      %template{ is: 'dom-if', if: '[[!_computeIfItemsRepeat(menuItems)]]' }
+    %cmi-dropdown-menu{ id: 'menu',
+                        disabled: "[[disabled]]",
+                        label: "[[label]]",
+                        placeholder: "[[placeholder]]",
+                        opened: "{{opened}}",
+                        :'on-cmi-dropdown-menu-select' => "_onCmiDropdownMenuSelect",
+                        :'horizontal-align' => "right",
+                        :'vertical-align' => "top" }
+      %cmi-menu{ class: "dropdown-content",
+                 :'selected$' => "{{selected}}",
+                 :'attr-for-selected' => 'value' }
         %content
 
-  %graspi-webcomponent-script/
+  %script{ src: './cmi-select.js' }

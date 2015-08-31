@@ -4,6 +4,10 @@ dependencies:
   - iron-selector
   - iron-behaviors
   - iron-dropdown
+  - paper-material
+  - paper-ripple
+  - paper-styles
+  - web-animations-js
   - cmi-item
 tasks:
   graspi_build:

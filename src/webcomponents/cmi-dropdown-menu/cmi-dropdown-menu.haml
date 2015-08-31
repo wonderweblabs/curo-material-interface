@@ -1,32 +1,46 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../iron-a11y-keys-behavior/iron-a11y-keys-behavior.html' }
+%link{ rel: 'import', href: '../iron-icons/iron-icons.html' }
+%link{ rel: 'import', href: '../iron-selector/iron-multi-selectable.html' }
+%link{ rel: 'import', href: '../iron-behaviors/iron-button-state.html' }
+%link{ rel: 'import', href: '../iron-behaviors/iron-control-state.html' }
+%link{ rel: 'import', href: '../iron-dropdown/iron-dropdown.html' }
+%link{ rel: 'import', href: '../paper-ripple/paper-ripple.html' }
+%link{ rel: 'import', href: '../paper-material/paper-material.html' }
+%link{ rel: 'import', href: '../paper-behaviors/paper-button-behavior.html' }
+%link{ rel: 'import', href: '../cmi-menu-button/cmi-menu-button.html' }
+%link{ rel: 'import', href: '../cmi-input/cmi-input.html' }
+
+
+/
+  <cmi-dropdown-menu>My Button</cmi-dropdown-menu>
+
+  @group CMI Elements
+  @element cmi-dropdown-menu
+  @demo demo/index.html
+
 %dom-module{ id: 'cmi-dropdown-menu' }
-  %style{ include: 'cmi-menu-behavior' }
-  %graspi-webcomponent-stylesheet/
+  %link{ rel: 'import', type: 'css', href: './cmi-dropdown-menu.css' }
   %template
-    .dropdown-trigger
-      %paper-ripple
-      %cmi-input{ id: 'input', :'on-tap' => '_onChildTap', readonly: true, disabled: "[[disabled]]", value: "[[_computeInputValue(selectedItem)]]", placeholder: "[[placeholder]]", :'always-float-label' => "[[alwaysFloatLabel]]", :'no-label-float' => "[[noLabelFloat]]", label: "[[label]]" }
-        %iron-icon{ icon: 'arrow-drop-down', suffix: true }
-    %iron-dropdown{ id: "dropdown", :'opened$' => "{{opened}}", :'horizontal-align$' => "{{horizontalAlign}}", :'vertical-align$' => "{{verticalAlign}}", :'horizontal-offset$' => "{{horizontalOffset}}", :'vertical-offset$' => "{{verticalOffset}}", :'open-animation-config$' => "{{openAnimationConfig}}", :'close-animation-config$' => "{{closeAnimationConfig}}", :'no-animations$' => "{{noAnimations}}" }
-      %paper-material{ class: "dropdown-content" }
-        %iron-selector{ id: 'menu-content', :'attr-for-selected$' => "[[attrForSelected]]", :'selected$' => "{{selected}}", :'selected-item$' => "{{selectedItem}}", :'activate-event$' => "{{activateEvent}}", :'selectable$' => "[[selectable]]", :'selected-class$' => "[[selectedClass]]", :'selected-attribute$' => "[[selectedAttribute]]", :'multi$' => "[[multi]]", :'selected-values$' => "{{selectedValues}}", :'selected-items' => "{{selectedItems}}" }
-          %template{ is: 'dom-if', if: '[[_computeIfItemsRepeat(menuItems)]]' }
-            %template{ is: "dom-repeat", items: "[[_computeItems(attrForSelected, attrForItemTitle, menuItems)]]", as: "item" }
-              %cmi-item{ :'value$' => "[[item.value]]" }= "[[item.title]]"
-          %template{ is: 'dom-if', if: '[[!_computeIfItemsRepeat(menuItems)]]' }
-            %content
+    %cmi-menu-button{ id: 'menuButton',
+                      disabled: "[[disabled]]",
+                      opened: "{{opened}}",
+                      :'horizontal-align' => "right",
+                      :'no-animations' => "[[noAnimations]]",
+                      :'on-iron-select' => "_onIronSelect",
+                      :'vertical-align' => "top",
+                      :'vertical-offset' => "[[_computeMenuVerticalOffset(noLabelFloat)]]" }
+      .dropdown-trigger
+        %paper-ripple
+        %cmi-input{ id: 'input',
+                    disabled: "[[disabled]]",
+                    label: "[[label]]",
+                    placeholder: "[[placeholder]]",
+                    readonly: true,
+                    value: "[[selectedItemLabel]]",
+                    :'always-float-label' => "[[alwaysFloatLabel]]",
+                    :'no-label-float' => "[[noLabelFloat]]" }
+          %iron-icon{ icon: "arrow-drop-down", suffix: "" }
+      %content{ id: 'content', select: ".dropdown-content" }
 
-    -# %content
-
-    -# %cmi-menu-button{ id: "menuButton", :'vertical-align' => "top", :'horizontal-align' => "right", :'vertical-offset' => "[[_computeMenuVerticalOffset(noLabelFloat)]]", disabled: "[[disabled]]", :'no-animations' => "[[noAnimations]]", :'on-iron-activate' => "_onIronActivate", opened: "{{opened}}" }
-    -#   .dropdown-trigger
-    -#     %paper-ripple
-    -#     %cmi-input{ readonly: true, disabled: "[[disabled]]", value: "[[selectedItemLabel]]", placeholder: "[[placeholder]]", :'always-float-label' => "[[alwaysFloatLabel]]", :'no-label-float' => "[[noLabelFloat]]", label: "[[label]]" }
-    -#       %iron-icon{ icon: 'arrow-drop-down', suffix: true }
-    -#   .dropdown-content
-    -#     %content{ select: ".dropdown-content" }
-
-    -# %cmi-menu{ class: "dropdown-content" }
-    -#   %template{ is: "dom-repeat", items: "[[letters]]", as: "letter" }
-    -#     %cmi-item{ value: "[[letter.value]]" }= "[[letter.title]]"
-
-  %graspi-webcomponent-script/
+  %script{ src: './cmi-dropdown-menu.js' }

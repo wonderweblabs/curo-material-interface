@@ -1,1 +1,46 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../iron-a11y-keys-behavior/iron-a11y-keys-behavior.html' }
+%link{ rel: 'import', href: '../iron-selector/iron-multi-selectable.html' }
+%link{ rel: 'import', href: '../iron-behaviors/iron-button-state.html' }
+%link{ rel: 'import', href: '../iron-behaviors/iron-control-state.html' }
+%link{ rel: 'import', href: '../iron-dropdown/iron-dropdown.html' }
+
+
+%link{ rel: 'import', href: '../paper-ripple/paper-ripple.html' }
+%link{ rel: 'import', href: '../paper-material/paper-material.html' }
+%link{ rel: 'import', href: '../paper-behaviors/paper-button-behavior.html' }
+%link{ rel: 'import', href: '../cmi-button-behavior/cmi-button-behavior.html' }
+%link{ rel: 'import', href: '../cmi-input/cmi-input.html' }
+
+%link{ rel: 'import', href: './cmi-dropdown.html' }
+
+
+%script{ src: './cmi-dropdown-behavior.js' }
+
+/
+  cmi-dropdown-behavior
+
+  @group CMI Elements
+  @element cmi-dropdown-behavior
+  @demo demo/index.html
+
+%dom-module{ id: 'cmi-dropdown-shared-styles' }
+  %link{ rel: 'import', type: 'css', href: './cmi-dropdown-shared-styles.css' }
+
+
+
+
 %graspi-webcomponent-script/
+
+
+
+
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.1",
+    "iron-selector": "PolymerElements/iron-selector#>=1.0.2",
+    "iron-behaviors": "PolymerElements/iron-behaviors#>=1.0.8",
+    "iron-dropdown": "PolymerElements/iron-dropdown#>=1.0.5",
+    "web-animations": "web-animations/web-animations-js",
+    "cmi-item": "./bower_components/cmi-item"
+  }
+}

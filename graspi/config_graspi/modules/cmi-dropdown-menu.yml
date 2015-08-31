@@ -3,15 +3,16 @@ dependencies:
   - polymer
   - iron-a11y-keys-behavior
   - iron-icon
-  - iron-icons
   - iron-selector
   - iron-behaviors
   - iron-dropdown
   - paper-ripple
-  - cmi-menu-behavior
-  - cmi-dropdown-behavior
+  - paper-behaviors
+  - paper-styles
   - cmi-input
   - cmi-item
+  - cmi-dropdown-behavior
+  - cmi-menu-behavior
 tasks:
   graspi_build:
     - graspi_webcomponents

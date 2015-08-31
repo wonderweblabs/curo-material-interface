@@ -17,15 +17,15 @@
   "dependencies": {
     "polymer": "Polymer/polymer#>=1.1.1",
     "iron-a11y-keys-behavior": "PolymerElements/iron-a11y-keys-behavior#>=1.0.5",
+    "iron-form-element-behavior": "PolymerElements/iron-form-element-behavior#>=1.0.4",
     "iron-icon": "PolymerElements/iron-icon#>=1.0.3",
-    "iron-selector": "*",
+    "iron-selector": "PolymerElements/iron-selector#>=1.0.2",
     "iron-behaviors": "PolymerElements/iron-behaviors#>=1.0.8",
     "iron-dropdown": "PolymerElements/iron-dropdown#>=1.0.5",
     "paper-ripple": "PolymerElements/paper-ripple#>=1.0.1",
     "cmi-input": "./bower_components/cmi-input",
     "cmi-item": "./bower_components/cmi-item",
-    "cmi-dropdown-behavior": "./bower_components/cmi-dropdown-behavior",
-    "cmi-menu-behavior": "./bower_components/cmi-menu-behavior"
+    "cmi-dropdown-menu": "./bower_components/cmi-dropdown-menu"
   }
 }
 

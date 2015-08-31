@@ -19,6 +19,7 @@
   "ignore": [],
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#>=1.1.1"
+    "polymer": "Polymer/polymer#>=1.1.1",
+    "paper-material": "PolymerElements/paper-material#>=1.0.2"
   }
 }

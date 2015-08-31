@@ -5,20 +5,44 @@ Polymer
 
   is: 'cmi-select'
 
-  properties:
-    options:
-      type: Array
-      notify: true
-      value: => []
-      observer: '_onSelectOptionsChange'
-
-
   behaviors: [
     Polymer.IronControlState,
-    Polymer.IronButtonState,
-    Polymer.CmiMenuBehavior,
-    Polymer.CmiDropdownBehavior
+    Polymer.IronFormElementBehavior
   ]
 
-  _onSelectOptionsChange: ->
-    @menuItems = @options
+  properties:
+
+    ###
+    True if the dropdown is open. Otherwise, false.
+    ###
+    opened:
+      type: Boolean
+      notify: true
+      value: false
+
+    ###
+    The label for the dropdown.
+    ###
+    label:
+      type: String
+
+    ###
+    The selected for the menu.
+    ###
+    selected:
+      type: String
+      notify: true
+      reflectToAttribute: true
+      observer: '_onSelectedChange'
+
+    ###
+    The placeholder for the dropdown.
+    ###
+    placeholder:
+      type: String
+
+  _onCmiDropdownMenuSelect: ->
+    @selected = @.$.menu.selectedItem.getAttribute('value')
+
+  _onSelectedChange: ->
+    @value = @selected

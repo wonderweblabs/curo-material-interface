@@ -1,8 +1,8 @@
 webcomponent: true
 dependencies:
   - polymer
-  - iron-selector
   - iron-a11y-keys-behavior
+  - iron-selector
   - cmi-radio-button
 tasks:
   graspi_build:

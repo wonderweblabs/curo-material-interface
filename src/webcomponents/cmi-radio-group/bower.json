@@ -16,7 +16,7 @@
   "dependencies": {
     "polymer": "Polymer/polymer#>=1.1.1",
     "iron-a11y-keys-behavior": "PolymerElements/iron-a11y-keys-behavior#>=1.0.5",
-    "iron-selector": "*",
-    "cmi-radio-button": "*"
+    "iron-selector": "PolymerElements/iron-selector#>=1.0.2",
+    "cmi-radio-button": "./bower_components/cmi-radio-button"
   }
 }

@@ -2,15 +2,15 @@ webcomponent: true
 dependencies:
   - polymer
   - iron-a11y-keys-behavior
+  - iron-form-element-behavior
   - iron-icon
   - iron-selector
   - iron-behaviors
   - iron-dropdown
   - paper-ripple
-  - cmi-menu-behavior
-  - cmi-dropdown-behavior
   - cmi-input
   - cmi-item
+  - cmi-dropdown-menu
 tasks:
   graspi_build:
     - graspi_webcomponents

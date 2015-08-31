@@ -5,5 +5,5 @@ tasks:
   graspi_build:
     - graspi_webcomponents
 options:
-  basePath: 'node_modules/cmi/src/webcomponents/webcomponents/cmi-headline'
+  basePath: 'node_modules/cmi/src/webcomponents/cmi-headline'
   destFolder: 'cmi-headline'
