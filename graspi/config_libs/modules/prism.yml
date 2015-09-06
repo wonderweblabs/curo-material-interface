@@ -1,11 +1,8 @@
 webcomponent: true
-
 dependencies: []
-
 tasks:
   graspi_build:
     - graspi_webcomponents
-
 options:
   basePath: 'bower_components/prism'
   destFolder: 'prism'
