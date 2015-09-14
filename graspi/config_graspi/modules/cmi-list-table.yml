@@ -1,9 +1,0 @@
-webcomponent: true
-dependencies:
-  - polymer
-tasks:
-  graspi_build:
-    - graspi_webcomponents
-options:
-  basePath: 'node_modules/cmi/src/webcomponents/cmi-list-table'
-  destFolder: 'cmi-list-table'

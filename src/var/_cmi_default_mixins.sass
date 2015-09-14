@@ -21,6 +21,24 @@
   -moz-box-sizing: $radius
   box-sizing: $radius
 
+// clearfix helper
+=clearfix()
+  *zoom: 1
+  &:before,
+  &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+=cmi-clearfix()
+  *zoom: 1
+  &:before,
+  &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+
 // keyframes
 =keyframes($name)
   @-webkit-keyframes #{$name}

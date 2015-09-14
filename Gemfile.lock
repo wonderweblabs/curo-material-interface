@@ -1,16 +1,14 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.9.1.1)
-    execjs (2.5.2)
-    sass (3.4.13)
+    haml (4.0.6)
+      tilt
+    sass (3.4.14)
+    tilt (1.4.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  coffee-script (~> 2.4)
-  sass (~> 3.4)
+  haml
+  sass (>= 3.4)

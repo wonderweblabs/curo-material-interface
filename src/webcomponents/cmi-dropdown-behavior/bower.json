@@ -19,6 +19,7 @@
     "iron-behaviors": "PolymerElements/iron-behaviors#>=1.0.8",
     "iron-dropdown": "PolymerElements/iron-dropdown#>=1.0.5",
     "web-animations": "web-animations/web-animations-js",
-    "cmi-item": "./bower_components/cmi-item"
+    "cmi-styles": "./node_modules/cmi/src/webcomponents/cmi-styles",
+    "cmi-item": "./node_modules/cmi/src/webcomponents/cmi-item"
   }
 }

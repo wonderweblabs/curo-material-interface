@@ -12,6 +12,7 @@
   "private": true,
   "dependencies": {
     "polymer": "Polymer/polymer#>=1.1.1",
-    "paper-behaviors": "PolymerElements/paper-behaviors#>=1.0.3"
+    "paper-behaviors": "PolymerElements/paper-behaviors#>=1.0.3",
+    "cmi-styles": "./node_modules/cmi/src/webcomponents/cmi-styles"
   }
 }

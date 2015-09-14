@@ -1,7 +1,0 @@
-postpipeline:
-  manifest:
-    options:
-      path: 'tmp/graspi/g-assets.json'
-    replacePattern:
-      pattern: '^(\/)?build\/'
-      replace: ''

@@ -43,6 +43,7 @@ db/*.sqlite3-journal
 *.rbc
 *.sublime-*
 .graspi.yml
+npm-debug.log
 
 # apps / software
 .rvmrc
