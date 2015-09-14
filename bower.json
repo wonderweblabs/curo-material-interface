@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
+    "cmi-base": "./node_modules/cmi/src/base",
     "cmi-polymer-element-catalog": "./node_modules/cmi/src/webcomponents/cmi-polymer-element-catalog",
     "cmi-doc-elements": "./node_modules/cmi/src/webcomponents/cmi-doc-elements",
     "cmi-doc-code-box": "./node_modules/cmi/src/webcomponents/cmi-doc-code-box",
