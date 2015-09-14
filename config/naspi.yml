@@ -1,0 +1,14 @@
+defaults: &defaults
+  tmpPath: 'tmp'
+  sassCache: 'tmp/.sass-cache'
+  cacheFile: 'tmp/.files.json'
+  pkgBuiltTrackFile: 'tmp/.packages.json'
+  sassLoadPaths:
+    - "build/bower_components/bourbon/app/assets/stylesheets"
+    - "build/bower_components/neat/app/assets/stylesheets"
+    - "src/var"
+    - "src/stylesheets/webcomponents"
+  buildPath: 'build'
+
+development:
+  <<: *defaults

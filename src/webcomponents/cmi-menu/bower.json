@@ -19,6 +19,7 @@
     "iron-behaviors": "PolymerElements/iron-behaviors#>=1.0.8",
     "iron-menu-behavior": "PolymerElements/iron-menu-behavior#>=1.0.2",
     "iron-collapse": "PolymerElements/iron-collapse#>=1.0.3",
-    "cmi-menu-behavior": "./bower_components/cmi-menu-behavior"
+    "cmi-styles": "./node_modules/cmi/src/webcomponents/cmi-styles",
+    "cmi-menu-behavior": "./node_modules/cmi/src/webcomponents/cmi-menu-behavior"
   }
 }

@@ -20,6 +20,7 @@
     "iron-input": "PolymerElements/iron-input#>=1.0.5",
     "iron-autogrow-textarea": "PolymerElements/iron-autogrow-textarea#>=1.0.4",
     "iron-form-element-behavior": "PolymerElements/iron-form-element-behavior#>=1.0.4",
-    "paper-input": "PolymerElements/paper-input#>=1.0.12"
+    "paper-input": "PolymerElements/paper-input#>=1.0.12",
+    "cmi-styles": "./node_modules/cmi/src/webcomponents/cmi-styles"
   }
 }

@@ -16,6 +16,7 @@
   "dependencies": {
     "polymer": "Polymer/polymer#>=1.1.1",
     "prism": "PrismJS/prism",
-    "prism-element": "PolymerElements/prism-element#>=1.0.0"
+    "prism-element": "PolymerElements/prism-element#>=1.0.0",
+    "cmi-styles": "./node_modules/cmi/src/webcomponents/cmi-styles"
   }
 }

@@ -6,9 +6,10 @@
     "web-components",
     "polymer"
   ],
+  "main": [],
   "ignore": [],
   "private": true,
   "dependencies": {
-    "cmi-doc-code-box": "./bower_components/cmi-doc-code-box"
+    "cmi-doc-code-box": "./node_modules/cmi/src/webcomponents/cmi-doc-code-box"
   }
 }

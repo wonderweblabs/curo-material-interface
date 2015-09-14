@@ -23,9 +23,10 @@
     "paper-ripple": "PolymerElements/paper-ripple#>=1.0.1",
     "paper-material": "PolymerElements/paper-material#>=1.0.2",
     "paper-behaviors": "PolymerElements/paper-behaviors#>=1.0.3",
-    "cmi-input": "./bower_components/cmi-input",
-    "cmi-item": "./bower_components/cmi-item",
-    "cmi-dropdown-behavior": "./bower_components/cmi-dropdown-behavior",
-    "cmi-menu-behavior": "./bower_components/cmi-menu-behavior"
+    "cmi-styles": "./node_modules/cmi/src/webcomponents/cmi-styles",
+    "cmi-input": "./node_modules/cmi/src/webcomponents/cmi-input",
+    "cmi-item": "./node_modules/cmi/src/webcomponents/cmi-item",
+    "cmi-dropdown-behavior": "./node_modules/cmi/src/webcomponents/cmi-dropdown-behavior",
+    "cmi-menu-behavior": "./node_modules/cmi/src/webcomponents/cmi-menu-behavior"
   }
 }
