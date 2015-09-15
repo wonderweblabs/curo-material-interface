@@ -1,6 +1,8 @@
 @import cmi_env
 
-\:host
+$cmi-button-filled-color-text-primary: $cmi-button-color-text
+
+:host
   +user-select(none)
   +box-sizing(border-box)
   display: inline-block
@@ -27,61 +29,61 @@
       *
         text-transform: inherit
 
-\:host([raised])
+:host([raised])
   > .content
 
-\:host([theme="primary"])
+:host([theme="primary"])
   > .content
     color: $cmi-button-color-primary
 
-\:host([theme="highlight"])
+:host([theme="highlight"])
   > .content
     color: $cmi-button-color-highlight
 
-\:host([theme="danger"])
+:host([theme="danger"])
   > .content
     color: $cmi-button-color-danger
 
-\:host([small])
+:host([small])
   font-size: 90%
   > .content
 
-\:host([large])
+:host([large])
   font-size: 115%
   > .content
 
-\:host([filled])
+:host([filled])
   background-color: $cmi-button-color-gray
   > .content
 
-\:host([filled][theme="primary"])
+:host([filled][theme="primary"])
   background-color: $cmi-button-color-primary
   > .content
-    color: $cmi-button-color-text
+    color: $cmi-button-filled-color-text-primary
 
-\:host([filled][theme="highlight"])
+:host([filled][theme="highlight"])
   background-color: $cmi-button-color-highlight
   > .content
     color: $cmi-button-color-text
   > paper-ripple
     color: $cmi-button-paper-ripple-light
 
-\:host([filled][theme="danger"])
+:host([filled][theme="danger"])
   background-color: $cmi-button-color-danger
   > .content
     color: $cmi-button-color-text-light
   > paper-ripple
     color: $cmi-button-paper-ripple-light
 
-\:host([block])
+:host([block])
   display: block
   > .content
 
-\:host([noink])
+:host([noink])
   > paper-ripple
     display: none
 
-\:host([disabled])
+:host([disabled])
   color: #a8a8a8
   cursor: auto
   pointer-events: none

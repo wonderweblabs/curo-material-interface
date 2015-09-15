@@ -1,16 +1,17 @@
 @import cmi_env
 
-\:host
+:host
   display: inline-block
   width: 200px
   height: 4px
 
-\:host(.transiting) #activeProgress,
-\:host(.transiting) #secondaryProgress
-  +transition-property(transform)
-  +transition-duration(0.08s)
-  +transition-timing-function(ease)
-  +transition-delay(0s)
+:host(.transiting)
+  #activeProgress,
+  #secondaryProgress
+    +transition-property(transform)
+    +transition-duration(0.08s)
+    +transition-timing-function(ease)
+    +transition-delay(0s)
 
 .fit
   +position(absolute, 0 0 0 0)

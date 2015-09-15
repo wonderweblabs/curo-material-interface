@@ -1,9 +1,9 @@
 @import cmi_env
 
-\:host
+:host
   position: relative
 
-\:host([line])
+:host([line])
   width: 100%
   > .h-line
     +position(absolute, 50% 0 auto 0)
@@ -22,12 +22,12 @@
       *
         text-transform: inherit
 
-\:host([right])
+:host([right])
   text-align: right
   > .h-inner
     padding: 0 0 0 15px
 
-\:host([center])
+:host([center])
   text-align: center
   > .h-inner
     padding: 0 15px

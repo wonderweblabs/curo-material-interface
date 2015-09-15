@@ -1,6 +1,6 @@
 @import cmi_env
 
-\:host
+:host
   display: inline-block
   position: relative
   padding: 8px
@@ -8,21 +8,23 @@
 
   @apply --paper-menu-button
 
-\:host([disabled])
+:host([disabled])
   cursor: auto
   color: var(--disabled-text-color)
 
   @apply --paper-menu-button-disabled
 
-\:host([vertical-align="top"]) paper-material
-  margin-bottom: 20px
-  margin-top: -10px
-  top: 10px
+:host([vertical-align="top"])
+  paper-material
+    margin-bottom: 20px
+    margin-top: -10px
+    top: 10px
 
-\:host([vertical-align="bottom"]) paper-material
-  bottom: 10px
-  margin-bottom: -10px
-  margin-top: 20px
+:host([vertical-align="bottom"])
+  paper-material
+    bottom: 10px
+    margin-bottom: -10px
+    margin-top: 20px
 
 paper-material
   border-radius: 2px

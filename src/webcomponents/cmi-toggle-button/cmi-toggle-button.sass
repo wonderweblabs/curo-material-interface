@@ -1,7 +1,7 @@
 @import cmi_env
 
 
-\:host
+:host
   display: inline-block
   .toggle-bar
     background-color: $cmi-toggle-button-color-bar
@@ -10,13 +10,13 @@
   .toggle-ink
     color: $cmi-toggle-button-color-text
 
-\:host([disabled])
+:host([disabled])
   pointer-events: none
 
-\:host(:focus)
+:host(:focus)
   outline: none
 
-\:host([checked])
+:host([checked])
   .toggle-bar
     background-color: $cmi-toggle-button-color-primary
   .toggle-button
@@ -39,12 +39,14 @@
   pointer-events: none
   opacity: 0.4
 
-\:host([checked]) #toggleBar
-  opacity: 0.5
+:host([checked])
+  #toggleBar
+    opacity: 0.5
 
-\:host([disabled]) #toggleBar
-  background-color: $cmi-toggle-button-color-bar
-  opacity: 0.12
+:host([disabled])
+  #toggleBar
+    background-color: $cmi-toggle-button-color-bar
+    opacity: 0.12
 
 #toggleButton
   +transition(transform linear .08s, background-color linear .08s)
@@ -60,12 +62,14 @@
 #toggleButton.dragging
   +transition(none)
 
-\:host([checked]) #toggleButton
-  +transform(translate(16px, 0))
+:host([checked])
+  #toggleButton
+    +transform(translate(16px, 0))
 
-\:host([disabled]) #toggleButton
-  background-color: #bdbdbd
-  opacity: 1
+:host([disabled])
+  #toggleButton
+    background-color: #bdbdbd
+    opacity: 1
 
 #ink
   position: absolute

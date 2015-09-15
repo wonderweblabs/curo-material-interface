@@ -1,7 +1,7 @@
 @import cmi_env
 
 
-\:host
+:host
   padding: 0
   border-spacing: 0px
   border-collapse: collapse
@@ -22,7 +22,7 @@
         vertical-align: middle
         background: transparent
 
-\:host([striped])
+:host([striped])
   ::content > thead,
   ::content > tbody,
     > tr:nth-child(even)
@@ -32,7 +32,7 @@
     > tr:nth-child(even).active
       background-color: darken($cmi-table-color-primary, 5%)
 
-\:host([hoverable])
+:host([hoverable])
   ::content > thead,
   ::content > tbody,
     > tr.active
@@ -42,7 +42,7 @@
     > tr.active:hover
       background-color: lighten($cmi-table-color-primary, 10%)
 
-\:host([striped][hoverable])
+:host([striped][hoverable])
   ::content > thead,
   ::content > tbody,
     > tr:nth-child(even):hover

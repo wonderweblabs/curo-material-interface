@@ -1,6 +1,6 @@
 @import cmi_env
 
-\:host
+:host
   display: inline-block
   position: relative
   text-align: left
@@ -14,14 +14,16 @@
     cursor: pointer
     @apply --paper-dropdown-menu
 
-\:host([disabled])
+:host([disabled])
   @apply --paper-dropdown-menu-disabled
 
-\:host([noink]) paper-ripple
-  display: none
+:host([noink])
+  paper-ripple
+    display: none
 
-\:host([no-label-float]) paper-ripple
-  top: 8px
+:host([no-label-float])
+  paper-ripple
+    top: 8px
 
 paper-ripple
   top: 20px

@@ -1,6 +1,6 @@
 @import cmi_env
 
-\:host
+:host
   +box-sizing(border-box)
   position: relative
   display: block
@@ -28,14 +28,14 @@
       &:last-child
         margin-bottom: 16px
 
-\:host([title-theme="dark"])
+:host([title-theme="dark"])
   > .content
     background-color: $cmi-card-image-dark-color-background
     ::content > *
       color: $cmi-card-image-dark-color-text
       text-shadow: none
 
-\:host([title-theme="light"])
+:host([title-theme="light"])
   > .content
     background-color: $cmi-card-image-light-color-background
     ::content > *

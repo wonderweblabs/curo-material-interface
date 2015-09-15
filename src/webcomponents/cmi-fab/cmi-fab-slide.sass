@@ -22,7 +22,7 @@ $animation-duration: .25s
 $animation-close-delay: .3s
 $animation-max-width: 400px
 
-\:host
+:host
   +border-top-radius($normal-border-radius)
   +border-bottom-radius($normal-border-radius)
   margin: 0 0.29em
@@ -64,7 +64,7 @@ $animation-max-width: 400px
       font-size: $normal-text-font-size
       line-height: $normal-icon-font-size
 
-\:host([small])
+:host([small])
   +border-top-radius($small-border-radius)
   +border-bottom-radius($small-border-radius)
   > .content
@@ -87,7 +87,7 @@ $animation-max-width: 400px
       font-size: $small-text-font-size
       line-height: $small-icon-font-size
 
-\:host([large])
+:host([large])
   +border-top-radius($large-border-radius)
   +border-bottom-radius($large-border-radius)
   > .content
@@ -110,7 +110,7 @@ $animation-max-width: 400px
       font-size: $large-text-font-size
       line-height: $large-icon-font-size
 
-\:host([open])
+:host([open])
   ::content
     cmi-fab-slide-content
       +transition-property(margin-right max-width)
@@ -121,13 +121,13 @@ $animation-max-width: 400px
       margin-right: $normal-padding
       margin-left: $normal-padding * -0.5
 
-\:host([open][small])
+:host([open][small])
   ::content
     cmi-fab-slide-content
       margin-right: $small-padding
       margin-left: $small-padding * -0.5
 
-\:host([open][large])
+:host([open][large])
   ::content
     cmi-fab-slide-content
       margin-right: $large-padding

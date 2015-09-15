@@ -1,26 +1,30 @@
 @import cmi_env
 
 
-\:host
+:host
   +user-select(none)
   display: inline-block
   width: 100%
   cursor: default
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 
-\:host(:not([disabled])) #sliderBar
-  --cmi-progress-active-color: $cmi-slider-color-primary
+:host(:not([disabled]))
+  #sliderBar
+    --cmi-progress-active-color: $cmi-slider-color-primary
 
-\:host(:not([disabled])) #sliderBar
-  --cmi-progress-secondary-color: lighten($cmi-slider-color-primary, 10%)
+:host(:not([disabled]))
+  #sliderBar
+    --cmi-progress-secondary-color: lighten($cmi-slider-color-primary, 10%)
 
-\:host([disabled]) #sliderBar
-  --cmi-progress-active-color: $cmi-slider-color-disabled
+:host([disabled])
+  #sliderBar
+    --cmi-progress-active-color: $cmi-slider-color-disabled
 
-\:host([disabled]) #sliderBar
-  --cmi-progress-secondary-color: lighten($cmi-slider-color-disabled, 10%)
+:host([disabled])
+  #sliderBar
+    --cmi-progress-secondary-color: lighten($cmi-slider-color-disabled, 10%)
 
-\:host(:focus)
+:host(:focus)
   outline: none
 
 #sliderContainer
@@ -68,9 +72,10 @@
   left: -4px
   width: calc(100% + 4px)
 
-.ring.expand:not(.pin) #sliderBar
-  left: -14px
-  width: calc(100% + 14px)
+.ring.expand:not(.pin)
+  #sliderBar
+    left: -14px
+    width: calc(100% + 14px)
 
 .slider-markers
   +box-sizing(border-box)

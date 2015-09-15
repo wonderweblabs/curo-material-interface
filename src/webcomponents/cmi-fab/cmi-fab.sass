@@ -15,7 +15,7 @@ $large-size: 67px
 $large-font-size: 21px
 $large-padding: ($large-size - $large-font-size) / 2
 
-\:host
+:host
   +border-top-radius($normal-border-radius)
   +border-bottom-radius($normal-border-radius)
   margin: 0 0.29em
@@ -35,7 +35,7 @@ $large-padding: ($large-size - $large-font-size) / 2
       width: 17px !important
       height: 17px !important
 
-\:host([small])
+:host([small])
   +border-top-radius($small-border-radius)
   +border-bottom-radius($small-border-radius)
   > .content
@@ -51,7 +51,7 @@ $large-padding: ($large-size - $large-font-size) / 2
       width: 14px !important
       height: 14px !important
 
-\:host([large])
+:host([large])
   +border-top-radius($large-border-radius)
   +border-bottom-radius($large-border-radius)
   > .content
@@ -67,16 +67,16 @@ $large-padding: ($large-size - $large-font-size) / 2
       width: 21px !important
       height: 21px !important
 
-\:host([block])
+:host([block])
   display: block
   > .content
     display: block
     width: auto
 
-\:host([block][text_left])
+:host([block][text_left])
   > .content
     text-align: left
 
-\:host([block][text_right])
+:host([block][text_right])
   > .content
     text-align: right

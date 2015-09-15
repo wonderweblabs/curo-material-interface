@@ -1,7 +1,7 @@
 @import cmi_env
 
 
-\:host
+:host
   @apply --layout-inline
   @apply --layout-center
   @apply --layout-center-justified
@@ -14,10 +14,10 @@
 
   @apply --paper-tab
 
-\:host(:focus)
+:host(:focus)
   outline: none
 
-\:host([link])
+:host([link])
   padding: 0
 
 .tab-content
@@ -28,12 +28,14 @@
 
   @apply --paper-tab-content
 
-\:host(:not(.iron-selected)) > .tab-content
-  opacity: 0.8
+:host(:not(.iron-selected))
+  > .tab-content
+    opacity: 0.8
 
-\:host(:focus) .tab-content
-  opacity: 1
-  font-weight: 700
+:host(:focus)
+  .tab-content
+    opacity: 1
+    font-weight: 700
 
 #ink
   color: var(--paper-tab-ink, --paper-yellow-a100)

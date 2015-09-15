@@ -1,14 +1,17 @@
 @import cmi_env
 
 
-\:host,
-\:host ::content > .cmi-list-table-head > ul,
-\:host ::content > .cmi-list-table-body > ul,
-\:host ::content > .cmi-list-table-head > li,
-\:host ::content > .cmi-list-table-body > li
+:host
   +box-sizing(border-box)
+:host
+  ::content
+    > .cmi-list-table-head > ul,
+    > .cmi-list-table-body > ul,
+    > .cmi-list-table-head > li,
+    > .cmi-list-table-body > li
+      +box-sizing(border-box)
 
-\:host
+:host
   position: relative
   display: block
   width: auto
@@ -44,7 +47,7 @@
     > ul > li
       font-weight: bold
 
-\:host([striped])
+:host([striped])
   ::content > .cmi-list-table-body
     > ul:nth-child(even)
       background-color: $cmi-list-table-color-even-row
@@ -53,7 +56,7 @@
     > ul:nth-child(even).active
       background-color: darken($cmi-list-table-color-primary, 5%)
 
-\:host([hoverable])
+:host([hoverable])
   ::content > .cmi-list-table-body
     > ul.active
       background-color: lighten($cmi-list-table-color-primary, 5%)
@@ -62,7 +65,7 @@
     > ul.active:hover
       background-color: lighten($cmi-list-table-color-primary, 10%)
 
-\:host([striped][hoverable])
+:host([striped][hoverable])
   ::content > .cmi-list-table-body
     > ul:nth-child(even):hover
       background-color: rgba(#000, 0.05)

@@ -1,6 +1,6 @@
 @import cmi_env
 
-\:host
+:host
   +box-sizing(border-box)
   +border-top-radius(2px)
   +border-bottom-radius(2px)
@@ -17,13 +17,13 @@
       overflow: hidden
       +border-bottom-radius(2px)
 
-\:host([block])
+:host([block])
   display: block
 
-\:host([theme="primary"])
+:host([theme="primary"])
   background-color: $cmi-card-color-primary
 
-\:host([theme="highlight"])
+:host([theme="highlight"])
   background-color: $cmi-card-color-highlight
 
 /* IE 10 support for HTML5 hidden attr */
