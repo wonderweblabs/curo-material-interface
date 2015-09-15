@@ -12,10 +12,10 @@
     max-width: 100%
     box-sizing: border-box
     cursor: pointer
-    @apply(--paper-dropdown-menu)
+    @apply --paper-dropdown-menu
 
 \:host([disabled])
-  @apply(--paper-dropdown-menu-disabled)
+  @apply --paper-dropdown-menu-disabled
 
 \:host([noink]) paper-ripple
   display: none
@@ -29,13 +29,13 @@ paper-ripple
   bottom: 16px
   right: 8px
 
-  @apply(--paper-dropdown-menu-ripple)
+  @apply --paper-dropdown-menu-ripple
 
 cmi-input
-  @apply(--paper-dropdown-menu-input)
+  @apply --paper-dropdown-menu-input
 
 iron-icon
   color: var(--disabled-text-color)
 
-  @apply(--paper-dropdown-menu-icon)
+  @apply --paper-dropdown-menu-icon
 

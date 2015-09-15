@@ -5,22 +5,22 @@
   padding: 8px 0
   background: var(--paper-menu-background-color, --primary-background-color)
   color: var(--paper-menu-color, --primary-text-color)
-  @apply(--paper-menu)
+  @apply --paper-menu
   > ::content
     > .iron-selected
       font-weight: bold
-      @apply(--paper-menu-selected-item)
+      @apply --paper-menu-selected-item
     > [disabled]
       color: var(--paper-menu-disabled-color, --disabled-text-color)
     > *:focus
       position: relative
       outline: 0
-      @apply(--paper-menu-focused-item)
+      @apply --paper-menu-focused-item
     > *:focus:after
-      @apply(--layout-fit)
+      @apply --layout-fit
       background: currentColor
       opacity: var(--dark-divider-opacity)
       content: ''
-      @apply(--paper-menu-focused-item-after)
+      @apply --paper-menu-focused-item-after
     > *[colored]:focus:after
       opacity: 0.26

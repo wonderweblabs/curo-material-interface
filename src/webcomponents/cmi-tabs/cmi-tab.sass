@@ -2,17 +2,17 @@
 
 
 \:host
-  @apply(--layout-inline)
-  @apply(--layout-center)
-  @apply(--layout-center-justified)
-  @apply(--layout-flex)
+  @apply --layout-inline
+  @apply --layout-center
+  @apply --layout-center-justified
+  @apply --layout-flex
 
   position: relative
   padding: 0 12px
   overflow: hidden
   cursor: pointer
 
-  @apply(--paper-tab)
+  @apply --paper-tab
 
 \:host(:focus)
   outline: none
@@ -26,7 +26,7 @@
   transform: translateZ(0)
   transition: opacity 0.1s cubic-bezier(0.4, 0.0, 1, 1)
 
-  @apply(--paper-tab-content)
+  @apply --paper-tab-content
 
 \:host(:not(.iron-selected)) > .tab-content
   opacity: 0.8

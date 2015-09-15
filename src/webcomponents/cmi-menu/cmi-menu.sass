@@ -2,7 +2,7 @@
 
 .selectable-content > ::content > .iron-selected
   font-weight: bold
-  @apply(--paper-menu-selected-item)
+  @apply --paper-menu-selected-item
 
 .selectable-content > ::content > [disabled]
   color: var(--paper-menu-disabled-color, --disabled-text-color)
@@ -10,14 +10,14 @@
 .selectable-content > ::content > *:focus
   position: relative
   outline: 0
-  @apply(--paper-menu-focused-item)
+  @apply --paper-menu-focused-item
 
 .selectable-content > ::content > *:focus:after
-  @apply(--layout-fit)
+  @apply --layout-fit
   background: currentColor
   opacity: var(--dark-divider-opacity)
   content: ''
-  @apply(--paper-menu-focused-item-after)
+  @apply --paper-menu-focused-item-after
 
 .selectable-content > ::content > *[colored]:focus:after
   opacity: 0.26
@@ -29,4 +29,4 @@
   background: var(--paper-menu-background-color, --primary-background-color)
   color: var(--paper-menu-color, --primary-text-color)
 
-  @apply(--paper-menu)
+  @apply --paper-menu

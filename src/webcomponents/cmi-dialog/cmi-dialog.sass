@@ -12,10 +12,10 @@ $cmi-color-text: #424242
   background: var(--paper-dialog-background-color, --primary-background-color)
   color: var(--paper-dialog-color, --primary-text-color)
 
-  @apply(--layout-scroll)
-  @apply(--paper-font-body1)
-  @apply(--shadow-elevation-16dp)
-  @apply(--paper-dialog)
+  @apply --layout-scroll
+  @apply --paper-font-body1
+  @apply --shadow-elevation-16dp
+  @apply --paper-dialog
 
   > ::content
     > *
@@ -30,12 +30,12 @@ $cmi-color-text: #424242
     h2
       position: relative
       margin: 0
-      @apply(--paper-font-title)
-      @apply(--paper-dialog-title)
+      @apply --paper-font-title
+      @apply --paper-dialog-title
     .buttons
       position: relative
       padding: 8px 8px 8px 24px
       margin: 0
       color: var(--paper-dialog-button-color, --default-primary-color)
-      @apply(--layout-horizontal)
-      @apply(--layout-end-justified)
+      @apply --layout-horizontal
+      @apply --layout-end-justified
