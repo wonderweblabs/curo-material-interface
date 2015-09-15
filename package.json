@@ -11,7 +11,11 @@
     "material",
     "curocms"
   ],
-  "files": [],
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
   "author": "Sascha Hillig - wonderweblabs <sascha@wonderweblabs.com> (https://www.wonderweblabs.com/)",
   "license": "MIT",
   "bugs": {
