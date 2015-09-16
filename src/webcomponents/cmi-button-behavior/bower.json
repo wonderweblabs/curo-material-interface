@@ -8,6 +8,7 @@
     "polymer",
     "cmi-elements"
   ],
+  "main": [],
   "ignore": [],
   "private": true,
   "dependencies": {
