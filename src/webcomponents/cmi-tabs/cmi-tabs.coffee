@@ -33,10 +33,11 @@ Polymer
       value: false
     selected:
       type: String,
+      value: '0',
       notify: true
     selectable:
       type: String,
-      value: 'paper-tab'
+      value: 'cmi-tab'
     _step:
       type: Number,
       value: 10
@@ -133,7 +134,7 @@ Polymer
       width: @_calcPercent(tabRect.width, w),
       left: @_calcPercent(tabOffsetLeft, w)
 
-    if @noSlide || old == null
+    if @noSlide || old == null || !old?
       @_positionBar(@_pos.width, @_pos.left)
       return
 
@@ -182,6 +183,3 @@ Polymer
       @_positionBar(@_pos.width, @_pos.left)
     else if cl.contains('contract')
       cl.remove('contract')
-
-
-

@@ -11,6 +11,7 @@
     %link{:href => "../../cmi-navbar/cmi-navbar.html", :rel => "import"}
     %link{:href => "../cmi-tabs.html", :rel => "import"}
     %link{:href => "../cmi-tab.html", :rel => "import"}
+    %link{:href => "../../iron-pages/iron-pages.html", :rel => "import"}
     %link{:href => "../../paper-styles/demo-pages.html", :rel => "import"}
 
     :plain
@@ -130,24 +131,35 @@
 
     %h3 H. Tabs aligned to bottom
 
-    %cmi-tabs{ selected: "0", :'align-bottom' => true }
-      %cmi-tab ITEM ONE
-      %cmi-tab ITEM TWO
-      %cmi-tab ITEM THREE
-
-
-    %h3 I. Bound Selection
-
-    %template{ is: "dom-bind" }
-      %h2
-        Current Tab:
-        %span= "[[selected]]"
-      %cmi-tabs{ selected: "{{selected}}" }
+    %cmi-doc-code-box{ :'left-cols' => '8', :'right-cols' => '4' }
+      %cmi-tabs{ selected: "0", :'align-bottom' => true }
         %cmi-tab ITEM ONE
         %cmi-tab ITEM TWO
         %cmi-tab ITEM THREE
 
 
+    %h3 I. Bound Selection
+
+    %cmi-doc-code-box{ :'left-cols' => '8', :'right-cols' => '4' }
+      %template{ is: "dom-bind" }
+        %h2
+          Current Tab:
+          %span= "[[selected]]"
+        %cmi-tabs{ selected: "{{selected}}" }
+          %cmi-tab ITEM ONE
+          %cmi-tab ITEM TWO
+          %cmi-tab ITEM THREE
 
 
+    %h3 J. Slideable tabs with real content pages
 
+    %cmi-doc-code-box{ :'left-cols' => '8', :'right-cols' => '4' }
+      %template{ is: "dom-bind" }
+        %cmi-tabs{ selected: "{{selected}}" }
+          %cmi-tab ITEM ONE
+          %cmi-tab ITEM TWO
+          %cmi-tab ITEM THREE
+        %iron-pages{ selected: "{{selected}}" }
+          .cmi-tab-1 Page 1
+          .cmi-tab-2 Page 2
+          .cmi-tab-3 Page 3

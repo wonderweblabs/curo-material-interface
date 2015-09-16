@@ -5,7 +5,9 @@ Polymer
   is: 'cmi-tab'
 
   properties:
-    noink: { type: Boolean, value: false }
+    noink:
+      type: Boolean,
+      value: false
 
   behaviors: [
     Polymer.IronControlState

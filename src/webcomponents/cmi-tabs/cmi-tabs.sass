@@ -1,9 +1,11 @@
 @import cmi_env
 
 :host
-  @apply --layout
-  @apply --layout-center
+  // @apply --layout
+  // @apply --layout-center
 
+  position: relative
+  display: block
   height: 48px
   font-size: 14px
   font-weight: 500
@@ -14,7 +16,7 @@
   user-select: none
   -webkit-tap-highlight-color: rgba(0,0,0,0)
 
-  @apply --paper-tabs
+  // @apply --paper-tabs
 
 #tabsContainer
   position: relative
@@ -53,7 +55,7 @@ paper-icon-button
   transition: -webkit-transform
   transition: transform
 
-  @apply --paper-tabs-selection-bar
+  // @apply --paper-tabs-selection-bar
 
 #selectionBar.align-bottom
   top: 0
