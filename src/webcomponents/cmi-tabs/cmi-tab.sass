@@ -32,13 +32,16 @@
   > .tab-content
     opacity: 0.8
 
+:host(.iron-selected)
+  color: $cmi-color-primary
+
 :host(:focus)
   .tab-content
     opacity: 1
     font-weight: 500
 
 #ink
-  color: var(--paper-tab-ink, --paper-yellow-a100)
+  color: $cmi-color-primary
   pointer-events: none
 
 .tab-content > ::content > a

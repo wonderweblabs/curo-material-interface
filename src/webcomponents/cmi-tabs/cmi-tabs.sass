@@ -4,8 +4,12 @@
   // @apply --layout
   // @apply --layout-center
 
-  position: relative
-  display: block
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  -ms-flex-align: center
+  -webkit-align-items: center
+  align-items: center
   height: 48px
   font-size: 14px
   font-weight: 500
@@ -15,6 +19,8 @@
   -ms-user-select: none
   user-select: none
   -webkit-tap-highlight-color: rgba(0,0,0,0)
+  color: $cmi-color-text
+  background-color: #fff
 
   // @apply --paper-tabs
 
@@ -26,6 +32,7 @@
 
 #tabsContent
   height: 100%
+  color: $cmi-color-text
 
 #tabsContent.scrollable
   position: absolute
@@ -47,7 +54,7 @@ paper-icon-button
   bottom: 0
   left: 0
   right: 0
-  background-color: var(--paper-tabs-selection-bar-color, --paper-yellow-a100)
+  background-color: $cmi-color-primary
   -webkit-transform-origin: left center
   transform-origin: left center
   -webkit-transform: scale(0)
