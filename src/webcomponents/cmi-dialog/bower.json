@@ -10,13 +10,16 @@
   ],
   "main": [
     "cmi-dialog.html",
-    "cmi-dialog-scrollable.html"
+    "cmi-dialog-scrollable.html",
+    "cmi-dialog-extended.html"
   ],
   "ignore": [],
   "private": true,
   "dependencies": {
     "polymer": "Polymer/polymer#>=1.1.3",
     "iron-flex-layout": "PolymerElements/iron-flex-layout#>=1.0.3",
+    "iron-icon": "PolymerElements/iron-icon#>=1.0.4",
+    "iron-icons": "PolymerElements/iron-icons#>=1.0.3",
     "paper-dialog-behavior": "PolymerElements/paper-dialog-behavior#>=1.0.4",
     "paper-dialog-scrollable": "PolymerElements/paper-dialog-scrollable#>=1.0.1",
     "paper-styles": "PolymerElements/paper-styles#>=1.0.11",

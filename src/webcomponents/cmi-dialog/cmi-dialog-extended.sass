@@ -1,0 +1,109 @@
+@import cmi_env
+
+$cmi-color-primary: #afd23e
+
+$cmi-color-disabled: #ccc
+$cmi-color-text: #424242
+
+$cmi-dialog-extended-header-color: #4c4c4c !default
+$cmi-dialog-extended-footer-color: #e5e5e5 !default
+$cmi-dialog-extended-headline-color: #e5e5e5 !default
+
+:host
+  +border-top-radius(3px)
+  +border-bottom-radius(3px)
+  display: block
+  margin: 24px 40px
+  background: var(--paper-dialog-background-color, --primary-background-color)
+  color: var(--paper-dialog-color, --primary-text-color)
+
+  .modal-inner
+    +display(flex)
+    +flex-direction(column)
+    +flex-wrap(nowrap)
+    +justify-content(space-between)
+  .modal-header,
+  .modal-footer
+    +flex-grow(0)
+    +flex-shrink(0)
+  .modal-content
+    +flex-grow(1)
+    +flex-shrink(0)
+    overflow: auto
+  .modal-header
+    +border-top-radius(3px)
+    background-color: $cmi-dialog-extended-header-color
+  .modal-footer
+    +border-bottom-radius(3px)
+    background-color: $cmi-dialog-extended-footer-color
+
+  .modal-header-inside,
+  .modal-footer-inside
+    +clearfix
+    +box-sizing(border-box)
+  .modal-header-inside
+    position: relative
+    display: block
+    width: auto
+    padding: 8px
+  .modal-footer-inside
+    position: relative
+    display: block
+    width: auto
+    padding: 8px
+
+  .modal-header-inside,
+  .modal-footer-inside
+    .back-button
+      float: left
+      min-width: 0
+      margin: 0 8px 0 0
+      border: 1px solid darken($cmi-dialog-extended-headline-color, 50%)
+      &:hover
+        background-color: lighten($cmi-dialog-extended-header-color, 10%)
+    .back-button ::content
+      paper-material
+        min-width: 0
+        padding: 1px 6px
+    .back-button /deep/
+      iron-icon
+        width: 14px
+
+  .modal-header-inside
+    .back-button /deep/
+      iron-icon
+        color: $cmi-dialog-extended-headline-color
+    .close-button
+      float: right
+      min-width: 0
+      margin: 0
+      border: 1px solid darken($cmi-dialog-extended-headline-color, 50%)
+      &:hover
+        background-color: lighten($cmi-dialog-extended-header-color, 10%)
+    .close-button ::content
+      paper-material
+        min-width: 0
+        padding: 1px 6px
+    .close-button /deep/
+      iron-icon
+        width: 14px
+        color: $cmi-dialog-extended-headline-color
+    h1
+      margin: 5px
+      font-weight: 200
+      font-size: 16px
+      line-height: 1.2
+      color: $cmi-dialog-extended-headline-color
+
+  .modal-footer-inside
+    text-align: right
+    .back-button
+      border-color: darken($cmi-dialog-extended-footer-color, 10%)
+      &:hover
+        background-color: darken($cmi-dialog-extended-footer-color, 5%)
+    .back-button ::content
+      paper-material
+        padding: 4px 9px
+
+
+
