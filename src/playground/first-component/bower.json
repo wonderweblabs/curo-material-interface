@@ -1,18 +1,20 @@
 {
-  "name": "cmi-styles",
+  "name": "first-component",
   "version": "1.0.0",
-  "description": "cmi-styles",
+  "description": "first-component",
   "homepage": "https://github.com/wonderweblabs/curo-material-interface",
   "keywords": [
     "web-components",
     "polymer",
     "cmi-elements"
   ],
-  "main": "cmi-styles.html",
+  "main": [
+    "first-component.html"
+  ],
   "ignore": [],
   "private": true,
   "dependencies": {
-    "bourbon": ">=4.2.4",
-    "neat": ">=1.7.2"
+    "polymer": "Polymer/polymer#>=1.1.3"
   }
 }
+

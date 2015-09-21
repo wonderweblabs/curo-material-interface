@@ -1,0 +1,20 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+
+/
+  Sabrina first element
+
+  @group CMI Elements
+  @element first-component
+  @demo demo/index.html
+
+%dom-module{ id: 'first-component' }
+  %link{ rel: 'import', type: 'css', href: './first-component.css' }
+  %template
+    %ul
+      %template{is: "dom-repeat", items: "{{contacts}}"}
+        %li
+          %img{ src: '{{item.img}}'}
+          %h3="{{item.name}}"
+          %span="{{item.email}}"
+
+%script{ src: './first-component.js' }
