@@ -34,7 +34,6 @@
     "cmi-slider": "./node_modules/cmi/src/webcomponents/cmi-slider",
     "cmi-table": "./node_modules/cmi/src/webcomponents/cmi-table",
     "cmi-tabs": "./node_modules/cmi/src/webcomponents/cmi-tabs",
-    "cmi-toggle-button": "./node_modules/cmi/src/webcomponents/cmi-toggle-button",
-    "first-component": "./node_modules/cmi/src/playground/first-component"
+    "cmi-toggle-button": "./node_modules/cmi/src/webcomponents/cmi-toggle-button"
   }
 }

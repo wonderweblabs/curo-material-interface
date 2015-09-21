@@ -10,6 +10,9 @@ Polymer
 
   properties:
 
+    ###
+    Set to true to stretch full width.
+    ###
     block: { type: Boolean, reflectToAttribute: true, value: false }
 
 
