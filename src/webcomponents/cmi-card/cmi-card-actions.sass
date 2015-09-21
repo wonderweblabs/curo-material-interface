@@ -1,0 +1,19 @@
+@import cmi_env
+
+:host
+  padding: 8px
+  ::content
+    a, cmi-button
+      margin-top: 0
+      margin-bottom: 0
+    *:first-child
+      margin-left: 0px
+    *:last-child
+      margin-right: 0px
+  &:first-child
+    padding-top: 8px
+  &:last-child
+    padding-bottom: 8px
+
+:host([line-top])
+  padding-top: 8px

@@ -1,0 +1,17 @@
+%dom-module#cmi-drawer-navigation
+  %graspi-webcomponent-stylesheet/
+  %template
+    %iron-selector{ :'attr-for-selected' => 'id', :'class$' => "[[getIronSelectorClasses(dragging, transition, peeking, selected)]]", :'activate-event' => '', selected: '[[selected]]'  }
+      #drawer_left{ :'style$' => "[[getDrawerStyle('left', drawerLeftWidth)]]" }
+        %content{ select: "[drawer_left]" }
+
+      #drawer_right{ :'style$' => "[[getDrawerStyle('right', drawerRightWidth)]]" }
+        %content{ select: "[drawer_right]" }
+
+      #drawer_main{ :'style$' => "[[getMainStyle(selected, drawerLeftWidth, drawerRightWidth)]]" }
+        %content{ select: "[drawer_main]" }
+        #scrim{ :'on-tap' => 'closeDrawer' }
+
+
+    %content
+  %graspi-webcomponent-script/

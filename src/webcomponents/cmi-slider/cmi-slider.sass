@@ -1,0 +1,213 @@
+@import cmi_env
+
+
+:host
+  +user-select(none)
+  display: inline-block
+  width: 100%
+  cursor: default
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+:host(:not([disabled]))
+  #sliderBar
+    --cmi-progress-active-color: $cmi-slider-color-primary
+
+:host(:not([disabled]))
+  #sliderBar
+    --cmi-progress-secondary-color: lighten($cmi-slider-color-primary, 10%)
+
+:host([disabled])
+  #sliderBar
+    --cmi-progress-active-color: $cmi-slider-color-disabled
+
+:host([disabled])
+  #sliderBar
+    --cmi-progress-secondary-color: lighten($cmi-slider-color-disabled, 10%)
+
+:host(:focus)
+  outline: none
+
+#sliderContainer
+  position: relative
+  width: calc(100% - 32px)
+  height: 32px
+
+#sliderContainer.editable
+  float: left
+  width: calc(100% - 72px)
+  margin: 12px 0
+
+.bar-container
+  +box-sizing(content-box)
+  position: absolute
+  top: 0
+  left: 16px
+  height: 100%
+  width: 100%
+  overflow: hidden
+
+.ring > .bar-container
+  +transition(left 0.18s ease, width 0.18s ease)
+  left: 20px
+  width: calc(100% - 4px)
+
+.ring.expand:not(.pin) > .bar-container
+  left: 30px
+  width: calc(100% - 14px)
+
+.ring.expand.dragging > .bar-container
+  +transition(none)
+
+#sliderBar
+  position: absolute
+  top: 15px
+  left: 0
+  height: 2px
+  width: 100%
+  padding: 8px 0
+  margin: -8px 0
+  background-color: transparent
+
+.ring #sliderBar
+  left: -4px
+  width: calc(100% + 4px)
+
+.ring.expand:not(.pin)
+  #sliderBar
+    left: -14px
+    width: calc(100% + 14px)
+
+.slider-markers
+  +box-sizing(border-box)
+  position: absolute
+  top: 15px
+  left: 15px
+  height: 2px
+  width: calc(100% + 2px)
+  pointer-events: none
+
+.slider-markers::after,
+.slider-marker::after
+  +border-top-radius(50%)
+  +border-bottom-radius(50%)
+  content: ""
+  display: block
+  width: 2px
+  height: 2px
+  background-color: black
+
+#sliderKnob
+  position: absolute
+  left: 0
+  top: 0
+  width: 32px
+  height: 32px
+
+.transiting > #sliderKnob
+  +transition(left 0.08s ease)
+
+#sliderKnob:focus
+  outline: none
+
+#sliderKnob.dragging
+  +transition(none)
+
+.snaps > #sliderKnob.dragging
+  +transition(transform 0.08s ease)
+
+#sliderKnobInner
+  +box-sizing(border-box)
+  +border-top-radius(50%)
+  +border-bottom-radius(50%)
+  +transition-property(height, width, background-color, border)
+  +transition-duration(0.1s)
+  +transition-timing-function(ease)
+  width: 12px
+  height: 12px
+  background-color: darken($cmi-slider-color-primary, 5%)
+
+.expand:not(.pin) > #sliderKnob > #sliderKnobInner
+  +transform(translateZ(0))
+  width: 100%
+  height: 100%
+
+.ring > #sliderKnob > #sliderKnobInner
+  background-color: transparent
+  border: 2px solid #c8c8c8
+
+#sliderKnobInner::before
+  background-color: darken($cmi-slider-color-primary, 5%)
+
+.pin > #sliderKnob > #sliderKnobInner::before
+  +transform(rotate(-45deg) scale(0) translate(0))
+  content: ""
+  position: absolute
+  top: 0
+  left: 0
+  width: 26px
+  height: 26px
+  margin-left: 3px
+  border-radius: 50% 50% 50% 0
+
+#sliderKnobInner::before,
+#sliderKnobInner::after
+  +transition(transform .2s ease, background-color .18s ease)
+
+.pin.ring > #sliderKnob > #sliderKnobInner::before
+  background-color: #c8c8c8
+
+.pin.expand > #sliderKnob > #sliderKnobInner::before
+  +transform(rotate(-45deg) scale(1) translate(17px, -17px))
+
+.pin > #sliderKnob > #sliderKnobInner::after
+  +transform(scale(0) translate(0))
+  content: attr(value)
+  position: absolute
+  top: 0
+  left: 0
+  width: 32px
+  height: 26px
+  text-align: center
+  color: #fff
+  font-size: 10px
+
+.pin.expand > #sliderKnob > #sliderKnobInner::after
+  +transform(scale(1) translate(0, -17px))
+
+.slider-input
+  width: 40px
+  float: right
+  overflow: hidden
+
+// .slider-input
+//   --paper-input-container-input:
+//       text-align: center
+
+#sliderContainer.disabled
+  pointer-events: none
+
+.disabled > #sliderKnob > #sliderKnobInner
+  width: 8px
+  height: 8px
+  background-color: $cmi-slider-color-disabled
+
+.disabled.ring > #sliderKnob > #sliderKnobInner
+  background-color: transparent
+
+paper-ripple
+  color: darken($cmi-slider-color-primary, 10%)
+
+#sliderKnob
+  +display(flex)
+  +justify-content(center)
+  +align-items(center)
+  +box-direction(row)
+
+.slider-markers
+  +display(flex)
+  +box-direction(row)
+  > .slider-marker
+    +flex(1)
+
+
+

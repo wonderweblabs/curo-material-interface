@@ -1,0 +1,32 @@
+{
+  "name": "cmi-dropdown-menu",
+  "version": "1.0.0",
+  "description": "cmi-dropdown-menu",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "cmi-elements"
+  ],
+  "main": [
+    "cmi-dropdown-menu.html"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.3",
+    "iron-a11y-keys-behavior": "PolymerElements/iron-a11y-keys-behavior#>=1.0.5",
+    "iron-icon": "PolymerElements/iron-icon#>=1.0.4",
+    "iron-selector": "PolymerElements/iron-selector#>=1.0.3",
+    "iron-behaviors": "PolymerElements/iron-behaviors#>=1.0.8",
+    "iron-dropdown": "PolymerElements/iron-dropdown#>=1.0.5",
+    "paper-ripple": "PolymerElements/paper-ripple#>=1.0.2",
+    "paper-material": "PolymerElements/paper-material#>=1.0.2",
+    "paper-behaviors": "PolymerElements/paper-behaviors#>=1.0.3",
+    "cmi-styles": "./node_modules/cmi/src/webcomponents/cmi-styles",
+    "cmi-input": "./node_modules/cmi/src/webcomponents/cmi-input",
+    "cmi-item": "./node_modules/cmi/src/webcomponents/cmi-item",
+    "cmi-dropdown-behavior": "./node_modules/cmi/src/webcomponents/cmi-dropdown-behavior",
+    "cmi-menu-behavior": "./node_modules/cmi/src/webcomponents/cmi-menu-behavior"
+  }
+}

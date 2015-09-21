@@ -1,0 +1,19 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+
+/
+  <cmi-navbar></cmi-navbar>
+
+  @group CMI Elements
+  @element cmi-navbar
+  @demo demo/index.html
+
+%dom-module{ id: 'cmi-navbar' }
+  %link{ rel: 'import', type: 'css', href: './cmi-navbar.css' }
+  %template
+    .cmi-navbar-content-container
+      %content{ select: "cmi-navbar-content" }
+
+    .cmi-navbar-content-hint-container
+      %content{ select: 'cmi-navbar-hint' }
+
+  %script{ src: './cmi-navbar.js' }

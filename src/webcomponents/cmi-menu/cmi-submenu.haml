@@ -1,0 +1,22 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../iron-menu-behavior/iron-menu-behavior.html' }
+%link{ rel: 'import', href: '../iron-behaviors/iron-control-state.html' }
+%link{ rel: 'import', href: '../iron-collapse/iron-collapse.html' }
+
+/
+  <cmi-submenu></cmi-submenu>
+
+  @group CMI Elements
+  @element cmi-submenu
+  @demo demo/index.html
+
+%dom-module{ id: 'cmi-submenu' }
+  %link{ rel: 'import', type: 'css', href: './cmi-submenu.css' }
+  %template
+    .selectable-content{ :'on-tap' => "_onTap" }
+      %content{ id: "trigger", select: ".menu-trigger" }
+
+    %iron-collapse{ id: "collapse", opened: "{{opened}}" }
+      %content{ select: ".menu-content" }
+
+  %script{ src: './cmi-submenu.js' }

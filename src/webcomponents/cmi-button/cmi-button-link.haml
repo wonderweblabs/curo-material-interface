@@ -1,0 +1,20 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../paper-material/paper-material.html' }
+%link{ rel: 'import', href: '../paper-ripple/paper-ripple.html' }
+%link{ rel: 'import', href: '../paper-behaviors/paper-button-behavior.html' }
+%link{ rel: 'import', href: '../cmi-button-behavior/cmi-button-behavior.html' }
+%link{ rel: 'import', href: './cmi-button.html' }
+
+/
+  <a is="cmi-button-link" href="#">My link button</a>
+
+  @group CMI Elements
+  @element cmi-button-link
+  @demo demo/index-button-link.html
+
+%dom-module{ id: 'cmi-button-link' }
+  %template
+    %cmi-button
+      %content
+
+  %script{ src: './cmi-button-link.js' }

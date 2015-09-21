@@ -1,0 +1,18 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: './cmi-headline-behavior.html' }
+
+/
+  <h2 is="cmi-h2"></h2>
+
+  @group CMI Elements
+  @element cmi-h2
+  @demo demo/index-h2.html
+
+%dom-module{ id: 'cmi-h2' }
+  %style{ include: 'cmi-headline-shared-style' }
+  -# %link{ rel: 'import', type: 'css', href: './cmi-h2.css' }
+  %template
+    .h-line
+    .h-inner
+      %content
+  %script{ src: './cmi-h2.js' }

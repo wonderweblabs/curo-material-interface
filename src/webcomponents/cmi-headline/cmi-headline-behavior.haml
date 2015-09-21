@@ -1,0 +1,13 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+
+%script{ src: './cmi-headline-behavior.js' }
+
+/
+  `cmi-headline-shared-style` implements a shared style for the cmi headline elements. Use it
+  inside of you dom-module with <style include="cmi-headline-shared-style"></style>
+
+  @group CMI Elements
+  @element cmi-headline-shared-style
+
+%dom-module{ id: 'cmi-headline-shared-style' }
+  %link{ rel: 'import', type: 'css', href: './cmi-headline-shared-style.css' }

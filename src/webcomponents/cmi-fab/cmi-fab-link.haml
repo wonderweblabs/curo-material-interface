@@ -1,0 +1,16 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: './cmi-fab.html' }
+
+/
+  <a is="cmi-fab-link"></a>
+
+  @group CMI Elements
+  @element cmi-fab-link
+  @demo demo/index-fab-link.html
+
+%dom-module{ id: 'cmi-fab-link' }
+  %template
+    %cmi-fab
+      %content
+
+  %script{ src: './cmi-fab-link.js' }

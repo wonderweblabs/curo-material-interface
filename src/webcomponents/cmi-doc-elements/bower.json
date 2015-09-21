@@ -1,0 +1,15 @@
+{
+  "name": "cmi-doc-elements",
+  "version": "1.0.0",
+  "description": "cmi doc elements",
+  "keywords": [
+    "web-components",
+    "polymer"
+  ],
+  "main": [],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "cmi-doc-code-box": "./node_modules/cmi/src/webcomponents/cmi-doc-code-box"
+  }
+}

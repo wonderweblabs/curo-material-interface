@@ -1,3 +1,5 @@
 source "http://rubygems.org"
 
-gemspec
+gem 'sass', '>=3.4'
+gem 'haml'
+gem 'terminal-notifier'

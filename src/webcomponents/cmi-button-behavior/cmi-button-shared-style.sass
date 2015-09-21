@@ -1,0 +1,94 @@
+@import cmi_env
+
+$cmi-button-filled-color-text-primary: $cmi-button-color-text !default
+
+:host
+  +user-select(none)
+  +box-sizing(border-box)
+  display: inline-block
+  position: relative
+  font: inherit
+  text-align: center
+  text-transform: uppercase
+  background: transparent
+  outline: none
+  cursor: pointer
+  > paper-ripple
+    color: $cmi-button-paper-ripple
+  > paper-material
+    font-weight: inherit
+    border-radius: inherit
+    &.keyboard-focus
+      font-weight: bold
+  > .content
+    +box-sizing(border-box)
+    display: block
+    position: relative
+    color: $cmi-button-color-text
+    ::content
+      *
+        text-transform: inherit
+
+:host([raised])
+  > .content
+
+:host([theme="primary"])
+  > .content
+    color: $cmi-button-color-primary
+
+:host([theme="highlight"])
+  > .content
+    color: $cmi-button-color-highlight
+
+:host([theme="danger"])
+  > .content
+    color: $cmi-button-color-danger
+
+:host([small])
+  font-size: 90%
+  > .content
+
+:host([large])
+  font-size: 115%
+  > .content
+
+:host([filled])
+  background-color: $cmi-button-color-gray
+  > .content
+
+:host([filled][theme="primary"])
+  background-color: $cmi-button-color-primary
+  > .content
+    color: $cmi-button-filled-color-text-primary
+
+:host([filled][theme="highlight"])
+  background-color: $cmi-button-color-highlight
+  > .content
+    color: $cmi-button-color-text
+  > paper-ripple
+    color: $cmi-button-paper-ripple-light
+
+:host([filled][theme="danger"])
+  background-color: $cmi-button-color-danger
+  > .content
+    color: $cmi-button-color-text-light
+  > paper-ripple
+    color: $cmi-button-paper-ripple-light
+
+:host([block])
+  display: block
+  > .content
+
+:host([noink])
+  > paper-ripple
+    display: none
+
+:host([disabled])
+  color: #a8a8a8
+  cursor: auto
+  pointer-events: none
+  background-color: $cmi-button-color-background-disabled
+  > .content
+    color: $cmi-button-color-disabled
+
+

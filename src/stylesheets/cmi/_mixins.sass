@@ -1,0 +1,52 @@
+// for all corners since bourbon.io does not support this
+=cmi-border-radius($radius)
+  +border-top-radius($radius)
+  +border-bottom-radius($radius)
+=border-radius($radius)
+  +border-top-radius($radius)
+  +border-bottom-radius($radius)
+
+// bourbon removed support
+// see - http://generatedcontent.org/post/37949105556/updateyourcss3
+=cmi-box-shadow($values...)
+  -webkit-box-shadow: $values
+  box-shadow: $values
+=box-shadow($values...)
+  -webkit-box-shadow: $values
+  box-shadow: $values
+
+// bourbon removed support
+=box-sizing($radius)
+  -webkit-box-sizing: $radius
+  -moz-box-sizing: $radius
+  box-sizing: $radius
+
+// clearfix helper
+=clearfix()
+  *zoom: 1
+  &:before,
+  &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+=cmi-clearfix()
+  *zoom: 1
+  &:before,
+  &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+
+// keyframes
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+

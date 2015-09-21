@@ -1,0 +1,38 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../iron-a11y-keys-behavior/iron-a11y-keys-behavior.html' }
+%link{ rel: 'import', href: '../iron-range-behavior/iron-range-behavior.html' }
+%link{ rel: 'import', href: '../iron-form-element-behavior/iron-form-element-behavior.html' }
+%link{ rel: 'import', href: '../paper-styles/paper-styles.html' }
+%link{ rel: 'import', href: '../paper-behaviors/paper-inky-focus-behavior.html' }
+%link{ rel: 'import', href: '../paper-ripple/paper-ripple.html' }
+%link{ rel: 'import', href: '../cmi-button/cmi-button.html' }
+%link{ rel: 'import', href: '../cmi-progress/cmi-progress.html' }
+
+/
+  `<cmi-slider></cmi-slider>`
+
+  @group CMI Elements
+  @element cmi-slider
+  @demo demo/index.html
+
+%dom-module{ id: 'cmi-slider' }
+  %link{ rel: 'import', type: 'css', href: './cmi-slider.css' }
+  %template
+    #sliderContainer{ :'class$' => "[[_getClassNames(disabled, pin, snaps, immediateValue, min, expand, dragging, transiting, editable)]]" }
+
+      .bar-container
+        %cmi-progress{ :'class$' => "[[_getProgressClass(transiting)]]", id: "sliderBar", :'aria-hidden' => "true", min: "[[min]]", max: "[[max]]", step: "[[step]]", value: "[[immediateValue]]", :'secondary-progress' => "[[secondaryProgress]]", :'on-down' => "_bardown", :'on-up' => "_resetKnob", :'on-track' => "_onTrack" }
+
+      %template{ is: 'dom-if', if: "[[snaps]]" }
+        .slider-markers
+          %template{ is: 'dom-repeat', items: "[[markers]]" }
+            .slider-marker
+
+      #sliderKnob{ :'on-down' => "_knobdown", :'on-up' => "_resetKnob", :'on-track' => "_onTrack", :'on-transitionend' => "_knobTransitionEnd" }
+        %paper-ripple{ id: 'ink', center: true, class: 'circle', :'hidden$' => "[[!receivedFocusFromKeyboard]]" }
+        #sliderKnobInner{ :'value$' => "[[immediateValue]]" }
+
+    %template{ is: 'dom-if', if: "[[editable]]" }
+      %cmi-input{ id: 'input', class: 'slider-input', :'disabled$' => "[[disabled]]", :'on-change' => "_inputChange", value: "[[_fixForInput(immediateValue)]]" }
+
+  %script{ src: './cmi-slider.js' }

@@ -1,0 +1,28 @@
+{
+  "name": "cmi-slider",
+  "version": "1.0.0",
+  "description": "cmi-slider",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "cmi-elements"
+  ],
+  "main": [
+    "cmi-slider.html"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.3",
+    "iron-a11y-keys-behavior": "PolymerElements/iron-a11y-keys-behavior#>=1.0.5",
+    "iron-form-element-behavior": "PolymerElements/iron-form-element-behavior#>=1.0.4",
+    "iron-range-behavior": "PolymerElements/iron-range-behavior#>=1.0.2",
+    "paper-behaviors": "PolymerElements/paper-behaviors#>=1.0.3",
+    "paper-ripple": "PolymerElements/paper-ripple#>=1.0.2",
+    "paper-styles": "PolymerElements/paper-styles#>=1.0.11",
+    "cmi-styles": "./node_modules/cmi/src/webcomponents/cmi-styles",
+    "cmi-progress": "./node_modules/cmi/src/webcomponents/cmi-progress",
+    "cmi-input": "./node_modules/cmi/src/webcomponents/cmi-input"
+  }
+}

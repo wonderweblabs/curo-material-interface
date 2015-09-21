@@ -1,0 +1,28 @@
+{
+  "name": "cmi",
+  "version": "0.0.6",
+  "description": "Frontend framework to provide google material ui like interfaces. Extracted from curo cms.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wonderweblabs/curo-material-interface.git"
+  },
+  "keywords": [
+    "curo",
+    "material",
+    "curocms"
+  ],
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
+  "author": "Sascha Hillig - wonderweblabs <sascha@wonderweblabs.com> (https://www.wonderweblabs.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wonderweblabs/curo-material-interface/issues"
+  },
+  "homepage": "http://wonderweblabs.github.io/curo-material-interface",
+  "dependencies": {
+    "naspi": "wonderweblabs/naspi#develop"
+  }
+}
