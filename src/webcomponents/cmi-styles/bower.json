@@ -8,7 +8,7 @@
     "polymer",
     "cmi-elements"
   ],
-  "main": "cmi-styles.html",
+  "main": [],
   "ignore": [],
   "private": true,
   "dependencies": {
