@@ -66,7 +66,6 @@ Polymer
     if integerPart.length > 3
       separatedIntegerPart = []
       times = parseInt((integerPart.length - 1) / 3)
-      console.log 'times:', times
 
       [times..0].forEach (i) =>
         separatedIntegerPart.push integerPart.slice((-3*(i+1)), integerPart.length + (-3*i))
