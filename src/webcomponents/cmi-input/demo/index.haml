@@ -9,6 +9,7 @@
     %link{:href => "../../cmi-doc-code-box/cmi-doc-code-box.html", :rel => "import"}
     %link{:href => "../cmi-input.html", :rel => "import"}
     %link{:href => "../cmi-textarea.html", :rel => "import"}
+    %link{:href => "../cmi-currency-input.html", :rel => "import"}
     %link{:href => "../../paper-styles/demo-pages.html", :rel => "import"}
   %body{ unresolved: true }
     .vertical.center-justified.layout
@@ -67,6 +68,17 @@
             %i.mdi.mdi-magnify{ prefix: true }
             %cmi-fab{ small: true, suffix: true, onclick: 'clearInput()', alt: 'clear', title: 'clear', tabindex: '0' }
               %i.mdi.mdi-close
+
+
+      %h4 Currency input
+      .vertical-section
+        %cmi-doc-code-box
+          %cmi-currency-input{ label: 'Preis', value: '0' }
+            %div{ suffix: true }= "€"
+      .vertical-section
+        %cmi-doc-code-box
+          %cmi-currency-input{ label: 'Preis', value: '100095' }
+            %div{ prefix: true }= "$"
 
     :plain
       <script>
