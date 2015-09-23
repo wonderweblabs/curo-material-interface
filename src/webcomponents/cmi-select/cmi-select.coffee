@@ -46,3 +46,4 @@ Polymer
 
   _onSelectedChange: ->
     @value = @selected
+    @fire('change')
