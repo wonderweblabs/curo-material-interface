@@ -27,9 +27,11 @@ Polymer
 
   _onValueChanged: (newValue, oldValue)->
     formattedValue = @_format(newValue)
-    @inputElement.selectionStart = formattedValue.length
-    @inputElement.selectionEnd = formattedValue.length
     @set('value', formattedValue)
+
+    if @focused
+      @inputElement.selectionStart = formattedValue.length
+      @inputElement.selectionEnd = formattedValue.length
 
   _convertToCent: (value)->
     value = "#{value}".replace(".","").replace(',',"")
