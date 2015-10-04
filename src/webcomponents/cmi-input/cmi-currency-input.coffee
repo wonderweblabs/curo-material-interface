@@ -7,7 +7,8 @@ Polymer
 
   behaviors: [
     Polymer.PaperInputBehavior,
-    Polymer.IronFormElementBehavior
+    Polymer.IronFormElementBehavior,
+    Polymer.IronControlState,
   ]
 
   properties:
@@ -16,45 +17,27 @@ Polymer
       value: 'Preis in €'
     value:
       observer: '_onValueChanged'
+      notify: true,
+      type: String
+    centValue:
+      type: Number
+      computed: '_convertToCent(value)'
+      reflectToAttribute: true
 
-  observers: [
-    '_onFocusedChanged(focused)'
-  ]
 
-  ready: ->
-    # If there's an initial input, validate it.
-    if (@value)
-      formattedValue = @_format(@value)
-      @updateValueAndPreserveCaret(formattedValue)
-      @_handleAutoValidate()
+  _onValueChanged: (newValue, oldValue)->
+    formattedValue = @_format(newValue)
+    @inputElement.selectionStart = formattedValue.length
+    @inputElement.selectionEnd = formattedValue.length
+    @set('value', formattedValue)
 
-  validate: ->
-    # Update the container and its addons (i.e. the custom error-message).
-    valid = @$.input.validate()
-    @$.container.invalid = !valid
-    @$.container.updateAddons(
-      inputElement: @$.input,
-      value: @value,
-      invalid: !valid
-    )
+  _convertToCent: (value)->
+    value = "#{value}".replace(".","").replace(',',"")
 
-    valid
-
-  _onValueChanged: (value, oldValue) ->
-    # The initial property assignment is handled by `ready`.
-    return if oldValue == undefined
-
-    formattedValue = @_format(value)
-    @updateValueAndPreserveCaret(formattedValue)
-
-    #TODO: set the cursor at the correct position
-    #TODO: handle - and + keycode to make the value negative/positive
-
-    @_handleAutoValidate()
-
-  _onFocusedChanged: (focused) ->
-    if !focused
-      @_handleAutoValidate()
+    if value?
+      parseInt(value)
+    else
+      0
 
   _format: (value) ->
     value = @_cleanUp(value)
@@ -78,10 +61,15 @@ Polymer
 
   _cleanUp: (value)->
     # remove all occurencies of . , - and +
-    value = value.replace(/[\.,\-\+]/g, '')
+    value = "#{value}".replace(/[^0-9]+/g, "")
 
     # prefill with '0`s'
     diff = if value.length > 3 then 0 else 3 - value.length
 
-    prefix = "0".repeat(diff)
+    prefix = ''
+
+    while diff > 0
+      prefix += "0"
+      diff = diff - 1
+
     value = "#{prefix}#{value}"
