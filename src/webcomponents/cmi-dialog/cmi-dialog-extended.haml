@@ -23,10 +23,10 @@
     .modal-inner
       .modal-header
         .modal-header-inside
-          %template{ is: 'dom-if', if: "[[closeBtn]]" }
+          %template{ is: 'dom-if', if: "[[_showCloseButton(closeBtn)]]" }
             %cmi-button{ class: 'close-button', small: true, :'on-tap' => '_onClickBtnClose' }
               %iron-icon{ icon: 'close' }
-          %template{ is: 'dom-if', if: "[[backBtnTop]]" }
+          %template{ is: 'dom-if', if: "[[_showBackButtonTop(backBtnTop)]]" }
             %cmi-button{ class: 'back-button', small: true, :'on-tap' => '_onClickBtnBack' }
               %iron-icon{ icon: 'chevron-left' }
           %h1= "{{headline}}"
@@ -34,7 +34,7 @@
         %content
       .modal-footer
         .modal-footer-inside
-          %template{ is: 'dom-if', if: "[[backBtnBottom]]" }
+          %template{ is: 'dom-if', if: "[[_showBackButtonBottom(backBtnBottom)]]" }
             %cmi-button{ class: 'back-button', :'on-tap' => '_onClickBtnBack' }
               %iron-icon{ icon: 'chevron-left' }
           %template{ is: 'dom-if', if: "[[_showCancelButton(cancelBtn)]]" }

@@ -95,6 +95,15 @@ Polymer
     return false unless successBtn?
     successBtn != ''
 
+  _showBackButtonTop: ->
+    backBtnTop == true || backBtnTop == 'true'
+
+  _showBackButtonBottom: ->
+    backBtnBottom == true || backBtnBottom == 'true'
+
+  _showCloseButton: =>
+    closeBtn == true || closeBtn == 'true'
+
   _onClickBtnCancel: ->
     @fire 'cmi-dialog-extended-cancel'
 

@@ -7,6 +7,9 @@
     "polymer"
   ],
   "main": [],
+  "naspi": {
+    "type": "simple_webcomponent"
+  },
   "ignore": [],
   "private": true,
   "dependencies": {
