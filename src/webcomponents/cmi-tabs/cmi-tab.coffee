@@ -8,6 +8,9 @@ Polymer
     noink:
       type: Boolean,
       value: false
+    badgeValue:
+      type: String,
+      value: ''
 
   behaviors: [
     Polymer.IronControlState
