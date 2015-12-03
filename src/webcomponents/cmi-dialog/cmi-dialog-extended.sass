@@ -12,7 +12,7 @@ $cmi-dialog-extended-headline-color: #e5e5e5 !default
 :host
   +border-top-radius(3px)
   +border-bottom-radius(3px)
-  display: block
+  +display(flex)
   margin: 24px 40px
   background: var(--paper-dialog-background-color, --primary-background-color)
   color: var(--paper-dialog-color, --primary-text-color)
@@ -22,6 +22,7 @@ $cmi-dialog-extended-headline-color: #e5e5e5 !default
     +flex-direction(column)
     +flex-wrap(nowrap)
     +justify-content(space-between)
+    +flex-grow(1)
   .modal-header,
   .modal-footer
     +flex-grow(0)

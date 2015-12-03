@@ -43,13 +43,13 @@ Polymer
       type: String
       value: 'Modal'
     closeBtn:
-      type: Boolean
+      type: Object
       value: true
     backBtnTop:
-      type: Boolean
+      type: Object
       value: true
     backBtnBottom:
-      type: Boolean
+      type: Object
       value: true
     cancelBtn:
       type: String
@@ -61,7 +61,7 @@ Polymer
       type: String
       value: null
     noCancelOnOutsideClick:
-      type: Boolean
+      type: Object
       value: true
 
   listeners:
@@ -91,17 +91,17 @@ Polymer
     return false unless doneBtn?
     doneBtn != ''
 
-  _showSuccessButton: ->
+  _showSuccessButton: (successBtn) ->
     return false unless successBtn?
     successBtn != ''
 
-  _showBackButtonTop: ->
+  _showBackButtonTop: (backBtnTop) ->
     backBtnTop == true || backBtnTop == 'true'
 
-  _showBackButtonBottom: ->
+  _showBackButtonBottom: (backBtnBottom) ->
     backBtnBottom == true || backBtnBottom == 'true'
 
-  _showCloseButton: =>
+  _showCloseButton: (closeBtn) ->
     closeBtn == true || closeBtn == 'true'
 
   _onClickBtnCancel: ->
