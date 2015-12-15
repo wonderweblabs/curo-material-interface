@@ -9,7 +9,7 @@ Polymer
     pin:                { type: Boolean, value: false, notify: true }
     secondaryProgress:  { type: Number, value: 0, notify: true, observer: '_secondaryProgressChanged' }
     editable:           { type: Boolean, value: false }
-    immediateValue:     { type: Number, value: 0, readOnly: true }
+    immediateValue:     { type: Number, value: 0, notify: true, readOnly: true }
     maxMarkers:         { type: Number, value: 0, notify: true, observer: '_maxMarkersChanged' }
     expand:             { type: Boolean, value: false, readOnly: true }
     dragging:           { type: Boolean, value: false, readOnly: true }
@@ -17,6 +17,7 @@ Polymer
     markers:            { type: Array, readOnly: true, value: [] }
 
   behaviors: [
+    Polymer.IronA11yKeysBehavior,
     Polymer.IronFormElementBehavior,
     Polymer.PaperInkyFocusBehavior,
     Polymer.IronRangeBehavior
@@ -43,24 +44,36 @@ Polymer
       @_updateKnob(@value);
     , 1)
 
+  ###
+  Increases value by `step` but not above `max`.
+  @method increment
+  ###
   increment: ->
     @value = @_clampValue(@value + @step)
 
+  ###
+  Decreases value by `step` but not below `min`.
+  @method decrement
+  ###
   decrement: ->
     @value = @_clampValue(@value - @step)
 
-  _updateKnob: (value) ->
+  _updateKnob: (value, min, max, snaps, step) ->
+    @setAttribute 'aria-valuemin', min
+    @setAttribute 'aria-valuemax', max
+    @setAttribute 'aria-valuenow', value
+
     @_positionKnob(@_calcRatio(value))
+
+  _valueChanged: ->
+    @setAttribute('aria-valuenow', @value)
+    @fire('value-change')
 
   _minChanged: ->
     @setAttribute('aria-valuemin', @min)
 
   _maxChanged: ->
     @setAttribute('aria-valuemax', @max)
-
-  _valueChanged: ->
-    @setAttribute('aria-valuenow', @value)
-    @fire('value-change')
 
   _immediateValueChanged: ->
     if  @dragging
@@ -71,11 +84,11 @@ Polymer
   _secondaryProgressChanged: ->
     @secondaryProgress = @_clampValue(@secondaryProgress)
 
-  _fixForInput: (immediateValue) ->
-    @immediateValue.toString()
-
   _expandKnob: ->
     @_setExpand(true)
+
+  # _fixForInput: (immediateValue) ->
+  #   @immediateValue.toString()
 
   _resetKnob: ->
     @cancelDebouncer('expandKnob')
@@ -86,10 +99,6 @@ Polymer
     @_setRatio(@_calcRatio(@immediateValue))
 
     @.$.sliderKnob.style.left = (@ratio * 100) + '%'
-
-  _inputChange: ->
-    @value = @.$$('#input').value
-    @fire('change')
 
   _calcKnobPosition: (ratio) ->
     (@max - @min) * ratio + @min
@@ -121,6 +130,7 @@ Polymer
     immediateValue = @_calcStep(@_calcKnobPosition(@_x / @_w))
     @_setImmediateValue(immediateValue)
 
+    # update knob's position
     translateX = ((@_calcRatio(immediateValue) * @_w) - @_startx)
     @translate3d(translateX + 'px', 0, 0, @.$.sliderKnob)
 
@@ -139,9 +149,9 @@ Polymer
   _knobdown: (event) ->
     @_expandKnob()
 
-    event.preventDefault()
+    event.preventDefault() #cancel selection
 
-    @focus()
+    @focus() #set the focus manually because we will called prevent default
 
   _bardown: (event) ->
     @_w = @.$.sliderBar.offsetWidth
@@ -150,27 +160,29 @@ Polymer
     prevRatio = @ratio
 
     @_setTransiting(true)
-
     @_positionKnob(ratio)
 
     @debounce('expandKnob', @_expandKnob, 60)
 
+    # if the ratio doesn't change, sliderKnob's animation won't start
+    # and `_knobTransitionEnd` won't be called
+    # Therefore, we need to manually update the `transiting` state
     @_setTransiting(false) if prevRatio == @ratio
 
     @async => @fire('change')
 
-    event.preventDefault()
+    event.preventDefault() # cancel selection
 
   _knobTransitionEnd: (event) ->
     @_setTransiting(false) if event.target == @.$.sliderKnob
 
   _maxMarkersChanged: (maxMarkers) ->
-    l = (@max - @min) / @step
+    @_setMarkers([]) if !@snaps
 
-    if !@snaps && l > maxMarkers
-      @_setMarkers([])
-    else
-      @_setMarkers(new Array(l))
+    steps = Math.floor((@max - @min) / @step)
+    steps = maxMarkers if steps > maxMarkers
+
+    @_setMarkers(new Array(steps))
 
   _mergeClasses: (classes) ->
     Object.keys(classes).filter( (className) ->
@@ -180,22 +192,20 @@ Polymer
   _getClassNames: ->
     classes = {}
 
-    classes.disabled = @disabled
-    classes.pin = @pin
-    classes.snaps = @snaps
-    classes.ring = @immediateValue <= @min
-    classes.expand = @expand
-    classes.dragging = @dragging
-    classes.transiting = @transiting
-    classes.editable = @editable
+    classes.disabled    = @disabled
+    classes.pin         = @pin
+    classes.snaps       = @snaps
+    classes.ring        = @immediateValue <= @min
+    classes.expand      = @expand
+    classes.dragging    = @dragging
+    classes.transiting  = @transiting
+    classes.editable    = @editable
 
     @_mergeClasses(classes)
 
-  _getProgressClass: ->
-    @_mergeClasses
-      transiting: @transiting
-
   _incrementKey: (event) ->
+    return if @disabled
+
     if event.detail.key == 'end'
       @value = @max
     else
@@ -204,11 +214,45 @@ Polymer
     @fire('change')
 
   _decrementKey: (event) ->
+    return if @disabled
+
     if event.detail.key == 'home'
       @value = @min
     else
       @decrement()
 
     @fire('change')
+
+  _changeValue: (event) ->
+    @value = event.target.value
+    @fire('change')
+
+  _inputKeyDown: (event) ->
+    event.stopPropagation()
+
+  # create the element ripple inside the `sliderKnob`
+  _createRipple: ->
+    @_rippleContainer = @.$.sliderKnob
+
+    Polymer.PaperInkyFocusBehaviorImpl._createRipple.call(@)
+
+  # Hide the ripple when user is not interacting with keyboard.
+  # This behavior is different from other ripple-y controls, but is
+  # according to spec: https://www.google.com/design/spec/components/sliders.html
+  _focusedChanged: (receivedFocusFromKeyboard) ->
+    @ensureRipple() if receivedFocusFromKeyboard
+
+    if @hasRipple()
+      # note, ripple must be un-hidden prior to setting `holdDown`
+      if receivedFocusFromKeyboard
+        @_ripple.removeAttribute('hidden')
+      else
+        @_ripple.setAttribute('hidden', '')
+
+      @_ripple.holdDown = receivedFocusFromKeyboard
+
+  # _getProgressClass: ->
+  #   @_mergeClasses
+  #     transiting: @transiting
 
 
