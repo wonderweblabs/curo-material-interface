@@ -2,6 +2,7 @@ module.exports = (gulp, config) ->
   path          = require('path')
   hamlc         = require('gulp-haml-coffee')
   gulpReplace   = require('gulp-replace')
+  changed       = require('gulp-changed')
 
   appendError   = require('../helper/stream_error_appender')
   appendNotify  = require('../helper/stream_notify_appender')
@@ -19,6 +20,7 @@ module.exports = (gulp, config) ->
   #
   gulp.task 'cmi-compile-hamlc', ->
     stream = gulp.src(["#{componentsPath}/**/*.hamlc"])
+    stream = stream.pipe(changed(config.destPath, { extension: '.html' }))
     stream = appendError(stream, config, 'CMI Haml-Coffee Error')
     stream = stream.pipe(gulpReplace(/\$\=/g, 'DOLLAREQUALSIGNS='))
     stream = stream.pipe(hamlc({ js: false }))

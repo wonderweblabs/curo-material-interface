@@ -3,6 +3,7 @@ module.exports = (gulp, config) ->
   sass          = require('gulp-sass')
   util          = require('gulp-util')
   sourcemaps    = require('gulp-sourcemaps')
+  changed       = require('gulp-changed')
 
   appendError   = require('../helper/stream_error_appender')
   appendNotify  = require('../helper/stream_notify_appender')
@@ -12,6 +13,7 @@ module.exports = (gulp, config) ->
   # ----------------------------------------------------------------------------------------
   gulp.task 'cmi-compile-sass', ->
     stream = gulp.src(["#{componentsPath}/**/*.sass"])
+    stream = stream.pipe(changed(config.destPath, { extension: '.css' }))
     stream = appendError(stream, config, 'CMI Sass Error')
     stream = stream.pipe(sourcemaps.init())                   if config.env == 'development'
     stream = stream.pipe(sass({

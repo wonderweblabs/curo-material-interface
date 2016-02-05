@@ -3,6 +3,7 @@ module.exports = (gulp, config) ->
   coffee        = require('gulp-coffee')
   util          = require('gulp-util')
   sourcemaps    = require('gulp-sourcemaps')
+  changed       = require('gulp-changed')
 
   appendError   = require('../helper/stream_error_appender')
   appendNotify  = require('../helper/stream_notify_appender')
@@ -12,6 +13,7 @@ module.exports = (gulp, config) ->
   # ----------------------------------------------------------------------------------------
   gulp.task 'cmi-compile-coffee', ->
     stream = gulp.src(["#{componentsPath}/**/*.coffee"])
+    stream = stream.pipe(changed(config.destPath, { extension: '.js' }))
     stream = appendError(stream, config, 'CMI Coffee Error')
     stream = stream.pipe(sourcemaps.init())                   if config.env == 'development'
     stream = stream.pipe(coffee({ bare: true }).on('error', util.log))
