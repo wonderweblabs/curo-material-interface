@@ -21,12 +21,12 @@
 
 %dom-module{ id: 'cmi-checkbox' }
   %link{ rel: 'import', type: 'css', href: './cmi-checkbox.css' }
-  %template{ 'strip-whitespace' => true }
+  %template( strip-whitespace )
     #checkboxContainer
       #checkbox( class$="[[_computeCheckboxClass(checked, invalid)]]" )
         #checkmark( class$="[[_computeCheckmarkClass(checked)]]" )
 
-    #checkboxLabel{ 'aria-hidden' => "true" }
+    #checkboxLabel
       %content
 
   %script{ src: './cmi-checkbox.js' }
