@@ -1,4 +1,5 @@
 %link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: "../iron-behaviors/iron-button-state.html" }
 %link{ rel: 'import', href: "../paper-behaviors/paper-button-behavior.html" }
 
 %script{ src: './cmi-button-behavior.js' }

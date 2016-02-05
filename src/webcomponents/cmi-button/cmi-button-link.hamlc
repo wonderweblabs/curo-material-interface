@@ -13,7 +13,7 @@
   @demo demo/index-button-link.html
 
 %dom-module{ id: 'cmi-button-link' }
-  %template
+  %template( strip-whitespace )
     %cmi-button
       %content
 

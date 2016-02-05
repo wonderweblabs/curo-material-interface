@@ -12,11 +12,10 @@
   @demo demo/index-button.html
 
 %dom-module{ id: 'cmi-button' }
+  %style{ include: 'paper-material' }
   %style{ include: 'cmi-button-shared-style' }
   %link{ rel: 'import', type: 'css', href: './cmi-button.css' }
-  %template
-    %paper-ripple
-    %paper-material( elevation="[[_elevation]]" animated="true" class$="[[_computeContentClass(receivedFocusFromKeyboard)]]" )
-      %content
+  %template( strip-whitespace )
+    %content
 
   %script{ src: './cmi-button.js' }

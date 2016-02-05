@@ -148,7 +148,7 @@
             &nbsp; Button
 
         %cmi-doc-code-box{ 'left-cols' => '4', 'right-cols' => '8' }
-          %cmi-button{ cmi: { raised: true } }
+          %cmi-button{ raised: true }
             %i.mdi.mdi-check
             &nbsp; Button
 

@@ -4,22 +4,25 @@ $cmi-button-filled-color-text-primary: $cmi-button-color-text !default
 
 :host
   +user-select(none)
-  +box-sizing(border-box)
+  background: transparent
+  border-radius: 3px
+  box-sizing: border-box
+  cursor: pointer
   display: inline-block
-  position: relative
   font: inherit
+  margin: 0 0.29em
+  min-width: 5.14em
+  padding: 0.7em 0.57em
+  position: relative
   text-align: center
   text-transform: uppercase
-  background: transparent
   outline: none
-  cursor: pointer
+  outline-width: 0
+  z-index: 0
+
   > paper-ripple
     color: $cmi-button-paper-ripple
-  > paper-material
-    font-weight: inherit
-    border-radius: inherit
-    &.keyboard-focus
-      font-weight: bold
+
   > .content
     +box-sizing(border-box)
     display: block
@@ -28,9 +31,6 @@ $cmi-button-filled-color-text-primary: $cmi-button-color-text !default
     ::content
       *
         text-transform: inherit
-
-:host([raised])
-  > .content
 
 :host([theme="primary"])
   > .content
@@ -46,15 +46,15 @@ $cmi-button-filled-color-text-primary: $cmi-button-color-text !default
 
 :host([small])
   font-size: 90%
-  > .content
+  padding: 0.4em 0.57em
 
 :host([large])
   font-size: 115%
-  > .content
+  line-height: 1.2
+  padding: 0.85em 1.2em
 
 :host([filled])
   background-color: $cmi-button-color-gray
-  > .content
 
 :host([filled][theme="primary"])
   background-color: $cmi-button-color-primary
@@ -77,17 +77,16 @@ $cmi-button-filled-color-text-primary: $cmi-button-color-text !default
 
 :host([block])
   display: block
-  > .content
 
 :host([noink])
   > paper-ripple
     display: none
 
 :host([disabled])
+  background-color: $cmi-button-color-background-disabled
   color: #a8a8a8
   cursor: auto
   pointer-events: none
-  background-color: $cmi-button-color-background-disabled
   > .content
     color: $cmi-button-color-disabled
 
