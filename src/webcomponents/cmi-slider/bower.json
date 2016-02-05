@@ -20,9 +20,6 @@
     "iron-range-behavior": "PolymerElements/iron-range-behavior#>=1.0.2",
     "paper-behaviors": "PolymerElements/paper-behaviors#>=1.0.3",
     "paper-ripple": "PolymerElements/paper-ripple#>=1.0.2",
-    "paper-styles": "PolymerElements/paper-styles#>=1.0.11",
-    "cmi-styles": "./node_modules/cmi/src/webcomponents/cmi-styles",
-    "cmi-progress": "./node_modules/cmi/src/webcomponents/cmi-progress",
-    "cmi-input": "./node_modules/cmi/src/webcomponents/cmi-input"
+    "paper-styles": "PolymerElements/paper-styles#>=1.0.11"
   }
 }

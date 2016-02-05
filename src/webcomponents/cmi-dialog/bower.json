@@ -23,7 +23,6 @@
     "paper-dialog-behavior": "PolymerElements/paper-dialog-behavior#>=1.0.4",
     "paper-dialog-scrollable": "PolymerElements/paper-dialog-scrollable#>=1.0.1",
     "paper-styles": "PolymerElements/paper-styles#>=1.0.11",
-    "neon-animation": "PolymerElements/neon-animation#>=1.0.4",
-    "cmi-styles": "./node_modules/cmi/src/webcomponents/cmi-styles"
+    "neon-animation": "PolymerElements/neon-animation#>=1.0.4"
   }
 }

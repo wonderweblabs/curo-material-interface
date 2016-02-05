@@ -1,0 +1,93 @@
+!!!
+%html
+  %head
+    %meta{ 'charset' => "utf-8" }
+    %meta{ 'content' => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible" }
+    %meta{ 'content' => "width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes", 'name' => "viewport" }
+    %title cmi-input demo
+    %script{ 'src' => "../../webcomponentsjs/webcomponents-lite.js" }
+    %link{ 'href' => "../../cmi-doc-code-box/cmi-doc-code-box.html", 'rel' => "import" }
+    %link{ 'href' => "../cmi-input.html", 'rel' => "import" }
+    %link{ 'href' => "../cmi-textarea.html", 'rel' => "import" }
+    %link{ 'href' => "../cmi-currency-input.html", 'rel' => "import" }
+    %link{ 'href' => "../../paper-styles/demo-pages.html", 'rel' => "import" }
+  %body{ unresolved: true }
+    .vertical.center-justified.layout
+
+      %h4 Text input
+      .vertical-section
+        %cmi-doc-code-box
+          %cmi-input{ label: 'label', autofocus: true }
+        %cmi-doc-code-box
+          %cmi-input{ label: 'password', type: 'password' }
+        %cmi-doc-code-box
+          %cmi-input{ label: 'label (no-label-float)', 'no-label-float' => true }
+        %cmi-doc-code-box
+          %cmi-input{ label: 'disabled', disabled: true }
+
+
+      %h4 Text area
+      .vertical-section
+        %cmi-doc-code-box
+          %cmi-textarea{ label: 'textarea label' }
+
+
+      %h4 Validation
+      .vertical-section
+        %cmi-doc-code-box
+          %cmi-input{ label: 'only type letters (auto-validate)', 'auto-validate' => true, pattern: "[a-zA-Z]*", 'error-message' => "letters only!" }
+        %cmi-doc-code-box
+          %cmi-input{ label: 'only type letters (no auto validate)', pattern: "[a-zA-Z]*", 'error-message' => "letters only, required input!", required: true, id: 'inputForValidation' }
+        %cmi-button{ onclick: "validate()" } Validate!
+
+
+      %h4 Character counter
+      .vertical-section
+        %cmi-doc-code-box
+          %cmi-input{ label: 'label', 'char-counter' => true }
+        %cmi-doc-code-box
+          %cmi-input{ label: 'at most 10 letters', 'char-counter' => true, 'auto-validate' => true, pattern: '[a-zA-Z]*', maxlength: '10', 'error-message' => 'letters only!' }
+        %cmi-doc-code-box
+          %cmi-textarea{ label: 'textarea', 'char-counter' => true }
+        %cmi-doc-code-box
+          %cmi-textarea{ label: 'textarea with maxlength', 'char-counter' => true, maxlength: '10' }
+        %cmi-doc-code-box
+          %cmi-textarea{ label: 'text area with rows and max-rows', rows: '3', 'max-rows' => '4' }
+
+
+      %h4 Prefixes and Suffixes
+      .vertical-section
+        %cmi-doc-code-box
+          %cmi-input{ label: 'total', class: 'short', type: 'number' }
+            %div{ prefix: true }= "€"
+        %cmi-doc-code-box
+          %cmi-input{ label: 'username', class: 'short' }
+            %div{ suffix: true }= "@email.com"
+        %cmi-doc-code-box
+          %cmi-input{ label: 'icons and buttons', class: 'short', id: 'inputWithButton' }
+            %i.mdi.mdi-magnify{ prefix: true }
+            %cmi-fab{ small: true, suffix: true, onclick: 'clearInput()', alt: 'clear', title: 'clear', tabindex: '0' }
+              %i.mdi.mdi-close
+
+
+      %h4 Currency input
+      .vertical-section
+        %cmi-doc-code-box
+          %cmi-currency-input{ label: 'Preis', value: '0' }
+            %div{ suffix: true }= "€"
+      .vertical-section
+        %cmi-doc-code-box
+          %cmi-currency-input{ label: 'Preis', value: '100095' }
+            %div{ prefix: true }= "$"
+
+    :plain
+      <script>
+        function validate() {
+          document.getElementById('inputForValidation').validate();
+        }
+
+        function clearInput() {
+          document.getElementById('inputWithButton').value = '';
+        }
+      </script>
+

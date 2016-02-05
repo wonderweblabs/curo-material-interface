@@ -5,23 +5,6 @@ Polymer
   is: 'cmi-checkbox'
 
   properties:
-    # value:
-    #   type: String
-    #   reflectToAttribute: true
-    #   value: ''
-    # boolean:
-    #   type: Boolean
-    #   reflectToAttribute: true
-    #   value: false
-    #   notify: true
-    #   observer: '_booleanChanged'
-    # checkedValue:
-    #   type: String
-    #   value: 'true'
-    # uncheckedValue:
-    #   type: String
-    #   value: null
-
     ###
     Fired when the checked state changes due to user interaction.
 

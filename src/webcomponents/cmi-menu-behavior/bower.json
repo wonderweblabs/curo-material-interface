@@ -18,8 +18,6 @@
     "iron-a11y-keys-behavior": "PolymerElements/iron-a11y-keys-behavior#>=1.0.5",
     "iron-behaviors": "PolymerElements/iron-behaviors#>=1.0.8",
     "iron-selector": "PolymerElements/iron-selector#>=1.0.3",
-    "iron-menu-behavior": "PolymerElements/iron-menu-behavior#>=1.0.3",
-    "cmi-styles": "./node_modules/cmi/src/webcomponents/cmi-styles",
-    "cmi-item": "./node_modules/cmi/src/webcomponents/cmi-item"
+    "iron-menu-behavior": "PolymerElements/iron-menu-behavior#>=1.0.3"
   }
 }

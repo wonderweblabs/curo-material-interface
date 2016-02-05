@@ -16,8 +16,6 @@
   "dependencies": {
     "polymer": "Polymer/polymer#>=1.1.3",
     "iron-a11y-keys-behavior": "PolymerElements/iron-a11y-keys-behavior#>=1.0.5",
-    "iron-selector": "PolymerElements/iron-selector#>=1.0.3",
-    "cmi-styles": "./node_modules/cmi/src/webcomponents/cmi-styles",
-    "cmi-radio-button": "./node_modules/cmi/src/webcomponents/cmi-radio-button"
+    "iron-selector": "PolymerElements/iron-selector#>=1.0.3"
   }
 }

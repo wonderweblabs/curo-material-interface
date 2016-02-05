@@ -19,8 +19,6 @@
     "polymer": "Polymer/polymer#>=1.1.3",
     "paper-material": "PolymerElements/paper-material#>=1.0.2",
     "paper-behaviors": "PolymerElements/paper-behaviors#>=1.0.3",
-    "paper-ripple": "PolymerElements/paper-ripple#>=1.0.2",
-    "cmi-styles": "./node_modules/cmi/src/webcomponents/cmi-styles",
-    "cmi-button-behavior": "./node_modules/cmi/src/webcomponents/cmi-button-behavior"
+    "paper-ripple": "PolymerElements/paper-ripple#>=1.0.2"
   }
 }

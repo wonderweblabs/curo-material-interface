@@ -1,0 +1,32 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../paper-ripple/paper-ripple.html' }
+%link{ rel: 'import', href: '../paper-behaviors/paper-checked-element-behavior.html' }
+%link{ rel: 'import', href: '../paper-behaviors/paper-inky-focus-behavior.html' }
+
+/
+
+  `cmi-checkbox` is a button that can be either checked or unchecked. User
+  can tap the checkbox to check or uncheck it. Usually you use checkboxes
+  to allow user to select multiple options from a set.  If you have a single
+  ON/OFF option, avoid using a single checkbox and use `cmi-toggle-button`
+  instead.
+
+  Example:
+  <cmi-checkbox>label</cmi-checkbox>
+  <cmi-checkbox checked>label</cmi-checkbox>
+
+  @group CMI Elements
+  @element cmi-checkbox
+  @demo demo/index.html
+
+%dom-module{ id: 'cmi-checkbox' }
+  %link{ rel: 'import', type: 'css', href: './cmi-checkbox.css' }
+  %template{ 'strip-whitespace' => true }
+    #checkboxContainer
+      #checkbox( class$="[[_computeCheckboxClass(checked, invalid)]]" )
+        #checkmark( class$="[[_computeCheckmarkClass(checked)]]" )
+
+    #checkboxLabel{ 'aria-hidden' => "true" }
+      %content
+
+  %script{ src: './cmi-checkbox.js' }

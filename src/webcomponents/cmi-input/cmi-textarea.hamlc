@@ -1,0 +1,33 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../iron-autogrow-textarea/iron-autogrow-textarea.html' }
+%link{ rel: 'import', href: '../iron-form-element-behavior/iron-form-element-behavior.html' }
+%link{ rel: 'import', href: '../paper-input/paper-input-behavior.html' }
+%link{ rel: 'import', href: '../paper-input/paper-input-container.html' }
+%link{ rel: 'import', href: '../paper-input/paper-input-error.html' }
+%link{ rel: 'import', href: '../paper-input/paper-input-char-counter.html' }
+-#%link{ rel: 'import', href: './cmi-input-behavior.html' }
+
+/
+  <cmi-textarea></cmi-textarea>
+
+  @group CMI Elements
+  @element cmi-textarea
+  @demo demo/index.html
+
+%dom-module{ id: 'cmi-textarea' }
+  %style{ include: 'cmi-input-behavior' }
+  %link{ rel: 'import', type: 'css', href: './cmi-textarea.css' }
+  %template
+    %paper-input-container( id='shadow' no-label-float$="[[noLabelFloat]]" always-float-label="[[_computeAlwaysFloatLabel(alwaysFloatLabel,placeholder)]]" auto-validate$="[[autoValidate]]" disabled="[[disabled]]" invalid="[[invalid]]" )
+
+      %label( hidden$="[[!label]]" )= "[[label]]"
+
+      %iron-autogrow-textarea( id="input" class$='paper-input-input' bind-value="{{value}}" autocomplete$="[[autocomplete]]" autofocus$="[[autofocus]]" inputmode$="[[inputmode]]" name$="[[name]]" placeholder$="[[placeholder]]" readonly$="[[readonly]]" required$="[[required]]" maxlength$="[[maxlength]]" autocapitalize$="[[autocapitalize]]" rows$="[[rows]]" max-rows$="[[maxRows]]" )
+
+      %template{ is: 'dom-if', if: "[[errorMessage]]" }
+        %paper-input-error= "[[errorMessage]]"
+
+      %template{ is: 'dom-if', if: "[[charCounter]]" }
+        %paper-input-char-counter
+
+  %script{ src: './cmi-textarea.js' }
