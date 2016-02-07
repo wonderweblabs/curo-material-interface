@@ -12,6 +12,7 @@
     "curocms"
   ],
   "files": [
+    "gulp",
     "src",
     "LICENSE",
     "README.md"
