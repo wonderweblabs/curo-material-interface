@@ -136,9 +136,9 @@ Polymer
     'reset':                        '_onReset'
 
   ready: ->
-    @_requestBot = document.createElement('iron-ajax')
-    @_requestBot.addEventListener('response', @_handleFormResponse.bind(@))
-    @_requestBot.addEventListener('error', @_handleFormError.bind(@))
+    @request = document.createElement('iron-ajax')
+    @request.addEventListener('response', @_handleFormResponse.bind(@))
+    @request.addEventListener('error', @_handleFormError.bind(@))
 
     @_customElements              = []
     @_customElementsInitialValues = []
@@ -209,6 +209,9 @@ Polymer
     json = {}
 
     addSerializedElement = (name, value) =>
+      # prevent null and undefined
+      value = '' if value == undefined || value == null
+
       # If the name doesn't exist, add it. Otherwise, serialize it to
       # an array,
       if !json[name]
