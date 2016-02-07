@@ -1,0 +1,30 @@
+@import cmi_env
+
+$cmi-item-height-min:           48px !default
+$cmi-item-font-weight-selected: bold !default
+$cmi-item-color-disabled:       lighten($cmi-color-text, 25%) !default
+
+:host
+  -webkit-font-smoothing: antialiased
+  display: block
+  font-size: 1rem
+  font-weight: normal
+  min-height: $cmi-item-height-min
+  padding: 0px 16px
+
+:host(.iron-selected)
+  font-weight: $cmi-item-font-weight-selected
+
+:host([disabled])
+  color: $cmi-item-color-disabled
+
+:host(:focus)
+  outline: 0
+  position: relative
+
+:host(:focus):before
+  +position(absolute, 0 0 0 0)
+  background: currentColor
+  content: ''
+  opacity: 0.12
+  pointer-events: none

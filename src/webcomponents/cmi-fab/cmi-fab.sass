@@ -18,65 +18,64 @@ $large-padding: ($large-size - $large-font-size) / 2
 :host
   +border-top-radius($normal-border-radius)
   +border-bottom-radius($normal-border-radius)
+  font-size: $normal-font-size
+  height: $normal-size
+  line-height: 1
   margin: 0 0.29em
-  > .content
-    +border-top-radius($normal-border-radius)
-    +border-bottom-radius($normal-border-radius)
-    min-width: 0
-    width: $normal-size
-    height: $normal-size
-    padding: $normal-padding
-    font-size: $normal-font-size
-    line-height: 1
+  min-width: 0
+  padding: $normal-padding
+  width: $normal-size
+
   ::content
+    line-height: 1
+
     *
       text-transform: inherit
+
     iron-icon
-      width: 17px !important
-      height: 17px !important
+      font-size: $normal-font-size
+      height: $normal-font-size !important
+      line-height: 1
+      width: $normal-font-size !important
 
 :host([small])
   +border-top-radius($small-border-radius)
   +border-bottom-radius($small-border-radius)
-  > .content
-    +border-top-radius($small-border-radius)
-    +border-bottom-radius($small-border-radius)
-    min-width: 0
-    width: $small-size
-    height: $small-size
-    padding: $small-padding
-    font-size: $small-font-size
+  font-size: $small-font-size
+  height: $small-size
+  line-height: 1
+  min-width: 0
+  padding: $small-padding
+  width: $small-size
+
   ::content
     iron-icon
-      width: 14px !important
-      height: 14px !important
+      font-size: $small-font-size
+      height: $small-font-size !important
+      width: $small-font-size !important
 
 :host([large])
   +border-top-radius($large-border-radius)
   +border-bottom-radius($large-border-radius)
-  > .content
-    +border-top-radius($large-border-radius)
-    +border-bottom-radius($large-border-radius)
-    min-width: 0
-    width: $large-size
-    height: $large-size
-    padding: $large-padding
-    font-size: $large-font-size
+  font-size: $large-font-size
+  height: $large-size
+  line-height: 1
+  min-width: 0
+  padding: $large-padding
+  width: $large-size
+
   ::content
     iron-icon
-      width: 21px !important
-      height: 21px !important
+      font-size: $large-font-size
+      height: $large-font-size !important
+      width: $large-font-size !important
 
 :host([block])
   display: block
-  > .content
-    display: block
-    width: auto
+  width: auto
 
 :host([block][text_left])
-  > .content
-    text-align: left
+  text-align: left
 
 :host([block][text_right])
-  > .content
-    text-align: right
+  text-align: right

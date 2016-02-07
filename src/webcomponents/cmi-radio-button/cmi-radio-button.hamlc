@@ -1,0 +1,24 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../paper-ripple/paper-ripple.html' }
+%link{ rel: 'import', href: '../paper-styles/default-theme.html' }
+%link{ rel: 'import', href: '../paper-behaviors/paper-inky-focus-behavior.html' }
+
+/
+  <cmi-radio-button></cmi-radio-button>
+
+  @group CMI Elements
+  @element cmi-radio-button
+  @demo demo/index.html
+
+%dom-module{ id: 'cmi-radio-button' }
+  %link{ rel: 'import', type: 'css', href: './cmi-radio-button.css' }
+  %template
+    #radioContainer
+      #offRadio
+      #onRadio
+      %paper-ripple( id='ink' class='circle' center="true" checked$="[[checked]]" )
+
+    #radioLabel{ 'aria-hidden' => "true" }
+      %content
+
+  %script{ src: './cmi-radio-button.js' }

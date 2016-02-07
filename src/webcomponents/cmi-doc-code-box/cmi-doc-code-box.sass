@@ -67,18 +67,20 @@ $grid-columns: 12
 
 pre.cmi-gh-pages-code,
 code.cmi-gh-pages-code
-  margin: 10px 0
-  padding: 10px 10px 10px 20px
-  font-size: 0.75rem
-  font-family: "Source Code Pro",Monaco,Menlo,Consolas,"Courier New",monospace
-  line-height: 1.1
+  background-color: #FFFDF4
   border-left: 5px solid #EBFFA8
   color: #616161
-  // color: #9f499b
-  background-color: #FFFDF4
-  // background-color: #fafafa
+  font-family: "Source Code Pro",Monaco,Menlo,Consolas,"Courier New",monospace
+  font-size: 0.75rem
+  line-height: 1.1
+  margin: 10px 0
+  padding: 10px 20px
   white-space: pre-wrap
   word-wrap: break-word
+
+  > #code
+    display: block
+
   > ::content
     .typ,
     .inline,

@@ -5,4 +5,10 @@ Polymer
   is: 'cmi-item'
 
   hostAttributes:
-    role: 'listitem'
+    role: 'option'
+    tabindex: 0
+
+  behaviors: [
+    Polymer.IronControlState,
+    Polymer.IronButtonState,
+  ]

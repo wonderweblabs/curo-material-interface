@@ -26,8 +26,6 @@
     "pushstate-anchor": "~0.3.0",
     "color": "~2.5.0",
     "hydrolysis": "PolymerLabs/hydrolysis#^1.11.0",
-    "web-animations-js": "*",
-    "cmi-doc-elements": "./node_modules/cmi/src/webcomponents/cmi-doc-elements",
-    "cmi-elements": "./node_modules/cmi/src/webcomponents/cmi-elements"
+    "web-animations-js": "*"
   }
 }
