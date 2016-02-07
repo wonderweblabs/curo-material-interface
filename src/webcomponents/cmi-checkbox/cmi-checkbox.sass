@@ -1,5 +1,18 @@
 @import cmi_env
 
+$cmi-checkbox-ink-color:              $cmi-color-primary !default
+$cmi-checkbox-border-color:           $cmi-color-text !default
+$cmi-checkbox-border-color-checked:   $cmi-color-primary !default
+$cmi-checkbox-border-color-invalid:   $cmi-color-danger !default
+$cmi-checkbox-border-color-disabled:  lighten($cmi-color-text, 20%) !default
+$cmi-checkbox-bg-checked:             $cmi-color-primary !default
+$cmi-checkbox-bg-invalid:             $cmi-color-danger !default
+$cmi-checkbox-bg-disabled-checked:    lighten($cmi-color-text, 20%) !default
+$cmi-checkbox-checkmark-color:        #fff !default
+$cmi-checkbox-label-color:            $cmi-color-text !default
+$cmi-checkbox-label-color-invalid:    $cmi-color-danger !default
+$cmi-checkbox-label-color-disabled:   lighten($cmi-color-text, 20%) !default
+
 :host
   cursor: pointer
   display: inline-block
@@ -8,59 +21,60 @@
 :host(:focus)
   outline: none
 
-.hidden
-  display: none
+:host
+  .hidden
+    display: none
 
-#checkboxContainer
-  +transform(translateZ(0))
-  display: inline-block
-  position: relative
-  width: 18px
-  height: 18px
-  vertical-align: middle
-  background-color: transparent
+  #checkboxContainer
+    +transform(translateZ(0))
+    display: inline-block
+    position: relative
+    width: 18px
+    height: 18px
+    vertical-align: middle
+    background-color: transparent
 
-#ink
-  position: absolute
-  top: -15px
-  left: -15px
-  width: 48px
-  height: 48px
-  color: $cmi-checkbox-color-primary
-  opacity: 0.6
-  pointer-events: none
+  #ink
+    position: absolute
+    top: -15px
+    left: -15px
+    width: 48px
+    height: 48px
+    color: $cmi-checkbox-ink-color
+    opacity: 0.6
+    pointer-events: none
 
-\:host-context([dir="rtl"])
+  #checkbox
+    +transition(background-color 140ms, border-color 140ms)
+    border: solid 2px
+    border-color: $cmi-checkbox-border-color
+    border-radius: 2px
+    box-sizing: border-box
+    height: 100%
+    pointer-events: none
+    position: relative
+
+:host-context([dir="rtl"])
   #ink
     left: auto
     right: -15px
 
-#ink[checked]
-  color: $cmi-checkbox-color-primary
+:host([checked])
+  #ink
+    color: $cmi-checkbox-ink-color
 
-#checkbox
-  +transition(background-color 140ms, border-color 140ms)
-  border: solid 2px
-  border-color: $cmi-checkbox-color-text
-  border-radius: 2px
-  box-sizing: border-box
-  height: 100%
-  pointer-events: none
-  position: relative
+  #checkbox
+    background-color: $cmi-checkbox-bg-checked
+    border-color: $cmi-checkbox-border-color-checked
 
   // checkbox checked animations
-  &.checked #checkmark
+  #checkmark
     +animation(checkmark-expand 140ms ease-out forwards)
-    // box-sizing: content-box
-
-  &.checked
-    background-color: $cmi-checkbox-color-primary
-    border-color: $cmi-checkbox-color-primary
 
   #checkmark
     +transform(rotate(45deg))
     border-bottom-width: 2px
-    border-color: $cmi-checkbox-color-checkmark
+    border-color: $cmi-checkbox-checkmark-color
     border-left: 0
     border-right-width: 2px
     border-style: solid
@@ -78,9 +92,9 @@
   padding-left: 8px
   white-space: normal
   pointer-events: none
-  color: $cmi-checkbox-color-text
+  color: $cmi-checkbox-label-color
 
-\:host-context([dir="rtl"])
+:host-context([dir="rtl"])
   #checkboxLabel
     padding-left: 0
     padding-right: 8px
@@ -89,30 +103,41 @@
   display: none
 
 
-// disabled state
-
-\:host([disabled])
-  pointer-events: none
-
-\:host([disabled])
-  #checkbox
-    opacity: 0.5
-    border-color: $cmi-checkbox-color-text
-
-\:host([disabled][checked])
-  #checkbox
-    background-color: $cmi-checkbox-color-text
-    opacity: 0.5
-
-\:host([disabled])
-  #checkboxLabel
-    opacity: 0.65
-
-
 // invalid state
 
-#checkbox.invalid:not(.checked)
-  border-color: #db4437
+:host([invalid])
+  #checkbox
+    border-color: $cmi-checkbox-border-color-invalid
+
+  #checkboxLabel
+    color: $cmi-checkbox-label-color-invalid
+
+:host([invalid][checked])
+  #checkbox
+    background-color: $cmi-checkbox-bg-invalid
+
+
+// disabled state
+
+:host([disabled])
+  pointer-events: none
+
+:host([disabled])
+  #checkbox
+    opacity: 0.5
+    border-color: $cmi-checkbox-border-color-disabled
+
+  #checkboxLabel
+    color: $cmi-checkbox-label-color-disabled
+
+:host([disabled][checked])
+  #checkbox
+    background-color: $cmi-checkbox-bg-disabled-checked
+    opacity: 0.5
+
+:host([disabled])
+  #checkboxLabel
+    opacity: 0.65
 
 
 // checkmark animation

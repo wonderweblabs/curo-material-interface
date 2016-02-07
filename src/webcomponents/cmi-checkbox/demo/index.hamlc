@@ -27,4 +27,10 @@
         %cmi-doc-code-box{ 'left-cols' => '4', 'right-cols' => '8' }
           %cmi-checkbox{ disabled: true, checked: true } Test
 
+        %cmi-doc-code-box{ 'left-cols' => '4', 'right-cols' => '8' }
+          %cmi-checkbox{ invalid: true, errorMessage: 'Some error here' } Test
+
+        %cmi-doc-code-box{ 'left-cols' => '4', 'right-cols' => '8' }
+          %cmi-checkbox{ invalid: true, errorMessage: 'Some error here', checked: true } Test
+
 
