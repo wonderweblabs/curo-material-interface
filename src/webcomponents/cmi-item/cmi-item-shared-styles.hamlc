@@ -1,0 +1,12 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+
+/
+  `cmi-item-shared-styles` implements a shared style for the cmi item elements
+  (e.g. cmi-item). Use it inside of you dom-module
+  with <style include="cmi-item-shared-styles"></style>
+
+  @group CMI Elements
+  @element cmi-item-shared-styles
+
+%dom-module{ id: 'cmi-item-shared-styles' }
+  %link{ rel: 'import', type: 'css', href: './cmi-item-shared-styles.css' }

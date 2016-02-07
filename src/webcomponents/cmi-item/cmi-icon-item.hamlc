@@ -1,16 +1,25 @@
 %link{ rel: 'import', href: '../polymer/polymer.html' }
-%link{ rel: 'import', href: '../paper-styles/paper-styles.html' }
+%link{ rel: 'import', href: '../iron-behaviors/iron-control-state.html' }
+%link{ rel: 'import', href: '../iron-behaviors/iron-button-state.html' }
+%link{ rel: 'import', href: 'cmi-item-shared-styles.html' }
 
 /
-  <cmi-icon-item></cmi-icon-item>
+  `<paper-icon-item>` is a convenience element to make an item with icon. It is a non interactive list
+  item with a fixed-width icon area, according to Material Design. This is useful if the icons are of
+  varying widths, but you want the item bodies to line up. Use this like a `<paper-item>`. The child
+  node with the attribute `item-icon` is placed in the icon area.
+
+  <paper-icon-item><iron-icon icon="favorite" item-icon></iron-icon>Favorite</paper-icon-item>
+  <paper-icon-item><div class="avatar" item-icon></div>Avatar</paper-icon-item>
 
   @group CMI Elements
   @element cmi-icon-item
   @demo demo/index.html
 
 %dom-module{ id: 'cmi-icon-item' }
+  %style{ include: 'cmi-item-shared-styles' }
   %link{ rel: 'import', type: 'css', href: './cmi-icon-item.css' }
-  %template
+  %template( strip-whitespace )
     #contentIcon.content-icon.layout.horizontal.center
       %content{ select: '[item-icon]' }
 
