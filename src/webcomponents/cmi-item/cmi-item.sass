@@ -1,0 +1,15 @@
+@import cmi_env
+
+:host
+  display: block
+  min-height: 48px
+  padding: 0px 16px
+  > ::content > *:not(:first-child):not(:last-child)
+    margin-right: 16px
+
+  @apply --layout-horizontal
+  @apply --layout-center
+  @apply --paper-font-subhead
+
+  @apply --paper-item
+

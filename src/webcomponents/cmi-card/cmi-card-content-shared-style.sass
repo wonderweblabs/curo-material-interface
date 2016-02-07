@@ -1,0 +1,15 @@
+@import cmi_env
+
+:host
+  +box-sizing(border-box)
+  position: relative
+  display: block
+  padding: 8px 16px 16px 16px
+  font: inherit
+  outline: none
+  &:first-child
+    padding-top: 16px
+
+:host([line-top])
+  padding-top: 16px
+  border-top: 1px solid $cmi-card-content-line-top

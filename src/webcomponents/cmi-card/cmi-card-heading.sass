@@ -1,0 +1,59 @@
+@import cmi_env
+
+:host
+  min-height: 72px
+  ::content
+    > .heading-image
+      +border-top-radius($cmi-card-heading-image-size / 2)
+      +border-bottom-radius($cmi-card-heading-image-size / 2)
+      position: relative
+      overflow: hidden
+      float: left
+      width: $cmi-card-heading-image-size
+      height: $cmi-card-heading-image-size
+      margin-right: 16px
+      img
+        width: 40px
+        height: auto
+    > h1.title,
+    > h2.title,
+    > h3.title,
+    > h4.title,
+    > h5.title,
+    > h6.title,
+    > .title
+      margin: 8px 0 3px 0
+      font-size: $cmi-card-heading-font-size-title
+      line-height: 1.2
+    > h2.sub-title,
+    > h3.sub-title,
+    > h4.sub-title,
+    > h5.sub-title,
+    > h6.sub-title,
+    > .sub-title
+      margin: 0 0 9px 0
+      font-size: $cmi-card-heading-font-size-subtitle
+      line-height: 1.0
+      color: #777
+
+:host([pull-up])
+  ::content
+    > h1.title,
+    > h2.title,
+    > h3.title,
+    > h4.title,
+    > h5.title,
+    > h6.title,
+    > .title
+      margin: 0 0 3px 0
+    > h2.sub-title,
+    > h3.sub-title,
+    > h4.sub-title,
+    > h5.sub-title,
+    > h6.sub-title,
+    > .sub-title
+      margin: 0
+
+/* IE 10 support for HTML5 hidden attr */
+[hidden]
+  display: none !important

@@ -1,0 +1,33 @@
+@import cmi_env
+
+:host
+  position: relative
+
+:host([line])
+  width: 100%
+  > .h-line
+    +position(absolute, 50% 0 auto 0)
+    z-index: 0
+    width: 100%
+    border-bottom: 1px solid $cmi-headline-color-line
+    line-height: 0.1em
+  > .h-inner
+    +box-sizing(border-box)
+    position: relative
+    display: inline
+    z-index: 1
+    background-color: $cmi-headline-color-background
+    padding: 0 15px 0 0
+    ::content
+      *
+        text-transform: inherit
+
+:host([right])
+  text-align: right
+  > .h-inner
+    padding: 0 0 0 15px
+
+:host([center])
+  text-align: center
+  > .h-inner
+    padding: 0 15px

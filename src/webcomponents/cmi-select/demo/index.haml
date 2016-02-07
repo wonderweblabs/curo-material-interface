@@ -1,0 +1,105 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes", :name => "viewport"}
+    %title cmi-toggle-button demo
+    %script{:src => "../../webcomponentsjs/webcomponents-lite.js"}
+    %link{:href => "../../cmi-doc-code-box/cmi-doc-code-box.html", :rel => "import"}
+    %link{:href => "../../paper-styles/demo-pages.html", :rel => "import"}
+    %link{:href => "../../paper-styles/paper-styles.html", :rel => "import"}
+    %link{:href => "../../cmi-form/cmi-form.html", :rel => "import"}
+    %link{:href => "../../cmi-button/cmi-button.html", :rel => "import"}
+    %link{:href => "../../cmi-item/cmi-item.html", :rel => "import"}
+    %link{:href => "../cmi-select.html", :rel => "import"}
+  %body{ unresolved: true }
+    .horizontal.center-center.layout
+      %div
+        %h4 method="get"
+        .horizontal-section
+          %form{ is: "cmi-form", id: "formGet", method: "get", action: "/" }
+            %cmi-select{ name: 'cars', label: 'Cars' }
+              %cmi-item{ value: "volvo" } Volvo
+              %cmi-item{ value: "saab" } Saab
+              %cmi-item{ value: "fiat" } Fiat
+              %cmi-item{ value: "audi" } Audi
+
+            %cmi-select{ name: 'cars_multiple', multiple: true, label: 'Cars Multiple' }
+              %cmi-item{ value: "volvo" } Volvo
+              %cmi-item{ value: "saab" } Saab
+              %cmi-item{ value: "fiat" } Fiat
+              %cmi-item{ value: "audi" } Audi
+            %br/
+            %br/
+            %cmi-select{ name: 'drinks', label: 'Drinks', selected: "fanta" }
+              %cmi-item{ value: "cola" } Cola
+              %cmi-item{ value: "fanta" } Fanta
+              %cmi-item{ value: "sprite" } Sprite
+              %cmi-item{ value: "water" } Water
+
+            %cmi-select{ name: 'drinks_multiple', multiple: true, label: 'Drinks Multiple', selected: "fanta" }
+              %cmi-item{ value: "cola" } Cola
+              %cmi-item{ value: "fanta" } Fanta
+              %cmi-item{ value: "sprite" } Sprite
+              %cmi-item{ value: "water" } Water
+            %br/
+            %br/
+            %cmi-button{ raised: true, onclick: "clickHandler(event)" } Submit
+
+      %div
+        %h4 method="post"
+        .horizontal-section
+          %form{ is: "cmi-form", id: "formPost", method: "post", action: "/" }
+            %cmi-select{ name: 'cars', label: 'Cars' }
+              %cmi-item{ value: "volvo" } Volvo
+              %cmi-item{ value: "saab" } Saab
+              %cmi-item{ value: "fiat" } Fiat
+              %cmi-item{ value: "audi" } Audi
+
+            %cmi-select{ name: 'cars_multiple', multiple: true, label: 'Cars Multiple' }
+              %cmi-item{ value: "volvo" } Volvo
+              %cmi-item{ value: "saab" } Saab
+              %cmi-item{ value: "fiat" } Fiat
+              %cmi-item{ value: "audi" } Audi
+
+            %br/
+            %br/
+            %cmi-select{ name: 'drinks', label: 'Drinks', selected: "fanta" }
+              %cmi-item{ value: "cola" } Cola
+              %cmi-item{ value: "fanta" } Fanta
+              %cmi-item{ value: "sprite" } Sprite
+              %cmi-item{ value: "water" } Water
+
+            %cmi-select{ name: 'drinks_multiple', multiple: true, label: 'Drinks Multiple', selected: "fanta" }
+              %cmi-item{ value: "cola" } Cola
+              %cmi-item{ value: "fanta" } Fanta
+              %cmi-item{ value: "sprite" } Sprite
+              %cmi-item{ value: "water" } Water
+            %br/
+            %br/
+            %cmi-button{ raised: true, onclick: "clickHandler(event)" } Submit
+            %button{ type: "submit" } Native Submit
+
+    %br/
+    %br/
+    .layout.vertical.center-center
+      %div
+        %h4 Submitted form data
+        .horizontal-section.wide
+          #output
+
+  :plain
+    <script>
+      document.getElementById('formGet').addEventListener('iron-form-submit', display);
+      document.getElementById('formPost').addEventListener('iron-form-submit', display);
+
+      function display(event) {
+        var output = document.getElementById('output');
+        output.innerHTML = JSON.stringify(event.detail);
+      }
+
+      function clickHandler(event) {
+        Polymer.dom(event).localTarget.parentElement.submit();
+      }
+    </script>

@@ -1,0 +1,25 @@
+{
+  "name": "cmi-button",
+  "version": "1.0.0",
+  "description": "cmi-button and cmi-button-link",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "cmi-elements"
+  ],
+  "main": [
+    "cmi-button.html",
+    "cmi-button-link.html"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.3",
+    "paper-material": "PolymerElements/paper-material#>=1.0.2",
+    "paper-ripple": "PolymerElements/paper-ripple#>=1.0.2",
+    "paper-behaviors": "PolymerElements/paper-behaviors#>=1.0.3",
+    "cmi-styles": "./node_modules/cmi/src/webcomponents/cmi-styles",
+    "cmi-button-behavior": "./node_modules/cmi/src/webcomponents/cmi-button-behavior"
+  }
+}

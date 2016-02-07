@@ -1,0 +1,17 @@
+@import cmi_env
+
+:host
+  overflow: hidden
+  @apply --layout-vertical
+  @apply --layout-center-justified
+  @apply --layout-flex
+  > ::content
+    > *
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+    [secondary]
+      color: var(--paper-item-body-secondary-color, --secondary-text-color)
+      @apply --paper-font-body1
+
+      @apply --paper-item-body-secondary

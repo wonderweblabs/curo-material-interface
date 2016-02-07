@@ -1,0 +1,19 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: './cmi-card-content-behavior.html' }
+
+/
+  `<cmi-card-heading><h1 class="title">my headline</h1></cmi-card-heading>`
+
+  @group CMI Elements
+  @element cmi-card-heading
+  @demo demo/index-heading.html
+
+%dom-module{ id: 'cmi-card-heading' }
+  %style{ include: 'cmi-card-content-shared-style' }
+  %link{ rel: 'import', type: 'css', href: './cmi-card-heading.css' }
+  %template
+    .heading-image{ :'hidden$' => "[[!image]]" }
+      %img{ src: "[[image]]", alt: "[[image-alt]]" }
+    %content
+
+  %script{ src: './cmi-card-heading.js' }

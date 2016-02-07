@@ -1,0 +1,36 @@
+%link{ rel: "import", href:"../polymer/polymer.html" }
+%link{ rel: "import", href:"../paper-input/paper-input-behavior.html" }
+%link{ rel: "import", href:"../paper-input/paper-input-container.html" }
+%link{ rel: "import", href:"../paper-input/paper-input-error.html" }
+%link{ rel: "import", href:"../iron-input/iron-input.html" }
+%link{ rel: "import", href:"../iron-form-element-behavior/iron-form-element-behavior.html" }
+%link{ rel: "import", href:"../iron-flex-layout/classes/iron-flex-layout.html" }
+%link{ rel: 'import', href: './cmi-input-behavior.html' }
+
+/
+  <cmi-currency-input></cmi-currency-input>
+
+  @group CMI Elements
+  @element cmi-currency-input
+  @demo demo/index.html
+
+%dom-module{ id: 'cmi-currency-input' }
+  %style{ include: 'cmi-input-behavior' }
+  %link{ rel: 'import', type: 'css', href: './cmi-currency-input.css' }
+
+  %template
+    %paper-input-container{ id: 'shadow', :'disabled$' => "[[disabled]]", :'no-label-float' => "[[noLabelFloat]]", :'always-float-label' => "[[_computeAlwaysFloatLabel(alwaysFloatLabel,placeholder)]]",:'invalid' => "[[invalid]]" }
+
+      %content{ select: "[prefix]" }
+
+      %label{ :'hidden$' => "[[!label]]" }= "[[label]]"
+
+      .horizontal.layout
+        %input.flex{ is: "iron-input", id: "input", :'aria-labelledby$' => "[[_ariaLabelledBy]]", :'aria-describedby$' => "[[_ariaDescribedBy]]", :'disabled$' => "[[disabled]]", :'bind-value' => "{{value}}", invalid: "{{invalid}}", :'prevent-invalid-input' => "[[preventInvalidInput]]", :'allowed-pattern' => "[[allowedPattern]]", validator: "[[validator]]", :'type$' => "[[type]]", :'pattern$' => "[[pattern]]", :'required$' => "[[required]]", :'autocomplete$' => "[[autocomplete]]", :'autofocus$' => "[[autofocus]]", :'inputmode$' => "[[inputmode]]", :'minlength$' => "[[minlength]]", :'maxlength$' => "[[maxlength]]", :'min$' => "[[min]]", :'max$' => "[[max]]", :'step$' => "[[step]]", :'name$' => "[[name]]", :'placeholder$' => "[[placeholder]]", :'readonly$' => "[[readonly]]", :'list$' => "[[list]]", :'size$' => "[[size]]", :'autocapitalize$' => "[[autocapitalize]]", :'autocorrect$' => "[[autocorrect]]" }
+
+      %content{ select: "[suffix]" }
+
+      %template{ is: 'dom-if', if: "[[errorMessage]]" }
+        %paper-input-error#error= "[[errorMessage]]"
+
+  %script{ src: './cmi-currency-input.js' }

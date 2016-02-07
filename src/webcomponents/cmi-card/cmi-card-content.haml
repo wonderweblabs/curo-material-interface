@@ -1,0 +1,17 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: './cmi-card-content-behavior.html' }
+
+/
+  `<cmi-card-content><p>my card content</p></cmi-card-content>`
+
+  @group CMI Elements
+  @element cmi-card-content
+  @demo demo/index-content.html
+
+%dom-module{ id: 'cmi-card-content' }
+  %style{ include: 'cmi-card-content-shared-style' }
+  %link{ rel: 'import', type: 'css', href: './cmi-card-content.css' }
+  %template
+    %content
+
+  %script{ src: './cmi-card-content.js' }

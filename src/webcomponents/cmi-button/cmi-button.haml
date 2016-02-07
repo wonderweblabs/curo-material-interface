@@ -1,0 +1,22 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../paper-material/paper-material.html' }
+%link{ rel: 'import', href: '../paper-ripple/paper-ripple.html' }
+%link{ rel: 'import', href: '../paper-behaviors/paper-button-behavior.html' }
+%link{ rel: 'import', href: '../cmi-button-behavior/cmi-button-behavior.html' }
+
+/
+  <cmi-button>My Button</cmi-button>
+
+  @group CMI Elements
+  @element cmi-button
+  @demo demo/index-button.html
+
+%dom-module{ id: 'cmi-button' }
+  %style{ include: 'cmi-button-shared-style' }
+  %link{ rel: 'import', type: 'css', href: './cmi-button.css' }
+  %template
+    %paper-ripple
+    %paper-material{ elevation: "[[_elevation]]", animated: true, :'class$' => "[[_computeContentClass(receivedFocusFromKeyboard)]]" }
+      %content
+
+  %script{ src: './cmi-button.js' }

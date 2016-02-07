@@ -1,0 +1,82 @@
+@import cmi_env
+
+$normal-border-radius: 28px
+$normal-size: 49px
+$normal-font-size: 17px
+$normal-padding: ($normal-size - $normal-font-size) / 2
+
+$small-border-radius: 22px
+$small-size: 44px
+$small-font-size: 14px
+$small-padding: ($small-size - $small-font-size) / 2
+
+$large-border-radius: 34px
+$large-size: 67px
+$large-font-size: 21px
+$large-padding: ($large-size - $large-font-size) / 2
+
+:host
+  +border-top-radius($normal-border-radius)
+  +border-bottom-radius($normal-border-radius)
+  margin: 0 0.29em
+  > .content
+    +border-top-radius($normal-border-radius)
+    +border-bottom-radius($normal-border-radius)
+    min-width: 0
+    width: $normal-size
+    height: $normal-size
+    padding: $normal-padding
+    font-size: $normal-font-size
+    line-height: 1
+  ::content
+    *
+      text-transform: inherit
+    iron-icon
+      width: 17px !important
+      height: 17px !important
+
+:host([small])
+  +border-top-radius($small-border-radius)
+  +border-bottom-radius($small-border-radius)
+  > .content
+    +border-top-radius($small-border-radius)
+    +border-bottom-radius($small-border-radius)
+    min-width: 0
+    width: $small-size
+    height: $small-size
+    padding: $small-padding
+    font-size: $small-font-size
+  ::content
+    iron-icon
+      width: 14px !important
+      height: 14px !important
+
+:host([large])
+  +border-top-radius($large-border-radius)
+  +border-bottom-radius($large-border-radius)
+  > .content
+    +border-top-radius($large-border-radius)
+    +border-bottom-radius($large-border-radius)
+    min-width: 0
+    width: $large-size
+    height: $large-size
+    padding: $large-padding
+    font-size: $large-font-size
+  ::content
+    iron-icon
+      width: 21px !important
+      height: 21px !important
+
+:host([block])
+  display: block
+  > .content
+    display: block
+    width: auto
+
+:host([block][text_left])
+  > .content
+    text-align: left
+
+:host([block][text_right])
+  > .content
+    text-align: right

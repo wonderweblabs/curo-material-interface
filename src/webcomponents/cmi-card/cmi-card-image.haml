@@ -1,0 +1,17 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+
+/
+  `<cmi-card-image image="https://placekitten.com/g/350/300"></cmi-card-image>`
+
+  @group CMI Elements
+  @element cmi-card-image
+  @demo demo/index-image.html
+
+%dom-module{ id: 'cmi-card-image' }
+  %link{ rel: 'import', type: 'css', href: './cmi-card-image.css' }
+  %template
+    %img{ :'hidden$' => "[[!image]]", src: "[[image]]" }
+    .content
+      %content
+
+  %script{ src: './cmi-card-image.js' }

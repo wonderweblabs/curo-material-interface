@@ -1,0 +1,17 @@
+{
+  "name": "cmi-base",
+  "description": "cmi-base",
+  "version": "1.0.0",
+  "private": true,
+  "naspi": {
+    "type": "cmi_base"
+  },
+  "main": [],
+  "ignore": [],
+  "dependencies": {
+    "bourbon": ">=4.2.4",
+    "neat": ">=1.7.2",
+    "mdi": ">=1.2.65",
+    "roboto-fontface": ">=0.4.3"
+  }
+}

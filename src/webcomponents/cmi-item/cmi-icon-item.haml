@@ -1,0 +1,19 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../paper-styles/paper-styles.html' }
+
+/
+  <cmi-icon-item></cmi-icon-item>
+
+  @group CMI Elements
+  @element cmi-icon-item
+  @demo demo/index.html
+
+%dom-module{ id: 'cmi-icon-item' }
+  %link{ rel: 'import', type: 'css', href: './cmi-icon-item.css' }
+  %template
+    #contentIcon.content-icon.layout.horizontal.center
+      %content{ select: '[item-icon]' }
+
+    %content
+
+  %script{ src: './cmi-icon-item.js' }

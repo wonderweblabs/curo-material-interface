@@ -1,0 +1,43 @@
+@import cmi_env
+
+:host
+  display: inline-block
+  position: relative
+  text-align: left
+  cursor: pointer
+  > #menuButton > ::content #input
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+    max-width: 100%
+    box-sizing: border-box
+    cursor: pointer
+    @apply --paper-dropdown-menu
+
+:host([disabled])
+  @apply --paper-dropdown-menu-disabled
+
+:host([noink])
+  paper-ripple
+    display: none
+
+:host([no-label-float])
+  paper-ripple
+    top: 8px
+
+paper-ripple
+  top: 20px
+  left: 8px
+  bottom: 16px
+  right: 8px
+
+  @apply --paper-dropdown-menu-ripple
+
+cmi-input
+  @apply --paper-dropdown-menu-input
+
+iron-icon
+  color: var(--disabled-text-color)
+
+  @apply --paper-dropdown-menu-icon
+

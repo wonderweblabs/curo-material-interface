@@ -1,0 +1,31 @@
+@import cmi_env
+
+:host
+  +box-sizing(border-box)
+  +border-top-radius(2px)
+  +border-bottom-radius(2px)
+  +clearfix
+  display: inline-block
+  position: relative
+  background: #fff
+  margin: 0.5rem 0 1rem 0
+  > #shadow ::content
+    > *:first-child
+      +border-top-radius(2px)
+      overflow: hidden
+    > *:last-child
+      overflow: hidden
+      +border-bottom-radius(2px)
+
+:host([block])
+  display: block
+
+:host([theme="primary"])
+  background-color: $cmi-card-color-primary
+
+:host([theme="highlight"])
+  background-color: $cmi-card-color-highlight
+
+/* IE 10 support for HTML5 hidden attr */
+[hidden]
+  display: none !important

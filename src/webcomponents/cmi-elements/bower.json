@@ -1,0 +1,42 @@
+{
+  "name": "cmi-elements",
+  "version": "1.0.0",
+  "description": "cmi elements",
+  "keywords": [
+    "web-components",
+    "polymer"
+  ],
+  "main": [],
+  "naspi": {
+    "type": "simple_webcomponent"
+  },
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "cmi-button": "./node_modules/cmi/src/webcomponents/cmi-button",
+    "cmi-button-behavior": "./node_modules/cmi/src/webcomponents/cmi-button-behavior",
+    "cmi-card": "./node_modules/cmi/src/webcomponents/cmi-card",
+    "cmi-checkbox": "./node_modules/cmi/src/webcomponents/cmi-checkbox",
+    "cmi-dialog": "./node_modules/cmi/src/webcomponents/cmi-dialog",
+    "cmi-dropdown-behavior": "./node_modules/cmi/src/webcomponents/cmi-dropdown-behavior",
+    "cmi-dropdown-menu": "./node_modules/cmi/src/webcomponents/cmi-dropdown-menu",
+    "cmi-fab": "./node_modules/cmi/src/webcomponents/cmi-fab",
+    "cmi-form": "./node_modules/cmi/src/webcomponents/cmi-form",
+    "cmi-headline": "./node_modules/cmi/src/webcomponents/cmi-headline",
+    "cmi-input": "./node_modules/cmi/src/webcomponents/cmi-input",
+    "cmi-item": "./node_modules/cmi/src/webcomponents/cmi-item",
+    "cmi-list-table": "./node_modules/cmi/src/webcomponents/cmi-list-table",
+    "cmi-menu": "./node_modules/cmi/src/webcomponents/cmi-menu",
+    "cmi-menu-behavior": "./node_modules/cmi/src/webcomponents/cmi-menu-behavior",
+    "cmi-menu-button": "./node_modules/cmi/src/webcomponents/cmi-menu-button",
+    "cmi-navbar": "./node_modules/cmi/src/webcomponents/cmi-navbar",
+    "cmi-progress": "./node_modules/cmi/src/webcomponents/cmi-progress",
+    "cmi-radio-button": "./node_modules/cmi/src/webcomponents/cmi-radio-button",
+    "cmi-radio-group": "./node_modules/cmi/src/webcomponents/cmi-radio-group",
+    "cmi-select": "./node_modules/cmi/src/webcomponents/cmi-select",
+    "cmi-slider": "./node_modules/cmi/src/webcomponents/cmi-slider",
+    "cmi-table": "./node_modules/cmi/src/webcomponents/cmi-table",
+    "cmi-tabs": "./node_modules/cmi/src/webcomponents/cmi-tabs",
+    "cmi-toggle-button": "./node_modules/cmi/src/webcomponents/cmi-toggle-button"
+  }
+}

@@ -1,0 +1,51 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../iron-a11y-keys-behavior/iron-a11y-keys-behavior.html' }
+%link{ rel: 'import', href: '../iron-flex-layout/iron-flex-layout.html' }
+%link{ rel: 'import', href: '../iron-form-element-behavior/iron-form-element-behavior.html' }
+%link{ rel: 'import', href: '../iron-range-behavior/iron-range-behavior.html' }
+
+%link{ rel: 'import', href: '../paper-behaviors/paper-inky-focus-behavior.html' }
+%link{ rel: 'import', href: '../paper-styles/paper-styles.html' }
+%link{ rel: 'import', href: '../cmi-progress/cmi-progress.html' }
+%link{ rel: 'import', href: '../cmi-input/cmi-input.html' }
+
+/
+
+  `cmi-slider` allows user to select a value from a range of values by
+  moving the slider thumb.  The interactive nature of the slider makes it a
+  great choice for settings that reflect intensity levels, such as volume,
+  brightness, or color saturation.
+
+  Example:
+  <cmi-slider></cmi-slider>
+
+  Use `min` and `max` to specify the slider range.  Default is 0 to 100.
+
+  Example:
+  <cmi-slider min="10" max="200" value="110"></cmi-slider>
+
+  @group CMI Elements
+  @element cmi-slider
+  @demo demo/index.html
+
+%dom-module{ id: 'cmi-slider' }
+  %link{ rel: 'import', type: 'css', href: './cmi-slider.css' }
+
+  %template
+    #sliderContainer{ :'class$' => "[[_getClassNames(disabled, pin, snaps, immediateValue, min, expand, dragging, transiting, editable)]]" }
+
+      .bar-container
+        %cmi-progress{ :'disabled$' => "[[disabled]]", :'id' => "sliderBar", :'aria-hidden' => "true", :'min' => "[[min]]", :'max' => "[[max]]", :'step' => "[[step]]", :'value' => "[[immediateValue]]", :'secondary-progress' => "[[secondaryProgress]]", :'on-down' => "_bardown", :'on-up' => "_resetKnob", :'on-track' => "_onTrack" }
+
+      %template{ is: 'dom-if', if: "[[snaps]]" }
+        .slider-markers
+          %template{ is: 'dom-repeat', items: "[[markers]]" }
+            .slider-marker
+
+      #sliderKnob{ :'on-down' => "_knobdown", :'on-up' => "_resetKnob", :'on-track' => "_onTrack", :'on-transitionend' => "_knobTransitionEnd" }
+        #sliderKnobInner{ :'value$' => "[[immediateValue]]" }
+
+    %template{ is: 'dom-if', if: "[[editable]]" }
+      %cmi-input{ :'id' => "input", :'type' => "number", :'step' => "[[step]]", :'min' => "[[min]]", :'max' => "[[max]]", :'class' => "slider-input", :'disabled$' => "[[disabled]]", :'value' => "[[immediateValue]]", :'on-change' => "_changeValue", :'on-keydown' => "_inputKeyDown", :'no-label-float' => true }
+
+  %script{ src: './cmi-slider.js' }

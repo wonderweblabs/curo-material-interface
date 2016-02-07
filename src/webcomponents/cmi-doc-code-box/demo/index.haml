@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes", :name => "viewport"}
+    %title cmi-doc-code-box demo
+    %script{:src => "../../webcomponentsjs/webcomponents-lite.js"}
+    %link{:href => "../cmi-doc-code-box.html", :rel => "import"}
+    %link{:href => "../../paper-styles/demo-pages.html", :rel => "import"}
+    %link{:href => "../../marked-element/marked-element.html", :rel => "import"}
+  %body{ unresolved: true }
+    .vertical.center-justified.layout
+
+      .vertical-section
+        %cmi-doc-code-box
+          %p Code to show
+
+      .vertical-section
+        %cmi-doc-code-box{ :'left-cols' => '4', :'right-cols' => '8' }
+          %p Code to show

@@ -1,0 +1,18 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../paper-dialog-behavior/paper-dialog-behavior.html' }
+%link{ rel: 'import', href: '../neon-animation/neon-animation-runner-behavior.html' }
+%link{ rel: 'import', href: '../paper-styles/paper-styles.html' }
+
+/
+  `<cmi-dialog>...</cmi-dialog>`
+
+  @group CMI Elements
+  @element cmi-dialog
+  @demo demo/index-dialog.html
+
+%dom-module{ id: 'cmi-dialog' }
+  %link{ rel: 'import', type: 'css', href: './cmi-dialog.css' }
+  %template
+    %content
+
+  %script{ src: './cmi-dialog.js' }

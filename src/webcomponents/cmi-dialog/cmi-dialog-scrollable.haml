@@ -1,0 +1,18 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../iron-flex-layout/classes/iron-flex-layout.html' }
+%link{ rel: 'import', href: '../paper-styles/paper-styles.html' }
+
+/
+  `<cmi-dialog-scrollable>...</cmi-dialog-scrollable>`
+
+  @group CMI Elements
+  @element cmi-dialog-scrollable
+  @demo demo/index-dialog-scrollable.html
+
+%dom-module{ id: 'cmi-dialog-scrollable' }
+  %link{ rel: 'import', type: 'css', href: './cmi-dialog-scrollable.css' }
+    %template
+      #scrollable.scrollable
+        %content
+
+  %script{ src: './cmi-dialog-scrollable.js' }

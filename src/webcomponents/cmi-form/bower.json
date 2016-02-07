@@ -1,0 +1,20 @@
+{
+  "name": "cmi-form",
+  "version": "1.0.0",
+  "description": "cmi-form",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "cmi-elements"
+  ],
+  "main": [
+    "cmi-form.html"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.3",
+    "iron-form": "PolymerElements/iron-form#>=1.0.9"
+  }
+}

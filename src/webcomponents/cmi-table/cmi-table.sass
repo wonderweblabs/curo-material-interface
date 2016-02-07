@@ -1,0 +1,51 @@
+@import cmi_env
+
+
+:host
+  padding: 0
+  border-spacing: 0px
+  border-collapse: collapse
+  outline: none
+  border: none
+  width: 100%
+  display: table
+  ::content > thead,
+  ::content > tbody
+    border-bottom: 1px solid #f0f0f0
+    > tr
+      background-color: $cmi-table-color-odd-row
+      > th, td
+        border: none
+        padding: 5px 15px
+        display: table-cell
+        text-align: left
+        vertical-align: middle
+        background: transparent
+
+:host([striped])
+  ::content > thead,
+  ::content > tbody,
+    > tr:nth-child(even)
+      background-color: $cmi-table-color-even-row
+    > tr.active
+      background-color: $cmi-table-color-primary
+    > tr:nth-child(even).active
+      background-color: darken($cmi-table-color-primary, 5%)
+
+:host([hoverable])
+  ::content > thead,
+  ::content > tbody,
+    > tr.active
+      background-color: lighten($cmi-table-color-primary, 5%)
+    > tr:hover
+      background-color: rgba(#000, 0.02)
+    > tr.active:hover
+      background-color: lighten($cmi-table-color-primary, 10%)
+
+:host([striped][hoverable])
+  ::content > thead,
+  ::content > tbody,
+    > tr:nth-child(even):hover
+      background-color: rgba(#000, 0.05)
+      &.active
+        background-color: lighten($cmi-table-color-primary, 8%)

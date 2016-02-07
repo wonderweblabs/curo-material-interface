@@ -1,0 +1,26 @@
+{
+  "name": "cmi-headline-behavior",
+  "version": "1.0.0",
+  "description": "cmi-headline-behavior",
+  "homepage": "https://github.com/wonderweblabs/curo-material-interface",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "cmi-elements"
+  ],
+  "main": [
+    "cmi-headline-behavior.html",
+    "cmi-h1.html",
+    "cmi-h2.html",
+    "cmi-h3.html",
+    "cmi-h4.html",
+    "cmi-h5.html",
+    "cmi-h6.html"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.1.3",
+    "cmi-styles": "./node_modules/cmi/src/webcomponents/cmi-styles"
+  }
+}
