@@ -1,0 +1,12 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+
+/
+  `cmi-menu-shared-styles` implements a shared style for the cmi menu elements
+  (e.g. cmi-menu). Use it inside of you dom-module
+  with <style include="cmi-menu-shared-styles"></style>
+
+  @group CMI Elements
+  @element cmi-menu-shared-styles
+
+%dom-module{ id: 'cmi-menu-shared-styles' }
+  %link{ rel: 'import', type: 'css', href: './cmi-menu-shared-styles.css' }

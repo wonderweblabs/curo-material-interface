@@ -11,8 +11,9 @@
   @demo demo/index.html
 
 %dom-module{ id: 'cmi-submenu' }
+  %style{ include: 'cmi-menu-shared-styles' }
   %link{ rel: 'import', type: 'css', href: './cmi-submenu.css' }
-  %template
+  %template( strip-whitespace )
     .selectable-content{ 'on-tap' => "_onTap" }
       %content{ id: "trigger", select: ".menu-trigger" }
 

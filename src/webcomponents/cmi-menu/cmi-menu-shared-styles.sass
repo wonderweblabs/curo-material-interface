@@ -1,0 +1,27 @@
+@import cmi_env
+
+$cmi-menu-color:          $cmi-color-text
+$cmi-menu-color-disabled: lighten($cmi-color-text, 25%) !default
+
+:host
+  color: $cmi-menu-color
+
+// need a wrapper element to make this higher specificity than the :host rule in paper-item
+.selectable-content > ::content > .iron-selected
+  font-weight: bold
+
+.selectable-content > ::content > [disabled]
+  color: $cmi-menu-color-disabled
+
+.selectable-content > ::content > *:focus
+  position: relative
+  outline: 0
+
+.selectable-content > ::content > *:focus:after
+  +position(absolute, 0 0 0 0)
+  background: currentColor
+  opacity: 0.12
+  content: ''
+
+.selectable-content > ::content > *[colored]:focus:after
+  opacity: 0.26
