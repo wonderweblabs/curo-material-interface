@@ -1,0 +1,14 @@
+@import cmi_env
+
+$cmi-input-hint-color: lighten($cmi-color-text, 25%) !default
+
+:host
+  clear: both
+  color: $cmi-input-hint-color
+  display: block
+  font-size: .9em
+  text-align: right
+  // color: var(--paper-input-container-invalid-color, --google-red-500)
+
+:host-context([dir="rtl"])
+  text-align: left

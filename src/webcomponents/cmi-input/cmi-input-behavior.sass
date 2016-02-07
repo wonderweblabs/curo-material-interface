@@ -1,37 +1,37 @@
 @import cmi_env
 
-:host
-  display: block
-  > #shadow ::content
-    > .input-content
-      .iron-input
-        +placeholder
-          color: #ccc
-      label
-        color: #ccc
-      &.label-is-highlighted
-        label
-          color: $cmi-input-color-primary
-      &.is-invalid
-        label
-          color: $cmi-input-color-danger
-      [prefix]
-        margin-right: 4px
-      .mdi
-        font-family: MaterialDesignIcons
-    > .underline
-      .unfocused-line
-        height: 1px
-        background: #ccc
-      .focused-line
-        background: $cmi-input-color-primary
-      &.is-invalid
-        .focused-line
-          background: $cmi-input-color-danger
-    > .add-on-content
-      &.is-highlighted
-        *
-          color: $cmi-input-color-primary
-
-:host([char-counter])
-  margin-bottom: 10px
+// :host
+//   display: block
+//   > #shadow ::content
+//     > .input-content
+//       .iron-input
+//         +placeholder
+//           color: #ccc
+//       label
+//         color: #ccc
+//       &.label-is-highlighted
+//         label
+//           color: $cmi-input-color-primary
+//       &.is-invalid
+//         label
+//           color: $cmi-input-color-danger
+//       [prefix]
+//         margin-right: 4px
+//       .mdi
+//         font-family: MaterialDesignIcons
+//     > .underline
+//       .unfocused-line
+//         height: 1px
+//         background: #ccc
+//       .focused-line
+//         background: $cmi-input-color-primary
+//       &.is-invalid
+//         .focused-line
+//           background: $cmi-input-color-danger
+//     > .add-on-content
+//       &.is-highlighted
+//         *
+//           color: $cmi-input-color-primary
+//
+// :host([char-counter])
+//   margin-bottom: 10px

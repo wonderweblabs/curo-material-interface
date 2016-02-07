@@ -10,6 +10,8 @@
     %link{ 'href' => "../../cmi-doc-code-box/cmi-doc-code-box.html", 'rel' => "import" }
     %link{ 'href' => "../cmi-button.html", 'rel' => "import" }
     %link{ 'href' => "../../paper-styles/demo-pages.html", 'rel' => "import" }
+    %link{ 'href' => "//cdn.materialdesignicons.com/1.4.57/css/materialdesignicons.min.css", 'media' => "all", 'rel' => "stylesheet", 'type' => "text/css" }
+
   %body{ unresolved: true }
     .vertical.center-justified.layout
 

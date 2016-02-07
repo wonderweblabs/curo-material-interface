@@ -1,210 +1,210 @@
-# 'use strict'
+'use strict'
 
-# # Polymer
 # Polymer
+Polymer
 
-#   is: 'cmi-input-container'
+  is: 'cmi-input-container'
 
-#   properties:
-#     ###
-#     Set to true to disable the floating label. The label disappears when the input value is
-#     not null.
-#     ###
-#     noLabelFloat: { type: Boolean, value: false }
+  properties:
 
-#     ###
-#     Set to true to always float the floating label.
-#     ###
-#     alwaysFloatLabel: { type: Boolean, value: false }
+    ###*
+    * Set to true to disable the floating label. The label disappears when the input value is
+    * not null.
+    ###
+    noLabelFloat: { type: Boolean, value: false }
 
-#     ###
-#     The attribute to listen for value changes on.
-#     ###
-#     attrForValue: { type: String, value: 'bind-value' }
+    ###*
+    * Set to true to always float the floating label.
+    ###
+    alwaysFloatLabel: { type: Boolean, value: false }
 
-#     ###
-#     Set to true to auto-validate the input value when it changes.
-#     ###
-#     autoValidate: { type: Boolean, value: false }
+    ###*
+    * The attribute to listen for value changes on.
+    ###
+    attrForValue: { type: String, value: 'bind-value' }
 
-#     ###
-#     True if the input is invalid. This property is set automatically when the input value
-#     changes if auto-validating, or when the `iron-input-validate` event is heard from a child.
-#     ###
-#     invalid: { observer: '_invalidChanged', type: Boolean, value: false }
+    ###*
+    * Set to true to auto-validate the input value when it changes.
+    ###
+    autoValidate: { type: Boolean, value: false }
 
-#     ###
-#     True if the input has focus.
-#     ###
-#     focused: { readOnly: true, type: Boolean, value: false, notify: true }
+    ###*
+    * True if the input is invalid. This property is set automatically when the input value
+    * changes if auto-validating, or when the `iron-input-validate` event is heard from a child.
+    ###
+    invalid: { observer: '_invalidChanged', type: Boolean, value: false }
 
-#     # do not set a default value here intentionally - it will be initialized lazily when a
-#     # distributed child is attached, which may occur before configuration for this element
-#     # in polyfill.
-#     _addons: { type: Array }
+    ###*
+    * True if the input has focus.
+    ###
+    focused: { readOnly: true, type: Boolean, value: false, notify: true }
 
-#     _inputHasContent: { type: Boolean, value: false }
+    _addons: { type: Array }
+    # do not set a default value here intentionally - it will be initialized lazily when a
+    # distributed child is attached, which may occur before configuration for this element
+    # in polyfill.
 
-#     _inputSelector: { type: String, value: 'input,textarea,.paper-input-input' }
+    _inputHasContent: { type: Boolean, value: false }
 
-#     _boundOnFocus:
-#       type: Function
-#       value: ->
-#         @_onFocus.bind(@)
+    _inputSelector: { type: String, value: 'input,textarea,.paper-input-input' }
 
-#     _boundOnBlur:
-#       type: Function
-#       value: ->
-#         @_onBlur.bind(@)
+    _boundOnFocus:
+      type: Function
+      value: -> @_onFocus.bind(@)
 
-#     _boundOnInput:
-#       type: Function,
-#       value: ->
-#         @_onInput.bind(@)
+    _boundOnBlur:
+      type: Function
+      value: -> @_onBlur.bind(@)
 
-#     _boundValueChanged:
-#       type: Function,
-#       value: ->
-#         @_onValueChanged.bind(@)
+    _boundOnInput:
+      type: Function
+      value: -> @_onInput.bind(@)
 
-#   listeners:
-#     'addon-attached':       '_onAddonAttached'
-#     'iron-input-validate':  '_onIronInputValidate'
+    _boundValueChanged:
+      type: Function
+      value: -> @_onValueChanged.bind(@)
 
-#   _getValueChangedEvent: ->
-#     @attrForValue + '-changed'
 
-#   _getPropertyForValue: ->
-#     Polymer.CaseMap.dashToCamelCase(@attrForValue)
+  listeners:
+    'addon-attached':       '_onAddonAttached'
+    'iron-input-validate':  '_onIronInputValidate'
 
-#   _getInputElement: ->
-#     Polymer.dom(@).querySelector(@_inputSelector)
+  _getValueChangedEvent: ->
+    "#{@attrForValue}-changed"
 
-#   _getInputElementValue: ->
-#     @_inputElement[@_getPropertyForValue()] || @_inputElement.value
+  _getPropertyForValue: ->
+    Polymer.CaseMap.dashToCamelCase(@attrForValue)
 
-#   ready: ->
-#     @_addons = [] if !@_addons
+  _getInputElement: ->
+    Polymer.dom(@).querySelector(@_inputSelector)
 
-#     @addEventListener('focus', @_boundOnFocus, true)
-#     @addEventListener('blur', @_boundOnBlur, true)
+  _getInputElementValue: ->
+    @_getInputElement()[@_getPropertyForValue()] || @_getInputElement().value
 
-#     if @attrForValue
-#       @_getInputElement().addEventListener(@_getValueChangedEvent(), @_boundValueChanged)
-#     else
-#       @addEventListener('input', @_onInput)
+  ready: ->
+    @_addons or= []
 
-#   attached: ->
-#     # Only validate when attached if the input already has a value.
-#     if @_getInputElementValue() != ''
-#       @_handleValueAndAutoValidate(@_getInputElement())
-#     else
-#       @_handleValue(@_getInputElement())
+    @addEventListener 'focus', @_boundOnFocus, true
+    @addEventListener 'blur', @_boundOnBlur, true
 
-#   _onAddonAttached: (event) ->
-#     @_addons = [] if !@_addons
+    if @attrForValue
+      @_getInputElement().addEventListener(@_getValueChangedEvent(), @_boundValueChanged)
+    else
+      @addEventListener('input', @_onInput)
 
-#     target = event.target
+  attached: ->
+    # Only validate when attached if the input already has a value.
+    if @_getInputElementValue() != ''
+      @_handleValueAndAutoValidate(@_getInputElement())
+    else
+      @_handleValue(@_getInputElement())
 
-#     if @_addons.indexOf(target) == -1
-#       @_addons.push(target)
-#       @_handleValue(@_getInputElement()) if @isAttached
+  _onAddonAttached: (event) ->
+    @_addons or= []
 
-#   _onFocus: ->
-#     @_setFocused(true)
+    target = event.target
 
-#   _onBlur: ->
-#     @_setFocused(false)
-#     @_handleValueAndAutoValidate(@_getInputElement())
+    if @_addons.indexOf(target) == -1
+      @_addons.push(target)
+      @_handleValue(@_getInputElement()) if @isAttached
 
-#   _onInput: (event) ->
-#     @_handleValueAndAutoValidate(event.target)
+  _onFocus: ->
+    @_setFocused(true)
 
-#   _onValueChanged: (event) ->
-#     @_handleValueAndAutoValidate(event.target);
+  _onBlur: ->
+    @_setFocused(false)
+    @_handleValueAndAutoValidate(@_getInputElement())
 
-#   _handleValue: (inputElement) ->
-#     value = @_getInputElementValue()
+  _onInput: (event) ->
+    @_handleValueAndAutoValidate(event.target)
 
-#     # type="number" hack needed because this.value is empty until it's valid
-#     if value || value == 0 || (inputElement.type == 'number' && !inputElement.checkValidity())
-#       @_inputHasContent = true
-#     else
-#       @_inputHasContent = false
+  _onValueChanged: (event) ->
+    @_handleValueAndAutoValidate(event.target)
 
-#     @updateAddons
-#       inputElement: inputElement
-#       value:        value
-#       invalid:      @invalid
+  _handleValue: (inputElement) ->
+    value = @_getInputElementValue()
 
-#   _handleValueAndAutoValidate: (inputElement) ->
-#     if @autoValidate
-#       if inputElement.validate
-#         valid = inputElement.validate(@_getInputElementValue())
-#       else
-#         valid = inputElement.checkValidity()
+    # type="number" hack needed because @value is empty until it's valid
+    if value || value == 0 || (inputElement.type == 'number' && !inputElement.checkValidity())
+      @_inputHasContent = true
+    else
+      @_inputHasContent = false
 
-#       @invalid = !valid
+    @updateAddons
+      inputElement: inputElement
+      value:        value
+      invalid:      @invalid
 
-#     # Call this last to notify the add-ons.
-#     @_handleValue(inputElement)
+  _handleValueAndAutoValidate: (inputElement) ->
+    if @autoValidate
 
-#   _onIronInputValidate: (event) ->
-#     @invalid = @_getInputElement().invalid
+      if inputElement.validate
+        valid = inputElement.validate(@_getInputElementValue())
+      else
+        valid = inputElement.checkValidity()
 
-#   _invalidChanged: ->
-#     @updateAddons({invalid: @invalid}) if @_addons
+      @invalid = !valid
 
-#   ###
-#   Call this to update the state of add-ons.
-#   @param {Object} state Add-on state.
-#   ###
-#   updateAddons: (state) ->
-#     for addon in @_addons
-#       addon.update(state)
+    # Call this last to notify the add-ons.
+    @_handleValue(inputElement)
 
-#   _computeInputContentClass: (noLabelFloat, alwaysFloatLabel, focused, invalid, _inputHasContent) ->
-#     cls = 'input-content'
+  _onIronInputValidate: (event) ->
+    @invalid = @_getInputElement().invalid
 
-#     if !noLabelFloat
-#       label = @querySelector('label')
-#       if alwaysFloatLabel || _inputHasContent
-#         cls += ' label-is-floating'
+  _invalidChanged: ->
+    @updateAddons({invalid: @invalid}) if @_addons
 
-#         # If the label is floating, ignore any offsets that may have been
-#         # applied from a prefix element.
-#         @.$.labelAndInputContainer.style.position = 'static'
+  ###*
+   * Call this to update the state of add-ons.
+   * @param {Object} state Add-on state.
+  ###
+  updateAddons: (state) ->
+    for addon in @_addons
+      addon.update(state)
 
-#         if invalid
-#           cls += ' is-invalid'
-#         else if focused
-#           cls += " label-is-highlighted"
+  _computeInputContentClass: (noLabelFloat, alwaysFloatLabel, focused, invalid, _inputHasContent) ->
+    cls = 'input-content'
 
-#       else
-#         # When the label is not floating, it should overlap the input element.
-#         @.$.labelAndInputContainer.style.position = 'relative' if label
+    if !noLabelFloat
+      label = @querySelector('label')
 
-#     else
-#       cls += ' label-is-hidden' if _inputHasContent
+      if alwaysFloatLabel || _inputHasContent
+        cls += ' label-is-floating'
 
-#     cls
+        # If the label is floating, ignore any offsets that may have been
+        # applied from a prefix element.
+        @.$.labelAndInputContainer.style.position = 'static'
 
-#   _computeUnderlineClass: (focused, invalid) ->
-#     cls = 'underline'
+        if invalid
+          cls += ' is-invalid'
+        else if (focused)
+          cls += " label-is-highlighted"
 
-#     if invalid
-#       cls += ' is-invalid'
-#     else if focused
-#       cls += ' is-highlighted'
+      else
+        # When the label is not floating, it should overlap the input element.
+        @.$.labelAndInputContainer.style.position = 'relative' if label
 
-#     cls
+    else
+      cls += ' label-is-hidden' if _inputHasContent
 
-#   _computeAddOnContentClass: (focused, invalid) ->
-#     cls = 'add-on-content'
+    cls
 
-#     if invalid
-#       cls += ' is-invalid'
-#     else if focused
-#       cls += ' is-highlighted'
+  _computeUnderlineClass: (focused, invalid) ->
+    cls = 'underline'
 
-#     cls
+    if invalid
+      cls += ' is-invalid'
+    else if focused
+      cls += ' is-highlighted'
+
+    cls
+
+  _computeAddOnContentClass: (focused, invalid) ->
+    cls = 'add-on-content'
+
+    if invalid
+      cls += ' is-invalid'
+    else if focused
+      cls += ' is-highlighted'
+
+    cls

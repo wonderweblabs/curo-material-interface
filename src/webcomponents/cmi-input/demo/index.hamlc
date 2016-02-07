@@ -11,6 +11,8 @@
     %link{ 'href' => "../cmi-textarea.html", 'rel' => "import" }
     %link{ 'href' => "../cmi-currency-input.html", 'rel' => "import" }
     %link{ 'href' => "../../paper-styles/demo-pages.html", 'rel' => "import" }
+    %link{ 'href' => "//cdn.materialdesignicons.com/1.4.57/css/materialdesignicons.min.css", 'media' => "all", 'rel' => "stylesheet", 'type' => "text/css" }
+
   %body{ unresolved: true }
     .vertical.center-justified.layout
 
@@ -19,11 +21,19 @@
         %cmi-doc-code-box
           %cmi-input{ label: 'label', autofocus: true }
         %cmi-doc-code-box
+          %cmi-input{ label: 'label', autofocus: true, value: 'filled sth.' }
+        %cmi-doc-code-box
           %cmi-input{ label: 'password', type: 'password' }
         %cmi-doc-code-box
           %cmi-input{ label: 'label (no-label-float)', 'no-label-float' => true }
         %cmi-doc-code-box
           %cmi-input{ label: 'disabled', disabled: true }
+        %cmi-doc-code-box
+          %cmi-input{ label: 'With hint', 'hint-message' => 'Here is some hint' }
+        %cmi-doc-code-box
+          %cmi-input{ label: 'With error', invalid: true, 'error-message' => 'Here is an error...', value: 'Wrong' }
+        %cmi-doc-code-box
+          %cmi-input{ label: 'With error', invalid: true, 'error-message' => 'Here is an error...', value: 'Wrong', 'hint-message' => 'Here is some hint' }
 
 
       %h4 Text area
@@ -31,6 +41,7 @@
         %cmi-doc-code-box
           %cmi-textarea{ label: 'textarea label' }
 
+          %cmi-textarea{ label: 'textarea label', value: 'Vivamus ac viverra sem, et sagittis risus. Sed dictum, risus at efficitur fringilla, magna mauris posuere nisi, id imperdiet ex ipsum at magna. Donec mattis, leo a malesuada tempor, neque dolor ornare diam, sit amet blandit quam massa in ipsum. Nunc turpis nibh, interdum eget posuere et, malesuada in erat. Suspendisse porttitor lorem id leo fringilla condimentum nec sed felis. Nunc commodo nibh in mattis scelerisque. Curabitur nunc magna, consectetur et lectus vel, ultrices elementum nulla. Integer nec ultrices lorem.' }
 
       %h4 Validation
       .vertical-section
@@ -47,6 +58,8 @@
           %cmi-input{ label: 'label', 'char-counter' => true }
         %cmi-doc-code-box
           %cmi-input{ label: 'at most 10 letters', 'char-counter' => true, 'auto-validate' => true, pattern: '[a-zA-Z]*', maxlength: '10', 'error-message' => 'letters only!' }
+        %cmi-doc-code-box
+          %cmi-input{ label: 'at most 10 letters', 'char-counter' => true, 'auto-validate' => true, pattern: '[a-zA-Z]*', maxlength: '10', 'error-message' => 'letters only!', 'hint-message' => 'Here is some hint' }
         %cmi-doc-code-box
           %cmi-textarea{ label: 'textarea', 'char-counter' => true }
         %cmi-doc-code-box
