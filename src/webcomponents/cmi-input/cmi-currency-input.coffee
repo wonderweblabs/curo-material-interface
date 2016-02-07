@@ -6,23 +6,32 @@ Polymer
   is: 'cmi-currency-input'
 
   behaviors: [
-    Polymer.PaperInputBehavior,
     Polymer.IronFormElementBehavior,
+    Polymer.PaperInputBehavior,
     Polymer.IronControlState,
   ]
 
   properties:
-    label:
-      type: String
-      value: 'Preis in €'
-    value:
-      observer: '_onValueChanged'
-      notify: true,
-      type: String
-    centValue:
-      type: Number
-      computed: '_convertToCent(value)'
-      reflectToAttribute: true
+
+    ###*
+    *
+    ###
+    label: { type: String, value: 'Preis in €' }
+
+    ###*
+    *
+    ###
+    value: { observer: '_onValueChanged', notify: true, type: String }
+
+    ###*
+    *
+    ###
+    centValue: { type: Number, computed: '_convertToCent(value)', reflectToAttribute: true }
+
+    ###*
+    *
+    ###
+    hintMessage: { type: String, value: null }
 
 
   _onValueChanged: (newValue, oldValue)->

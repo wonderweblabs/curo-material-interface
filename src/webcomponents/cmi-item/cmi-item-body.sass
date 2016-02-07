@@ -1,17 +1,32 @@
 @import cmi_env
 
+$cmi-item-body-color: $cmi-color-text !default
+
 :host
+  +flex-grow(0)
   overflow: hidden
-  @apply --layout-vertical
-  @apply --layout-center-justified
-  @apply --layout-flex
+
   > ::content
+
     > *
       white-space: nowrap
       overflow: hidden
       text-overflow: ellipsis
-    [secondary]
-      color: var(--paper-item-body-secondary-color, --secondary-text-color)
-      @apply --paper-font-body1
 
-      @apply --paper-item-body-secondary
+    [secondary]
+      color: $cmi-item-body-color
+
+:host([two-line])
+  +display(flex)
+  +flex-direction(column)
+  +align-items(left)
+  +justify-content(center)
+  min-height: 72px
+
+:host([three-line])
+  +display(flex)
+  +flex-direction(column)
+  +align-items(left)
+  +justify-content(center)
+  min-height: 88px
+

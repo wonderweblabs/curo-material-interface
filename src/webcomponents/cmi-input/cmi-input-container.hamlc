@@ -1,0 +1,83 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+
+/
+  <cmi-input-container></cmi-input-container>
+
+  `<cmi-input-container>` is a container for a `<label>`, an `<input is="iron-input">` or
+  `<iron-autogrow-textarea>` and optional add-on elements such as an error message or character
+  counter, used to implement Material Design text fields.
+
+  For example:
+
+  <cmi-input-container>
+  <label>Your name</label>
+  <input is="iron-input">
+  </cmi-input-container>
+
+  ### Listening for input changes
+
+  By default, it listens for changes on the `bind-value` attribute on its children nodes and perform
+  tasks such as auto-validating and label styling when the `bind-value` changes. You can configure
+  the attribute it listens to with the `attr-for-value` attribute.
+
+  ### Using a custom input element
+
+  You can use a custom input element in a `<cmi-input-container>`, for example to implement a
+  compound input field like a social security number input. The custom input element should have the
+  `paper-input-input` class, have a `notify:true` value property and optionally implements
+  `Polymer.IronValidatableBehavior` if it is validatable.
+
+  <cmi-input-container attr-for-value="ssn-value">
+  <label>Social security number</label>
+  <ssn-input class="paper-input-input"></ssn-input>
+  </cmi-input-container>
+
+  ### Validation
+
+  If the `auto-validate` attribute is set, the input container will validate the input and update
+  the container styling when the input value changes.
+
+  ### Add-ons
+
+  Add-ons are child elements of a `<cmi-input-container>` with the `add-on` attribute and
+  implements the `Polymer.PaperInputAddonBehavior` behavior. They are notified when the input value
+  or validity changes, and may implement functionality such as error messages or character counters.
+  They appear at the bottom of the input.
+
+  ### Prefixes and suffixes
+  These are child elements of a `<cmi-input-container>` with the `prefix`
+  or `suffix` attribute, and are displayed inline with the input, before or after.
+
+  <cmi-input-container>
+  <div prefix>$</div>
+  <label>Total</label>
+  <input is="iron-input">
+  <paper-icon-button suffix icon="clear"></paper-icon-button>
+  </cmi-input-container>
+
+  @group CMI Elements
+  @element cmi-input-container
+  @demo demo/index.html
+
+%dom-module{ id: 'cmi-input-container' }
+  %link{ rel: 'import', type: 'css', href: './cmi-input-container.css' }
+  %template( strip-whitespace )
+
+    %template( is="dom-if" if="[[!noLabelFloat]]" )
+      .floated-label-placeholder
+        &nbsp;
+
+    %div( class$="[[_computeInputContentClass(noLabelFloat,alwaysFloatLabel,focused,invalid,_inputHasContent)]]" )
+      %content( select="[prefix]" id="prefix" )
+      #labelAndInputContainer.label-and-input-container
+        %content( select=":not([add-on]):not([prefix]):not([suffix])" )
+      %content( select="[suffix]" )
+
+    %div( class$="[[_computeUnderlineClass(focused,invalid)]]" )
+      .unfocused-line
+      .focused-line
+
+    %div( class$="[[_computeAddOnContentClass(focused,invalid)]]" )
+      %content( id="addOnContent" select="[add-on]" )
+
+  %script{ src: './cmi-input-container.js' }

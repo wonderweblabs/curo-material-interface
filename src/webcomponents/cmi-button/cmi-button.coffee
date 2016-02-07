@@ -8,8 +8,3 @@ Polymer
     Polymer.CmiButtonBehavior
   ]
 
-  properties:
-
-    block: { type: Boolean, reflectToAttribute: true, value: false }
-
-

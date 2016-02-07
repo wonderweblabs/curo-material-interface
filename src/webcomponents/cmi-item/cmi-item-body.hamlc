@@ -1,0 +1,15 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+
+/
+  <cmi-item-body></cmi-item-body>
+
+  @group CMI Elements
+  @element cmi-item-body
+  @demo demo/index.html
+
+%dom-module{ id: 'cmi-item-body' }
+  %link{ rel: 'import', type: 'css', href: './cmi-item-body.css' }
+  %template( strip-whitespace )
+    %content
+
+  %script{ src: './cmi-item-body.js' }

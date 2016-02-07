@@ -36,7 +36,7 @@ Polymer
       closing = if /^\s*<\//.test(line) then true else false
 
       times = if closing == true then stack.length else stack.length + 1
-      resultLines.push "#{Array(times).join(indentation)}#{line}"
+      resultLines.push "#{Array(times).join(indentation)}#{line.replace(/^\s+/, '')}"
 
       for tag in (line.match(/(?:<\/)([^\s>\/>]*)/gm) || [])
         tag = tag.replace(/^<\//, '')
@@ -53,6 +53,9 @@ Polymer
         continue if exludedTags.indexOf(tag) >= 0
 
         stack.push tag
+
+    if resultLines[0] == ''
+      resultLines.shift()
 
     code = Prism.highlight((resultLines.join('\n') || ''), Prism.languages.markup)
     @.$.code.innerHTML = code

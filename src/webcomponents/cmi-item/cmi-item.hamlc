@@ -1,0 +1,42 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../iron-behaviors/iron-control-state.html' }
+%link{ rel: 'import', href: '../iron-behaviors/iron-button-state.html' }
+%link{ rel: 'import', href: 'cmi-item-shared-styles.html' }
+
+/
+  `<cmi-item>` is a non-interactive list item. By default, it is a horizontal flexbox.
+
+  <cmi-item>Item</cmi-item>
+
+  Use this element with `<cmi-item-body>` to make Material Design styled two-line
+  and three-line items.
+
+  <cmi-item>
+  <cmi-item-body two-line>
+  <div>Show your status</div>
+  <div secondary>Your status is visible to everyone</div>
+  </cmi-item-body>
+  <iron-icon icon="warning"></iron-icon>
+  </cmi-item>
+
+  ### Accessibility
+
+  This element has `role="listitem"` by default. Depending on usage, it may be more appropriate to set
+  `role="menuitem"`, `role="menuitemcheckbox"` or `role="menuitemradio"`.
+
+  <cmi-item role="menuitemcheckbox">
+  <cmi-item-body>Show your status</cmi-item-body>
+  <cmi-checkbox></cmi-checkbox>
+  </cmi-item>
+
+  @group CMI Elements
+  @element cmi-item
+  @demo demo/index.html
+
+%dom-module{ id: 'cmi-item' }
+  %style{ include: 'cmi-item-shared-styles' }
+  %link{ rel: 'import', type: 'css', href: './cmi-item.css' }
+  %template( strip-whitespace )
+    %content
+
+  %script{ src: './cmi-item.js' }

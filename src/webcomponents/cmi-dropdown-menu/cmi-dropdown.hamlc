@@ -1,0 +1,55 @@
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+-# %link{ rel: 'import', href: '../iron-a11y-keys-behavior/iron-a11y-keys-behavior.html' }
+-# %link{ rel: 'import', href: '../iron-selector/iron-multi-selectable.html' }
+-# %link{ rel: 'import', href: '../iron-dropdown/iron-dropdown.html' }
+-# %link{ rel: 'import', href: '../paper-material/paper-material.html' }
+
+-# %script{ src: './cmi-dropdown-behavior.js' }
+
+/
+  cmi-dropdown
+
+  @group CMI Elements
+  @element cmi-dropdown
+  @demo demo/index.html
+
+%dom-module{ id: 'cmi-dropdown' }
+  %link{ rel: 'import', type: 'css', href: './cmi-dropdown.css' }
+  %template
+    %content
+
+    -# %cmi-dropdown{ id: "dropdown",
+    -#                'opened$' => "{{opened}}",
+    -#                'horizontal-align$' => "{{horizontalAlign}}",
+    -#                'vertical-align$' => "{{verticalAlign}}",
+    -#                'horizontal-offset$' => "{{horizontalOffset}}",
+    -#                'vertical-offset$' => "{{verticalOffset}}",
+    -#                'open-animation-config$' => "{{openAnimationConfig}}",
+    -#                'close-animation-config$' => "{{closeAnimationConfig}}",
+    -#                'no-animations$' => "{{noAnimations}}" }
+    -#   %paper-material{ class: "dropdown-content" }
+    -#     %cmi-menu
+    -#       %template{ is: 'dom-if', if: '[[_computeIfItemsRepeat(menuItems)]]' }
+    -#         %template{ is: "dom-repeat", items: "[[_computeItems(attrForSelected, attrForItemTitle, menuItems)]]", as: "item" }
+    -#           %cmi-item{ 'value$' => "[[item.value]]" }= "[[item.title]]"
+    -#       %template{ is: 'dom-if', if: '[[!_computeIfItemsRepeat(menuItems)]]' }
+    -#         %content
+
+-# %iron-selector{ id: 'menu-content',
+-#                 'attr-for-selected$' => "[[attrForSelected]]",
+-#                 'selected$' => "{{selected}}",
+-#                 'selected-item$' => "{{selectedItem}}",
+-#                 'activate-event$' => "{{activateEvent}}",
+-#                 'selectable$' => "[[selectable]]",
+-#                 'selected-class$' => "[[selectedClass]]",
+-#                 'selected-attribute$' => "[[selectedAttribute]]",
+-#                 'multi$' => "[[multi]]",
+-#                 'selected-values$' => "{{selectedValues}}",
+-#                 'selected-items' => "{{selectedItems}}" }
+-#   %template{ is: 'dom-if', if: '[[_computeIfItemsRepeat(menuItems)]]' }
+-#     %template{ is: "dom-repeat", items: "[[_computeItems(attrForSelected, attrForItemTitle, menuItems)]]", as: "item" }
+-#       %cmi-item{ 'value$' => "[[item.value]]" }= "[[item.title]]"
+-#   %template{ is: 'dom-if', if: '[[!_computeIfItemsRepeat(menuItems)]]' }
+-#     %content
+
+  %script{ src: './cmi-dropdown.js' }

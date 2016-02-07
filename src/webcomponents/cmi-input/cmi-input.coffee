@@ -10,3 +10,10 @@ Polymer
     Polymer.PaperInputBehavior,
     Polymer.IronControlState
   ]
+
+  properties:
+
+    ###*
+    *
+    ###
+    hintMessage: { type: String, value: null }

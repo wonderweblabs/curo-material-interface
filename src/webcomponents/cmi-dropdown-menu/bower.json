@@ -22,11 +22,6 @@
     "iron-dropdown": "PolymerElements/iron-dropdown#>=1.0.5",
     "paper-ripple": "PolymerElements/paper-ripple#>=1.0.2",
     "paper-material": "PolymerElements/paper-material#>=1.0.2",
-    "paper-behaviors": "PolymerElements/paper-behaviors#>=1.0.3",
-    "cmi-styles": "./node_modules/cmi/src/webcomponents/cmi-styles",
-    "cmi-input": "./node_modules/cmi/src/webcomponents/cmi-input",
-    "cmi-item": "./node_modules/cmi/src/webcomponents/cmi-item",
-    "cmi-dropdown-behavior": "./node_modules/cmi/src/webcomponents/cmi-dropdown-behavior",
-    "cmi-menu-behavior": "./node_modules/cmi/src/webcomponents/cmi-menu-behavior"
+    "paper-behaviors": "PolymerElements/paper-behaviors#>=1.0.3"
   }
 }

@@ -9,9 +9,11 @@
     "cmi-elements"
   ],
   "main": [
-    "cmi-input-behavior.html",
     "cmi-input.html",
-    "cmi-textarea.html"
+    "cmi-textarea.html",
+    "cmi-input-container.html",
+    "cmi-input-error.html",
+    "cmi-input-char-counter.html"
   ],
   "ignore": [],
   "private": true,
@@ -21,6 +23,17 @@
     "iron-autogrow-textarea": "PolymerElements/iron-autogrow-textarea#>=1.0.5",
     "iron-form-element-behavior": "PolymerElements/iron-form-element-behavior#>=1.0.4",
     "paper-input": "PolymerElements/paper-input#>=1.0.14",
-    "cmi-styles": "./node_modules/cmi/src/webcomponents/cmi-styles"
+    "iron-a11y-keys-behavior": "PolymerElements/iron-a11y-keys-behavior#^1.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+    "iron-icon": "PolymerElements/iron-icon#^1.0.0",
+    "iron-test-helpers": "PolymerElements/iron-test-helpers#^1.0.0",
+    "iron-validator-behavior": "PolymerElements/iron-validator-behavior#^1.0.0",
+    "paper-icon-button": "PolymerElements/paper-icon-button#^1.0.0",
+    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
+    "web-component-tester": "Polymer/web-component-tester#^3.4.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
   }
 }

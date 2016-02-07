@@ -1,0 +1,17 @@
+cmi-input-hint
+%link{ rel: 'import', href: '../polymer/polymer.html' }
+%link{ rel: 'import', href: '../paper-input/paper-input-addon-behavior.html' }
+
+/
+  <cmi-input-hint></cmi-input-hint>
+
+  @group CMI Elements
+  @element cmi-input-hint
+  @demo demo/index.html
+
+%dom-module{ id: 'cmi-input-hint' }
+  %link{ rel: 'import', type: 'css', href: './cmi-input-hint.css' }
+  %template( strip-whitespace )
+    %content
+
+  %script{ src: './cmi-input-hint.js' }
