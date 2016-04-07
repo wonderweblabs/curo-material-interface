@@ -23,17 +23,21 @@ $cmi-dialog-extended-headline-color: #e5e5e5 !default
     +flex-wrap(nowrap)
     +justify-content(space-between)
     +flex-grow(1)
+
   .modal-header,
   .modal-footer
     +flex-grow(0)
     +flex-shrink(0)
+
   .modal-content
     +flex-grow(1)
     +flex-shrink(0)
     overflow: auto
+
   .modal-header
     +border-top-radius(3px)
     background-color: $cmi-dialog-extended-header-color
+
   .modal-footer
     +border-bottom-radius(3px)
     background-color: $cmi-dialog-extended-footer-color
@@ -42,67 +46,86 @@ $cmi-dialog-extended-headline-color: #e5e5e5 !default
   .modal-footer-inside
     +clearfix
     +box-sizing(border-box)
+
   .modal-header-inside
-    position: relative
     display: block
-    width: auto
     padding: 8px
+    position: relative
+    width: auto
+
   .modal-footer-inside
-    position: relative
     display: block
-    width: auto
     padding: 8px
+    position: relative
+    width: auto
 
   .modal-header-inside,
   .modal-footer-inside
+
     .back-button
-      float: left
-      min-width: 0
-      margin: 0 8px 0 0
       border: 1px solid darken($cmi-dialog-extended-headline-color, 50%)
+      float: left
+      margin: 0 8px 0 0
+      min-width: 0
+
       &:hover
         background-color: lighten($cmi-dialog-extended-header-color, 10%)
+
     .back-button ::content
       paper-material
         min-width: 0
         padding: 1px 6px
+
     .back-button /deep/
       iron-icon
         width: 14px
 
   .modal-header-inside
+
     .back-button /deep/
+
       iron-icon
         color: $cmi-dialog-extended-headline-color
+
     .close-button
-      float: right
-      min-width: 0
-      margin: 0
       border: 1px solid darken($cmi-dialog-extended-headline-color, 50%)
+      float: right
+      margin: 0
+      min-width: 0
+
       &:hover
         background-color: lighten($cmi-dialog-extended-header-color, 10%)
+
     .close-button ::content
+
       paper-material
         min-width: 0
         padding: 1px 6px
+
     .close-button /deep/
+
       iron-icon
-        width: 14px
         color: $cmi-dialog-extended-headline-color
+        width: 14px
+
     h1
-      margin: 5px
+      color: $cmi-dialog-extended-headline-color
       font-weight: 200
       font-size: 16px
-      line-height: 1.2
-      color: $cmi-dialog-extended-headline-color
+      line-height: 26px
+      margin: 5px
 
   .modal-footer-inside
     text-align: right
+
     .back-button
       border-color: darken($cmi-dialog-extended-footer-color, 10%)
+
       &:hover
         background-color: darken($cmi-dialog-extended-footer-color, 5%)
+
     .back-button ::content
+
       paper-material
         padding: 4px 9px
 

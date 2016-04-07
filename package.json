@@ -1,6 +1,6 @@
 {
   "name": "cmi",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Frontend framework to provide google material ui like interfaces. Extracted from curo cms.",
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "build": "./node_modules/gulp/bin/gulp.js --require coffee-script/register cmi-build",
     "watch": "./node_modules/gulp/bin/gulp.js --require coffee-script/register --notify=true cmi-watch"
   },
-  "dependencies": {
+  "devDependencies": {
     "coffee-script": "^1.10.0",
     "coffeeify": "^2.0.1",
     "gulp": "^3.9.0",
